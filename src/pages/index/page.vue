@@ -47,13 +47,14 @@
       <el-col :span="8">
        <div class="col col-d">
           <p style="font-size:24px;">最新监测的欺诈团伙</p>
-          <div style="margin-bottom:10px;" v-for="top in items1" :key="top"  class="col col-r">
+          <div style="margin-bottom:10px;" v-for="top in items1" :key="top" class="col col-r">
             <span style='margin-right:40%'>名次 <b>:</b> <span> {{top.list}} </span></span>
             <span>姓名 <b>:</b> <span> {{top.name}} </span></span><br><br>
             <span style='margin-right:40%'>人数 <b>:</b> <span> {{top.num}} </span></span>
           </div>
         </div>
-      </el-col><el-col :span="8">
+      </el-col>
+      <el-col :span="8">
         <div class="col col-d">
           <p style="font-size:24px;">等待人工审核人员列表</p>
           <div style="margin-bottom:10px;" v-for="top in items2" :key="top" class="col col-r">
@@ -103,9 +104,9 @@ export default {
         ]
       },
       items: [
-        { key: 1, list: 10, name: 'zk', phone: 18855556666, star: 3 },
-        { key: 2, list: 10, name: 'zk', phone: 18855556666, star: 3 },
-        { key: 3, list: 10, name: 'zk', phone: 18855556666, star: 3 }
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 },
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 },
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 }
       ],
       items1: [
         { list: 10, name: 'zk', num: 18866 },
