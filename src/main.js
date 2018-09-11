@@ -11,16 +11,6 @@ import '@/mock'
 import i18n from './i18n'
 // 核心插件
 import d2Admin from '@/plugin/d2admin'
-
-// [ 可选插件组件 ] 图表
-import VCharts from 'v-charts'
-import 'v-charts/lib/style.css'
-// 表格插件
-import DataTables from 'vue-data-tables'
-
-// 调用axios
-import axios from 'axios'
-
 // 调用接口
 import global from './pages/global/global.vue'
 
@@ -32,9 +22,6 @@ import { frameInRoutes } from '@/router/routes'
 
 // 核心插件
 Vue.use(d2Admin)
-Vue.use(VCharts)
-Vue.use(DataTables)
-Vue.prototype.$ajax = axios
 Vue.prototype.GLOBAL = global
 // Vue.use(axios)
 // Vue.use(global)
