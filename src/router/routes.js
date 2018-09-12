@@ -17,29 +17,43 @@ const frameIn = [
         name: 'index',
         meta,
         component: () => import('@/pages/index')
+      }
+    ]
+  },
+  {
+    path: '/antiFraud',
+    name:'antiFraud',
+    redirect: { name: 'antiFraud-index' },
+    component: layoutHeaderAside,
+    children: (pre => [
+      {
+        path: 'index',
+        name: `${pre}index`,
+        component: () => import('@/pages/index'),
+        meta: { ...meta, title: '总览' }
       },
       {
-        path: '/page1',
-        name: 'page1',
+        path: 'addCustomer',
+        name: `${pre}addCustomer`,
         component: () => import('@/pages/page1'),
-        meta: { meta, title: '新客戶提交' }
+        meta: { ...meta, title: '新客戶提交' }
       },
       {
-        path: '/page2',
-        name: 'page2',
+        path: 'examineCustomer',
+        name: `${pre}examineCustomer`,
         component: () => import('@/pages/page2'),
-        meta: { meta, title: '审核管理' }
+        meta: { ...meta, title: '审核管理' }
       },
       {
-        path: '/page3',
-        name: 'page3',
+        path: 'searchCustomer',
+        name: `${pre}searchCustomer`,
         component: () => import('@/pages/page3'),
-        meta: { meta, title: '客户检索' }
+        meta: { ...meta, title: '客户检索' }
       }, {
-        path: '/page4',
-        name: 'page4',
+        path: 'idCard',
+        name: `${pre}idCard`,
         component: () => import('@/pages/page4'),
-        meta: { meta, title: '客户黑名单' }
+        meta: { ...meta, title: '客户黑名单' }
       }
       // {
       //   path: '/global',
@@ -47,7 +61,7 @@ const frameIn = [
       //   component: () => import('@/pages/global'),
       //   meta: { meta, title: '接口' }
       // }
-    ]
+    ])('antiFraud-')
   }
 ]
 
