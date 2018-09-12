@@ -34,7 +34,7 @@
       </div>
       <!-- 快速登录按钮 -->
       <el-button type="info" class="button-help" @click="dialogVisible = true">
-        快速选择用户（测试功能）
+        快速选择用户
       </el-button>
     </div>
     <el-dialog
