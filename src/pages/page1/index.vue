@@ -4,10 +4,10 @@
     <demo-page-header
       slot="header"
       @submit="handleSubmit"
-      ref="header"/>
+      ref="header"  @zk = "zk"/>
     <!-- <el-button style="position:fixed;top:122px;right:620px;height:28px;line-height:2px;" type="warning" @click="add"> 切换 </el-button> -->
 
-    <el-switch
+    <!-- <el-switch
       v-model="value2"
       style="position:fixed;top:122px;right:590px;height:32px;"
       @change="add"
@@ -15,7 +15,7 @@
       inactive-color="#ff4949"
       active-icon-class="el-icon-tickets"
       inactive-icon-class="el-icon-menu"> 
-    </el-switch>
+    </el-switch> -->
     
     <demo-page-main
       :table-data="table"
@@ -28,7 +28,7 @@
       :total="page.total"
       @change="handlePaginationChange"/>
 
-    <el-card v-show="!ok">
+    <el-card v-show="ok1">
       <el-row :gutter="10">
         <el-col :span="24">
         <div class="col col-l">
@@ -75,8 +75,7 @@ export default {
   components: {
     'DemoPageHeader': () => import('./componnets/PageHeader'),
     'DemoPageMain': () => import('./componnets/PageMain'),
-    'DemoPageFooter': () => import('./componnets/PageFooter'),
-    // 'DemoToggle': () => import('./componnets/Toggle'),
+    'DemoPageFooter': () => import('./componnets/PageFooter')
   },
   data () {
     return {
@@ -93,6 +92,7 @@ export default {
         { name: 'zk3', num: 3065, status:"danger" },
       ],
       ok:false,
+      ok1:true,
       table: [],
       loading:false,
       page: {
@@ -126,19 +126,24 @@ export default {
   methods: {
     nextClicked(currentPage) {
       console.log('next clicked', currentPage)
-      return true; //return false if you want to prevent moving to next page
+      return true //return false if you want to prevent moving to next page
     },
     backClicked(currentPage) {
-      console.log('back clicked', currentPage);
-      return true; //return false if you want to prevent moving to previous page
+      console.log('back clicked', currentPage)
+      return true //return false if you want to prevent moving to previous page
     },
 
     message () {
       this.dialogVisible = true
     },
-    add () {
-      // alert(this.ok);
-      this.ok=!this.ok
+    zk (msg) {
+      if(msg == true){
+        this.ok =false
+        this.ok1 =true
+      }else{
+        this.ok1 =false
+        this.ok =true
+      }
     },
     handlePaginationChange (val) {
       this.$notify({

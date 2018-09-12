@@ -54,13 +54,13 @@
         width="55">
       </el-table-column>
 
-      <el-table-column label="卡密" :show-overflow-tooltip="true">
+      <el-table-column label="姓名" width="100" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.key}}
         </template>
       </el-table-column>
 
-      <el-table-column label="面值" width="60" align="center">
+      <el-table-column label="出生年月" width="120"  align="center">
         <template slot-scope="scope">
           <el-tag
             size="mini"
@@ -70,7 +70,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="状态" width="50" align="center">
+      <el-table-column label="手机号码" width="100" align="center">
         <template slot-scope="scope">
           <boolean-control
             :value="scope.row.type"
@@ -89,7 +89,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="状态" width="50" align="center">
+      <el-table-column label="家庭住址" align="center">
         <template slot-scope="scope">
           <boolean-control-mini
             :value="scope.row.type"
@@ -108,25 +108,25 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="管理员" width="60">
+      <el-table-column label="学生/员工" width="80" align="center">
         <template slot-scope="scope">
           {{scope.row.admin}}
         </template>
       </el-table-column>
 
-      <el-table-column label="管理员备注" :show-overflow-tooltip="true">
+      <el-table-column label="籍贯" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.adminNote}}
         </template>
       </el-table-column>
 
-      <el-table-column label="创建时间" width="150" :show-overflow-tooltip="true">
+      <el-table-column label="亲属姓名" width="80" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.dateTimeCreat}}
         </template>
       </el-table-column>
 
-      <el-table-column label="使用状态" width="100" align="center">
+      <el-table-column label="亲属住址" align="center">
         <template slot-scope="scope">
           <el-tag
             size="mini"
@@ -136,7 +136,17 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="使用时间" width="150" :show-overflow-tooltip="true">
+      <el-table-column label="亲属手机号码" width="120" align="center" :show-overflow-tooltip="true">
+        <template slot-scope="scope">
+          {{scope.row.dateTimeUse}}
+        </template>
+      </el-table-column>
+      <el-table-column label="已申请的信用卡" align="center" :show-overflow-tooltip="true">
+        <template slot-scope="scope">
+          {{scope.row.dateTimeUse}}
+        </template>
+      </el-table-column>
+      <el-table-column label="已申请贷款" width="150" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.dateTimeUse}}
         </template>
@@ -223,8 +233,8 @@ export default {
       currentTableData: [],
       multipleSelection: [],
       downloadColumns: [
-        { label: '卡密', prop: 'key' },
-        { label: '面值', prop: 'value' },
+        { label: '姓名', prop: 'admin' },
+        { label: '出生年月', prop: 'value' },
         { label: '状态', prop: 'type' },
         { label: '管理员', prop: 'admin' },
         { label: '管理员备注', prop: 'adminNote' },
