@@ -7,17 +7,26 @@
           <p style="font-size:24px;">客户组列表</p>
           <div shadow="hover" style="margin-bottom:5px;height:15px;" v-for="top in item" :key="top" class="col col-r">
             <span style='margin-right:40%'>组名 <b>:</b> <span> {{top.name}} </span></span>
-            <span>状态 <b>:</b> <span> &nbsp; <el-button class="midd1" :type="top.status"></el-button> </span></span>
+            <span>状态 <b>:</b> <span> &nbsp; <el-button class="midd1" size="mini" :type="top.status"></el-button> </span></span>
           </div>
         </div>
       </el-col>
       <el-col :span="18">
         <div class="col col-l" style="margin-bottom:10px;">
           <p style="font-size:24px;">人员列表</p>
-         <el-button type="success"></el-button> <span class="midd"> 安全 </span> <el-button type="danger"></el-button><span class="midd">欺诈</span><el-button type="info"></el-button><span class="midd">可疑</span><el-button type="warning"></el-button>
-        <span class="midd">待检测</span></div>
+          <el-button size="mini" type="success"></el-button> <span class="midd"> 安全 </span> <el-button size="mini" type="danger"></el-button><span class="midd">欺诈</span><el-button size="mini" type="info"></el-button><span class="midd">可疑</span><el-button size="mini" type="warning"></el-button>
+          <span class="midd" style="margin-right:20px;">待检测</span>
+          <el-switch
+            v-model="value2"
+            @change="toggle"
+            active-color="#13ce46"
+            inactive-color="#ff4949"
+            active-icon-class="el-icon-tickets"
+            inactive-icon-class="el-icon-menu"> 
+          </el-switch>
+        </div>
       </el-col>
-      <el-col :span="18">
+      <el-col :span="18" v-show="ok">
         <div class="col col-l">
           <el-row :gutter="23">
             <el-col style="margin-bottom:10px;" :span="4" v-for="list in items" :key="list">
@@ -25,16 +34,31 @@
                 <img  @click="message()" v-bind:src="list.img" class="image" alt="图片">
                 <p class="lis">姓名 <b>:</b> {{list.name}}</p>
                 <p class="lis">电话 <b>:</b> {{list.phone}}</p>
-                <p class="lis">状态 <b>:</b> &nbsp;<el-button class="midd1" :type="list.status"></el-button></p>
+                <p class="lis">状态 <b>:</b> &nbsp;<el-button size="mini" class="midd1" :type="list.status"></el-button></p>
               </el-card>
             </el-col>
           </el-row>
         </div>
       </el-col>
+
+      <el-card v-show="!ok">
+        <el-row :gutter="10">
+          <el-col :span="24">
+          <div class="col col-l">
+            <div shadow="hover" style="margin-bottom:10px;" v-for="pic in item" :key="top" class="col col-r">
+              <span class="ri">组名 <b>:</b> <span> {{pic.name}} </span></span>
+              <span class="ri">人数 <b>:</b> <span> &nbsp; {{pic.num}} </span></span>
+              <span class="ri">添加 <b>:</b> <span> &nbsp; <el-button size="mini" class="midd1" :type="pic.status"></el-button> </span></span>
+            </div>
+          </div>
+        </el-col>
+        </el-row>
+      </el-card>
+
     </el-row>
   </el-card>
   <div>
-    <!-- 全屏详细信息 -->
+     <!-- 全屏详细信息 -->
     <el-dialog
       :title="tooltipContent"
       :fullscreen="true"
@@ -84,7 +108,7 @@
                 </span>
                 <p>姓名 <b>:</b> {{zk_name}}</p>
                 <p>电话 <b>:</b> {{zk_phone}}</p>
-                <p>状态 <b>:</b> &nbsp;&nbsp;<el-button class="midd1" type="danger"></el-button></p>
+                <p>状态 <b>:</b> &nbsp;&nbsp;<el-button size="mini" class="midd1" type="danger"></el-button></p>
               </div>
             </el-col>
             <el-col :span="18">
@@ -138,6 +162,7 @@ export default {
   name: 'page2',
   data () {
     return {
+      ok:true,
       dialogVisible: false,
       zk_name: 'zk',
       zk_phone: '15522322212',
@@ -151,7 +176,9 @@ export default {
         { name: 'zk2', status: 'warning' },
         { name: 'zk2', status: 'success' },
         { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'danger' }
+        { name: 'zk2', status: 'danger' },
+        { name: 'zk2', status: 'danger' },
+        { name: 'zk2', status: 'danger' },
       ],
       dynamicTags: [],
       inputVisible: false,
@@ -171,6 +198,9 @@ export default {
     }
   },
   methods: {
+    toggle () {
+      this.ok = !this.ok
+    },
     message () {
       this.dialogVisible = true
     },
@@ -196,6 +226,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .ri{
+    margin-right:5%;
+  }
   .el-tag + .el-tag {
     margin-left: 10px;
   }
@@ -222,8 +255,9 @@ export default {
   .midd1{
     display: inline-block;
     vertical-align: middle;
-    height:26px;
+    height:20px;
     line-height:32px;
+    width:40px;
   }
   .lis {
     margin-left:17px;

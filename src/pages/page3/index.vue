@@ -16,7 +16,7 @@
                 <img  @click="message()" v-bind:src="list.img" class="image" alt="图片">
                 <p class="lis">姓名 <b>:</b> {{list.name}}</p>
                 <p class="lis">电话 <b>:</b> {{list.phone}}</p>
-                <p class="lis">状态 <b>:</b> &nbsp;<el-button class="midd1" :type="list.status"></el-button></p>
+                <p class="lis">状态 <b>:</b> &nbsp;<el-button size="mini" class="midd1" :type="list.status"></el-button></p>
               </el-card>
             </el-col>
           </el-row>
@@ -74,7 +74,7 @@
                 </span>
                 <p>姓名 <b>:</b> {{zk_name}}</p>
                 <p>电话 <b>:</b> {{zk_phone}}</p>
-                <p>状态 <b>:</b> &nbsp;&nbsp;<el-button class="midd1" type="danger"></el-button></p>
+                <p>状态 <b>:</b> &nbsp;&nbsp;<el-button size="mini" class="midd1" type="danger"></el-button></p>
               </div>
             </el-col>
             <el-col :span="18">
@@ -213,8 +213,9 @@ export default {
   .midd1{
     display: inline-block;
     vertical-align: middle;
-    height:26px;
-    line-height:32px;
+    height:20px;
+    line-height:30px;
+    width: 40px;
   }
   .lis {
     margin-left:17px;

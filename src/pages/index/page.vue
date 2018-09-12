@@ -76,13 +76,13 @@ export default {
     // this.chartSettings = {
     //   xAxisType: 'time'
     // }
-    this.$ajax(this.GLOBAL.urls.list)
-      .then(res => {
-        console.log(res)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    // this.$ajax(this.GLOBAL.urls.list)
+    //   .then(res => {
+    //     console.log(res)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    // })
     return {
       user: 800,
       group: 8,
