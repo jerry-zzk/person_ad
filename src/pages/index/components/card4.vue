@@ -2,31 +2,39 @@
     <div>
         <el-row :gutter="10">
             <el-col :span="6">
-                <div class="col col-l">
+                <div class="col col-1">
                     <h4>客户/分组</h4>
                     <p><span> {{user}} / {{group}} </span></p>
-                    <div class="icon fa fa-ravelry"></div>
+                    <div class="icon">
+                        <img src="../image/user-group.svg" alt="">
+                    </div>
                 </div>
             </el-col>
             <el-col :span="6">
-                <div class="col col-r">
+                <div class="col col-2">
                     <h4>敲诈客户</h4>
                     <p><span> {{user_qz}} </span></p>
-                    <div class="icon fa fa-snowflake-o"></div>
+                    <div class="icon">
+                        <img src="../image/people.svg" alt="">
+                    </div>
                 </div>
             </el-col>
             <el-col :span="6">
-                <div class="col col-l">
+                <div class="col col-3">
                     <h4>欺诈团伙</h4>
                     <p><span> {{user_group}} </span></p>
-                    <div class="icon fa fa-sign-language"></div>
+                    <div class="icon">
+                        <img src="../image/group.svg" alt="">
+                    </div>
                 </div>
             </el-col>
             <el-col :span="6">
-                <div class="col col-r">
+                <div class="col col-4">
                     <h4>待审核</h4>
                     <p><span> {{num}}</span></p>
-                    <div class="icon fa fa-superpowers"></div>
+                    <div class="icon">
+                        <img src="../image/search.svg" alt="">
+                    </div>
                 </div>
             </el-col>
         </el-row>
@@ -74,21 +82,30 @@
         }
         .icon{
             position: absolute;
-            right: 0;
+            right: 24px;
             top: 24px;
             font-size: 42px;
+            width: 50px;
+            height: 50px;
+            img{
+                width: 100%;
+            }
         }
-
-
     }
-
-    .col-l {
+    .col-1 {
         background-color: rgba(175, 255, 177, 0.42);
         border-color: rgba(208, 199, 205, 0.33);
     }
-
-    .col-r {
+    .col-2 {
         background-color: rgba(82, 255, 241, 0.42);
+        border-color: rgba(208, 199, 205, 0.33);
+    }
+    .col-3 {
+        background-color: rgb(216, 220, 255);
+        border-color: rgba(208, 199, 205, 0.33);
+    }
+    .col-4 {
+        background-color: rgba(255, 182, 193, 0.42);
         border-color: rgba(208, 199, 205, 0.33);
     }
 </style>

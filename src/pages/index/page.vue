@@ -4,10 +4,9 @@
       <card4></card4>
     </el-card>
   <!-- 折线图区域 -->
-    <div class="inner">
-      <ve-line :data="chartData"></ve-line>
-      <!-- <ve-line :data="chartData" :settings="chartSettings"></ve-line> -->
-    </div>
+    <el-card shadow="never" class="d2-mb">
+      <line-chart></line-chart>
+    </el-card>
   <!-- 反欺诈列表 -->
     <topBox></topBox>
   </d2-container>
@@ -15,13 +14,11 @@
 
 <script>
 import D2HelpBtn from './components/d2-help-btn'
-import card4 from './components/top4-card/card4.vue'
+import card4 from './components/card4.vue'
+import lineChart from './components/line-chart.vue'
 import topBox from './components/topBox.vue'
 export default {
   data () {
-    // this.chartSettings = {
-    //   xAxisType: 'time'
-    // }
     return {
       chartData: {
         columns: ['日期', '客户', '欺诈客户'],
@@ -57,14 +54,15 @@ export default {
   components: {
     D2HelpBtn,
     card4,
-    topBox
+    topBox,
+    lineChart
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .inner {
-  position: position;
+  position: relative;
   top: 20px;
   right:  20px;
   bottom: 20px;
