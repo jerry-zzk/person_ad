@@ -2,7 +2,7 @@
 export default [
   { path: '/index',
     title: '反欺诈',
-    icon: 'home'
+    iconSvg: 'add',
     // children: [
     //   { path: '/page1', title: '信用分' },
     //   { path: '/page2', title: '地理位置' },
