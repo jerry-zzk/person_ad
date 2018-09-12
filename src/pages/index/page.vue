@@ -1,29 +1,7 @@
 <template>
   <d2-container class="page">
-      <el-card shadow="never" class="d2-mb">
-      <el-row :gutter="10">
-        <el-col :span="6">
-          <div class="col col-l">
-            <p>客户/分组 <b>:</b> <span> {{user}} / {{group}} </span> </p>
-            <p></p>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="col col-r">
-            <p>敲诈客户 <b>:</b> <span> {{user_qz}} </span> </p>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="col col-l">
-            <p>欺诈团伙 <b>:</b> <span> {{user_group}} </span> </p>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="col col-r">
-            <p>待审核 <b>:</b> <span> {{num}} 客户</span> </p>
-          </div>
-        </el-col>
-      </el-row>
+    <el-card shadow="never" class="d2-mb">
+      <card4></card4>
     </el-card>
   <!-- 折线图区域 -->
     <div class="inner">
@@ -71,6 +49,7 @@
 
 <script>
 import D2HelpBtn from './components/d2-help-btn'
+import card4 from './components/top4-card/card4.vue'
 export default {
   data () {
     // this.chartSettings = {
@@ -84,11 +63,6 @@ export default {
         console.log(error)
       })
     return {
-      user: 800,
-      group: 8,
-      user_qz: 30,
-      user_group: 2,
-      num: 300,
       chartData: {
         columns: ['日期', '客户', '欺诈客户'],
         rows: [
@@ -121,7 +95,8 @@ export default {
     }
   },
   components: {
-    D2HelpBtn
+    D2HelpBtn,
+    card4
   }
 }
 </script>

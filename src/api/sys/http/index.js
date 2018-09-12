@@ -15,5 +15,3 @@ export function httpPost (url, data = {}) {
     data
   })
 }
-
-//gcx-test
