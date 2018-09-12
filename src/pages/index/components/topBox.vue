@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div id="topBox">
     <el-row :gutter="10">
       <el-col :span="10">
-        <div style="position:relative;padding:15px;border-radius:3px;background-color:#FF9800;color:#fff;font-size:14px;text-align: center;">
-          <p style="font-size:20px;margin-top:0;text-align:left;">欺诈TOP 10</p>
-          <el-row style="padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.5);">
+        <div class="ipanel">
+          <p class="ipanel-title">欺诈TOP 10</p>
+          <el-row class="ipanel-thead">
             <el-col :span="4">名次</el-col>
             <el-col :span="8">姓名</el-col>
             <el-col :span="8">电话</el-col>
             <el-col :span="4">评分</el-col>
           </el-row>
-          <div style="height:340px;overflow-y: auto;text-align: center;">
-            <el-row v-for="top in items" :key="top.list" style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.5);">
+          <div class="ipanel-tbody">
+            <el-row v-for="top in items" :key="top.list" class="ipanel-tr">
               <el-col :span="4">{{top.list}}</el-col>
               <el-col :span="8">{{top.name}}</el-col>
               <el-col :span="8">{{top.phone}}</el-col>
@@ -21,43 +21,32 @@
         </div>
       </el-col>
       <el-col :span="7">
-        <div style="position:relative;padding:15px;border-radius:3px;background-color:#04c142;color:#fff;font-size:14px;text-align: center;">
-          <p style="font-size:20px;margin-top:0;color:#fff;text-align:left;">最新监测的欺诈团伙</p>
-          
-          <el-row style="padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.5);">
+        <div class="ipanel" style="background-color:#04c142;">
+          <p class="ipanel-title">最新监测的欺诈团伙</p>
+          <el-row class="ipanel-thead"">
             <el-col :span="6">名次</el-col>
             <el-col :span="12">名称</el-col>
             <el-col :span="6">人数</el-col>
           </el-row>
-          <div style="height:340px;overflow-y: auto;">
-            <el-row v-for="top in items1" :key="top.list" style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.5);">
+          <div class="ipanel-tbody">
+            <el-row v-for="top in items1" :key="top.list" class="ipanel-tr"">
               <el-col :span="6">{{top.list}}</el-col>
               <el-col :span="12">{{top.name}}</el-col>
               <el-col :span="6">{{top.num}}</el-col>
             </el-row>
           </div>
-          <!--
-          <el-row>
-            <el-col :xl="12" :lg="12" :md="12" :lg="3" :xl="1"></el-col>
-          </el-row>
-          <div v-for="top in items1" :key="top.list" style="width:100px;">
-            <p>名次:{{top.list}}</p>
-            <p>名称:{{top.name}}</p>
-            <p>人数:{{top.num}}</p>
-          </div>
-        -->
         </div>
       </el-col>
       <el-col :span="7">
-        <div style="position:relative;padding:15px;border-radius:3px;background-color:#737373;color:#fff;font-size:14px;text-align: center;">
-          <p style="font-size:20px;margin-top:0;color:#fff;text-align:left;">等待人工审核人员列表</p>
-          <el-row style="padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.5);">
+        <div class="ipanel" style="background-color:#737373;">
+          <p class="ipanel-title">等待人工审核人员列表</p>
+          <el-row class="ipanel-thead">
             <el-col :span="8">姓名</el-col>
             <el-col :span="12">手机</el-col>
             <el-col :span="4">评分</el-col>
           </el-row>
-          <div style="height:340px;overflow-y: auto;">
-            <el-row v-for="top in items2" :key="top.list" style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.5);">
+          <div class="ipanel-tbody">
+            <el-row v-for="top in items2" :key="top.list" class="ipanel-tr"">
               <el-col :span="8">{{top.name}}</el-col>
               <el-col :span="12">{{top.phone}}</el-col>
               <el-col :span="4">{{top.star}}</el-col>
@@ -102,34 +91,46 @@ export default {
         { star: 10, name: 'zk', phone: 18855556665 },
         { star: 10, name: 'zk', phone: 18855556666 },
         { star: 10, name: 'zk', phone: 18855556667 },
-        { star: 10, name: 'zk', phone: 18855556668 }
-        /*,
+        { star: 10, name: 'zk', phone: 18855556668 },
         { star: 10, name: 'zk', phone: 18855556669 },
-        { star: 10, name: 'zk', phone: 18855556610 },
-        { star: 10, name: 'zk', phone: 18855554611 },
-        { star: 10, name: 'zk', phone: 18855556612 },
-        { star: 10, name: 'zk', phone: 18855556613 }
-        */
+        { star: 10, name: 'zk', phone: 18855556610 }
       ]
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-    @import '~@/assets/style/public.scss';
-    .col {
-        padding: 20px;
-        border-radius: 4px;
-        border-width: 1px;
-        border-style: solid;
-        font-size: 16px;
+    #topBox .ipanel{
+      position: relative;
+      height: 440px;
+      padding: 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
+      background-color: #FF9800;
+      box-shadow: 0 0 8px #bbb;
+      overflow-y: hidden;
     }
-    .col-l {
-        background-color: lighten($color-info, 40%);
-        border-color: lighten($color-info, 35%);
+    #topBox .ipanel .ipanel-title{
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 20px;
+      text-align: left;
     }
-    .col-r {
-        background-color: lighten($color-success, 47%);
-        border-color: lighten($color-success, 40%);
+    #topBox .ipanel .ipanel-thead{
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+    #topBox .ipanel .ipanel-tbody{
+      text-align: center;
+    }
+    #topBox .ipanel .ipanel-tbody .ipanel-tr{
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+    #topBox .ipanel .ipanel-tbody .ipanel-tr:hover{
+      background-color: #fff;
+      color: #000;
     }
 </style>
