@@ -7,6 +7,7 @@
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
+      <div class="layer bg" id="login"></div>
       <!-- 顶栏 -->
       <div
         class="d2-theme-header"
@@ -81,6 +82,8 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import mixinSearch from './mixins/search'
+require('particles.js')
+import config from './config/default'
 export default {
   name: 'd2-layout-header-aside',
   mixins: [
@@ -95,6 +98,10 @@ export default {
     'd2-header-theme': () => import('./components/header-theme'),
     'd2-header-user': () => import('./components/header-user'),
     'd2-header-error-log': () => import('./components/header-error-log')
+  },
+  mounted () {
+    // 初始化例子插件
+    particlesJS('login', config)
   },
   data () {
     return {
@@ -142,4 +149,24 @@ export default {
 <style lang="scss">
 // 注册主题
 @import '~@/assets/style/theme/register.scss';
+  .layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    &.flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  // 背景
+  .bg {
+    canvas {
+      display: block;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
 </style>

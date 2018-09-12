@@ -19,7 +19,7 @@ const setting = {
       {
         name: 'index',
         meta: {
-          title: '反欺诈',
+          title: '首页',
           requiresAuth: false
         }
       }
@@ -58,12 +58,6 @@ const setting = {
         name: 'star',
         backgroundImage: 'image/theme/star/bg.jpg',
         preview: 'image/theme/star/preview@2x.png'
-      },
-      {
-        title: '流星1',
-        name: 'star1',
-        backgroundImage: 'image/theme/star/bg1.jpg',
-        preview: 'image/theme/star/preview@2x1.png'
       },
       {
         title: 'Tomorrow Night Blue (vsCode)',

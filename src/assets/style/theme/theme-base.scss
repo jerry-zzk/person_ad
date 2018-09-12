@@ -84,6 +84,7 @@
         transition: width .3s;
         float: left;
         text-align: center;
+        position: relative;
         img {
           height: 60px;
         }
@@ -91,6 +92,7 @@
       // 折叠侧边栏切换按钮
       .toggle-aside-btn {
         float: left;
+        position: relative;
         height: 60px;
         width: 60px;
         display: flex;
@@ -107,6 +109,7 @@
         float: left;
         border-bottom: none;
         background-color: transparent;
+        position: relative;
         %header-menu-item {
           @extend %unable-select;
           i.fa {
@@ -131,6 +134,7 @@
         height: 60px;
         display: flex;
         align-items: center;
+        position: relative;
         .btn-text {
           padding: 14px 12px;
           border-radius: 4px;
