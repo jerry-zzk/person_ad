@@ -14,10 +14,11 @@
       <el-col :span="18">
         <div class="col col-l" style="margin-bottom:10px;">
           <p style="font-size:24px;">人员列表</p>
-          <el-button size="mini" type="success"></el-button> <span class="midd"> 安全 </span> <el-button size="mini" type="danger"></el-button><span class="midd">欺诈</span><el-button size="mini" type="info"></el-button><span class="midd">可疑</span><el-button size="mini" type="warning"></el-button>
+          <el-button size="small" type="success"></el-button> <span class="midd"> 安全 </span> <el-button size="small" type="danger"></el-button><span class="midd">欺诈</span><el-button size="small" type="info"></el-button><span class="midd">可疑</span><el-button size="small" type="warning"></el-button>
           <span class="midd" style="margin-right:20px;">待检测</span>
           <el-switch
-            v-model="value2"
+            style="margin-top:6px;"
+            v-model="value1"
             @change="toggle"
             active-color="#13ce46"
             inactive-color="#ff4949"
@@ -45,10 +46,11 @@
         <el-row :gutter="10">
           <el-col :span="24">
           <div class="col col-l">
-            <div shadow="hover" style="margin-bottom:10px;" v-for="pic in item" :key="top" class="col col-r">
+            <div shadow="hover" style="margin-bottom:10px;" v-for="pic in items" :key="pic" class="col col-r">
+              <span class="ri">头像 <b>:</b> <span> &nbsp; <img  @click="message()" v-bind:src="pic.img" class="image2" alt="图片"> </span></span>
               <span class="ri">组名 <b>:</b> <span> {{pic.name}} </span></span>
-              <span class="ri">人数 <b>:</b> <span> &nbsp; {{pic.num}} </span></span>
-              <span class="ri">添加 <b>:</b> <span> &nbsp; <el-button size="mini" class="midd1" :type="pic.status"></el-button> </span></span>
+              <span class="ri">电话 <b>:</b> <span> &nbsp; {{pic.phone}} </span></span>
+              <span class="ri">状态 <b>:</b> <span> &nbsp; <el-button size="mini" class="midd1" :type="pic.status"></el-button> </span></span>
             </div>
           </div>
         </el-col>
@@ -58,7 +60,7 @@
     </el-row>
   </el-card>
   <div>
-     <!-- 全屏详细信息 -->
+    <!-- 全屏详细信息 -->
     <el-dialog
       :title="tooltipContent"
       :fullscreen="true"
@@ -162,7 +164,9 @@ export default {
   name: 'page2',
   data () {
     return {
-      ok:true,
+      value1: true,
+      value2: false,
+      ok:false,
       dialogVisible: false,
       zk_name: 'zk',
       zk_phone: '15522322212',
@@ -184,7 +188,7 @@ export default {
       inputVisible: false,
       inputValue: '',
       items: [
-        { name: 'zk', phone: 15522322212, status: 'danger', img: img1 },
+        { name: 'zk4', phone: 15522322212, status: 'danger', img: img1 },
         { name: 'zk1', phone: 15652322212, status: 'success', img: img3 },
         { name: 'zk2', phone: 15578956212, status: 'danger', img: img1 },
         { name: 'zk2', phone: 15578956212, status: 'warning', img: img3 },
@@ -283,6 +287,10 @@ export default {
     width: 40%;
     vertical-align: top;
     margin-right:20px;
+  }
+  .image2{
+    width:5%;
+    vertical-align: middle;
   }
   .clearfix:before,
   .clearfix:after {

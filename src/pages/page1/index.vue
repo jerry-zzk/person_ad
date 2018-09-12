@@ -35,12 +35,34 @@
           <div shadow="hover" style="margin-bottom:10px;" v-for="top in item" :key="top" class="col col-r">
             <span class="ri">组名 <b>:</b> <span> {{top.name}} </span></span>
             <span class="ri">人数 <b>:</b> <span> &nbsp; {{top.num}} </span></span>
-            <span class="ri">添加 <b>:</b> <span> &nbsp; <el-button size="mini" class="midd1" :type="top.status"></el-button> </span></span>
+            <span class="ri">添加 <b>:</b>  &nbsp; <el-button size="mini" @click="message" class="midd1" :type="top.status"> + </el-button> </span>
           </div>
         </div>
       </el-col>
       </el-row>
     </el-card>
+
+    <!-- 全屏 -->
+    <el-dialog
+      :title="tooltipContent"
+      :fullscreen="true"
+      :visible.sync="dialogVisible"
+      :append-to-body="true">
+      <vue-good-wizard 
+        :steps="steps"
+        :onNext="nextClicked" 
+        :onBack="backClicked">
+        <div slot="选择方式">
+          <h4>Step 1</h4>
+        </div>
+        <div slot="表格填写">
+          <h4>Step 2</h4>
+        </div>
+        <div slot="提交信息">
+          <h4>Step 3</h4>
+        </div>
+      </vue-good-wizard>
+    </el-dialog>
 
   </d2-container>
 </template>
@@ -78,9 +100,42 @@ export default {
         size: 100,
         total: 0
       },
+       steps: [
+        {
+          label: '第一步',
+          slot: 'page1',
+        },
+        {
+          label: '第二步',
+          slot: 'page2',
+        },
+        {
+          label: '第三步',
+          slot: 'page3',
+          options: {
+            nextDisabled: true,
+          },
+        }
+      ],
+      dialogVisible: false,
+      dynamicTags: [],
+      inputVisible: false,
+      inputValue: '',
     }
   },
   methods: {
+    nextClicked(currentPage) {
+      console.log('next clicked', currentPage)
+      return true; //return false if you want to prevent moving to next page
+    },
+    backClicked(currentPage) {
+      console.log('back clicked', currentPage);
+      return true; //return false if you want to prevent moving to previous page
+    },
+
+    message () {
+      this.dialogVisible = true
+    },
     add () {
       // alert(this.ok);
       this.ok=!this.ok
@@ -167,7 +222,7 @@ export default {
     display: inline-block;
     vertical-align: middle;
     height:20px;
-    line-height:32px;
+    line-height:6px;
     width:40px;
   }
 </style>

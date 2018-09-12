@@ -144,23 +144,39 @@
 
       <el-table-column label="添加操作" width="100" align="center">
         <template slot-scope="scope">
-          <!-- <boolean-control-mini
-            :value="scope.row.type"
-            @change="(val) => {
-              handleSwitchChange(val, scope.$index)
-            }"> -->
-            <d2-icon
-              name="check-circle"
-              style="font-size: 20px; line-height: 32px; color: #67C23A;"
-              slot="active" @change="step()"/>
-            <!-- <d2-icon
-              name="times-circle"
-              style="font-size: 20px; line-height: 32px; color: #F56C6C;"
-              slot="inactive"/> -->
-          <!-- </boolean-control-mini> -->
+          <el-button size="mini"  @click="message"> + </el-button>
         </template>
       </el-table-column>
 
+      <!-- 全屏详细信息 -->
+    <el-dialog
+      :title="tooltipContent"
+      :fullscreen="true"
+      :visible.sync="dialogVisible"
+      :append-to-body="true">
+      <vue-good-wizard 
+        :steps="steps"
+        :onNext="nextClicked" 
+        :onBack="backClicked">
+        <div slot="page1">
+          <h4>Step 1</h4>
+          <p>This is step 1</p>
+        </div>
+        <div slot="page2">
+          <h4>Step 2</h4>
+          <p>This is step 2</p>
+        </div>
+        <div slot="page3">
+          <h4>Step 3</h4>
+          <p>This is step 3</p>
+        </div>
+        <div slot="page4">
+          <h4>Step 4</h4>
+          <p>This is step 4</p>
+        </div>
+      </vue-good-wizard>
+    </el-dialog>
+      
     </el-table>
   </div>
 </template>
@@ -183,6 +199,27 @@ export default {
   },
   data () {
     return {
+      steps: [
+        {
+          label: '第一步',
+          slot: 'page1',
+        },
+        {
+          label: '第二步',
+          slot: 'page2',
+        },
+        {
+          label: '第三步',
+          slot: 'page3',
+        },
+        {
+          label: '第四步',
+          slot: 'page4',
+          options: {
+            nextDisabled: true,
+          },
+        }
+      ],
       currentTableData: [],
       multipleSelection: [],
       downloadColumns: [
@@ -194,7 +231,11 @@ export default {
         { label: '创建时间', prop: 'dateTimeCreat' },
         { label: '使用状态', prop: 'used' },
         { label: '使用时间', prop: 'dateTimeUse' }
-      ]
+      ],
+      dialogVisible: false,
+      dynamicTags: [],
+      inputVisible: false,
+      inputValue: '',
     }
   },
   watch: {
@@ -206,9 +247,39 @@ export default {
     }
   },
   methods: {
-    step () {
-      alert(123);
+    // step () {
+    //   alert(123);
+    // },
+    nextClicked(currentPage) {
+      console.log('next clicked', currentPage)
+      return true; //return false if you want to prevent moving to next page
     },
+    backClicked(currentPage) {
+      console.log('back clicked', currentPage);
+      return true; //return false if you want to prevent moving to previous page
+    },
+
+    message () {
+      this.dialogVisible = true
+    },
+    handleClose (tag) {
+      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
+    },
+    showInput () {
+      this.inputVisible = true
+      this.$nextTick(_ => {
+        this.$refs.saveTagInput.$refs.input.focus()
+      })
+    },
+    handleInputConfirm () {
+      let inputValue = this.inputValue
+      if (inputValue) {
+        this.dynamicTags.push(inputValue)
+      }
+      this.inputVisible = false
+      this.inputValue = ''
+    },
+
     handleSwitchChange (val, index) {
       const oldValue = this.currentTableData[index]
       this.$set(this.currentTableData, index, {
