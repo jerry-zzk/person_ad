@@ -3,7 +3,7 @@
     <el-row :gutter="10">
       <el-col :span="10">
         <div class="ipanel">
-          <p class="ipanel-title">欺诈TOP 10</p>
+          <p class="ipanel-title" style="color:#FF9800;">欺诈TOP 10</p>
           <el-row class="ipanel-thead">
             <el-col :span="4">名次</el-col>
             <el-col :span="8">姓名</el-col>
@@ -22,7 +22,7 @@
       </el-col>
       <el-col :span="7">
         <div class="ipanel" style="background-color:#04c142;">
-          <p class="ipanel-title">最新监测的欺诈团伙</p>
+          <p class="ipanel-title" style="color:#04c142;">最新监测的欺诈团伙</p>
           <el-row class="ipanel-thead"">
             <el-col :span="6">名次</el-col>
             <el-col :span="12">名称</el-col>
@@ -39,7 +39,7 @@
       </el-col>
       <el-col :span="7">
         <div class="ipanel" style="background-color:#737373;">
-          <p class="ipanel-title">等待人工审核人员列表</p>
+          <p class="ipanel-title" style="color:#737373;">等待人工审核人员列表</p>
           <el-row class="ipanel-thead">
             <el-col :span="8">姓名</el-col>
             <el-col :span="12">手机</el-col>
@@ -91,9 +91,9 @@ export default {
         { star: 10, name: 'zk', phone: 18855556665 },
         { star: 10, name: 'zk', phone: 18855556666 },
         { star: 10, name: 'zk', phone: 18855556667 },
-        { star: 10, name: 'zk', phone: 18855556668 },
         { star: 10, name: 'zk', phone: 18855556669 },
-        { star: 10, name: 'zk', phone: 18855556610 }
+        { star: 10, name: 'zk', phone: 18855556610 },
+        { star: 10, name: 'zk', phone: 18855554611 }
       ]
     }
   }
@@ -104,19 +104,20 @@ export default {
       position: relative;
       height: 440px;
       padding: 15px;
-      border-radius: 4px;
+      border-radius: 3px;
       font-size: 14px;
       text-align: center;
       color: #fff;
       background-color: #FF9800;
-      box-shadow: 0 0 8px #bbb;
       overflow-y: hidden;
     }
     #topBox .ipanel .ipanel-title{
       margin-top: 0;
       margin-bottom: 8px;
+      padding: 8px;
+      border-radius: 4px;
       font-size: 20px;
-      text-align: left;
+      background-color: #fff;
     }
     #topBox .ipanel .ipanel-thead{
       padding: 8px 0;
