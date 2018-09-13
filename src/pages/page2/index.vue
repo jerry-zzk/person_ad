@@ -16,7 +16,9 @@
           <p style="font-size:24px;">人员列表</p>
           <el-button size="small" type="success"></el-button> <span class="midd"> 安全 </span> <el-button size="small" type="danger"></el-button><span class="midd">欺诈</span><el-button size="small" type="info"></el-button><span class="midd">可疑</span><el-button size="small" type="warning"></el-button>
           <span class="midd" style="margin-right:20px;">待检测</span>
-          <el-switch
+          <span @click="toggle1" :class="[toggle,to1]">表格</span>
+          <span @click="toggle2" :class="[toggle,to]">列表</span>
+          <!-- <el-switch
             style="margin-top:6px;"
             v-model="value1"
             @change="toggle"
@@ -24,7 +26,7 @@
             inactive-color="#ff4949"
             active-icon-class="el-icon-tickets"
             inactive-icon-class="el-icon-menu"> 
-          </el-switch>
+          </el-switch> -->
         </div>
       </el-col>
       <el-col :span="18" v-show="ok">
@@ -164,9 +166,12 @@ export default {
   name: 'page2',
   data () {
     return {
+      toggle:"toggle",
+      to:"to",
+      to1:"to1",
       value1: true,
       value2: false,
-      ok:false,
+      ok:"",
       dialogVisible: false,
       zk_name: 'zk',
       zk_phone: '15522322212',
@@ -202,8 +207,17 @@ export default {
     }
   },
   methods: {
-    toggle () {
-      this.ok = !this.ok
+    toggle1 () {
+      this.to ="to1"
+      this.to1 ="to"
+      this.ok = true
+      // alert(this.ok);
+    },
+    toggle2 () {
+      this.to ="to"
+      this.to1 ="to1"
+      this.ok = false
+      // alert(this.ok);
     },
     message () {
       this.dialogVisible = true
@@ -230,6 +244,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .toggle{
+    margin:0;
+    /* border:1px solid #ccc; */
+    border-radius:0;
+    text-align:center;
+    border-radius: 3px;
+    height:20px;
+    line-height: 24px;
+    width:50px;
+    font-size:13px;
+    display:inline-block;
+    background: #a0cfff;
+    color:#FFF;
+    margin-top:6px;
+    display: inline-block;
+    vertical-align: middle;
+    width:50px;
+    height:23px;
+    line-height:23px;
+  }
+  .to{
+    background: #409EFF;
+  }
+  .toggle:hover{
+    background: #409EFF;
+    color:#fff;
+    cursor: pointer;
+    font-size:13px;
+  }
+
+
   .ri{
     margin-right:5%;
   }
