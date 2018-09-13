@@ -3,13 +3,7 @@
     <el-card  class="d2-mb">
     <el-row :gutter="10">
       <el-col :span="6">
-        <div class="col col-l">
-          <p style="font-size:24px;">客户组列表</p>
-          <div shadow="hover" style="margin-bottom:5px;height:15px;" v-for="top in item" :key="top" class="col col-r">
-            <span style='margin-right:40%'>组名 <b>:</b> <span> {{top.name}} </span></span>
-            <span>状态 <b>:</b> <span> &nbsp; <el-button class="midd1" size="mini" :type="top.status"></el-button> </span></span>
-          </div>
-        </div>
+          <d2-customer-list :item="item"></d2-customer-list>
       </el-col>
       <el-col :span="18">
         <div class="col col-l" style="margin-bottom:10px;">
@@ -25,7 +19,7 @@
             active-color="#13ce46"
             inactive-color="#ff4949"
             active-icon-class="el-icon-tickets"
-            inactive-icon-class="el-icon-menu"> 
+            inactive-icon-class="el-icon-menu">
           </el-switch> -->
         </div>
       </el-col>
