@@ -23,13 +23,13 @@
       <el-col :span="7">
         <div class="ipanel" style="background-color:#04c142;">
           <p class="ipanel-title" style="color:#04c142;">最新监测的欺诈团伙</p>
-          <el-row class="ipanel-thead"">
+          <el-row class="ipanel-thead">
             <el-col :span="6">名次</el-col>
             <el-col :span="12">名称</el-col>
             <el-col :span="6">人数</el-col>
           </el-row>
           <div class="ipanel-tbody">
-            <el-row v-for="top in items1" :key="top.list" class="ipanel-tr"">
+            <el-row v-for="top in items1" :key="top.list" class="ipanel-tr">
               <el-col :span="6">{{top.list}}</el-col>
               <el-col :span="12">{{top.name}}</el-col>
               <el-col :span="6">{{top.num}}</el-col>
@@ -46,7 +46,7 @@
             <el-col :span="4">评分</el-col>
           </el-row>
           <div class="ipanel-tbody">
-            <el-row v-for="top in items2" :key="top.list" class="ipanel-tr"">
+            <el-row v-for="top in items2" :key="top.list" class="ipanel-tr">
               <el-col :span="8">{{top.name}}</el-col>
               <el-col :span="12">{{top.phone}}</el-col>
               <el-col :span="4">{{top.star}}</el-col>
