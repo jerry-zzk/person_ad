@@ -5,8 +5,6 @@
       slot="header"
       @submit="handleSubmit"
       ref="header"  @zk = "zk"/>
-    <!-- <el-button style="position:fixed;top:122px;right:620px;height:28px;line-height:2px;" type="warning" @click="add"> 切换 </el-button> -->
-
     <!-- <el-switch
       v-model="value2"
       style="position:fixed;top:122px;right:590px;height:32px;"
@@ -14,9 +12,7 @@
       active-color="#13ce46"
       inactive-color="#ff4949"
       active-icon-class="el-icon-tickets"
-      inactive-icon-class="el-icon-menu"> 
-    </el-switch> -->
-    
+      inactive-icon-class="el-icon-menu"></el-switch> -->
     <demo-page-main
       :table-data="table"
       :loading="loading" v-show="ok"/>
@@ -48,22 +44,19 @@
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
-      <vue-good-wizard 
-        :steps="steps"
-        :onNext="nextClicked" 
-        :onBack="backClicked">
-        <div slot="选择方式">
+      <vue-good-wizard :steps="steps"
+        :onNext="nextClicked" :onBack="backClicked">
+        <div slot="page1">
           <h4>Step 1</h4>
         </div>
-        <div slot="表格填写">
+        <div slot="page2">
           <h4>Step 2</h4>
         </div>
-        <div slot="提交信息">
+        <div slot="page3">
           <h4>Step 3</h4>
         </div>
       </vue-good-wizard>
     </el-dialog>
-
   </d2-container>
 </template>
 
@@ -82,67 +75,67 @@ export default {
       value1: true,
       value2: true,
       item: [
-        { name: 'zk3', num: 3065, status:"danger"},
-        { name: 'zk3', num: 3065, status:"warning" },
-        { name: 'zk3', num: 3065, status:"success" },
-        { name: 'zk3', num: 3065, status:"danger" },
-        { name: 'zk3', num: 3065, status:"success" },
-        { name: 'zk3', num: 3065, status:"danger" },
-        { name: 'zk3', num: 3065, status:"info" },
-        { name: 'zk3', num: 3065, status:"danger" },
+        { name: 'zk3', num: 3065, status: 'danger' },
+        { name: 'zk3', num: 3065, status: 'warning' },
+        { name: 'zk3', num: 3065, status: 'success' },
+        { name: 'zk3', num: 3065, status: 'danger' },
+        { name: 'zk3', num: 3065, status: 'success' },
+        { name: 'zk3', num: 3065, status: 'danger' },
+        { name: 'zk3', num: 3065, status: 'info' },
+        { name: 'zk3', num: 3065, status: 'danger' }
       ],
-      ok:false,
-      ok1:true,
+      ok: false,
+      ok1: true,
       table: [],
-      loading:false,
+      loading: false,
       page: {
         current: 1,
         size: 100,
         total: 0
       },
-       steps: [
+      steps: [
         {
-          label: '第一步',
-          slot: 'page1',
+          label: '选择方式',
+          slot: 'page1'
         },
         {
-          label: '第二步',
-          slot: 'page2',
+          label: '表格填写',
+          slot: 'page2'
         },
         {
-          label: '第三步',
+          label: '提交信息',
           slot: 'page3',
           options: {
-            nextDisabled: true,
-          },
+            nextDisabled: true
+          }
         }
       ],
       dialogVisible: false,
       dynamicTags: [],
       inputVisible: false,
-      inputValue: '',
+      inputValue: ''
     }
   },
   methods: {
-    nextClicked(currentPage) {
+    nextClicked (currentPage) {
       console.log('next clicked', currentPage)
-      return true //return false if you want to prevent moving to next page
+      return true // return false if you want to prevent moving to next page
     },
-    backClicked(currentPage) {
+    backClicked (currentPage) {
       console.log('back clicked', currentPage)
-      return true //return false if you want to prevent moving to previous page
+      return true // return false if you want to prevent moving to previous page
     },
 
     message () {
       this.dialogVisible = true
     },
     zk (msg) {
-      if(msg == true){
-        this.ok =false
-        this.ok1 =true
-      }else{
-        this.ok1 =false
-        this.ok =true
+      if (msg === true) {
+        this.ok = false
+        this.ok1 = true
+      } else {
+        this.ok1 = false
+        this.ok = true
       }
     },
     handlePaginationChange (val) {

@@ -148,10 +148,6 @@
           <h4>Step 3</h4>
           <p>This is step 3</p>
         </div>
-        <div slot="page4">
-          <h4>Step 4</h4>
-          <p>This is step 4</p>
-        </div>
       </vue-good-wizard>
     </el-dialog>
     </el-table>
@@ -178,20 +174,16 @@ export default {
     return {
       steps: [
         {
-          label: '第一步',
+          label: '选择方式',
           slot: 'page1'
         },
         {
-          label: '第二步',
+          label: '表格填写',
           slot: 'page2'
         },
         {
-          label: '第三步',
-          slot: 'page3'
-        },
-        {
-          label: '第四步',
-          slot: 'page4',
+          label: '提交信息',
+          slot: 'page3',
           options: {
             nextDisabled: true
           }

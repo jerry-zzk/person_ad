@@ -19,6 +19,10 @@ import router from './router'
 import { menuHeader, menuAside } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
 
+// 引用插件 vue-good-wizard
+import VueGoodWizard from 'vue-good-wizard'
+Vue.use(VueGoodWizard)
+
 // 核心插件
 Vue.use(d2Admin)
 Vue.prototype.GLOBAL = global
