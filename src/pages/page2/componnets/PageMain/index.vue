@@ -134,10 +134,8 @@
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
-      <vue-good-wizard 
-        :steps="steps"
-        :onNext="nextClicked" 
-        :onBack="backClicked">
+      <vue-good-wizard :steps="steps"
+        :onNext="nextClicked" :onBack="backClicked">
         <div slot="page1">
           <h4>Step 1</h4>
           <p>This is step 1</p>
@@ -156,7 +154,6 @@
         </div>
       </vue-good-wizard>
     </el-dialog>
-      
     </el-table>
   </div>
 </template>
@@ -182,22 +179,22 @@ export default {
       steps: [
         {
           label: '第一步',
-          slot: 'page1',
+          slot: 'page1'
         },
         {
           label: '第二步',
-          slot: 'page2',
+          slot: 'page2'
         },
         {
           label: '第三步',
-          slot: 'page3',
+          slot: 'page3'
         },
         {
           label: '第四步',
           slot: 'page4',
           options: {
-            nextDisabled: true,
-          },
+            nextDisabled: true
+          }
         }
       ],
       currentTableData: [],
@@ -215,7 +212,7 @@ export default {
       dialogVisible: false,
       dynamicTags: [],
       inputVisible: false,
-      inputValue: '',
+      inputValue: ''
     }
   },
   watch: {
@@ -230,15 +227,14 @@ export default {
     // step () {
     //   alert(123);
     // },
-    nextClicked(currentPage) {
+    nextClicked (currentPage) {
       console.log('next clicked', currentPage)
-      return true; //return false if you want to prevent moving to next page
+      return true
     },
-    backClicked(currentPage) {
-      console.log('back clicked', currentPage);
-      return true; //return false if you want to prevent moving to previous page
+    backClicked (currentPage) {
+      console.log('back clicked', currentPage)
+      return true
     },
-
     message () {
       this.dialogVisible = true
     },
