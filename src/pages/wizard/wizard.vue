@@ -78,7 +78,7 @@
           </el-row>
           <el-row :gutter="10" style="margin-bottom:10px;">
             <el-col :span="24">
-              <div class="col col-r"  >
+              <div class="col col-r">
                   身份证号 <b>:</b> {{pNum}}
               </div>
             </el-col>
