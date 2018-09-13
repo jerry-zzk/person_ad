@@ -5,7 +5,8 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
-      <line-chart></line-chart>
+      <line-chart> </line-chart>
+      
     </el-card>
   <!-- 反欺诈列表 -->
     <topBox></topBox>

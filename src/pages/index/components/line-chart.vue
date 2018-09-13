@@ -104,6 +104,8 @@
         };
         const line_chart=echart.init(document.getElementById('line-chart'))
         line_chart.setOption(option)
+        this.$store.commit('chartData.chartData.z','1')
+        console.log(this.$store.state)
       }
     }
   }

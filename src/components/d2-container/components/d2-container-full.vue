@@ -19,3 +19,8 @@
     name: 'd2-container-full'
   }
 </script>
+<style lang="scss">
+    .el-scrollbar__wrap{
+        overflow-x: hidden;
+    }
+</style>

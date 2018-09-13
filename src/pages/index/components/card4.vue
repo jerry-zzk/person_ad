@@ -40,7 +40,6 @@
         </el-row>
     </div>
 </template>
-
 <script>
   export default {
     name: 'card4',
@@ -56,7 +55,6 @@
   }
 </script>
 <style lang="scss" scoped>
-    @import "~@/assets/style/public.scss";
     *{
         margin: 0;
         padding: 0;
@@ -64,14 +62,13 @@
     .fa {
         margin-right: 20px;
     }
-
     .col {
         padding: 20px;
         border-radius: 4px;
         border-width: 1px;
         border-style: solid;
         font-size: 16px;
-        transition: all 0.3s ease;
+        transition: all 0.28s ease;
         line-height: 26px;
         position: relative;
         &:hover{
