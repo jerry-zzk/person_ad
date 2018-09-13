@@ -17,6 +17,7 @@
 import D2HelpBtn from './components/d2-help-btn'
 import card4 from './components/card4.vue'
 import lineChart from './components/line-chart.vue'
+import { BusinessTable1List } from '@/api/demo/business/table/1'
 export default {
   data () {
     return {
@@ -33,6 +34,13 @@ export default {
           { '日期': '2018-01-08', '客户': 1222, '欺诈客户': 493 },
           { '日期': '2018-01-09', '客户': 3333, '欺诈客户': 293 }
         ]
+      },
+      table: [],
+      loading:false,
+      page: {
+        current: 1,
+        size: 100,
+        total: 0
       }
     }
   },
@@ -41,6 +49,9 @@ export default {
     card4,
     lineChart,
     topBox: () => import('./components/topBox')
+  },
+  methods: {
+    
   }
 }
 </script>
