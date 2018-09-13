@@ -21,10 +21,10 @@ Mock.mock('/api/demo/business/table/1', ({ body }) => {
             'dateTimeCreat': '@datetime',
             'used': '@boolean',
             'dateTimeUse': '@datetime',
-            'phone': '15588642255',
-            'address':'山西省孝义市xxxxxx',
+            'phone': '15596446321',
+            'address':'山西省孝义市@csentence(3,7)',
             'card':'建设银行信用卡',
-            'money':'500000'
+            'money':'@integer(10000, 100000)'
           }
         ]
       }

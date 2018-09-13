@@ -44,7 +44,7 @@
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
-      <vue-good-wizard :steps="steps"
+      <!-- <vue-good-wizard :steps="steps"
         :onNext="nextClicked" :onBack="backClicked">
         <div slot="page1">
           <h4>Step 1</h4>
@@ -55,7 +55,8 @@
         <div slot="page3">
           <h4>Step 3</h4>
         </div>
-      </vue-good-wizard>
+      </vue-good-wizard> -->
+      <good-wizard></good-wizard>
     </el-dialog>
   </d2-container>
 </template>
@@ -68,7 +69,8 @@ export default {
   components: {
     'DemoPageHeader': () => import('./componnets/PageHeader'),
     'DemoPageMain': () => import('./componnets/PageMain'),
-    'DemoPageFooter': () => import('./componnets/PageFooter')
+    'DemoPageFooter': () => import('./componnets/PageFooter'),
+    'GoodWizard': () => import('../wizard/wizard.vue'),
   },
   data () {
     return {
@@ -93,23 +95,6 @@ export default {
         size: 100,
         total: 0
       },
-      steps: [
-        {
-          label: '选择方式',
-          slot: 'page1'
-        },
-        {
-          label: '表格填写',
-          slot: 'page2'
-        },
-        {
-          label: '提交信息',
-          slot: 'page3',
-          options: {
-            nextDisabled: true
-          }
-        }
-      ],
       dialogVisible: false,
       dynamicTags: [],
       inputVisible: false,
@@ -117,15 +102,6 @@ export default {
     }
   },
   methods: {
-    nextClicked (currentPage) {
-      console.log('next clicked', currentPage)
-      return true // return false if you want to prevent moving to next page
-    },
-    backClicked (currentPage) {
-      console.log('back clicked', currentPage)
-      return true // return false if you want to prevent moving to previous page
-    },
-
     message () {
       this.dialogVisible = true
     },

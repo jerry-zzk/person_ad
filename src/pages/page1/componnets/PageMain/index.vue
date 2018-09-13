@@ -134,7 +134,7 @@
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
-      <vue-good-wizard :steps="steps"
+      <!-- <vue-good-wizard :steps="steps"
         :onNext="nextClicked" :onBack="backClicked">
         <div slot="page1">
           <h4>Step 1</h4>
@@ -148,7 +148,8 @@
           <h4>Step 3</h4>
           <p>This is step 3</p>
         </div>
-      </vue-good-wizard>
+      </vue-good-wizard> -->
+      <good-wizard></good-wizard>
     </el-dialog>
     </el-table>
   </div>
@@ -159,6 +160,7 @@ import BooleanControl from '../BooleanControl'
 import BooleanControlMini from '../BooleanControlMini'
 export default {
   components: {
+    'GoodWizard': () => import('../../../wizard/wizard.vue'),
     BooleanControl,
     BooleanControlMini
   },
