@@ -4,7 +4,7 @@ Mock.mock('/api/demo/business/table/1', ({ body }) => {
   // 这是通过 post 传来的参数
   body = JSON.parse(body)
   const { page } = body
-  page.total = 1000
+  page.total = 500
   return Mock.mock(
     {
       code: 0,
@@ -20,7 +20,11 @@ Mock.mock('/api/demo/business/table/1', ({ body }) => {
             'adminNote': '@cparagraph(0.5)',
             'dateTimeCreat': '@datetime',
             'used': '@boolean',
-            'dateTimeUse': '@datetime'
+            'dateTimeUse': '@datetime',
+            'phone': '15588642255',
+            'address':'山西省孝义市xxxxxx',
+            'card':'建设银行信用卡',
+            'money':'500000'
           }
         ]
       }

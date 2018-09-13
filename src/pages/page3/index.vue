@@ -1,11 +1,11 @@
 <template>
   <d2-container>
-    <el-input
+    <!-- <el-input
       placeholder="请输入内容"
       clearable style="margin-bottom:10px;">
       <el-button slot="append" icon="el-icon-search" @click="search()"></el-button>
-    </el-input>
-    <el-card class="d2-mb">
+    </el-input> -->
+    <el-card class="d2-mb" v-show="ok1">
     <el-row :gutter="10">
       <el-col :span="24">
         <div class="col col-l">
@@ -24,6 +24,22 @@
       </el-col>
     </el-row>
   </el-card>
+  <!-- 表格 -->
+  <demo-page-header
+      slot="header"
+      @submit="handleSubmit"
+      ref="header"  @zk = "zk"/>
+  <demo-page-main
+      :table-data="table"
+      :loading="loading" v-show="ok"/>
+    <!-- <demo-toggle /> -->
+  <demo-page-footer
+      slot="footer"
+      :current="page.current"
+      :size="page.size"
+      :total="page.total"
+      @change="handlePaginationChange"/>
+
   <!-- 全屏信息展示 -->
     <el-dialog
       :title="tooltipContent"
@@ -123,8 +139,14 @@
 <script>
 import img1 from '../../assets/img/1.jpg'
 import img3 from '../../assets/img/3.jpg'
+import { BusinessTable1List } from '@/api/demo/business/table/1'
 export default {
-  name: 'page3',
+  name: 'demo-business-table-1',
+  components: {
+    'DemoPageHeader': () => import('./componnets/PageHeader'),
+    'DemoPageMain': () => import('./componnets/PageMain'),
+    'DemoPageFooter': () => import('./componnets/PageFooter')
+  },
   data () {
     return {
       zk_name: 'zk',
@@ -156,10 +178,64 @@ export default {
         { name: 'zk2', phone: 15578956212, status: 'success', img: img3 },
         { name: 'zk2', phone: 15578956212, status: 'warning', img: img1 },
         { name: 'zk2', phone: 15578956212, status: 'danger', img: img3 }
-      ]
+      ],
+      ok:false,
+      ok1:true,
+      table: [],
+      loading:false,
+      page: {
+        current: 1,
+        size: 100,
+        total: 0
+      },
     }
   },
   methods: {
+    zk (msg) {
+      if(msg == true){
+        this.ok =false
+        this.ok1 =true
+      }else{
+        this.ok1 =false
+        this.ok =true
+      }
+    },
+    handlePaginationChange (val) {
+      this.$notify({
+        title: '分页变化',
+        message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
+      })
+      this.page = val
+      // nextTick 只是为了优化示例中 notify 的显示
+      this.$nextTick(() => {
+        this.$refs.header.handleFormSubmit()
+      })
+    },
+    handleSubmit (form) {
+      this.loading = true
+      this.$notify({
+        title: '开始请求模拟表格数据'
+      })
+      BusinessTable1List({
+        ...form,
+        page: this.page
+      })
+        .then(res => {
+          this.loading = false
+          this.$notify({
+            title: '模拟表格数据请求完毕'
+          })
+          this.table = res.list
+          this.page = res.page
+        })
+        .catch(err => {
+          this.loading = false
+          this.$notify({
+            title: '模拟表格数据请求异常'
+          })
+          console.log('err', err)
+        })
+    },
     message () {
       this.dialogVisible = true
     },

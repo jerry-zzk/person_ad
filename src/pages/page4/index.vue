@@ -3,8 +3,11 @@
 		<demo-page-header
 	      slot="header"
 	      @submit="handleSubmit"
-	      ref="header"/>
-		<div>
+	      ref="header" @zk = "zk"/>
+    <demo-page-main
+      :table-data="table"
+      :loading="loading" v-show="ok"/>
+		<div v-show="ok1">
 		    <ul class="people_list">
 		      	<li class="people_item black_list">
 			        <img src="../index/image/qr@2x.png">
@@ -110,19 +113,39 @@ export default {
   name: 'demo-business-table-1',
   components: {
     'DemoPageHeader': () => import('./componnets/PageHeader'),
+    'DemoPageMain': () => import('./componnets/PageMain'),
     'DemoPageFooter': () => import('./componnets/PageFooter')
   },
   data () {
     return {
+      value1: true,
+      value2: true,
+      ok:false,
+      ok1:true,
       table: [],
+      loading:false,
       page: {
         current: 1,
         size: 100,
         total: 0
-      }
+      },
+      dialogVisible: false,
+      dynamicTags: [],
+      inputVisible: false,
+      inputValue: '',
     }
   },
   methods: {
+    zk (msg) {
+      // alert(msg);
+      if(msg == true){
+        this.ok =false
+        this.ok1 =true
+      }else{
+        this.ok1 =false
+        this.ok =true
+      }
+    },
     handlePaginationChange (val) {
       this.$notify({
         title: '分页变化',
