@@ -6,7 +6,6 @@
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
       <line-chart> </line-chart>
-      
     </el-card>
     <!-- 反欺诈列表 -->
     <topBox></topBox>
@@ -41,6 +40,14 @@ export default {
     card4,
     lineChart,
     topBox: () => import('./components/topBox')
+  },
+  mounted(){
+
+  },
+  methods:{
+    getChartData(){
+
+    }
   }
 }
 </script>

@@ -12,18 +12,15 @@
       }
     },
     mounted(){
-      this.drawLineChart()
+      let chartData=this.$store.state.chartData.chartData
+      this.drawLineChart(chartData)
     },
     methods:{
-      drawLineChart(){
+      drawLineChart(chartData){
         let option = {
           tooltip: {
             show:true,
-            trigger: 'axis',
-            // backgroundColor:['skyblue'],
-            // textStyle:{
-            //   color:['#003']
-            // },
+            trigger: 'axis'
           },
           grid:{
             top:40,
@@ -32,7 +29,7 @@
             bottom:70
           },
           legend: {
-            data:['折线A','折线B'],
+            data:chartData.name,
             left:'center'
           },
           dataZoom: [{
@@ -47,7 +44,7 @@
             end: 100
           }],
           xAxis: {
-            data: ["2018-5-4","2018-5-5","2018-5-6","2018-5-7","2018-5-8","2018-5-9"],
+            data:chartData.x,
             boundaryGap: false
           },
           yAxis: {
@@ -81,31 +78,30 @@
           },
           series: [
             {
-              name: '折线A',
+              name: chartData.name[0],
               type: 'line',
               lineStyle:{
                 width:1.2
               },
               smooth: true,
-              data: [5, 20, 36, 10, 10, 20],
+              data: chartData.y[0],
               showSymbol:true,
             },
             {
-              name: '折线B',
+              name: chartData.name[1],
               type: 'line',
               lineStyle:{
                 width:1.2
               },
               smooth: true,
-              data: [15, 22, 10, 30, 20, 40],
+              data: chartData.y[1],
               showSymbol:false,
             }
           ]
         };
         const line_chart=echart.init(document.getElementById('line-chart'))
         line_chart.setOption(option)
-        this.$store.commit('chartData.chartData.z','1')
-        console.log(this.$store.state)
+        // this.$store.commit('setX',[124,235])
       }
     }
   }
