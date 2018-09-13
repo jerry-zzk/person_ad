@@ -5,10 +5,9 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
-      <line-chart> </line-chart>
-      
+      <line-chart></line-chart>
     </el-card>
-    <!-- 反欺诈列表 -->
+  <!-- 反欺诈列表 -->
     <topBox></topBox>
   </d2-container>
 </template>
@@ -17,7 +16,6 @@
 import D2HelpBtn from './components/d2-help-btn'
 import card4 from './components/card4.vue'
 import lineChart from './components/line-chart.vue'
-import { BusinessTable1List } from '@/api/demo/business/table/1'
 export default {
   data () {
     return {
@@ -35,13 +33,21 @@ export default {
           { '日期': '2018-01-09', '客户': 3333, '欺诈客户': 293 }
         ]
       },
-      table: [],
-      loading:false,
-      page: {
-        current: 1,
-        size: 100,
-        total: 0
-      }
+      items: [
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 },
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 },
+        { list: 10, name: 'zk', phone: 18855556666, star: 3 }
+      ],
+      items1: [
+        { list: 10, name: 'zk', num: 18866 },
+        { list: 10, name: 'zk', num: 1866 },
+        { list: 10, name: 'zk', num: 18606 }
+      ],
+      items2: [
+        { star: 10, name: 'zk', phone: 18855556666 },
+        { star: 10, name: 'zk', phone: 18855556666 },
+        { star: 10, name: 'zk', phone: 18855556666 }
+      ]
     }
   },
   components: {
@@ -49,9 +55,6 @@ export default {
     card4,
     lineChart,
     topBox: () => import('./components/topBox')
-  },
-  methods: {
-    
   }
 }
 </script>
