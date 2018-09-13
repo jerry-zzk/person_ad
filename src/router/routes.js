@@ -54,7 +54,15 @@ const frameIn = [
         name: `${pre}idCard`,
         component: () => import('@/pages/page4'),
         meta: { ...meta, title: '客户黑名单' }
-      }
+      },
+      // zk_test
+      // {
+      //   path: 'manage',
+      //   name: `${pre}manage`,
+      //   component: () => import('@/pages/table'),
+      //   meta: { ...meta, title: '业务管理' }
+      // }
+      
       // {
       //   path: '/global',
       //   name: 'global',

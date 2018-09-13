@@ -52,7 +52,6 @@
         </el-col>
         </el-row>
       </el-card>
-
     </el-row>
   </el-card>
   <div>
@@ -149,6 +148,8 @@
         </el-card>
       </div>
     </el-dialog>
+
+    <!-- <demo-table>table</demo-table> -->
   </div>
   </d2-container>
 </template>
@@ -156,8 +157,13 @@
 <script>
 import img1 from '../../assets/img/1.jpg'
 import img3 from '../../assets/img/3.jpg'
+// import zkData from '@/api/demo/plugins/mock/ajax'
 export default {
   name: 'page2',
+  components:{
+    zkData
+    // 'DemoTable': () => import('../table/index.vue'),
+  },
   data () {
     return {
       toggle:"toggle",
