@@ -78,6 +78,14 @@
         active-icon-class="el-icon-menu"> 
       </el-switch> -->
     </el-form-item>
+
+    <el-form-item>
+      <el-pagination
+        :current-page="current"
+        layout="prev, next, jumper">
+      </el-pagination>
+    </el-form-item>
+
   </el-form>
 </template>
 

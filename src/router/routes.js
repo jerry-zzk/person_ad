@@ -56,14 +56,17 @@ const frameIn = [
         name: `${pre}idCard`,
         component: () => import('@/pages/page4'),
         meta: { ...meta, title: '客户黑名单' }
-      },
-      // zk_test
-      // {
-      //   path: 'manage',
-      //   name: `${pre}manage`,
-      //   component: () => import('@/pages/table'),
-      //   meta: { ...meta, title: '业务管理' }
-      // }
+      },{
+        path: 'creditLoan',
+        name: `${pre}creditLoan`,
+        component: () => import('@/pages/warn'),
+        meta: { ...meta, title: '欺詐警告' }
+      },{
+        path: 'manage',
+        name: `${pre}manage`,
+        component: () => import('@/pages/manage'),
+        meta: { ...meta, title: '业务管理' }
+      }
       
       // {
       //   path: '/global',

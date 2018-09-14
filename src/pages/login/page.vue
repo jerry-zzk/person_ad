@@ -4,7 +4,7 @@
     <div class="layer flex-center">
       <!-- logo部分 -->
       <div class="logo-group">
-        <img src="./image/logo.svg" alt="logo">
+        <img src="./image/logo.png" alt="logo">
       </div>
       <!-- 表单部分 -->
       <div class="form-group">
@@ -28,7 +28,8 @@
                 </template>
               </el-input>
             </el-form-item>
-            <el-button @click="submit" type="primary" class="button-login">登录</el-button>
+            <el-button @click="submit" type="primary" class="button-login" style="background: #c5a06b;
+    border-color: #c5a06b;">登录</el-button>
           </el-form>
         </el-card>
       </div>

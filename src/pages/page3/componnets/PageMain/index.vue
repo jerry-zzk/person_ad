@@ -122,11 +122,11 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="添加操作" width="100" align="center">
+      <!-- <el-table-column label="添加操作" width="100" align="center">
         <template slot-scope="scope">
           <el-button size="mini"  @click="message"> + </el-button>
         </template>
-      </el-table-column>
+      </el-table-column> -->
 
       <!-- 全屏详细信息 -->
     <el-dialog
