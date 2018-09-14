@@ -58,7 +58,7 @@
             searchValueChange(){
                 let search_value=this.search_value
                 let current=this.current
-                this.$emit("list searchValueChange",{
+                this.$emit("listSearchValueChange",{
                     search_value:search_value,
                     current:current
                 })
