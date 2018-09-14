@@ -1,11 +1,11 @@
 <template>
     <div class="col col-l">
         <p class="search">
-            <input class="search_input">
-            <span class="fa fa-search"></span>
+            <input class="search_input" v-model="search_value">
+            <span class="fa fa-search" @click="searchValueChange"></span>
         </p>
         <ul>
-            <li v-for="top in item" :key="top" class="col col-r">
+            <li v-for="top,index in item" :key="index" class="col col-r">
                 <div class="its">
                     <span>组名 <b>:</b> </span>
                     <span> {{top.name}} </span>
@@ -22,14 +22,13 @@
                 </div>
                 <div class="its">
                     <span>告警人数 <b>:</b> </span>
-                    <span> {{top.num}} </span>
+                    <span> {{top.danger_num}} </span>
                 </div>
             </li>
         </ul>
         <el-pagination
                 :current-page="current"
-                layout="prev, pager, next, jumper"
-                @size-change="handleSizeChange"
+                layout="prev, next, jumper"
                 @current-change="handleCurrentChange">
         </el-pagination>
     </div>
@@ -39,20 +38,30 @@
         props: {
             item: {
                 default: []
-            },
-            current: {
-                default: 1
-            },
-            size: {
-                default: 0
+            }
+        },
+        data(){
+            return{
+                search_value:'',
+                current:1
             }
         },
         methods:{
-            handleSizeChange(val){
-                console.log(val)
-            },
             handleCurrentChange(val){
-                console.log(val)
+                this.current=val
+                let search_value=this.search_value
+                this.$emit("listCurrentChange",{
+                    search_value:search_value,
+                    current:val
+                })
+            },
+            searchValueChange(){
+                let search_value=this.search_value
+                let current=this.current
+                this.$emit("list searchValueChange",{
+                    search_value:search_value,
+                    current:current
+                })
             }
 
         }
