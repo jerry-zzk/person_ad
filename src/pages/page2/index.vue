@@ -68,8 +68,8 @@
               <div class="col col-l">
                 <el-button class="button-new-tag" size="small" @click="showInput">添加标签</el-button>
                 <el-tag
-                :key="tag"
-                v-for="tag in dynamicTags"
+                :key="index"
+                v-for="tag,index in dynamicTags"
                 closable
                 :disable-transitions="false"
                 @close="handleClose(tag)">

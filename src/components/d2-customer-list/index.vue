@@ -79,7 +79,7 @@
     ul {
         list-style: none;
         li{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     }
     .midd1 {
