@@ -38,13 +38,15 @@ const setting = {
   theme: {
     list: [
       {
-        title: 'd2admin 经典',
+        title: '纯色',
         name: 'd2',
+        backgroundImage: 'image/theme/d2/bg.jpg',
         preview: 'image/theme/d2/preview@2x.png'
       },
       {
-        title: '紫罗兰',
+        title: '蓝色',
         name: 'violet',
+        backgroundImage: 'image/theme/violet/bg.jpg',
         preview: 'image/theme/violet/preview@2x.png'
       },
       {
@@ -54,15 +56,10 @@ const setting = {
         preview: 'image/theme/line/preview@2x.png'
       },
       {
-        title: '流星',
+        title: '模糊',
         name: 'star',
         backgroundImage: 'image/theme/star/bg.jpg',
         preview: 'image/theme/star/preview@2x.png'
-      },
-      {
-        title: 'Tomorrow Night Blue (vsCode)',
-        name: 'tomorrow-night-blue',
-        preview: 'image/theme/tomorrow-night-blue/preview@2x.png'
       }
     ]
   },
