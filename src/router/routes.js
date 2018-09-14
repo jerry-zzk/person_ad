@@ -61,14 +61,12 @@ const frameIn = [
         name: `${pre}creditLoan`,
         component: () => import('@/pages/warn'),
         meta: { ...meta, title: '欺詐警告' }
-      },
-      // zk_test
-      // {
-      //   path: 'manage',
-      //   name: `${pre}manage`,
-      //   component: () => import('@/pages/table'),
-      //   meta: { ...meta, title: '业务管理' }
-      // }
+      },{
+        path: 'manage',
+        name: `${pre}manage`,
+        component: () => import('@/pages/manage'),
+        meta: { ...meta, title: '业务管理' }
+      }
       
       // {
       //   path: '/global',
