@@ -1,9 +1,10 @@
 <template>
-    <div id="line-chart"></div>
+    <div id="line-chart">
+    </div>
 </template>
 
 <script>
-  import echart from 'echarts'
+  import echart from 'echarts';
   export default {
     name: 'lineChart',
     data () {
