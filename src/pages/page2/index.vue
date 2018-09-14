@@ -161,7 +161,6 @@ import img3 from '../../assets/img/3.jpg'
 export default {
   name: 'page2',
   components:{
-    zkData
     // 'DemoTable': () => import('../table/index.vue'),
   },
   data () {
@@ -176,18 +175,16 @@ export default {
       zk_name: 'zk',
       zk_phone: '15522322212',
       item: [
-        { name: 'zk3', status: 'danger' },
-        { name: 'zk1', status: 'success' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'success' },
-        { name: 'zk2', status: 'danger' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'success' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'danger' },
-        { name: 'zk2', status: 'danger' },
-        { name: 'zk2', status: 'danger' },
+        { name: 'zk3', status: 'danger' ,num:101},
+        { name: 'zk1', status: 'success' ,num:101},
+        { name: 'zk2', status: 'warning',num:101 },
+        { name: 'zk2', status: 'warning' ,num:101},
+        { name: 'zk2', status: 'success' ,num:101},
+        { name: 'zk2', status: 'danger' ,num:101},
+        { name: 'zk2', status: 'warning' ,num:101},
+        { name: 'zk2', status: 'success' ,num:101},
+        { name: 'zk2', status: 'warning' ,num:1019},
+        { name: 'zk2', status: 'danger' ,num:103}
       ],
       dynamicTags: [],
       inputVisible: false,
