@@ -2,7 +2,7 @@
   <d2-container class="page">
     <el-card  class="d2-mb">
     <el-row :gutter="10">
-      <el-col :span="6">
+      <el-col :span="6" style="height: 800px">
           <d2-customer-list :item="item"></d2-customer-list>
       </el-col>
       <el-col :span="18">
