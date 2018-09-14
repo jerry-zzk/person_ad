@@ -87,6 +87,11 @@
         position: relative;
         img {
           height: 60px;
+          transform:scale(0.8);
+          -ms-transform: scale(0.8);   /* IE 9 */
+          -moz-transform: scale(0.8);  /* Firefox */
+          -webkit-transform: scale(0.8); /* Safari 和 Chrome */
+          -o-transform: scale(0.8);
         }
       }
       // 折叠侧边栏切换按钮

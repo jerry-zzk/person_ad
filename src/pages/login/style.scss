@@ -30,6 +30,11 @@
     top: 75px;
     img {
       height: 140px;
+      transform:scale(0.4);
+      -ms-transform: scale(0.4);   /* IE 9 */
+      -moz-transform: scale(0.4);  /* Firefox */
+      -webkit-transform: scale(0.4); /* Safari 和 Chrome */
+      -o-transform: scale(0.4);
     }
   }
   // 登录表单
