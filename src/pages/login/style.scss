@@ -29,7 +29,9 @@
     position: relative;
     top: 75px;
     img {
-      height: 140px;
+      position: relative;
+      top: 12px;
+      height: 100px;
       transform:scale(0.4);
       -ms-transform: scale(0.4);   /* IE 9 */
       -moz-transform: scale(0.4);  /* Firefox */
