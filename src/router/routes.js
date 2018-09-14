@@ -26,12 +26,14 @@ const frameIn = [
     redirect: { name: 'antiFraud-index' },
     component: layoutHeaderAside,
     children: (pre => [
+      /*
       {
         path: 'index',
         name: `${pre}index`,
         component: () => import('@/pages/index'),
         meta: { ...meta, title: '总览' }
       },
+      */
       {
         path: 'addCustomer',
         name: `${pre}addCustomer`,

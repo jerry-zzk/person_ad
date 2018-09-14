@@ -22,7 +22,7 @@
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
         </div>
-        <d2-menu-header/>
+        <!-- <d2-menu-header/> -->
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
@@ -91,7 +91,7 @@ export default {
   ],
   components: {
     'd2-menu-side': () => import('./components/menu-side'),
-    'd2-menu-header': () => import('./components/menu-header'),
+    // 'd2-menu-header': () => import('./components/menu-header'),
     'd2-tabs': () => import('./components/tabs'),
     'd2-header-fullscreen': () => import('./components/header-fullscreen'),
     'd2-header-search': () => import('./components/header-search'),

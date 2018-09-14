@@ -2,12 +2,18 @@ import creditEvaluation from './modules/credit-evaluation'
 import antiFraud from './modules/anti-fraud'
 
 // 菜单 侧边栏
+/*
 export const menuAside = [
   antiFraud,
   creditEvaluation,
 ]
+*/
+
+
+ export const menuAside = antiFraud
 
 // 菜单 顶栏
+/*
 export const menuHeader = [
   {
     path: '/index',
@@ -68,3 +74,4 @@ export const menuHeader = [
     iconSvg: 'help'
   }
 ]
+*/
