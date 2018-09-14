@@ -36,15 +36,7 @@ export default [
     { path: '/index', title: '首页', iconSvg: '首页' },
     { path: '/antiFraud/addCustomer', title: '新客户提交', iconSvg: '新客户提交' },
     { path: '/antiFraud/examineCustomer', title: '审核管理', iconSvg: '审核管理' },
-    {
-      title: '欺诈警告',
-      iconSvg: '欺诈报警',
-      children: [
-        { path: '/antiFraud/creditLoan', title: '信用贷客户',iconSvg: 'people' },
-        { path: '/antiFraud/Mortgage', title: '抵押贷客户',iconSvg: 'people' },
-        { path: '/antiFraud/XX', title: 'XX贷客户',iconSvg: 'people' }
-      ]
-    },
+    { path: '/antiFraud/creditLoan', title: '欺诈警告', iconSvg: '欺诈报警' },
     { path: '/antiFraud/searchCustomer', title: '客户检索', iconSvg: '客户检索' },
     {  
       title: '客户黑名单', 
