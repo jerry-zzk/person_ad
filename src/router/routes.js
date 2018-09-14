@@ -56,6 +56,11 @@ const frameIn = [
         name: `${pre}idCard`,
         component: () => import('@/pages/page4'),
         meta: { ...meta, title: '客户黑名单' }
+      },{
+        path: 'creditLoan',
+        name: `${pre}creditLoan`,
+        component: () => import('@/pages/warn'),
+        meta: { ...meta, title: '欺詐警告' }
       },
       // zk_test
       // {

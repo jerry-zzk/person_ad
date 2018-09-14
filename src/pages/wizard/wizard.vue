@@ -19,7 +19,7 @@
           </el-form-item>
           <el-form-item label="出生日期" prop="born">
             <el-col :span="11">
-              <el-form-item prop="date1">
+              <el-form-item prop="born">
                 <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.born" style="width: 100%;"></el-date-picker>
               </el-form-item>
             </el-col>
@@ -79,7 +79,7 @@
           <el-row :gutter="10" style="margin-bottom:10px;">
             <el-col :span="24">
               <div class="col col-r">
-                  身份证号 <b>:</b> {{pNum}}
+                身份证号 <b>:</b> {{pNum}}
               </div>
             </el-col>
           </el-row>
@@ -122,10 +122,10 @@ export default {
             { required: true, message: '请输入您的真实姓名', trigger: 'blur' },
           ],
           born: [
-            { required: true, message: '请选择出生日期', trigger: ' blur' },
+            { required: true, message: '请选择出生日期', trigger: 'change' },
           ],
           num: [
-            { type: 'number', required: true, message: '请输入身份证号', trigger: 'blur' },
+            { required: true, message: '请输入身份证号', trigger: 'blur' },
           ],
           phoneNum: [
             { required: true, message: '请输入手机号', trigger: 'blur' }
@@ -179,10 +179,34 @@ export default {
     },
     choose (index) {
       this.index = index
-      this.$confirm(`您选择的是${this.item[this.index].name}`, '选择方式', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消'
-      })
+      if(this.index === 3){
+        // alert(121123)
+        this.$alert(`您选择的是${this.item[this.index].name}`, '选择方式', {
+          confirmButtonText: '确定',
+          beforeClose: (action, instance, done) => {
+            if (action === 'confirm') {
+              instance.confirmButtonLoading = true
+              instance.confirmButtonText = '执行中...'
+              done()
+              setTimeout(() => {
+                // done();
+                setTimeout(() => {
+                  instance.confirmButtonLoading = false;
+                }, 300);
+              }, 300);
+            } else {
+              done()
+            }
+          }
+          // cancelButtonText: '取消'
+        })
+      }else{
+        // alert(this.index)
+        this.$alert(`您选择的是${this.item[this.index].name}。抱歉,暂时不能使用`, '选择方式', {
+          confirmButtonText: '取消',
+          // cancelButtonText: '取消'
+        })
+      }
     },
     nextClicked (currentPage) {
       console.log('next clicked', currentPage)
