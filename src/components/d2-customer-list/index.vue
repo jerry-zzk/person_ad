@@ -1,10 +1,12 @@
 <template>
-    <div class="col col-l">
+    <div class="col col-l left-list">
         <p class="search">
             <input class="search_input" v-model="search_value">
             <span class="fa fa-search" @click="searchValueChange"></span>
         </p>
+
         <ul>
+            <el-scrollbar style="height: 100%">
             <li v-for="top,index in item" :key="index" class="col col-r">
                 <div class="its">
                     <span>组名 <b>:</b> </span>
@@ -25,12 +27,15 @@
                     <span> {{top.danger_num}} </span>
                 </div>
             </li>
+            </el-scrollbar>
         </ul>
+
         <el-pagination
                 :current-page="current"
                 layout="prev, next, jumper"
                 @current-change="handleCurrentChange">
         </el-pagination>
+
     </div>
 </template>
 <script>
@@ -91,7 +96,6 @@
         float: right;
         margin-right: 10px;
     }
-
     .col {
         padding: 20px;
         border-radius: 4px;
@@ -108,11 +112,6 @@
     .col-r {
         background-color: lighten($color-success, 47%);
         border-color: lighten($color-success, 40%);
-    }
-
-    .search {
-        margin-bottom: 20px;
-        position: relative;
     }
 
     .search_input{
@@ -136,7 +135,27 @@
         height: 25px;
         display: inline-block;
     }
-    .el-pagination__sizes{
-        margin: 0;
+    .left-list{
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        .search{
+            position: absolute;
+            top: 20px;
+        }
+        .el-pagination{
+            position: absolute;
+            bottom: 10px;
+        }
+        ul{
+            position: absolute;
+            top:60px;
+            height: calc(100% - 110px);
+            overflow: hidden;
+            padding-right: 10px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding-top: 20px;
+        }
     }
 </style>
