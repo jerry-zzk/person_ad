@@ -9,6 +9,8 @@
     </el-card>
     <!-- 反欺诈列表 -->
     <topBox></topBox>
+    <!--人员信息弹窗-->
+    <people-info-popup></people-info-popup>
   </d2-container>
 </template>
 
@@ -42,12 +44,11 @@ export default {
     topBox: () => import('./components/topBox')
   },
   mounted(){
-
   },
   methods:{
     getChartData(){
 
-    }
+    },
   }
 }
 </script>

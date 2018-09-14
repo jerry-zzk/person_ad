@@ -1,5 +1,5 @@
 <template>
-  <div id="topBox">
+  <div id="topBox" @click="openPeopleInfoPopup">
     <el-row :gutter="10">
       <el-col :span="10">
         <div class="ipanel">
@@ -11,7 +11,7 @@
             <el-col :span="4">评分</el-col>
           </el-row>
           <div class="ipanel-tbody">
-            <el-row v-for="top in items" :key="top.list" class="ipanel-tr">
+            <el-row v-for="top in items" :key="top.list" class="ipanel-tr" >
               <el-col :span="4">{{top.list}}</el-col>
               <el-col :span="8">{{top.name}}</el-col>
               <el-col :span="8">{{top.phone}}</el-col>
@@ -96,7 +96,12 @@ export default {
         { star: 10, name: 'zk', phone: 18855554611 }
       ]
     }
-  }
+  },
+    methods:{
+        openPeopleInfoPopup(){
+            this.$store.commit('setData',true)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
