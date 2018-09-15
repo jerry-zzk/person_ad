@@ -27,17 +27,7 @@
         </el-date-picker>
       </p>
       <p>告警规则 <b>:</b>&nbsp; 
-        <span v-for="(bg,index) in bgc" :key="bg" :class="[bg_zk(index),{el_bg: selectedBlock[index] === index}]" >{{bg.num}}</span>
-        <!-- <span :class="[el5,el_bg5]" @click="cha5">5</span>
-        <span :class="[el4,el_bg4]" @click="cha4">4</span>
-        <span :class="[el3,el_bg3]" @click="cha3">3</span>
-        <span :class="[el2,el_bg2]" @click="cha2">2</span>
-        <span :class="[el1,el_bg1]" @click="cha1">1</span> -->
-        <!-- <el-button :class="[el5,el_bg1]" @click="alt" size="mini">5</el-button>
-        <el-button :class="[el5,el_bg1]" size="mini" >4</el-button> -->
-        <!-- <el-button class="el3" size="mini" >3</el-button>
-        <el-button class="el2" size="mini" >2</el-button>
-        <el-button class="el1" size="mini">1</el-button> -->
+        <span v-for="(bg,index) in bgc" :key="bg" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
         评分范围 <b>:</b> &nbsp;
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
       </p>
@@ -196,7 +186,7 @@
     data () {
       return {
         selectedBlock: {},
-        inx: 0,
+        inx: -1,
         bgc:[
           {num:5},
           {num:4},
@@ -271,7 +261,7 @@
     },
     methods: {
       chan_zk(index){
-        this.$set(this.selectedBlock, this.inx, index)
+        this.inx = index
       },
       bg_zk(index){
         let bg = this.bgc[index].num
@@ -415,7 +405,7 @@
     ;margin-right:3px;
     vertical-align: center;
   }
-  .el5,.el4,.el3,.el2,.el1{
+  .el5{
     display:inline-block;
     margin:0;
     border-radius:0;
@@ -430,7 +420,7 @@
     opacity: 0.8;
   }
   .el_bg{
-    background:#641807;
+    background:#641807 !important;
   }
   .el5:hover{
     margin:0;
@@ -442,6 +432,17 @@
     width:50px;
   }
   .el4{
+    display:inline-block;
+    margin:0;
+    border-radius:0;
+    border:none;
+    color:#fff;
+    width:50px;
+    text-align: center;
+    line-height: 25px;
+    height:25px;
+    font-size:12px;
+    opacity: 0.8;
     background:#ed5a39;
   }
   .el4:hover{
@@ -450,6 +451,17 @@
     opacity: 1;
   }
   .el3{
+    display:inline-block;
+    margin:0;
+    border-radius:0;
+    border:none;
+    color:#fff;
+    width:50px;
+    text-align: center;
+    line-height: 25px;
+    height:25px;
+    font-size:12px;
+    opacity: 0.8;
     background:#e37f18;
   }
   .el3:hover{
@@ -458,6 +470,17 @@
     opacity: 1;
   }
   .el2{
+    display:inline-block;
+    margin:0;
+    border-radius:0;
+    border:none;
+    color:#fff;
+    width:50px;
+    text-align: center;
+    line-height: 25px;
+    height:25px;
+    font-size:12px;
+    opacity: 0.8;
     background:#e3b718;
   }
   .el2:hover{
@@ -466,6 +489,17 @@
     opacity: 1;
   }
   .el1{
+    display:inline-block;
+    margin:0;
+    border-radius:0;
+    border:none;
+    color:#fff;
+    width:50px;
+    text-align: center;
+    line-height: 25px;
+    height:25px;
+    font-size:12px;
+    opacity: 0.8;
     background:#cde318;
     margin-right:30px;
   }
