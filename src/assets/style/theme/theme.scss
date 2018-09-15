@@ -179,11 +179,17 @@
           i {
             color: $theme-aside-item-color;
           }
+          svg{
+            fill: $theme-aside-item-color;
+          }
           &:hover {
             color: $theme-aside-item-color-hover;
             background: $theme-aside-item-background-color-hover;
             i {
               color: $theme-aside-item-color-hover;
+            }
+            svg{
+              fill: $theme-aside-item-color-hover;
             }
           }
           &:focus {
@@ -192,12 +198,18 @@
             i {
               color: $theme-aside-item-color-focus;
             }
+            svg{
+              fill: $theme-aside-item-color-focus;
+            }
           }
           &.is-active {
             color: $theme-aside-item-color-active;
             background: $theme-aside-item-background-color-active;
             i {
               color: $theme-aside-item-color-active;
+            }
+            svg{
+              fill: $theme-aside-item-color-active;
             }
           }
         }
@@ -212,6 +224,9 @@
           .el-submenu__icon-arrow {
             color: $theme-aside-item-color;
           }
+          svg{
+            fill: $theme-aside-item-color;
+          }
           &:hover {
             color: $theme-aside-item-color-hover;
             background: $theme-aside-item-background-color-hover;
@@ -220,6 +235,9 @@
             }
             .el-submenu__icon-arrow {
               color: $theme-aside-item-color-hover;
+            }
+            svg{
+              fill: $theme-aside-item-color-hover;
             }
           }
         }
