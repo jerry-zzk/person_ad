@@ -33,7 +33,7 @@ export default {
 }
 */
 export default [
-    { path: '/index', title: '首页', iconSvg: 'ihome' },
+    { path: '/antiFraud/index', title: '首页', iconSvg: 'ihome' },
     { path: '/antiFraud/addCustomer', title: '新客户提交', iconSvg: 'inewConsumerSubmit' },
     { path: '/antiFraud/examineCustomer', title: '审核管理', iconSvg: 'iauditsMgt' },
     { path: '/antiFraud/creditLoan', title: '欺诈警告', iconSvg: 'icheatWarn' },

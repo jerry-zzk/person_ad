@@ -29,6 +29,7 @@
     $d2-theme-header-height: 60px;
     .d2-theme-header {
       height: $d2-theme-header-height;
+      z-index:1;
     }
     .d2-theme-container {
       .d2-theme-container-aside {
