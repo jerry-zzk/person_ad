@@ -407,7 +407,7 @@
     }
   }
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
   .ic_svg{
     height:10px;
     width:10px;
