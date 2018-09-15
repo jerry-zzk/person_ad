@@ -58,7 +58,7 @@
                         <div class="sanjiao"></div>
                         <div class="sanjiao_gai"></div>
                         <div class="sanjiao_gai1" ></div>
-                        <span class="dbx" style="cursor:pointer;" :class="dbx(index)" >{{list.star}}</span> 
+                        <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
                         <p class="lis1" style="font-size:13px;" :title="list.name">
                         <!-- <img style="height:10px;width:10px;border:1px solid red;display:inline-block;" src="../../assets/svg-icons/icons/phone.svg" alt=""> -->
                         <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
