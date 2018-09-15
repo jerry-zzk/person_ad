@@ -60,7 +60,7 @@
 
 <script>
 export default {
-  name: 'card4',
+  name: 'topBox',
   data () {
     return {
       items: [
