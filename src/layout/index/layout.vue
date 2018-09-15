@@ -62,9 +62,11 @@
                               <el-row :gutter="20">
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
-                                    <p>联信核</p>
-                                    <p>贷前反欺诈产品</p>
+                                    <a :href="`${$baseUrl}#/antiFraud/index`">
+                                      <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
+                                      <p>联信核</p>
+                                      <p>贷前反欺诈产品</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
@@ -155,7 +157,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scope>
+<style lang="scss" scoped>
   // 注册主题
   @import '~@/assets/style/theme/register.scss';
   .layer {
