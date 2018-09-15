@@ -52,7 +52,7 @@ export default {
   height: 50px;
   width: 100px;
   border-radius: 4px;
-  background-size: cover;
+  background-size: cover!important;
   border: 1px solid $color-border-1;
 }
 </style>

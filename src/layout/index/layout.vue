@@ -59,7 +59,7 @@
                         <el-row>
                           <el-col :span="18" :offset="3">
                             <div class="grid-content bg-purple-light">
-                              <el-row :gutter="20">
+                              <el-row>
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
                                     <a :href="`${$baseUrl}#/antiFraud/index`">
@@ -93,25 +93,19 @@
                               <el-row :gutter="20">
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
-                                    <p>联信核</p>
-                                    <p>贷前反欺诈产品</p>
+                                    <img :src="`${$baseUrl}image/index/lian_zhong.png`">
+                                    <p>联众</p>
+                                    <p>风控知识图谱系统</p>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
-                                    <p>联信控</p>
-                                    <p>贷中监控产品</p>
+                                    <img :src="`${$baseUrl}image/index/lian_zhi.png`">
+                                    <p>联智</p>
+                                    <p>大数据建模风控分析系统</p>
                                   </div>
                                 </el-col>
-                                <el-col :span="8">
-                                  <div class="menu_button button_three">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
-                                    <p>联信服</p>
-                                    <p>数据核验服务产品</p>
-                                  </div>
-                                </el-col>
+                               
                               </el-row>
                             </div>
                           </el-col>
@@ -122,23 +116,23 @@
                               <el-row :gutter="20">
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
-                                    <p>联信核</p>
-                                    <p>贷前反欺诈产品</p>
+                                    <img :src="`${$baseUrl}image/index/lian_yan.png`">
+                                    <p>联眼</p>
+                                    <p>数据采集平台</p>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
-                                    <p>联信控</p>
-                                    <p>贷中监控产品</p>
+                                    <img :src="`${$baseUrl}image/index/lian_qing.png`">
+                                    <p>联擎</p>
+                                    <p>大数据基础平台</p>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
-                                    <p>联信服</p>
-                                    <p>数据核验服务产品</p>
+                                    <img :src="`${$baseUrl}image/index/lian_rong.png`">
+                                    <p>联融</p>
+                                    <p>数据治理融合汇聚平台</p>
                                   </div>
                                 </el-col>
                               </el-row>
@@ -204,13 +198,13 @@
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
   }
   .menu_button{
-    width: 141px;
+    width: 181px;
     height: 151px;
     margin: auto;
     padding: 20px;
     cursor: pointer;
     img{
-      margin: 0 20px;
+      margin: 0 40px;
     }
     p{
        text-align: center;
