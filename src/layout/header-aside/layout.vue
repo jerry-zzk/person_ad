@@ -26,6 +26,7 @@
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
+          <d2-header-help/>
           <d2-header-search @click="handleSearchClick"/>
           <d2-header-error-log/>
           <d2-header-fullscreen/>
@@ -93,6 +94,7 @@ export default {
     'd2-menu-side': () => import('./components/menu-side'),
     // 'd2-menu-header': () => import('./components/menu-header'),
     'd2-tabs': () => import('./components/tabs'),
+    'd2-header-help': () => import('./components/header-help'),
     'd2-header-fullscreen': () => import('./components/header-fullscreen'),
     'd2-header-search': () => import('./components/header-search'),
     'd2-header-theme': () => import('./components/header-theme'),
