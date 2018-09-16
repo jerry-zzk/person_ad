@@ -16,6 +16,7 @@
 			<div id="anchor-2" class="section">
 				
 			</div>
+			<!--设备欺诈 -->
 			<div id="anchor-3" class="section">
 				<p class="title">设备欺诈</p>
 				<p>设备评分：<span class="red"><i class="fa fa-waring"></i>有风险</span></p>
@@ -92,6 +93,7 @@
 					</table>
 				</div>
 			</div>
+			<!--团伙关联 -->
 			<div id="anchor-4" class="section">
 				<el-row>
 					<el-col :span="12">
@@ -170,6 +172,7 @@
 					</el-col>
 				</el-row>
 			</div>
+			<!--金融属性 -->
 			<div id="anchor-5" class="section">
 				<el-row>
 					<el-col :span="12">
@@ -205,14 +208,37 @@
 						</el-col>
 					</el-col>
 					<el-col :span="12">
-						<p class="title">催收短信</p>
+						<p class="title">高危消费行为</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart4"></div>
 					</el-col>
 					<el-col :span="12">
-
+						<p class="title">贷款类app注册</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart5"></div>
 					</el-col>
 					<el-col :span="12">
 						<p class="title">高危消费类型</p>
-						<div class="echart" style="width:100%;height:500px" ref="myEchart3"></div>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart6"></div>
+					</el-col>
+				</el-row>
+			</div>
+			<!--网络行为 -->
+			<div id="anchor-6" class="section">
+				<el-row>
+					<el-col :span="12">
+						<p class="title">APP使用</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart7"></div>
+					</el-col>
+					<el-col :span="12">
+						<p class="title">社交行为</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart8"></div>
+					</el-col>
+					<el-col :span="12">
+						<p class="title">浏览行为</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart9"></div>
+					</el-col>
+					<el-col :span="12">
+						<p class="title">搜索行为</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart10"></div>
 					</el-col>
 				</el-row>
 			</div>
@@ -220,7 +246,7 @@
 	</el-container>
 </template>
 <style lang="scss" scoped>
-
+@import '~@/assets/style/unit/info.scss';
 </style>
 <script>
 import echarts from 'echarts'
@@ -250,19 +276,42 @@ export default {
     	chart2: null,
     	chart3: null,
     	chart4: null,
+    	chart5: null,
+    	chart6: null,
+    	chart7: null,
+    	chart8: null,
+    	chart9: null,
+    	chart10: null,
     }
   },
   mounted() {
     this.initChart1();
     this.initChart2();
     this.initChart3();
+    this.initChart4();
+    this.initChart5();
+    this.initChart6();
+    this.initChart7();
+    this.initChart8();
+    this.initChart9();
+    this.initChart10();
   }, 
   beforeDestroy() {
     if (!this.chart) {
       return
     }
-    this.chart.dispose();
-    this.chart = null;
+    this.chart1.dispose();
+    this.chart2.dispose();
+    this.chart3.dispose();
+    this.chart4.dispose();
+    this.chart5.dispose();
+    this.chart6.dispose();
+    this.chart7.dispose();
+    this.chart8.dispose();
+    this.chart9.dispose();
+    this.chart10.dispose();
+    this.chart1 = this.chart2 = this.chart3 = this.chart4 = this.chart5 =null;
+    this.chart6 = this.chart7 = this.chart8 = this.chart9 = this.chart10=null;
   },
   methods:{
   	goAnchor(selector) {
@@ -409,7 +458,383 @@ export default {
 		        ]
 		    }]
 		})
-    }
+    },
+    initChart4() {
+      	this.chart4 = echarts.init(this.$refs.myEchart4);
+      	// 把配置和数据放这里
+      	this.chart4.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart4() {
+      	this.chart4 = echarts.init(this.$refs.myEchart4);
+      	// 把配置和数据放这里
+      	this.chart4.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+	initChart5() {
+      	this.chart5 = echarts.init(this.$refs.myEchart5);
+      	// 把配置和数据放这里
+      	this.chart5.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart6() {
+      	this.chart6 = echarts.init(this.$refs.myEchart6);
+      	// 把配置和数据放这里
+      	this.chart6.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart7() {
+      	this.chart7 = echarts.init(this.$refs.myEchart7);
+      	// 把配置和数据放这里
+      	this.chart7.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart8() {
+      	this.chart8 = echarts.init(this.$refs.myEchart8);
+      	// 把配置和数据放这里
+      	this.chart8.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart9() {
+      	this.chart9 = echarts.init(this.$refs.myEchart9);
+      	// 把配置和数据放这里
+      	this.chart9.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
+    initChart10() {
+      	this.chart10 = echarts.init(this.$refs.myEchart10);
+      	// 把配置和数据放这里
+      	this.chart10.setOption({
+		    title: {
+		        text: '基础雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    },
+		    radar: {
+		        // shape: 'circle',
+		        name: {
+		            textStyle: {
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '销售（sales）', max: 6500},
+		           { name: '管理（Administration）', max: 16000},
+		           { name: '信息技术（Information Techology）', max: 30000},
+		           { name: '客服（Customer Support）', max: 38000},
+		           { name: '研发（Development）', max: 52000},
+		           { name: '市场（Marketing）', max: 25000}
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        // areaStyle: {normal: {}},
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '预算分配（Allocated Budget）'
+		            },
+		             {
+		                value : [5000, 14000, 28000, 31000, 42000, 21000],
+		                name : '实际开销（Actual Spending）'
+		            }
+		        ]
+		    }]
+		})
+    },
   }
  }
 </script>
