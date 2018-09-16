@@ -1,6 +1,6 @@
 // layout
 import layoutHeaderAside from '@/layout/header-aside'
-
+import layoutIndex from '@/layout/index'
 const meta = { requiresAuth: true }
 
 /**
@@ -9,16 +9,13 @@ const meta = { requiresAuth: true }
 const frameIn = [
   {
     path: '/',
-    redirect: { name: 'index' },
-    component: layoutHeaderAside,
-    children: [
-      {
-        path: 'index',
-        name: 'index',
-        meta,
-        component: () => import('@/pages/index')
-      }
-    ]
+    name: 'index',
+    component: layoutIndex
+  },
+  {
+    path: '/index',
+    name: 'index',
+    component: layoutIndex,
   },
   {
     path: '/antiFraud',
@@ -26,14 +23,12 @@ const frameIn = [
     redirect: { name: 'antiFraud-index' },
     component: layoutHeaderAside,
     children: (pre => [
-      /*
       {
         path: 'index',
         name: `${pre}index`,
         component: () => import('@/pages/index'),
         meta: { ...meta, title: '总览' }
       },
-      */
       {
         path: 'addCustomer',
         name: `${pre}addCustomer`,

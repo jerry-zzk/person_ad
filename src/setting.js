@@ -38,6 +38,12 @@ const setting = {
   theme: {
     list: [
       {
+        title: '简约线条',
+        name: 'line',
+        backgroundImage: 'image/theme/line/bg.jpg',
+        preview: 'image/theme/line/preview@2x.png'
+      },
+      {
         title: '纯色',
         name: 'd2',
         backgroundImage: 'image/theme/d2/bg.jpg',
@@ -48,12 +54,6 @@ const setting = {
         name: 'violet',
         backgroundImage: 'image/theme/violet/bg.jpg',
         preview: 'image/theme/violet/preview@2x.png'
-      },
-      {
-        title: '简约线条',
-        name: 'line',
-        backgroundImage: 'image/theme/line/bg.jpg',
-        preview: 'image/theme/line/preview@2x.png'
       },
       {
         title: '模糊',

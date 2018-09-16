@@ -15,7 +15,7 @@
   height: 100%;
   width: 100%;
   min-width: 900px;
-  background-size: cover;
+  background-size: cover!important;
   background-position: center;
   overflow: hidden;
   position: relative;
@@ -29,6 +29,7 @@
     $d2-theme-header-height: 60px;
     .d2-theme-header {
       height: $d2-theme-header-height;
+      z-index:1;
     }
     .d2-theme-container {
       .d2-theme-container-aside {
@@ -108,6 +109,11 @@
           font-size: 20px;
           margin-top: 4px;
         }
+      }
+      // 公司名字
+      .d2-header-companyName{
+        float: left;
+        padding-top: 20px;
       }
       // [菜单] 顶栏
       .el-menu {

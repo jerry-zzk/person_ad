@@ -33,22 +33,22 @@ export default {
 }
 */
 export default [
-    { path: '/index', title: '首页', iconSvg: '首页' },
-    { path: '/antiFraud/addCustomer', title: '新客户提交', iconSvg: '新客户提交' },
-    { path: '/antiFraud/examineCustomer', title: '审核管理', iconSvg: '审核管理' },
-    { path: '/antiFraud/creditLoan', title: '欺诈警告', iconSvg: '欺诈报警' },
-    { path: '/antiFraud/searchCustomer', title: '客户检索', iconSvg: '客户检索' },
+    { path: '/antiFraud/index', title: '首页', iconSvg: 'ihome' },
+    { path: '/antiFraud/addCustomer', title: '新客户提交', iconSvg: 'inewConsumerSubmit' },
+    { path: '/antiFraud/examineCustomer', title: '审核管理', iconSvg: 'iauditsMgt' },
+    { path: '/antiFraud/creditLoan', title: '欺诈警告', iconSvg: 'icheatWarn' },
+    { path: '/antiFraud/searchCustomer', title: '客户检索', iconSvg: 'iconsumerSearch' },
     {  
       title: '客户黑名单', 
-      iconSvg: '客户黑名单',
+      iconSvg: 'iconsumerBlacklist',
       children: [
-        { path: '/antiFraud/idCard', title: '身份证黑名单',iconSvg: '身份证号黑名单' },
-        { path: '/antiFraud/phone', title: '手机号黑名单',iconSvg: '手机号黑名单' },
-        { path: '/antiFraud/virtualAcount', title: '虚拟账号黑名单',iconSvg: '虚拟账号黑名单' },
-        { path: '/antiFraud/ip', title: 'IP地址黑名单',iconSvg: 'ip地址黑名单' }
+        { path: '/antiFraud/idCard', title: '身份证黑名单',iconSvg: 'iidCardBlacklist' },
+        { path: '/antiFraud/phone', title: '手机号黑名单',iconSvg: 'itelephoneBlacklist' },
+        { path: '/antiFraud/virtualAcount', title: '虚拟账号黑名单',iconSvg: 'ivirtualAccountBlacklist' },
+        { path: '/antiFraud/ip', title: 'IP地址黑名单',iconSvg: 'iipAdressBlacklist' }
       ]
     },
-    { path: '/antiFraud/count', title: '统计报告', iconSvg: '统计报告' },
-    { path: '/antiFraud/manage', title: '业务管理', iconSvg: '业务管理' },
+    { path: '/antiFraud/count', title: '统计报告', iconSvg: 'istatistical' },
+    { path: '/antiFraud/manage', title: '业务管理', iconSvg: 'iBusinessMgt' },
   ]
 
