@@ -58,7 +58,11 @@
                             <evaluateInfo></evaluateInfo>
                         </el-tab-pane>
                         <el-tab-pane label="联通详单" name="third">
-                            <generalFederation></generalFederation>
+                            <div class="wrap">
+                                <el-scrollbar style="height: 100%">
+                                    <generalFederation></generalFederation>
+                                </el-scrollbar>
+                            </div>
                         </el-tab-pane>
                     </el-tabs>
                 </el-main>
