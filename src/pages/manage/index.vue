@@ -49,7 +49,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .page {
     .page__btn-group {

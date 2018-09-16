@@ -54,7 +54,9 @@
                             </div>
 
                         </el-tab-pane>
-                        <el-tab-pane label="评估详情" name="second">评估详情</el-tab-pane>
+                        <el-tab-pane label="评估详情" name="second">
+                            <evaluateInfo></evaluateInfo>
+                        </el-tab-pane>
                         <el-tab-pane label="联通详单" name="third">
                             <generalFederation></generalFederation>
                         </el-tab-pane>
@@ -68,10 +70,11 @@
 
 <script>
     export default {
-        name: "people-info-popup",
-        components: {
-            fraudulentAlarm: () => import('./switch-page/fraudulent-alarm.vue'),
-            generalFederation: () => import('./switch-page/general-federation.vue')
+        name:"people-info-popup",
+        components:{
+            fraudulentAlarm:()=>import('./switch-page/fraudulent-alarm.vue'),
+            generalFederation:()=>import('./switch-page/general-federation.vue'),
+            evaluateInfo:()=>import('./switch-page/evaluate-info.vue')
         },
         data() {
             return {
