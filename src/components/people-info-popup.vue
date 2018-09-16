@@ -1,8 +1,10 @@
 <template>
   <div class="people-info-popup" v-if="dialogVisible">
     <span class="el-icon-circle-close-outline" @click="handleClose"></span>
-    <div class="content" :class="{show:isShow}">
+    <div class="content-wrap" :class="{show:isShow}">
+      <div class="content">
 
+      </div>
     </div>
   </div>
 
@@ -32,7 +34,6 @@ export default {
           setTimeout(function () {
               vm.isShow=val
           },100)
-
           this.dialogVisible=val
       }
     },
@@ -68,7 +69,10 @@ export default {
         opacity: 1;
       }
     }
-    .content{
+    .content-wrap.show{
+      transform: scale(1);
+    }
+    .content-wrap{
       width: 100%;
       height: 100%;
       background: white;
@@ -76,11 +80,17 @@ export default {
       z-index: 0;
       border-radius: 5px;
       transform: scale(0);
-      transition: all 0.28s ease;
+      transition: all 0.5s ease;
+      padding: 26px;
+      box-sizing: border-box;
+      .content{
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.15);
+        border-radius: 5px;
+      }
     }
-    .content.show{
-      transform: scale(1);
-    }
+
   }
 
 </style>
