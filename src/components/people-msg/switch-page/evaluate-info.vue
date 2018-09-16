@@ -174,18 +174,45 @@
 				<el-row>
 					<el-col :span="12">
 						<el-col :span="24">
-
+							<p class="title">催收电话</p>
+							<table>
+								<tr>
+									<td class="first color1">138********</td>
+									<td>2018年1月3日</td>
+									<td>建设银行</td>
+								</tr>
+								<tr>
+									<td class="first color2">138********</td>
+									<td>2018年1月3日</td>
+									<td>建设银行</td>
+								</tr>
+							</table>
 						</el-col>
 						<el-col :span="24">
-							
+							<p class="title">催收短信</p>
+							<table>
+								<tr>
+									<td class="first color1">138********</td>
+									<td>2018年1月3日</td>
+									<td>建设银行</td>
+								</tr>
+								<tr>
+									<td class="first color2">138********</td>
+									<td>2018年1月3日</td>
+									<td>建设银行</td>
+								</tr>
+							</table>
 						</el-col>
 					</el-col>
 					<el-col :span="12">
+						<p class="title">催收短信</p>
 					</el-col>
 					<el-col :span="12">
+
 					</el-col>
 					<el-col :span="12">
 						<p class="title">高危消费类型</p>
+						<div class="echart" style="width:100%;height:500px" ref="myEchart3"></div>
 					</el-col>
 				</el-row>
 			</div>
