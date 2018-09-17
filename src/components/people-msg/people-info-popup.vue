@@ -59,6 +59,14 @@
 
                         </el-tab-pane>
                         <el-tab-pane label="评估详情" name="second">
+<<<<<<< HEAD
+=======
+                            <div class="wrap">
+                                <evaluateInfo></evaluateInfo>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="联通详单" name="third">
+>>>>>>> 84ac69ea542e3d8cd1e515db3732e67c3ba8e11f
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <evaluateInfo></evaluateInfo>
