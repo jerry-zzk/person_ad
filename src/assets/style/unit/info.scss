@@ -75,7 +75,8 @@ $gray:#6e73775c;
 		}
 	}
 	#evaluete-info-main{
-		margin-top:55px;
+		padding-top:55px;
+		height:calc(100% - 55px);
 		main{
 			p.title{
 				margin:0px;
