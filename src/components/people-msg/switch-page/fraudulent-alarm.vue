@@ -190,6 +190,7 @@
 <style lang="scss" scoped>
     #fraudulent-alarm{
         padding-right: 20px;
+        padding-left: 20px;
         .title {
             margin: 0;
             font-size: 18px;
@@ -232,6 +233,7 @@
                 line-height: 40px;
                 text-align: center;
                 margin-bottom: 5px;
+                margin-top: 5px;
                 span {
                     background: rgb(64, 154, 254);
                     &:nth-child(1) {

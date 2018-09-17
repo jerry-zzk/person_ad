@@ -3,8 +3,10 @@
         <span class="close el-icon-close" @click="handleClose"></span>
         <div class="content" :class="{show:isShow}">
             <el-container style="height: 100%;">
+
                 <el-aside>
                     <el-row class="left-msg">
+                        <el-scrollbar style="height: 100%;">
                         <el-col :span="24">
                             <div class="bg-blue">
                                 <span>真实身份  </span>
@@ -40,8 +42,10 @@
                                 <p><label><i class="fa fa-envelope"></i>邮箱:</label> 51616455616@fds4.com</p>
                             </div>
                         </el-col>
+                        </el-scrollbar>
                     </el-row>
                 </el-aside>
+
                 <el-main>
                     <el-button class="msg-button" size="mini" type="primary">打印</el-button>
                     <el-button class="msg-button" size="mini" type="primary">导出</el-button>
@@ -55,13 +59,15 @@
 
                         </el-tab-pane>
                         <el-tab-pane label="评估详情" name="second">
-                            <evaluateInfo></evaluateInfo>
+                            <div class="wrap">
+                                <el-scrollbar style="height: 100%">
+                                    <evaluateInfo></evaluateInfo>
+                                </el-scrollbar>
+                            </div>
                         </el-tab-pane>
                         <el-tab-pane label="联通详单" name="third">
                             <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                    <generalFederation></generalFederation>
-                                </el-scrollbar>
+                                <generalFederation></generalFederation>
                             </div>
                         </el-tab-pane>
                     </el-tabs>
@@ -101,7 +107,7 @@
                 let vm = this
                 setTimeout(function () {
                     vm.isShow = val
-                }, 100)
+                })
 
                 this.dialogVisible = val
             }
@@ -183,9 +189,10 @@
             }
             .el-main {
                 position: relative;
+                padding: 0;
                 .msg-button{
                     position: absolute;
-                    top:20px;
+                    top:6px;
                     z-index: 100;
                     &:first-child{
                         right: 100px;
@@ -195,7 +202,7 @@
                     }
                 };
                 .wrap {
-                    height: calc(100vh - 160px);
+                    height: calc(100vh - 120px);
                 }
             }
         }
