@@ -16,7 +16,7 @@ import global from './pages/global/global.vue'
 
 // 菜单和路由设置
 import router from './router'
-import { menuAside } from '@/menu'
+import { menuAside,menuAside1 } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
 
 // 引用插件 vue-good-wizard
@@ -65,5 +65,18 @@ new Vue({
       this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
     }
     */
+    '$route.matched' (val) {
+      let url_path = val[0].path
+      let now_menuAside =  menuAside
+      // 监听到不同的子模块
+      if(url_path=='/dataVerification'){
+        now_menuAside = menuAside1
+      }
+      // 初始化菜单搜索功能
+      this.$store.commit('d2admin/search/init', now_menuAside)
+      // 显示侧边菜单
+      this.$store.commit('d2admin/menu/asideSet', now_menuAside)
+    }
+    
   }
 }).$mount('#app')
