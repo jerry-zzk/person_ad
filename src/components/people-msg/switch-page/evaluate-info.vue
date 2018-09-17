@@ -14,244 +14,242 @@
 			  </li>
 			</ul>
 		</div>
-		<el-scrollbar style="height: 100%">
-			<el-container id="evaluete-info-main">
-				<el-main>
-					<div id="anchor-1" class="section">
-						
+		<div id="evaluete-info-main">
+			<el-scrollbar style="height: 100%">
+				<div id="anchor-1" class="section">
+					
+				</div>
+				<div id="anchor-2" class="section">
+					
+				</div>
+				<!--设备欺诈 -->
+				<div id="anchor-3" class="section">
+					<p class="title">设备欺诈</p>
+					<p>设备评分：<span class="red"><i class="fa fa-waring"></i>有风险</span></p>
+					<div class="echart" style="height:500px;width:500px" ref="myEchart1"></div>
+					<div class="guan_lian_hao">
+						<p><i class="fa fa-waring"></i>有风险</p>
+						<ul class="waring-list">
+							<li class="list-item">139*******</li>
+							<li class="list-item">139*******</li>
+							<li class="list-item">139*******</li>
+							<li class="list-item">139*******</li>
+						</ul>
 					</div>
-					<div id="anchor-2" class="section">
-						
+					<div class="guan_lian_hao">
+						<p><i class="fa fa-waring"></i>疑似黑中介wifi</p>
+						<ul class="waring-list">
+							<li class="list-item">网络环境</li>
+						</ul>
 					</div>
-					<!--设备欺诈 -->
-					<div id="anchor-3" class="section">
-						<p class="title">设备欺诈</p>
-						<p>设备评分：<span class="red"><i class="fa fa-waring"></i>有风险</span></p>
-						<div class="echart" style="height:500px;width:500px" ref="myEchart1"></div>
-						<div class="guan_lian_hao">
-							<p><i class="fa fa-waring"></i>有风险</p>
-							<ul class="waring-list">
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-							</ul>
-						</div>
-						<div class="guan_lian_hao">
-							<p><i class="fa fa-waring"></i>疑似黑中介wifi</p>
-							<ul class="waring-list">
-								<li class="list-item">网络环境</li>
-							</ul>
-						</div>
-						<div class="wei_zhi_xin_xi">
-							<p><i class="fa fa-waring"></i>疑似黑中介地址</p>
-							<ul class="waring-list">
-								<li class="list-item">位置信息</li>
-							</ul>
-						</div>
-						<div class="IP_yi_chang">
-							<p><i class="fa fa-waring"></i>疑似团伙欺诈</p>
-							<ul class="waring-list">
-								<li class="list-item">ip地址</li>
-							</ul>
-							<p><i class="fa fa-waring"></i>黑中介风险</p>
-							<ul class="waring-list">
-								<li class="list-item">ip地址</li>
-							</ul>
-						</div>
-						<div class="xu_ni_hao_ma">
-							<table>
-								<tr>
-									<td class="first color1">
-										微博
-									</td>
-									<td>
-										**********
-									</td>
-								</tr>
-								<tr>
-									<td class="first color2">
-										微信
-									</td>
-									<td>
-										**********
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="xing_hao_xi_tong">
-							<table>
-								<tr>
-									<td class="first color1">
-										系统
-									</td>
-									<td>
-										**********
-									</td>
-								</tr>
-								<tr>
-									<td class="first color2">
-										账号
-									</td>
-									<td>
-										**********
-									</td>
-								</tr>
-							</table>
-						</div>
+					<div class="wei_zhi_xin_xi">
+						<p><i class="fa fa-waring"></i>疑似黑中介地址</p>
+						<ul class="waring-list">
+							<li class="list-item">位置信息</li>
+						</ul>
 					</div>
-					<!--团伙关联 -->
-					<div id="anchor-4" class="section">
-						<el-row>
-							<el-col :span="12">
-								<p class="title">通联关系</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart2"></div>
-								<div class="table">
-									<p>详情</p>
-									<table>
-										<tr>
-											<td class="first color1">
-												系统
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-										<tr>
-											<td class="first color2">
-												账号
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-									</table>
-								</div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">虚拟身份</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart3"></div>
-								<div class="table">
-									<p>详情</p>
-									<table>
-										<tr>
-											<td class="first color1">
-												系统
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-										<tr>
-											<td class="first color2">
-												账号
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-									</table>
-								</div>
+					<div class="IP_yi_chang">
+						<p><i class="fa fa-waring"></i>疑似团伙欺诈</p>
+						<ul class="waring-list">
+							<li class="list-item">ip地址</li>
+						</ul>
+						<p><i class="fa fa-waring"></i>黑中介风险</p>
+						<ul class="waring-list">
+							<li class="list-item">ip地址</li>
+						</ul>
+					</div>
+					<div class="xu_ni_hao_ma">
+						<table>
+							<tr>
+								<td class="first color1">
+									微博
+								</td>
+								<td>
+									**********
+								</td>
+							</tr>
+							<tr>
+								<td class="first color2">
+									微信
+								</td>
+								<td>
+									**********
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="xing_hao_xi_tong">
+						<table>
+							<tr>
+								<td class="first color1">
+									系统
+								</td>
+								<td>
+									**********
+								</td>
+							</tr>
+							<tr>
+								<td class="first color2">
+									账号
+								</td>
+								<td>
+									**********
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--团伙关联 -->
+				<div id="anchor-4" class="section">
+					<el-row>
+						<el-col :span="12">
+							<p class="title">通联关系</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart2"></div>
+							<div class="table">
+								<p>详情</p>
+								<table>
+									<tr>
+										<td class="first color1">
+											系统
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+									<tr>
+										<td class="first color2">
+											账号
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+								</table>
+							</div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">虚拟身份</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart3"></div>
+							<div class="table">
+								<p>详情</p>
+								<table>
+									<tr>
+										<td class="first color1">
+											系统
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+									<tr>
+										<td class="first color2">
+											账号
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+								</table>
+							</div>
+						</el-col>
+						<el-col :span="24">
+							<p class="title">行为关联风险</p>
+							<div class="table">
+								<p>详情</p>
+								<table>
+									<tr>
+										<td class="first color1">
+											系统
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+									<tr>
+										<td class="first color2">
+											账号
+										</td>
+										<td>
+											**********
+										</td>
+									</tr>
+								</table>
+							</div>
+						</el-col>
+					</el-row>
+				</div>
+				<!--金融属性 -->
+				<div id="anchor-5" class="section">
+					<el-row>
+						<el-col :span="12">
+							<el-col :span="24">
+								<p class="title">催收电话</p>
+								<table>
+									<tr>
+										<td class="first color1">138********</td>
+										<td>2018年1月3日</td>
+										<td>建设银行</td>
+									</tr>
+									<tr>
+										<td class="first color2">138********</td>
+										<td>2018年1月3日</td>
+										<td>建设银行</td>
+									</tr>
+								</table>
 							</el-col>
 							<el-col :span="24">
-								<p class="title">行为关联风险</p>
-								<div class="table">
-									<p>详情</p>
-									<table>
-										<tr>
-											<td class="first color1">
-												系统
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-										<tr>
-											<td class="first color2">
-												账号
-											</td>
-											<td>
-												**********
-											</td>
-										</tr>
-									</table>
-								</div>
+								<p class="title">催收短信</p>
+								<table>
+									<tr>
+										<td class="first color1">138********</td>
+										<td>2018年1月3日</td>
+										<td>建设银行</td>
+									</tr>
+									<tr>
+										<td class="first color2">138********</td>
+										<td>2018年1月3日</td>
+										<td>建设银行</td>
+									</tr>
+								</table>
 							</el-col>
-						</el-row>
-					</div>
-					<!--金融属性 -->
-					<div id="anchor-5" class="section">
-						<el-row>
-							<el-col :span="12">
-								<el-col :span="24">
-									<p class="title">催收电话</p>
-									<table>
-										<tr>
-											<td class="first color1">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-										<tr>
-											<td class="first color2">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-									</table>
-								</el-col>
-								<el-col :span="24">
-									<p class="title">催收短信</p>
-									<table>
-										<tr>
-											<td class="first color1">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-										<tr>
-											<td class="first color2">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-									</table>
-								</el-col>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">高危消费行为</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart4"></div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">贷款类app注册</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart5"></div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">高危消费类型</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart6"></div>
-							</el-col>
-						</el-row>
-					</div>
-					<!--网络行为 -->
-					<div id="anchor-6" class="section">
-						<el-row>
-							<el-col :span="12">
-								<p class="title">APP使用</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart7"></div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">社交行为</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart8"></div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">浏览行为</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart9"></div>
-							</el-col>
-							<el-col :span="12">
-								<p class="title">搜索行为</p>
-								<div class="echart" style="width:100%;height:500px" ref="myEchart10"></div>
-							</el-col>
-						</el-row>
-					</div>
-				</el-main>
-			</el-container>
-		</el-scrollbar>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">高危消费行为</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart4"></div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">贷款类app注册</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart5"></div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">高危消费类型</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart6"></div>
+						</el-col>
+					</el-row>
+				</div>
+				<!--网络行为 -->
+				<div id="anchor-6" class="section">
+					<el-row>
+						<el-col :span="12">
+							<p class="title">APP使用</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart7"></div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">社交行为</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart8"></div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">浏览行为</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart9"></div>
+						</el-col>
+						<el-col :span="12">
+							<p class="title">搜索行为</p>
+							<div class="echart" style="width:100%;height:500px" ref="myEchart10"></div>
+						</el-col>
+					</el-row>
+				</div>
+			</el-scrollbar>
+		</div>
 	</div>
 </template>
 <style lang="scss" scoped>
