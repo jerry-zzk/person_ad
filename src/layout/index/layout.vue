@@ -78,9 +78,11 @@
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
-                                    <p>联信服</p>
-                                    <p>数据核验服务产品</p>
+                                    <a :href="`${$baseUrl}#/dataVerification/index`">
+                                      <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
+                                      <p>联信服</p>
+                                      <p>数据核验服务产品</p>
+                                    </a>
                                   </div>
                                 </el-col>
                               </el-row>

@@ -10,12 +10,14 @@ const frameIn = [
   {
     path: '/',
     name: 'index',
-    component: layoutIndex
+    component: layoutIndex,
+    meta: meta
   },
   {
     path: '/index',
     name: 'index',
     component: layoutIndex,
+    meta: meta
   },
   {
     path: '/antiFraud',
@@ -70,6 +72,20 @@ const frameIn = [
       //   meta: { meta, title: '接口' }
       // }
     ])('antiFraud-')
+  },
+  {
+    path: '/dataVerification',
+    name:'dataVerification',
+    redirect: { name: 'dataVerification-index' },
+    component: layoutHeaderAside,
+    children: (pre => [
+      {
+        path: 'index',
+        name: `${pre}index`,
+        component: () => import('@/pages/index'),
+        meta: { ...meta, title: '身份核验' }
+      }
+    ])('dataVerification-')
   }
 ]
 
