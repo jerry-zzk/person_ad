@@ -1,5 +1,5 @@
 <template>
-  <div id="topBox" @click="openPeopleInfoPopup">
+  <div id="topBox"  >
     <el-row :gutter="10">
       <el-col :span="10">
         <div class="ipanel">
@@ -11,11 +11,13 @@
             <el-col :span="4">评分</el-col>
           </el-row>
           <div class="ipanel-tbody">
-            <el-row v-for="top in items" :key="top.list" class="ipanel-tr"  >
-              <el-col :span="4">{{top.list}}</el-col>
-              <el-col :span="8">{{top.name}}</el-col>
-              <el-col :span="8">{{top.phone}}</el-col>
-              <el-col :span="4">{{top.star}}</el-col>
+            <el-row v-for="top in items" :key="top.list" class="ipanel-tr" >
+              <div @click="openPeopleInfoPopup">
+                <el-col :span="4">{{top.list}}</el-col>
+                <el-col :span="8">{{top.name}}</el-col>
+                <el-col :span="8">{{top.phone}}</el-col>
+                <el-col :span="4">{{top.star}}</el-col>
+              </div>
             </el-row>
           </div>
         </div>
@@ -99,6 +101,7 @@ export default {
   },
   methods:{
     openPeopleInfoPopup(){
+        console.log("fds")
         this.$store.commit('setData',true)
     }
   }
