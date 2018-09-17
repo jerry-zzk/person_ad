@@ -10,12 +10,14 @@ const frameIn = [
   {
     path: '/',
     name: 'index',
-    component: layoutIndex
+    component: layoutIndex,
+    meta: meta
   },
   {
     path: '/index',
     name: 'index',
     component: layoutIndex,
+    meta: meta
   },
   {
     path: '/antiFraud',
