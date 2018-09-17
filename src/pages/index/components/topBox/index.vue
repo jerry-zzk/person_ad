@@ -97,46 +97,46 @@ export default {
       ]
     }
   },
-    methods:{
-        openPeopleInfoPopup(){
-            this.$store.commit('setData',true)
-        }
+  methods:{
+    openPeopleInfoPopup(){
+        this.$store.commit('setData',true)
     }
+  }
 }
 </script>
 <style lang="scss" scoped>
-    #topBox .ipanel{
-      position: relative;
-      height: 440px;
-      padding: 15px;
-      border-radius: 3px;
-      font-size: 14px;
-      text-align: center;
-      color: #fff;
-      background-color: #FF9800;
-      overflow-y: hidden;
-    }
-    #topBox .ipanel .ipanel-title{
-      margin-top: 0;
-      margin-bottom: 8px;
-      padding: 8px;
-      border-radius: 4px;
-      font-size: 20px;
-      background-color: #fff;
-    }
-    #topBox .ipanel .ipanel-thead{
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,.5);
-    }
-    #topBox .ipanel .ipanel-tbody{
-      text-align: center;
-    }
-    #topBox .ipanel .ipanel-tbody .ipanel-tr{
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,.5);
-    }
-    #topBox .ipanel .ipanel-tbody .ipanel-tr:hover{
-      background-color: #fff;
-      color: #000;
-    }
+  #topBox .ipanel{
+    position: relative;
+    height: 440px;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #FF9800;
+    overflow-y: hidden;
+  }
+  #topBox .ipanel .ipanel-title{
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: #fff;
+  }
+  #topBox .ipanel .ipanel-thead{
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+  }
+  #topBox .ipanel .ipanel-tbody{
+    text-align: center;
+  }
+  #topBox .ipanel .ipanel-tbody .ipanel-tr{
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+  }
+  #topBox .ipanel .ipanel-tbody .ipanel-tr:hover{
+    background-color: #fff;
+    color: #000;
+  }
 </style>
