@@ -1,0 +1,98 @@
+$blue:#409efe;
+$black:#6e7377;
+$gray:#6e73775c;
+/**** fix *****/
+.el-tabs__header{
+    margin:0px!important;
+}
+/**** fix *****/
+#evaluete-info{
+	height:100%;
+	#evaluete-info-header{
+		height:54px;
+		position: absolute;
+		left:0;
+		right:0px;
+		padding:0px;
+		z-index:1000;
+		background:white;
+		border:1px solid $gray;
+		border-top:none;
+		border-left:none;
+		ul{
+			list-style: none;
+			margin: 0px;
+	    	padding: 0px;
+			&:after{
+				clear:both;
+			}
+			li{
+				float: left;
+				position: relative;
+				width: 18%;
+				margin:16px 0px;
+				a{
+					border:1px solid $gray;
+					color:$black;
+					border-radius:20px;
+					padding:5px 20px;
+					margin: 0px;
+					width:56%;
+					&:hover{
+						background:$blue;
+						color:white;
+					}
+				}
+				span.bar{
+					position: absolute;
+				    right: -4%;
+				    top: 0px;
+				    display: block;
+				    width: 100px;
+				    height: 24px;
+				    span{
+						display: block;
+					    width: 6px;
+					    height: 6px;
+					    background: rgba(0, 0, 0, 0.2);
+					    border-radius: 50%;
+					    margin: 8px 0px 0 10px;
+					    float: left;
+					    &.center{
+					    	width: 8px;
+					    	height: 8px;
+					    	margin: 7px 0px 0 10px;
+					    }	
+				    }
+				}
+				&:last-child{
+					width: 10%;
+					a{
+						width:100%
+					}
+				}
+			}
+		}
+	}
+	#evaluete-info-main{
+		margin-top:55px;
+		main{
+			p.title{
+				margin:0px;
+				font-szie:14px;
+				position: relative;
+				&:before{
+					content:" ";
+					position: absolute;
+					top:0px;
+					left:0px;
+					background:$blue;
+					border-radius:50%;
+					width:6px;
+					height:6px;
+				}
+			}
+		}
+	}
+}
+
