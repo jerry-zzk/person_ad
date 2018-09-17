@@ -11,13 +11,11 @@
             <el-col :span="4">评分</el-col>
           </el-row>
           <div class="ipanel-tbody">
-            <el-row v-for="top in items" :key="top.list" class="ipanel-tr" >
-              <div @click="openPeopleInfoPopup">
+            <el-row v-for="top in items"  :key="top.list"  class="ipanel-tr" @click.native="openPeopleInfoPopup">
                 <el-col :span="4">{{top.list}}</el-col>
                 <el-col :span="8">{{top.name}}</el-col>
                 <el-col :span="8">{{top.phone}}</el-col>
                 <el-col :span="4">{{top.star}}</el-col>
-              </div>
             </el-row>
           </div>
         </div>
