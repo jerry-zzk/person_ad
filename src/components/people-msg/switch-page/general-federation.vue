@@ -31,13 +31,13 @@
                                     </div>
                                 </el-col>
                                 <el-col :span="6">
-                                    <div class="type02 center">
-                                        风险指标
+                                    <div class="type02">
+                                        分析结果
                                     </div>
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="type03">
-                                        风险指标
+                                        数据来源
                                     </div>
                                 </el-col>
                             </el-row>
@@ -62,40 +62,40 @@
                                 <div class="txt center">是</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">运营商</div>
+                                <div class="txt">运营商实名信息</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left">身份证号有效性</div>
+                                <div class="txt txt-left">运营商是否与登记人一致</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">不一致</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt">运营商实名信息与个人登记信息匹配校验</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left">身份证号有效性</div>
+                                <div class="txt txt-left">是否出现长时间关机</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">是</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt">连续超过5天无数据、无通话、无短信记录</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left">身份证号有效性</div>
+                                <div class="txt txt-left">是否呼叫紧急联系人</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">是</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt">与提交的紧急联系人有通话记录</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -117,10 +117,10 @@
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt txt-left1">认证实名</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">中国移动</div>
+                                <div class="txt">雯雯</div>
                             </el-col>
                             <el-col :span="4">
                                 <div class="txt">入网时间</div>
@@ -131,63 +131,63 @@
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt txt-left1">手机号</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">中国移动</div>
+                                <div class="txt">13261236365</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">入网时间</div>
+                                <div class="txt">登记邮箱</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt">wenwen@qq.com</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt txt-left1">当前余额</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">中国移动</div>
+                                <div class="txt">358.6</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">入网时间</div>
+                                <div class="txt">会员等级</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt">3级</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt txt-left1">积分值</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">中国移动</div>
+                                <div class="txt">120</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">入网时间</div>
+                                <div class="txt">网龄</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt">5年9个月</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
-                            </el-col>
-                            <el-col :span="8">
-                                <div class="txt">中国移动</div>
-                            </el-col>
-                            <el-col :span="4">
-                                <div class="txt">入网时间</div>
+                                <div class="txt txt-left1">最早通话时间</div>
                             </el-col>
                             <el-col :span="8">
                                 <div class="txt">2012-12-12</div>
+                            </el-col>
+                            <el-col :span="4">
+                                <div class="txt">最近通话时间</div>
+                            </el-col>
+                            <el-col :span="8">
+                                <div class="txt">2012-12-21</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
-                                <div class="txt txt-left1" style="padding-left: 25px">登记地址：<span style="margin-right: 40px"> </span>xxxxxxxxxxxxx</div>
+                                <div class="txt txt-left1" style="padding-left: 25px">登记地址：<span style="margin-right: 40px"> </span>北京海淀区北四环西路255号方正国际大厦 252</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -196,71 +196,71 @@
                         <div class="head">
                             <el-row>
                                 <el-col :span="4">
-                                    <div class="txt  left-jiao head-its">运营商类型</div>
+                                    <div class="txt  left-jiao head-its">月份</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">中国移动</div>
+                                    <div class="txt head-its">主呼叫时间（分）</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">入网时间</div>
+                                    <div class="txt head-its">被呼叫时间（分）</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">2012-12-12</div>
+                                    <div class="txt head-its">短信数（条）</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its right-jiao">2012-12-12</div>
+                                    <div class="txt head-its right-jiao">话费充值（元）</div>
                                 </el-col>
                             </el-row>
                         </div>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">201212</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">569</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">256</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">112</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">120</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">201312</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">569</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">256</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">112</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">120</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">201412</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">569</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">256</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">112</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">120</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -293,71 +293,71 @@
                         </div>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left3">运营商类型</div>
+                                <div class="txt txt-left3 center">02514651651</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">265秒</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">江苏</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">20</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left3">运营商类型</div>
+                                <div class="txt txt-left3 center">02514651651</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">265秒</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">江苏</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">20</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left3">运营商类型</div>
+                                <div class="txt txt-left3 center">02514651651</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">265秒</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">江苏</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">20</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -366,59 +366,59 @@
                         <div class="head">
                             <el-row>
                                 <el-col :span="5">
-                                    <div class="txt  left-jiao head-its">运营商类型</div>
+                                    <div class="txt  left-jiao head-its">号码</div>
                                 </el-col>
                                 <el-col :span="6">
-                                    <div class="txt head-its">中国移动</div>
+                                    <div class="txt head-its">号码归属地</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">入网时间</div>
+                                    <div class="txt head-its">条数</div>
                                 </el-col>
                                 <el-col :span="8">
-                                    <div class="txt head-its right-jiao">2012-12-12</div>
+                                    <div class="txt head-its right-jiao">号码标识</div>
                                 </el-col>
                             </el-row>
                         </div>
                         <el-row>
                             <el-col :span="5">
-                                <div class="txt txt-left4">运营商类型</div>
+                                <div class="txt txt-left4 center">56126512</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">北京</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">11</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">招商银行2</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="5">
-                                <div class="txt txt-left4">运营商类型</div>
+                                <div class="txt txt-left4 center">56126512</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">北京</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">11</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">招商银行2</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="5">
-                                <div class="txt txt-left4">运营商类型</div>
+                                <div class="txt txt-left4 center">56126512</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">北京</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">11</div>
                             </el-col>
                             <el-col :span="8">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">招商银行2</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -427,95 +427,95 @@
                         <div class="head">
                             <el-row>
                                 <el-col :span="4">
-                                    <div class="txt  left-jiao head-its">号码</div>
+                                    <div class="txt  left-jiao head-its">地区</div>
                                 </el-col>
                                 <el-col :span="3">
-                                    <div class="txt head-its">通话时长</div>
-                                </el-col>
-                                <el-col :span="3">
-                                    <div class="txt head-its">通话次数</div>
-                                </el-col>
-                                <el-col :span="4">
-                                    <div class="txt head-its">号码归属地</div>
+                                    <div class="txt head-its">号码数量</div>
                                 </el-col>
                                 <el-col :span="3">
                                     <div class="txt head-its">主叫次数</div>
                                 </el-col>
+                                <el-col :span="4">
+                                    <div class="txt head-its">主叫时间</div>
+                                </el-col>
                                 <el-col :span="3">
                                     <div class="txt head-its">被叫次数</div>
                                 </el-col>
+                                <el-col :span="3">
+                                    <div class="txt head-its">被叫时间</div>
+                                </el-col>
                                 <el-col :span="4">
-                                    <div class="txt head-its right-jiao">号码标识</div>
+                                    <div class="txt head-its right-jiao">占比</div>
                                 </el-col>
                             </el-row>
                         </div>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left">运营商类型</div>
+                                <div class="txt txt-left center">北京</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">22</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">5262</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">5716</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">852</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2321</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">85.4%</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left">运营商类型</div>
+                                <div class="txt txt-left center">北京</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">22</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">5262</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">5716</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">852</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2321</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">85.4%</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left">运营商类型</div>
+                                <div class="txt txt-left center">北京</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">22</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">5262</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">5716</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">852</div>
                             </el-col>
                             <el-col :span="3">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">2321</div>
                             </el-col>
                             <el-col :span="4">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">85.4%</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -523,55 +523,55 @@
                         <p class="tit"><b>.</b>出行风险分析</p>
                         <div class="head">
                             <el-row>
+                                <el-col :span="6">
+                                    <div class="txt  left-jiao head-its">出发时间</div>
+                                </el-col>
                                 <el-col :span="4">
-                                    <div class="txt  left-jiao head-its">运营商类型</div>
+                                    <div class="txt head-its">出发地</div>
                                 </el-col>
-                                <el-col :span="5">
-                                    <div class="txt head-its">中国移动</div>
+                                <el-col :span="6">
+                                    <div class="txt head-its">到达时间</div>
                                 </el-col>
-                                <el-col :span="5">
-                                    <div class="txt head-its">入网时间</div>
+                                <el-col :span="4">
+                                    <div class="txt head-its">目的地</div>
                                 </el-col>
-                                <el-col :span="5">
-                                    <div class="txt head-its">2012-12-12</div>
-                                </el-col>
-                                <el-col :span="5">
-                                    <div class="txt head-its right-jiao">2012-12-12</div>
+                                <el-col :span="4">
+                                    <div class="txt head-its right-jiao">停留时间</div>
                                 </el-col>
                             </el-row>
                         </div>
                         <el-row>
+                            <el-col :span="6">
+                                <div class="txt txt-left1 center">2016年8月10日 22时</div>
+                            </el-col>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt center">北京</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                            <el-col :span="6">
+                                <div class="txt center">2016年8月10日 22时</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                            <el-col :span="4">
+                                <div class="txt center">深圳</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
-                            </el-col>
-                            <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                            <el-col :span="4">
+                                <div class="txt center">218小时</div>
                             </el-col>
                         </el-row>
                         <el-row>
+                            <el-col :span="6">
+                                <div class="txt txt-left1 center">2016年8月10日 22时</div>
+                            </el-col>
                             <el-col :span="4">
-                                <div class="txt txt-left1">运营商类型</div>
+                                <div class="txt center">北京</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                            <el-col :span="6">
+                                <div class="txt center">2016年8月10日 22时</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                            <el-col :span="4">
+                                <div class="txt center">深圳</div>
                             </el-col>
-                            <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
-                            </el-col>
-                            <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                            <el-col :span="4">
+                                <div class="txt center">218小时</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -580,71 +580,71 @@
                         <div class="head">
                             <el-row>
                                 <el-col :span="4">
-                                    <div class="txt  left-jiao head-its">运营商类型</div>
+                                    <div class="txt  left-jiao head-its">月份</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">中国移动</div>
+                                    <div class="txt head-its">名称</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">入网时间</div>
+                                    <div class="txt head-its">号码</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its">2012-12-12</div>
+                                    <div class="txt head-its">通话次数</div>
                                 </el-col>
                                 <el-col :span="5">
-                                    <div class="txt head-its right-jiao">2012-12-12</div>
+                                    <div class="txt head-its right-jiao">短信条数</div>
                                 </el-col>
                             </el-row>
                         </div>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">2016-9</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">1564321654</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">2016-9</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">1564321654</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="4">
-                                <div class="txt txt-left2">运营商类型</div>
+                                <div class="txt txt-left2 center">2016-9</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">中国移动</div>
+                                <div class="txt center">信用钱包</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">入网时间</div>
+                                <div class="txt center">1564321654</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                             <el-col :span="5">
-                                <div class="txt">2012-12-12</div>
+                                <div class="txt center">12</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -654,17 +654,17 @@
                             <el-row>
                                 <el-col :span="8">
                                     <div class="type01">
-                                        风险指标
+                                        分析指标
                                     </div>
                                 </el-col>
                                 <el-col :span="6">
                                     <div class="type02 center">
-                                        风险指标
+                                        分析结果
                                     </div>
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="type03">
-                                        风险指标
+                                        数据来源
                                     </div>
                                 </el-col>
                             </el-row>
@@ -672,46 +672,46 @@
                         </div>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">身份证号有效性</div>
+                                <div class="txt txt-left3 center">110通话记录</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">6次</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">通话列表、公安数据</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">运营商是否属实</div>
+                                <div class="txt txt-left3 center">110通话记录</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">是</div>
+                                <div class="txt center">6次</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">运营商</div>
+                                <div class="txt center">通话列表、公安数据</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">身份证号有效性</div>
+                                <div class="txt txt-left3 center">110通话记录</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">6次</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">通话列表、公安数据</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">身份证号有效性</div>
+                                <div class="txt txt-left3 center">110通话记录</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">6次</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">通话列表、公安数据</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -726,12 +726,12 @@
                                 </el-col>
                                 <el-col :span="6">
                                     <div class="type02 center">
-                                        风险指标
+                                        分析结果
                                     </div>
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="type03">
-                                        风险指标
+                                        数据来源
                                     </div>
                                 </el-col>
                             </el-row>
@@ -739,35 +739,35 @@
                         </div>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">身份证号有效性</div>
+                                <div class="txt txt-left3 center">近6月联系号码数</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">121个</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">通话列表</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">运营商是否属实</div>
+                                <div class="txt txt-left3 center">近6月联系号码数</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">是</div>
+                                <div class="txt center">121个</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">运营商</div>
+                                <div class="txt center">通话列表</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left3">身份证号有效性</div>
+                                <div class="txt txt-left3 center">近6月联系号码数</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">121个</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center ">通话列表</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -777,17 +777,17 @@
                             <el-row>
                                 <el-col :span="8">
                                     <div class="type01">
-                                        风险指标
+                                        月份
                                     </div>
                                 </el-col>
                                 <el-col :span="6">
-                                    <div class="type02 center">
-                                        风险指标
+                                    <div class="type02 ">
+                                        流量使用数
                                     </div>
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="type03">
-                                        风险指标
+                                        数据来源
                                     </div>
                                 </el-col>
                             </el-row>
@@ -795,35 +795,35 @@
                         </div>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left4">身份证号有效性</div>
+                                <div class="txt txt-left4 center">2018-12</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">3.5G</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">运营商</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left4">运营商是否属实</div>
+                                <div class="txt txt-left4 center">2018-12</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">是</div>
+                                <div class="txt center">3.5G</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">运营商</div>
+                                <div class="txt center">运营商</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left4">身份证号有效性</div>
+                                <div class="txt txt-left4 center">2018-12</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">3.5G</div>
                             </el-col>
                             <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                                <div class="txt center">运营商</div>
                             </el-col>
                         </el-row>
                     </div>
@@ -833,17 +833,17 @@
                             <el-row>
                                 <el-col :span="8">
                                     <div class="type01">
-                                        风险指标
+                                        APP名称
                                     </div>
                                 </el-col>
                                 <el-col :span="6">
-                                    <div class="type02 center">
-                                        风险指标
+                                    <div class="type02 ">
+                                        打开评率（天）
                                     </div>
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="type03">
-                                        风险指标
+                                        平均使用时长
                                     </div>
                                 </el-col>
                             </el-row>
@@ -851,24 +851,24 @@
                         </div>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left">身份证号有效性</div>
+                                <div class="txt txt-left center">招商银行信用卡</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">有效</div>
+                                <div class="txt center">3</div>
                             </el-col>
-                            <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                            <el-col :span="10 ">
+                                <div class="txt center">10min</div>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="8">
-                                <div class="txt txt-left">运营商是否属实</div>
+                                <div class="txt txt-left center">招商银行信用卡</div>
                             </el-col>
                             <el-col :span="6">
-                                <div class="txt center">是</div>
+                                <div class="txt center">3</div>
                             </el-col>
-                            <el-col :span="10">
-                                <div class="txt">运营商</div>
+                            <el-col :span="10 ">
+                                <div class="txt center">10min</div>
                             </el-col>
                         </el-row>
 
@@ -877,44 +877,55 @@
                         <p class="tit"><b>.</b>催收电话分析</p>
                         <div class="head">
                             <el-row>
-                                <el-col :span="8">
-                                    <div class="type01">
-                                        风险指标
-                                    </div>
+                                <el-col :span="4">
+                                    <div class="txt  left-jiao head-its">电话类型</div>
                                 </el-col>
-                                <el-col :span="6">
-                                    <div class="type02 center">
-                                        风险指标
-                                    </div>
+                                <el-col :span="5">
+                                    <div class="txt head-its">主呼叫次数</div>
                                 </el-col>
-                                <el-col :span="10">
-                                    <div class="type03">
-                                        风险指标
-                                    </div>
+                                <el-col :span="5">
+                                    <div class="txt head-its">被呼叫次数</div>
+                                </el-col>
+                                <el-col :span="5">
+                                    <div class="txt head-its">成功接通次数</div>
+                                </el-col>
+                                <el-col :span="5">
+                                    <div class="txt head-its right-jiao">通话时长</div>
                                 </el-col>
                             </el-row>
-
                         </div>
                         <el-row>
-                            <el-col :span="8">
-                                <div class="txt txt-left1">身份证号有效性</div>
+                            <el-col :span="4">
+                                <div class="txt txt-left2 center">宜人贷</div>
                             </el-col>
-                            <el-col :span="6">
-                                <div class="txt center">有效</div>
+                            <el-col :span="5">
+                                <div class="txt center">3</div>
                             </el-col>
-                            <el-col :span="10">
-                                <div class="txt">ISO国际身份验证规则</div>
+                            <el-col :span="5">
+                                <div class="txt center">5</div>
+                            </el-col>
+                            <el-col :span="5">
+                                <div class="txt center">6</div>
+                            </el-col>
+                            <el-col :span="5">
+                                <div class="txt center">10min</div>
                             </el-col>
                         </el-row>
                         <el-row>
-                            <el-col :span="8">
-                                <div class="txt txt-left1">运营商是否属实</div>
+                            <el-col :span="4">
+                                <div class="txt txt-left2 center">宜人贷</div>
                             </el-col>
-                            <el-col :span="6">
-                                <div class="txt center">是</div>
+                            <el-col :span="5">
+                                <div class="txt center">3</div>
                             </el-col>
-                            <el-col :span="10">
-                                <div class="txt">运营商</div>
+                            <el-col :span="5">
+                                <div class="txt center">5</div>
+                            </el-col>
+                            <el-col :span="5">
+                                <div class="txt center">6</div>
+                            </el-col>
+                            <el-col :span="5">
+                                <div class="txt center">10min</div>
                             </el-col>
                         </el-row>
                     </div>
