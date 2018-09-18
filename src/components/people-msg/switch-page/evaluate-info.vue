@@ -1,5 +1,5 @@
 <template>
-	<div id="evaluete-info">
+	<div id="evaluete-info" >
 		<div id="evaluete-info-header">
 			<ul>
 			  <li :index="item.index" v-for="item in menu_item">
@@ -16,8 +16,8 @@
 		</div>
 		<div id="evaluete-info-main">
 			<el-scrollbar style="height: 100%">
-				<div id="evaluete-info-main-inner">
-					<div id="anchor-1" class="section">
+				<div id="evaluete-info-main-inner" v-resize:throttle="onResize">
+					<div id="anchor-1" class="section" >
 						<div class="detail-body">
 				      <el-row :gutter="40">
 				        <el-col :span="16">
@@ -58,7 +58,7 @@
 				          <div id="detail_heatMap"></div>
 				        </el-col>
 				      </el-row>
-			      </div>
+			      	</div>
 						<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
 		    		<div class="detail-body">
 				      <el-row class="detail-tr color-6">
@@ -334,6 +334,7 @@
 <script>
 import echarts from 'echarts'
 import 'echarts/map/js/china.js';
+import resize from 'vue-resize-directive'
 export default {
   data () {
     return {
@@ -372,6 +373,7 @@ export default {
     	chart8: null,
     	chart9: null,
     	chart10: null,
+    	heatMap_chart:null,
     	heatMapData: [
         {name: '北京', value: 5.3},
         {name: '天津', value: 3.8},
@@ -410,6 +412,9 @@ export default {
       ]
     }
   },
+  directives: {
+    resize
+  },
   mounted() {
     this.initChart1();
     this.initChart2();
@@ -424,9 +429,6 @@ export default {
     this.drawHeatMap();
   }, 
   beforeDestroy() {
-    if (!this.chart) {
-      return
-    }
     this.chart1.dispose();
     this.chart2.dispose();
     this.chart3.dispose();
@@ -441,6 +443,19 @@ export default {
     this.chart6 = this.chart7 = this.chart8 = this.chart9 = this.chart10=null;
   },
   methods:{
+  	onResize:function(){
+  		this.chart1.resize();
+  		this.chart2.resize();
+  		this.chart3.resize();
+  		this.chart4.resize();
+  		this.chart5.resize();
+  		this.chart6.resize();
+  		this.chart7.resize();
+  		this.chart8.resize();
+  		this.chart9.resize();
+  		this.chart10.resize();
+  		this.heatMap_chart.resize();
+  	},
   	goAnchor(item) {
   		this.menu_item.forEach((item, index) => {
   			item.select = false;
@@ -1534,8 +1549,8 @@ export default {
           data: _this.heatMapData
         }]
       }
-      const heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
-      heatMap_chart.setOption(option)
+      this.heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
+      this.heatMap_chart.setOption(option)
     }
   }
  }
