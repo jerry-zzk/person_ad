@@ -62,6 +62,7 @@
                               <el-row>
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
+                                    <img :src="`${$baseUrl}image/index/lian_xin_he_bg.png`">
                                     <a :href="`${$baseUrl}#/antiFraud/index`">
                                       <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
                                       <p>联信核</p>
@@ -71,6 +72,7 @@
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
+                                    <img :src="`${$baseUrl}image/index/lian_xin_kong_bg.png`">
                                     <a :href="`${$baseUrl}#/loaningMonitor/index`">
                                       <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
                                       <p>联信控</p>
@@ -80,6 +82,7 @@
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
+                                    <img :src="`${$baseUrl}image/index/lian_xin_fu_bg.png`">
                                     <a :href="`${$baseUrl}#/dataVerification/index`">
                                       <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
                                       <p>联信服</p>
@@ -97,16 +100,22 @@
                               <el-row :gutter="20">
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
-                                    <img :src="`${$baseUrl}image/index/lian_zhong.png`">
-                                    <p>联众</p>
-                                    <p>风控知识图谱系统</p>
+                                    <img :src="`${$baseUrl}image/index/lian_zhong_bg.png`">
+                                    <a href="javacript:void(0);">
+                                      <img :src="`${$baseUrl}image/index/lian_zhong.png`">
+                                      <p>联众</p>
+                                      <p>风控知识图谱系统</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
-                                    <img :src="`${$baseUrl}image/index/lian_zhi.png`">
-                                    <p>联智</p>
-                                    <p>大数据建模风控分析系统</p>
+                                    <img :src="`${$baseUrl}image/index/lian_zhi_bg.png`">
+                                    <a href="javacript:void(0);">
+                                      <img :src="`${$baseUrl}image/index/lian_zhi.png`">
+                                      <p>联智</p>
+                                      <p>大数据建模风控分析系统</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                
@@ -120,23 +129,32 @@
                               <el-row :gutter="20">
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
-                                    <img :src="`${$baseUrl}image/index/lian_yan.png`">
-                                    <p>联眼</p>
-                                    <p>数据采集平台</p>
+                                    <img :src="`${$baseUrl}image/index/lian_yan_bg.png`">
+                                    <a href="javacript:void(0);">
+                                      <img :src="`${$baseUrl}image/index/lian_yan.png`">
+                                      <p>联眼</p>
+                                      <p>数据采集平台</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
-                                    <img :src="`${$baseUrl}image/index/lian_qing.png`">
-                                    <p>联擎</p>
-                                    <p>大数据基础平台</p>
+                                    <img :src="`${$baseUrl}image/index/lian_qing_bg.png`">
+                                    <a href="javacript:void(0);">
+                                      <img :src="`${$baseUrl}image/index/lian_qing.png`">
+                                      <p>联擎</p>
+                                      <p>大数据基础平台</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
-                                    <img :src="`${$baseUrl}image/index/lian_rong.png`">
-                                    <p>联融</p>
-                                    <p>数据治理融合汇聚平台</p>
+                                    <img :src="`${$baseUrl}image/index/lian_rong_bg.png`">
+                                    <a href="javacript:void(0);">
+                                      <img :src="`${$baseUrl}image/index/lian_rong.png`">
+                                      <p>联融</p>
+                                      <p>数据治理融合汇聚平台</p>
+                                    </a>
                                   </div>
                                 </el-col>
                               </el-row>
@@ -203,15 +221,34 @@
   }
   .menu_button{
     width: 181px;
+    position: relative;
     height: 151px;
     margin: auto;
     padding: 20px;
     cursor: pointer;
-    img{
-      margin: 0 40px;
+    &>img{
+      position: absolute;
+      top:0px;
+      left:0px;
+      opacity:0;
+      z-index: 1;
+      width: 180px;
+      height: 180px;
+      margin: 5px 20px;
+      transition:opacity 0.5s ease-in-out;
+    }
+    &:hover>img{
+      opacity:1;
+    }
+    a{
+      position: absolute;
+      z-index:2;
+      img{
+        margin: 0 40px;
+      }
     }
     p{
-       text-align: center;
+      text-align: center;
       font-size:14px;
       margin:5px;
       paddiing:0px;
