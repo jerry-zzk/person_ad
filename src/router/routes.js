@@ -319,13 +319,13 @@ const frameIn = [
       {
         path: 'riskAssessment',
         name: `${pre}riskAssessment`,
-        component: () => import('@/pages/loanMonitor'),
+        component: () => import('@/pages/riskRating'),
         meta: { ...meta, title: '客户风险评估' }
       },
       {
         path: 'lossRepair',
         name: `${pre}lossRepair`,
-        component: () => import('@/pages/loanMonitor'),
+        component: () => import('@/pages/riskRating'),
         meta: { ...meta, title: '失联修复' }
       },
       {
