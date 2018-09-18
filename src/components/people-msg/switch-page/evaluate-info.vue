@@ -1500,10 +1500,7 @@ export default {
 		    ]
 		})
     },
-<<<<<<< HEAD
-=======
     // 热力图
->>>>>>> 09d23dbe87940f91e6828d52ed0d5c4c65e8079f
     drawHeatMap(){
       let _this = this;
       let option = {
