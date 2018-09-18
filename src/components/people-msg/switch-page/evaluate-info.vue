@@ -210,7 +210,7 @@
 									<p>详情</p>
 									<table>
 										<tr>
-											<td class="first color1">张三/td>
+											<td class="first color1">张三</td>
 											<td>黑名单</td>
 											<td>日期</td>
 											<td>微博转发</td>
@@ -421,7 +421,7 @@ export default {
     this.initChart8();
     this.initChart9();
     this.initChart10();
-    this.drawHeatMap()
+    this.drawHeatMap();
   }, 
   beforeDestroy() {
     if (!this.chart) {
@@ -497,187 +497,734 @@ export default {
       	this.chart2 = echarts.init(this.$refs.myEchart2);
       	// 把配置和数据放这里
       	this.chart2.setOption({
-		    title: {
-		        text: '基础雷达图'
-		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
-		            }
-		        ]
-		    }]
-		})
+		     title: {
+		         text: ''
+		     },
+		     tooltip: {
+		         formatter: function(x) {
+		             return x.data.des;
+		         }
+		     },
+		     animationDuration: 1500,
+		     animationEasingUpdate: 'quinticInOut',
+		     series: [{
+		        
+		         type: 'graph',
+		         layout: 'force',
+		         symbolSize: 58,
+		         roam: true,
+		         edgeSymbol: ['circle', 'arrow'],
+		         // edgeSymbolSize: [80, 10],
+		         edgeLabel: {
+		             normal: {
+		                 textStyle: {
+		                     fontSize: 20
+		                 }
+		             }
+		         },
+		         focusNodeAdjacency: true,
+		         force: {
+		             repulsion: 2500,
+		             edgeLength: [10, 50]
+		         },
+		         draggable: true,
+		         itemStyle: {
+		             normal: {
+		                 color: '#4b565b'
+		             }
+		         },
+		         lineStyle: {
+		             color: 'source',
+		             curveness: 0.3,
+		             
+		         },
+		         edgeLabel: {
+		             normal: {
+		                 show: true,
+		                 formatter: function(x) {
+		                     return x.data.name;
+		                 }
+		             }
+		         },
+		         label: {
+		             normal: {
+		                 show: true,
+		                 textStyle: {}
+		             }
+		         },
+		         data: [{
+		             name: '侯亮平',
+		             des: '最高检反贪局侦查处处长，汉东省人民检察院副检察长兼反贪局局长。<br/>经过与腐败违法分子的斗争，最终将一批腐败分子送上了审判台，<br/>正义战胜邪恶，自己也迎来了成长。',
+		             symbolSize: 100,
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '李达康',
+		             des: '汉东省省委常委，京州市市委书记。是一个正义无私的好官。<br/>但为人过于爱惜自己的羽毛，对待身边的亲人和朋友显得有些无情。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '祁同伟',
+		             des: '汉东省公安厅厅长',
+		             symbolSize: 100
+		         }, {
+		             name: '陈岩石',
+		             des: '离休干部、汉东省检察院前常务副检察长。充满正义，平凡而普通的共 产 党人。<br/>对大老虎赵立春，以各种形式执着举报了十二年。<br/>在这场关系党和国家生死存亡的斗争中，老人家以耄耋高龄，<br/>义无反顾地背起了炸 药包，在反腐胜利前夕因病去世。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '陆亦可',
+		             des: '汉东省检察院反贪局一处处长',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '高育良',
+		             des: '汉东省省委副书记兼政法委书记。年近六十，是一个擅长太极功夫的官场老手。侯亮平、陈海和祁同伟是其学生。',
+		             symbolSize: 100
+		         }, {
+		             name: '沙瑞金',
+		             des: '汉东省省委书记',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '高小琴',
+		             des: '山水集团董事长，是一位叱咤于政界和商界的风云人物，处事圆滑、精明干练。'
+		         }, {
+		             name: '高小凤'
+		         }, {
+		             name: '赵东来',
+		             des: '汉东省京州市公安局局长，充满正义，整治恶势力，<br/>在与检察部门的合作中从最初的质疑到之后的通力配合。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '程度',
+		             des: '汉东省京州市公安局光明区分局局长，因犯错误，被李达康书记和赵东来局长点名要清除公安队伍。<br/>但在高小琴的帮助下，祁同伟调他当上了省公安厅办公室副主任。<br/>尽管程度逃避了所有罪责，上面也有人保他，<br/>但最终还是在反贪局局长侯亮平的缜密侦查下被绳之于法。',
+		         }, {
+		             name: '吴惠芬',
+		             des: '汉东省省委副书记高育良的妻子，汉东大学明史教授。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '赵瑞龙',
+		             des: '副国级人物赵立春的公子哥，官二代，打着老子的旗子，<br/>黑白两道通吃，可谓呼风唤雨，权倾一时。',
+		         }, {
+		             name: '赵立春',
+		             des: '副国级领导人，曾经的改革闯将，在权利面前，显得极其渺小。',
+		         }, {
+		             name: '陈海',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '梁璐',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '刘新建'
+		         }, {
+		             name: '欧阳菁'
+		         }, {
+		             name: '吴心怡',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '蔡成功'
+		         }, {
+		             name: '丁义珍'
+		         }],
+		         links: [{
+		             source: '高育良',
+		             target: '侯亮平',
+		             name: '师生',
+		             des: '侯亮平是高育良的得意门生'
+		         }, {
+		             source: '高育良',
+		             target: '祁同伟',
+		             name: '师生'
+		         }, {
+		             source: '赵立春',
+		             target: '高育良',
+		             name: "前领导"
+		         }, {
+		             source: '赵立春',
+		             target: '赵瑞龙',
+		             name: "父子"
+		         }, {
+		             source: '赵立春',
+		             target: '刘新建',
+		             name: "前部队下属"
+		         }, {
+		             source: '李达康',
+		             target: '赵立春',
+		             name: "前任秘书"
+		         }, {
+		             source: '祁同伟',
+		             target: '高小琴',
+		             name: "情人"
+		         }, {
+		             source: '陈岩石',
+		             target: '陈海',
+		             name: "父子"
+		         }, {
+		             source: '陆亦可',
+		             target: '陈海',
+		             name: "属下"
+		         }, {
+		             source: '沙瑞金',
+		             target: '陈岩石',
+		             name: "故人"
+		         }, {
+		             source: '祁同伟',
+		             target: '陈海',
+		             name: "师哥"
+		         }, {
+		             source: '祁同伟',
+		             target: '侯亮平',
+		             name: "师哥"
+		         }, {
+		             source: '侯亮平',
+		             target: '陈海',
+		             name: "同学，生死朋友"
+		         }, {
+		             source: '高育良',
+		             target: '吴惠芬',
+		             name: "夫妻"
+		         }, {
+		             source: '陈海',
+		             target: '赵东来',
+		             name: "朋友"
+		         }, {
+		             source: '高小琴',
+		             target: '高小凤',
+		             name: "双胞胎",
+		             symbolSize: '1'
+		         }, {
+		             source: '赵东来',
+		             target: '陆亦可',
+		             name: "爱慕"
+		         }, {
+		             source: '祁同伟',
+		             target: '程度',
+		             name: "领导"
+		         }, {
+		             source: '高育良',
+		             target: '高小凤',
+		             name: "情人"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '祁同伟',
+		             name: "勾结",
+		             symbolSize: '1',
+		         }, {
+		             source: '李达康',
+		             target: '赵东来',
+		             name: "领导"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '程度',
+		             name: "领导"
+		         }, {
+		             source: '沙瑞金',
+		             target: '李达康',
+		             name: "领导"
+		         }, {
+		             source: '沙瑞金',
+		             target: '高育良',
+		             name: "领导"
+		         }, {
+		             source: '祁同伟',
+		             target: '梁璐',
+		             name: "夫妻"
+		         }, {
+		             source: '吴惠芬',
+		             target: '梁璐',
+		             name: "朋友"
+		         }, {
+		             source: '李达康',
+		             target: '欧阳菁',
+		             name: "夫妻"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '刘新建',
+		             name: "洗钱工具"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '高小琴',
+		             name: "勾结，腐化",
+		             symbolSize: '1'
+		         }, {
+		             source: '赵瑞龙',
+		             target: '高小凤',
+		             name: "腐化"
+		         }, {
+		             source: '吴心怡',
+		             target: '陆亦可',
+		             name: "母女"
+		         }, {
+		             source: '吴心怡',
+		             target: '吴惠芬',
+		             name: "姐妹"
+		         }, {
+		             source: '蔡成功',
+		             target: '侯亮平',
+		             name: "发小"
+		         }, {
+		             source: '蔡成功',
+		             target: '欧阳菁',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '欧阳菁',
+		             target: '刘新建',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '刘新建',
+		             target: '赵瑞龙',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '李达康',
+		             target: '丁义珍',
+		             name: "领导"
+		         }, {
+		             source: '高小琴',
+		             target: '丁义珍',
+		             name: "策划出逃"
+		         }, {
+		             source: '祁同伟',
+		             target: '丁义珍',
+		             name: "勾结"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '丁义珍',
+		             name: "勾结"
+		         }]
+		     }]
+		 })
     },
     initChart3() {
       	this.chart3 = echarts.init(this.$refs.myEchart3);
       	// 把配置和数据放这里
       	this.chart3.setOption({
-		    title: {
-		        text: '基础雷达图'
-		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
-		            }
-		        ]
-		    }]
+		     title: {
+		         text: ''
+		     },
+		     tooltip: {
+		         formatter: function(x) {
+		             return x.data.des;
+		         }
+		     },
+		     animationDuration: 1500,
+		     animationEasingUpdate: 'quinticInOut',
+		     series: [{
+		        
+		         type: 'graph',
+		         layout: 'force',
+		         symbolSize: 58,
+		         roam: true,
+		         edgeSymbol: ['circle', 'arrow'],
+		         // edgeSymbolSize: [80, 10],
+		         edgeLabel: {
+		             normal: {
+		                 textStyle: {
+		                     fontSize: 20
+		                 }
+		             }
+		         },
+		         focusNodeAdjacency: true,
+		         force: {
+		             repulsion: 2500,
+		             edgeLength: [10, 50]
+		         },
+		         draggable: true,
+		         itemStyle: {
+		             normal: {
+		                 color: '#4b565b'
+		             }
+		         },
+		         lineStyle: {
+		             color: 'source',
+		             curveness: 0.3,
+		             
+		         },
+		         edgeLabel: {
+		             normal: {
+		                 show: true,
+		                 formatter: function(x) {
+		                     return x.data.name;
+		                 }
+		             }
+		         },
+		         label: {
+		             normal: {
+		                 show: true,
+		                 textStyle: {}
+		             }
+		         },
+		         data: [{
+		             name: '侯亮平',
+		             des: '最高检反贪局侦查处处长，汉东省人民检察院副检察长兼反贪局局长。<br/>经过与腐败违法分子的斗争，最终将一批腐败分子送上了审判台，<br/>正义战胜邪恶，自己也迎来了成长。',
+		             symbolSize: 100,
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '李达康',
+		             des: '汉东省省委常委，京州市市委书记。是一个正义无私的好官。<br/>但为人过于爱惜自己的羽毛，对待身边的亲人和朋友显得有些无情。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '祁同伟',
+		             des: '汉东省公安厅厅长',
+		             symbolSize: 100
+		         }, {
+		             name: '陈岩石',
+		             des: '离休干部、汉东省检察院前常务副检察长。充满正义，平凡而普通的共 产 党人。<br/>对大老虎赵立春，以各种形式执着举报了十二年。<br/>在这场关系党和国家生死存亡的斗争中，老人家以耄耋高龄，<br/>义无反顾地背起了炸 药包，在反腐胜利前夕因病去世。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '陆亦可',
+		             des: '汉东省检察院反贪局一处处长',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '高育良',
+		             des: '汉东省省委副书记兼政法委书记。年近六十，是一个擅长太极功夫的官场老手。侯亮平、陈海和祁同伟是其学生。',
+		             symbolSize: 100
+		         }, {
+		             name: '沙瑞金',
+		             des: '汉东省省委书记',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '高小琴',
+		             des: '山水集团董事长，是一位叱咤于政界和商界的风云人物，处事圆滑、精明干练。'
+		         }, {
+		             name: '高小凤'
+		         }, {
+		             name: '赵东来',
+		             des: '汉东省京州市公安局局长，充满正义，整治恶势力，<br/>在与检察部门的合作中从最初的质疑到之后的通力配合。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '程度',
+		             des: '汉东省京州市公安局光明区分局局长，因犯错误，被李达康书记和赵东来局长点名要清除公安队伍。<br/>但在高小琴的帮助下，祁同伟调他当上了省公安厅办公室副主任。<br/>尽管程度逃避了所有罪责，上面也有人保他，<br/>但最终还是在反贪局局长侯亮平的缜密侦查下被绳之于法。',
+		         }, {
+		             name: '吴惠芬',
+		             des: '汉东省省委副书记高育良的妻子，汉东大学明史教授。',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '赵瑞龙',
+		             des: '副国级人物赵立春的公子哥，官二代，打着老子的旗子，<br/>黑白两道通吃，可谓呼风唤雨，权倾一时。',
+		         }, {
+		             name: '赵立春',
+		             des: '副国级领导人，曾经的改革闯将，在权利面前，显得极其渺小。',
+		         }, {
+		             name: '陈海',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '梁璐',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'red'
+		                 }
+		             }
+		         }, {
+		             name: '刘新建'
+		         }, {
+		             name: '欧阳菁'
+		         }, {
+		             name: '吴心怡',
+		             itemStyle: {
+		                 normal: {
+		                     color: 'green'
+		                 }
+		             }
+		         }, {
+		             name: '蔡成功'
+		         }, {
+		             name: '丁义珍'
+		         }],
+		         links: [{
+		             source: '高育良',
+		             target: '侯亮平',
+		             name: '师生',
+		             des: '侯亮平是高育良的得意门生'
+		         }, {
+		             source: '高育良',
+		             target: '祁同伟',
+		             name: '师生'
+		         }, {
+		             source: '赵立春',
+		             target: '高育良',
+		             name: "前领导"
+		         }, {
+		             source: '赵立春',
+		             target: '赵瑞龙',
+		             name: "父子"
+		         }, {
+		             source: '赵立春',
+		             target: '刘新建',
+		             name: "前部队下属"
+		         }, {
+		             source: '李达康',
+		             target: '赵立春',
+		             name: "前任秘书"
+		         }, {
+		             source: '祁同伟',
+		             target: '高小琴',
+		             name: "情人"
+		         }, {
+		             source: '陈岩石',
+		             target: '陈海',
+		             name: "父子"
+		         }, {
+		             source: '陆亦可',
+		             target: '陈海',
+		             name: "属下"
+		         }, {
+		             source: '沙瑞金',
+		             target: '陈岩石',
+		             name: "故人"
+		         }, {
+		             source: '祁同伟',
+		             target: '陈海',
+		             name: "师哥"
+		         }, {
+		             source: '祁同伟',
+		             target: '侯亮平',
+		             name: "师哥"
+		         }, {
+		             source: '侯亮平',
+		             target: '陈海',
+		             name: "同学，生死朋友"
+		         }, {
+		             source: '高育良',
+		             target: '吴惠芬',
+		             name: "夫妻"
+		         }, {
+		             source: '陈海',
+		             target: '赵东来',
+		             name: "朋友"
+		         }, {
+		             source: '高小琴',
+		             target: '高小凤',
+		             name: "双胞胎",
+		             symbolSize: '1'
+		         }, {
+		             source: '赵东来',
+		             target: '陆亦可',
+		             name: "爱慕"
+		         }, {
+		             source: '祁同伟',
+		             target: '程度',
+		             name: "领导"
+		         }, {
+		             source: '高育良',
+		             target: '高小凤',
+		             name: "情人"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '祁同伟',
+		             name: "勾结",
+		             symbolSize: '1',
+		         }, {
+		             source: '李达康',
+		             target: '赵东来',
+		             name: "领导"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '程度',
+		             name: "领导"
+		         }, {
+		             source: '沙瑞金',
+		             target: '李达康',
+		             name: "领导"
+		         }, {
+		             source: '沙瑞金',
+		             target: '高育良',
+		             name: "领导"
+		         }, {
+		             source: '祁同伟',
+		             target: '梁璐',
+		             name: "夫妻"
+		         }, {
+		             source: '吴惠芬',
+		             target: '梁璐',
+		             name: "朋友"
+		         }, {
+		             source: '李达康',
+		             target: '欧阳菁',
+		             name: "夫妻"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '刘新建',
+		             name: "洗钱工具"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '高小琴',
+		             name: "勾结，腐化",
+		             symbolSize: '1'
+		         }, {
+		             source: '赵瑞龙',
+		             target: '高小凤',
+		             name: "腐化"
+		         }, {
+		             source: '吴心怡',
+		             target: '陆亦可',
+		             name: "母女"
+		         }, {
+		             source: '吴心怡',
+		             target: '吴惠芬',
+		             name: "姐妹"
+		         }, {
+		             source: '蔡成功',
+		             target: '侯亮平',
+		             name: "发小"
+		         }, {
+		             source: '蔡成功',
+		             target: '欧阳菁',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '欧阳菁',
+		             target: '刘新建',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '刘新建',
+		             target: '赵瑞龙',
+		             name: "举报",
+		             lineStyle: {
+		                 normal: {
+		                     type: 'dotted',
+		                     color: '#000'
+		                 }
+		             }
+		         }, {
+		             source: '李达康',
+		             target: '丁义珍',
+		             name: "领导"
+		         }, {
+		             source: '高小琴',
+		             target: '丁义珍',
+		             name: "策划出逃"
+		         }, {
+		             source: '祁同伟',
+		             target: '丁义珍',
+		             name: "勾结"
+		         }, {
+		             source: '赵瑞龙',
+		             target: '丁义珍',
+		             name: "勾结"
+		         }]
+		     }]
 		})
     },
     initChart4() {
       	this.chart4 = echarts.init(this.$refs.myEchart4);
       	// 把配置和数据放这里
       	this.chart4.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    xAxis: {
+		        type: 'category',
+		        boundaryGap: false,
+		        
+		        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
 		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c}次"
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
+		    yAxis: {
+		        type: 'value'
 		    },
 		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
-		            }
-		        ]
-		    }]
-		})
-    },
-    initChart4() {
-      	this.chart4 = echarts.init(this.$refs.myEchart4);
-      	// 把配置和数据放这里
-      	this.chart4.setOption({
-		    title: {
-		        text: '基础雷达图'
-		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
-		            }
-		        ]
+		        name:'高危消费行为',
+		        data: [420, 432, 401, 334, 390, 510, 520],
+		        type: 'line',
+		        smooth: true,
+		        areaStyle: {}
 		    }]
 		})
     },
@@ -685,46 +1232,26 @@ export default {
       	this.chart5 = echarts.init(this.$refs.myEchart5);
       	// 把配置和数据放这里
       	this.chart5.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    xAxis: {
+		        type: 'category',
+		        boundaryGap: false,
+		        
+		        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
 		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c}"
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
+		    yAxis: {
+		        type: 'value'
 		    },
 		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
-		            }
-		        ]
+		        name:'贷款类APP注册',
+		        data: [820, 932, 901, 934, 1290, 1330, 1320],
+		        type: 'line',
+		        smooth: true,
+		        areaStyle: {}
 		    }]
 		})
     },
@@ -732,94 +1259,83 @@ export default {
       	this.chart6 = echarts.init(this.$refs.myEchart6);
       	// 把配置和数据放这里
       	this.chart6.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    title : {
+		        text: '某站点用户访问来源',
+		        subtext: '纯属虚构',
+		        x:'center'
 		    },
-		    tooltip: {},
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
 		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		        orient: 'vertical',
+		        left: 'left',
+		        data: ['赌博','奢侈品','出入境跨境消费','娱乐场所','XXX']
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
+		    series : [
+		        {
+		            name: '搜索行为',
+		            type: 'pie',
+		            center: ['50%', '60%'],
+		            data:[
+		                {value:3351, name:'赌博'},
+		                {value:3101, name:'奢侈品'},
+		                {value:1234, name:'娱乐场所'},
+		                {value:1325, name:'出入境跨境消费'},
+		                {value:1148, name:'XXX'}
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
 		            }
-		        ]
-		    }]
+		        }
+		    ]
 		})
     },
     initChart7() {
       	this.chart7 = echarts.init(this.$refs.myEchart7);
       	// 把配置和数据放这里
       	this.chart7.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+		            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+		        }
 		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
+		    xAxis : [
+		        {
+		            type : 'category',
+		            data : ['PiPi', '美团', '人人贷', '招行', '拍拍贷'],
+		            axisTick: {
+		                alignWithLabel: true
 		            }
-		        ]
-		    }]
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value'
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'直接访问',
+		            type:'bar',
+		            barWidth: '60%',
+		            data:[10, 12, 20, 4, 3]
+		        }
+		    ]
 		})
     },
     initChart8() {
@@ -827,140 +1343,161 @@ export default {
       	// 把配置和数据放这里
       	this.chart8.setOption({
 		    title: {
-		        text: '基础雷达图'
+		        text: '堆叠区域图'
 		    },
-		    tooltip: {},
-		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'cross',
+		            label: {
+		                backgroundColor: '#6a7985'
 		            }
-		        ]
-		    }]
+		        }
+		    },
+		    legend: {
+		        data:['qq','微博','微信','高危行为']
+		    },
+		    toolbox: {
+		        feature: {
+		            saveAsImage: {}
+		        }
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            data : ['一月','二月','三月','四月','五月','六月','七月']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value'
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'高危行为',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {color:"#bad654"}},
+		            data:[120, 132, 101, 134, 90, 230, 210]
+		        },
+		        {
+		            name:'微信',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {color:"#76cbc5"}},
+		            data:[220, 182, 191, 234, 290, 330, 310]
+		        },
+		        {
+		            name:'微博',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {color:"#65a4c3"}},
+		            data:[150, 232, 201, 154, 190, 330, 410]
+		        },
+		        {
+		            name:'qq',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {color:"#6e82b9"}},
+		            data:[320, 332, 301, 334, 390, 330, 320]
+		        },
+
+		    ]
 		})
     },
     initChart9() {
       	this.chart9 = echarts.init(this.$refs.myEchart9);
       	// 把配置和数据放这里
       	this.chart9.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    title : {
+		        text: '某站点用户访问来源',
+		        subtext: '纯属虚构',
+		        x:'center'
 		    },
-		    tooltip: {},
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
 		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		        orient: 'vertical',
+		        left: 'left',
+		        data: ['理财','贷款','汽车','新闻','博彩']
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
+		    series : [
+		        {
+		            name: '浏览行为',
+		            type: 'pie',
+		            radius: ['50%', '70%'],
+		            center: ['50%', '60%'],
+		            data:[
+		                {value:335, name:'理财'},
+		                {value:310, name:'贷款'},
+		                {value:234, name:'汽车'},
+		                {value:135, name:'新闻'},
+		                {value:1548, name:'博彩'}
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
 		            }
-		        ]
-		    }]
+		        }
+		    ]
 		})
     },
     initChart10() {
       	this.chart10 = echarts.init(this.$refs.myEchart10);
       	// 把配置和数据放这里
       	this.chart10.setOption({
-		    title: {
-		        text: '基础雷达图'
+		    title : {
+		        text: '某站点用户访问来源',
+		        subtext: '纯属虚构',
+		        x:'center'
 		    },
-		    tooltip: {},
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
 		    legend: {
-		        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+		        orient: 'vertical',
+		        left: 'left',
+		        data: ['高回报','骗贷','高利贷','洗钱','资金转移']
 		    },
-		    radar: {
-		        // shape: 'circle',
-		        name: {
-		            textStyle: {
-		                color: '#fff',
-		                backgroundColor: '#999',
-		                borderRadius: 3,
-		                padding: [3, 5]
-		           }
-		        },
-		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
-		        ]
-		    },
-		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
-		        type: 'radar',
-		        // areaStyle: {normal: {}},
-		        data : [
-		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
-		            },
-		             {
-		                value : [5000, 14000, 28000, 31000, 42000, 21000],
-		                name : '实际开销（Actual Spending）'
+		    series : [
+		        {
+		            name: '搜索行为',
+		            type: 'pie',
+		            radius: ['50%', '70%'],
+		            center: ['50%', '60%'],
+		            data:[
+		                {value:3351, name:'高回报'},
+		                {value:3101, name:'骗贷'},
+		                {value:1234, name:'高利贷'},
+		                {value:1325, name:'洗钱'},
+		                {value:1148, name:'资金转移'}
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
 		            }
-		        ]
-		    }]
+		        }
+		    ]
 		})
     },
     // 热力图
@@ -999,7 +1536,7 @@ export default {
           data: _this.heatMapData
         }]
       }
-      let heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
+      const heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
       heatMap_chart.setOption(option)
     }
   }
