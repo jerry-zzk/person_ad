@@ -24,10 +24,11 @@
               @submit="handleSubmit"
               ref="header"  @zk = "zk"/>
             <demo-page-main
+            style="margin-bottom:15px;"
               :table-data="table"
               :loading="loading" v-show="ok"/>
 
-            <el-card v-show="ok1">
+            <el-card v-show="ok1" style="margin-bottom:15px;">
               <el-row :gutter="10">
                 <el-col :span="24">
                 <div class="col col-l">
