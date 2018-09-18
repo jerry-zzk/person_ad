@@ -1260,8 +1260,8 @@ export default {
       	// 把配置和数据放这里
       	this.chart6.setOption({
 		    title : {
-		        text: '某站点用户访问来源',
-		        subtext: '纯属虚构',
+		        text: '',
+		        subtext: '',
 		        x:'center'
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
@@ -1343,7 +1343,7 @@ export default {
       	// 把配置和数据放这里
       	this.chart8.setOption({
 		    title: {
-		        text: '堆叠区域图'
+		        text: ''
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
 		    tooltip : {
@@ -1419,9 +1419,8 @@ export default {
       	// 把配置和数据放这里
       	this.chart9.setOption({
 		    title : {
-		        text: '某站点用户访问来源',
-		        subtext: '纯属虚构',
-		        x:'center'
+		        text: '',
+		        subtext: '',
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
 		    tooltip : {
@@ -1462,9 +1461,8 @@ export default {
       	// 把配置和数据放这里
       	this.chart10.setOption({
 		    title : {
-		        text: '某站点用户访问来源',
-		        subtext: '纯属虚构',
-		        x:'center'
+		        text: '',
+		        subtext: '',
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
 		    tooltip : {
