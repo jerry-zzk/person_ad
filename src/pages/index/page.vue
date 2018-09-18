@@ -5,12 +5,14 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
+      <p @click="open1">test</p>
       <line-chart> </line-chart>
     </el-card>
     <!-- 反欺诈列表 -->
     <topBox></topBox>
     <!--人员信息弹窗-->
     <people-info-popup></people-info-popup>
+    <people-info-popup1></people-info-popup1>
 
   </d2-container>
 </template>
@@ -47,9 +49,12 @@ export default {
   mounted(){
   },
   methods:{
-    getChartData(){
+      getChartData(){
 
-    },
+      },
+      open1(){
+          this.$store.commit('setData1',true)
+      }
   }
 }
 </script>
