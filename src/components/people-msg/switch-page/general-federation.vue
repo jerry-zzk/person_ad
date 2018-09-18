@@ -1065,9 +1065,10 @@
                     line-height: 40px;
                     padding-left: 15%;
                     box-sizing: border-box;
-                    border: 1px solid rgba(0,0,0,0.2);
+                    border: 1px solid rgba(0,0,0,0.12);
                     font-family: '楷体';
                     overflow: hidden;
+                    font-size: 14px;
                 }
                 .txt-left{
                     border-left: 4px solid rgb(188,215,84);
