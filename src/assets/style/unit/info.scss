@@ -275,6 +275,26 @@ $green4:#6e83ba;
 		}
 	}
 }
+
+.container{
+	padding:20px;
+	border:1px solid $gray;
+	box-shadow:0px 0px 1px 1px $gray;
+	.title{
+		font-size:18px;
+		padding-left:20px;
+		&:before{
+			position: absolute;
+			content:" ";
+			display:block;
+			width:10px;
+
+		}
+	}
+}
+
+
+
 // frank
 .detail-body{
   padding: 0 20px;
@@ -364,3 +384,5 @@ $green4:#6e83ba;
 	border: 1px solid #ddd;
 	border-top: 4px solid #409efe;
 }
+
+
