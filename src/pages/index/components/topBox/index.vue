@@ -99,7 +99,6 @@ export default {
   },
   methods:{
     openPeopleInfoPopup(){
-        console.log("fds")
         this.$store.commit('setData',true)
     }
   }

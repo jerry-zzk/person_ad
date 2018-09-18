@@ -71,11 +71,12 @@
         box-sizing: border-box;
         position: relative;
         .search{
-            height: 40px;
+            height: 35px;
             margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
             input{
                 width: 100%;
-                height: 40px;
+                height: 35px;
                 border:1px solid rgba(0,0,0,0.2);
                 border-radius: 20px;
                 outline: none;
@@ -86,7 +87,7 @@
             .fa{
                 position: absolute;
                 right: 34px;
-                top:34px;
+                top:30px;
                 cursor: pointer;
             }
         }

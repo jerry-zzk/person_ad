@@ -1,5 +1,5 @@
 <template>
-    <div class="people-info-popup" v-if="dialogVisible">
+    <div class="people-info-popup1" v-if="dialogVisible">
         <span class="close el-icon-close" @click="handleClose"></span>
         <div class="content" :class="{show:isShow}">
             <el-container style="height: 100%;">
@@ -50,24 +50,40 @@
                     <el-button class="msg-button" size="mini" type="primary">打印</el-button>
                     <el-button class="msg-button" size="mini" type="primary">导出</el-button>
                     <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-                        <el-tab-pane label="欺诈告警" name="first">
+                        <el-tab-pane label="总体概况" name="first">
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
-                                    <fraudulentAlarm></fraudulentAlarm>
+                                    <first></first>
                                 </el-scrollbar>
                             </div>
 
                         </el-tab-pane>
-                        <el-tab-pane label="评估详情" name="second">
+                        <el-tab-pane label="失联倾向异常" name="second">
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
-                                <evaluateInfo></evaluateInfo>
+                                <second></second>
                                 </el-scrollbar>
                             </div>
                         </el-tab-pane>
-                        <el-tab-pane label="联通详单" name="third">
+                        <el-tab-pane label="关联异常" name="third">
                             <div class="wrap">
-                                <generalFederation></generalFederation>
+                                <el-scrollbar style="height: 100%">
+                                    <third></third>
+                                </el-scrollbar>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="位置异常" name="four">
+                            <div class="wrap">
+                                <el-scrollbar style="height: 100%">
+                                    <four></four>
+                                </el-scrollbar>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="网络行为异常" name="five">
+                            <div class="wrap">
+                                <el-scrollbar style="height: 100%">
+                                    <five></five>
+                                </el-scrollbar>
                             </div>
                         </el-tab-pane>
                     </el-tabs>
@@ -80,11 +96,13 @@
 
 <script>
     export default {
-        name:"people-info-popup",
+        name:"people-info-popup1",
         components:{
-            fraudulentAlarm:()=>import('./switch-page/fraudulent-alarm.vue'),
-            generalFederation:()=>import('./switch-page/general-federation.vue'),
-            evaluateInfo:()=>import('./switch-page/evaluate-info.vue')
+            first:()=>import('./switch-page/first.vue'),
+            second:()=>import('./switch-page/second.vue'),
+            third:()=>import('./switch-page/third.vue'),
+            four:()=>import('./switch-page/four.vue'),
+            five:()=>import('./switch-page/five.vue'),
         },
         data() {
             return {
@@ -95,7 +113,7 @@
         computed: {
             dialogVisible: {
                 get() {
-                    return this.$store.state.peopleInfoPopup.showPeopleInfoPopup
+                    return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1
                 },
                 set() {
 
@@ -114,7 +132,7 @@
         },
         methods: {
             handleClose() {
-                this.$store.commit('setData', false)
+                this.$store.commit('setData1', false)
             },
             handleClick(tab, event) {
                 console.log(tab, event);
@@ -123,7 +141,7 @@
     }
 </script>
 <style lang="scss" scoped>
-    .people-info-popup {
+    .people-info-popup1 {
         position: fixed;
         top: 0;
         left: 0;
@@ -131,7 +149,7 @@
         width: 100%;
         height: 100%;
         padding: 30px;
-        z-index: 9900;
+        z-index: 9901;
         box-sizing: border-box;
         .close {
             position: absolute;
@@ -202,7 +220,7 @@
                     }
                 };
                 .wrap {
-                    height: calc(100vh - 120px);
+                    height: calc(100vh - 110px);
                 }
             }
         }
