@@ -14,7 +14,7 @@
           :value="logLengthError"
           :is-dot="logLengthError === 0">
           <d2-icon
-            :name="logLengthError === 0 ? 'dot-circle-o' : 'bell-o'"
+            :name="logLengthError === 0 ? 'dot-circle-o' : 'envelope-o'"
             style="font-size: 20px"/>
         </el-badge>
         <d2-icon
