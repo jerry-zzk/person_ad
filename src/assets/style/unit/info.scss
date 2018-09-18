@@ -6,11 +6,6 @@ $green1:#bcd754;
 $green2:#76cbc4;
 $green3:#8abbd2;
 $green4:#6e83ba;
-/**** fix *****/
-.el-tabs__header{
-    margin:0px!important;
-}
-/**** fix *****/
 #evaluete-info{
 	height:100%;
 	#evaluete-info-header{
@@ -85,8 +80,8 @@ $green4:#6e83ba;
 		left:0px;
 		right:0px;
 		height:calc(100% - 55px);
-		padding: 20px;
 		#evaluete-info-main-inner{
+			padding-bottom: 20px;
 			p.title{
 				margin:0px;
 				font-size:18px;
@@ -97,7 +92,7 @@ $green4:#6e83ba;
 				    position: absolute;
 				    top: 9px;
 				    left: 9px;
-				    background: #409efe;
+				    background: $blue;
 				    border-radius: 50%;
 				    width: 6px;
 				    height: 6px;
@@ -112,8 +107,9 @@ $green4:#6e83ba;
 				}
 			}
 			.section{
-				height:580px;
-				width:100%;
+				min-height:700px;
+				width:calc(100% - 40px);
+				padding:20px;
 				div.container>p{
 					color:$red;
 					margin:5px 0;
@@ -146,7 +142,7 @@ $green4:#6e83ba;
 
 					border-spacing:0px 4px;
 
-					width:calc(100% - 20px);
+					width:calc(100% - 100px);
 					margin:10px;
 					tr{
 						text-align:center;
@@ -206,8 +202,8 @@ $green4:#6e83ba;
 				.echart{
 					margin:10px;
 					padding:20px;
-					width:calc(100% - 60px);
-					height:200px;
+					width:calc(100% - 100px);
+					height:360px;
 					border:1px solid $gray;
 					&:before{
 						content:" ";

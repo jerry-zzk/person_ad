@@ -15,165 +15,171 @@
             <div class="content">
                 <div class="col1 left">身份欺诈</div>
                 <div class="right">
-                    <span class="its">身份证号正确性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">0</span>
+                    <span class="its its1">身份证号正确性</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3">0</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">手机号码真实性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">手机号码真实性</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">地址信息正确性</span>
-                    <span class="its" style="color: orange">疑似欺诈</span>
-                    <span class="its">4.8</span>
+                    <span class="its its1">地址信息正确性</span>
+                    <span class="its its2" style="color: orange">疑似欺诈</span>
+                    <span class="its its3">4.8</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">教育信息真实性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">&nbsp;</span>
+                    <span class="its its1">教育信息真实性</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3" >&nbsp;</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">亲属信息正确性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">亲属信息正确性</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
             </div>
             <div class="content">
                 <div class="col1 left">黑名单欺诈</div>
                 <div class="right">
-                    <span class="its">身份证号正确性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">0</span>
+                    <span class="its its1">身份证号黑名单</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3">0</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">手机号码真实性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">手机号码真实性</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">地址信息正确性</span>
-                    <span class="its" style="color: orange">疑似欺诈</span>
-                    <span class="its">4.8</span>
+                    <span class="its its1">手机号黑名单</span>
+                    <span class="its its2" style="color: orange">疑似欺诈</span>
+                    <span class="its its3">4.8</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">教育信息真实性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">&nbsp;</span>
+                    <span class="its its1">IP地址黑名单</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3" >&nbsp;</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">亲属信息正确性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">虚拟证号黑名单</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
             </div>
             <div class="content">
                 <div class="col1 left">金融欺诈</div>
                 <div class="right">
-                    <span class="its">身份证号正确性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">0</span>
+                    <span class="its its1">多金融平台申请</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3">0</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">手机号码真实性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">信用卡还款逾期</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">地址信息正确性</span>
-                    <span class="its" style="color: orange">疑似欺诈</span>
-                    <span class="its">4.8</span>
+                    <span class="its its1">平台拒贷情况</span>
+                    <span class="its its2" style="color: orange">疑似欺诈</span>
+                    <span class="its its3">4.8</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">教育信息真实性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">&nbsp;</span>
+                    <span class="its its1">其他贷款逾期</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3" >&nbsp;</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">亲属信息正确性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">多平台催收</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
             </div>
             <div class="content">
-                <div class="col1 left">设备欺诈</div>
+                <div class="col1 left" style="height: 252px">设备欺诈</div>
                 <div class="right">
-                    <span class="its">身份证号正确性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">0</span>
+                    <span class="its its1">同物理设备关联多手机号码</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3">0</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">手机号码真实性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">同物理设备关联多虚拟号码</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">地址信息正确性</span>
-                    <span class="its" style="color: orange">疑似欺诈</span>
-                    <span class="its">4.8</span>
+                    <span class="its its1">使用APP贷款时IP地址异常</span>
+                    <span class="its its2" style="color: orange">疑似欺诈</span>
+                    <span class="its its3">4.8</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">教育信息真实性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">&nbsp;</span>
+                    <span class="its its1">使用APP贷款时位置异常</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3" >&nbsp;</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">亲属信息正确性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">使用设备型号、操作系统异常</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
+                    <span class="its">&nbsp;</span>
+                </div>
+                <div class="right">
+                    <span class="its its1">网络环境使用代理环境、虚拟环境</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
             </div>
             <div class="content">
                 <div class="col1 left">团伙欺诈</div>
                 <div class="right">
-                    <span class="its">身份证号正确性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">0</span>
+                    <span class="its its1">与黑名单密切联系的手机号码</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3">0</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">手机号码真实性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">与黑名单密切联系的虚拟号码</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">地址信息正确性</span>
-                    <span class="its" style="color: orange">疑似欺诈</span>
-                    <span class="its">4.8</span>
+                    <span class="its its1">使用IP黑名单的虚拟号码</span>
+                    <span class="its its2" style="color: orange">疑似欺诈</span>
+                    <span class="its its3">4.8</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">教育信息真实性</span>
-                    <span class="its">非欺诈</span>
-                    <span class="its">&nbsp;</span>
+                    <span class="its its1">连接相同的wifi的一定周期大量申请</span>
+                    <span class="its its2">非欺诈</span>
+                    <span class="its its3" >&nbsp;</span>
                     <span class="its">&nbsp;</span>
                 </div>
                 <div class="right">
-                    <span class="its">亲属信息正确性</span>
-                    <span class="its" style="color: red">欺诈</span>
-                    <span class="its">9.6</span>
+                    <span class="its its1">相同位置的一定周期大量申请</span>
+                    <span class="its its2" style="color: red">欺诈</span>
+                    <span class="its its3">9.6</span>
                     <span class="its">&nbsp;</span>
                 </div>
             </div>
@@ -206,17 +212,17 @@
 
         .col2 {
             display: inline-block;
-            width: calc(20% - 4px);
+            width: calc(30% - 4px);
         }
 
         .col3 {
             display: inline-block;
-            width: calc(20% - 4px);
+            width: calc(15% - 4px);
         }
 
         .col4 {
             display: inline-block;
-            width: calc(20% - 4px);
+            width: calc(15% - 4px);
         }
 
         .col5 {
@@ -273,9 +279,19 @@
                     display: inline-block;
                     width: calc(25% - 2px);
                     height: 40px;
+                    font-size: 13px;
                     text-align: center;
                     line-height: 40px;
-                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                }
+                .its1{
+                    width: calc(37.5% - 2px);
+                }
+                .its2{
+                    width: calc(18.75% - 2px);
+                }
+                .its3{
+                    width: calc(18.75% - 2px);
                 }
             }
             .content:nth-child(2) .left{
