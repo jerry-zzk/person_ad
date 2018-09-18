@@ -60,7 +60,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="出生年月" width="120"  align="center" :show-overflow-tooltip="true">
+      <el-table-column label="查询时间"  align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           <!-- <el-tag
             size="mini"
@@ -70,19 +70,19 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="手机号码" width="100" align="center" :show-overflow-tooltip="true">
+      <el-table-column label="查询内容" width="100" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.phone}}
         </template>
       </el-table-column>
 
-      <el-table-column label="家庭住址" align="center" :show-overflow-tooltip="true">
+      <el-table-column label="查询结果显示" align="center" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           {{scope.row.address}}
         </template>
       </el-table-column>
 
-      <el-table-column label="学生/员工" width="80" align="center">
+      <!-- <el-table-column label="学生/员工" width="80" align="center">
         <template slot-scope="scope">
           {{scope.row.admin}}
         </template>
@@ -122,11 +122,11 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="添加操作" width="100" align="center">
+       <el-table-column label="添加操作" width="100" align="center">
         <template slot-scope="scope">
           <el-button size="mini"  @click="message"> + </el-button>
         </template>
-      </el-table-column>
+      </el-table-column>  -->
 
       <!-- 全屏详细信息 -->
     <el-dialog

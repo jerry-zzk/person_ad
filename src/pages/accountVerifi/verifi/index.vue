@@ -155,7 +155,7 @@ export default {
         })
     },
     cli(){
-        if(this.ruleForm.name == this.ruleForm.num){
+        if(this.ruleForm.name == this.ruleForm.num && this.ruleForm.name!= "" && this.ruleForm.num!= ""){
             this.hello = true
             this.sorry = false
         }else if(this.ruleForm.name != this.ruleForm.num){
