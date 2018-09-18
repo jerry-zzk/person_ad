@@ -6,11 +6,6 @@ $green1:#bcd754;
 $green2:#76cbc4;
 $green3:#8abbd2;
 $green4:#6e83ba;
-/**** fix *****/
-.el-tabs__header{
-    margin:0px!important;
-}
-/**** fix *****/
 #evaluete-info{
 	height:100%;
 	#evaluete-info-header{
@@ -85,8 +80,8 @@ $green4:#6e83ba;
 		left:0px;
 		right:0px;
 		height:calc(100% - 55px);
-		padding: 20px;
 		#evaluete-info-main-inner{
+			padding-bottom: 20px;
 			p.title{
 				margin:0px;
 				font-size:18px;
@@ -97,7 +92,7 @@ $green4:#6e83ba;
 				    position: absolute;
 				    top: 9px;
 				    left: 9px;
-				    background: #409efe;
+				    background: $blue;
 				    border-radius: 50%;
 				    width: 6px;
 				    height: 6px;
@@ -112,8 +107,9 @@ $green4:#6e83ba;
 				}
 			}
 			.section{
-				height:580px;
-				width:100%;
+				min-height:700px;
+				width:calc(100% - 40px);
+				padding:20px;
 				div.container>p{
 					color:$red;
 					margin:5px 0;
@@ -146,7 +142,7 @@ $green4:#6e83ba;
 
 					border-spacing:0px 4px;
 
-					width:calc(100% - 20px);
+					width:calc(100% - 100px);
 					margin:10px;
 					tr{
 						text-align:center;
@@ -206,8 +202,8 @@ $green4:#6e83ba;
 				.echart{
 					margin:10px;
 					padding:20px;
-					width:calc(100% - 60px);
-					height:200px;
+					width:calc(100% - 100px);
+					height:360px;
 					border:1px solid $gray;
 					&:before{
 						content:" ";
@@ -278,5 +274,95 @@ $green4:#6e83ba;
 			}
 		}
 	}
+}
+// frank
+.detail-body{
+  padding: 0 20px;
+  margin-bottom: 20px;
+  ul {
+    margin: 0 0 6px 0;
+    padding-left: 0;
+    li{
+      color: #409efe;
+    }
+  }
+  // 表头
+  .detail-thead{
+    .detail-thead-th{
+      line-height: 36px;
+      text-align: center;
+      color: #fff;
+      background-color: #409efe;
+    }
+    .detail-thead-th-left{
+      border-radius: 8px 0 0 0;
+    }
+    .detail-thead-th-right{
+      border-radius: 0 8px 0 0;
+    }
+  }
+  .detail-thead2{
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    background-color: #409efe;
+    border-radius: 8px 8px 0 0;
+  }
+  // 表格body
+  .detail-tr{
+    height: 36px;
+    margin: 4px 0 8px 0;
+    line-height: 36px;
+    border: 1px solid #ddd;
+    .el-col{
+      text-align: center;
+    }
+  }
+  .detail-tr2{
+    height: 42px;
+    line-height: 42px;
+    .el-col{
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+  }
+  // 10个左边框的颜色
+  .color-1{
+    border-left: 4px solid #bad754;
+  }
+  .color-2{
+    border-left: 4px solid #76cbc5;
+  }
+  .color-3{
+    border-left: 4px solid #64a5c3;
+  }
+  .color-4{
+    border-left: 4px solid #6e83ba;
+  }
+  .color-5{
+    border-left: 4px solid #8e6bcf;
+  }
+  .color-6{
+    border-left: 4px solid #fa4645;
+  }
+  .color-7{
+    border-left: 4px solid #fe714e;
+  }
+  .color-8{
+    border-left: 4px solid #fe954f;
+  }
+  .color-9{
+    border-left: 4px solid #ffb64f;
+  }
+  .color-10{
+    border-left: 4px solid #f1d77e;
+  }
+}
+// 热力图
+#detail_heatMap{
+	width: 100%;
+	height: 246px;
+	border: 1px solid #ddd;
+	border-top: 4px solid #409efe;
 }
 
