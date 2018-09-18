@@ -219,7 +219,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .zk_ul{
-    border:2px solid #ccc;
+    border:1px solid #ccc;
     padding:5px 0 5px 15px;
     // margin-bottom: 15px;
   }
