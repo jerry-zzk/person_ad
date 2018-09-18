@@ -71,9 +71,11 @@
                                 </el-col>
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
-                                    <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
-                                    <p>联信控</p>
-                                    <p>贷中监控产品</p>
+                                    <a :href="`${$baseUrl}#/loaningMonitor/index`">
+                                      <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
+                                      <p>联信控</p>
+                                      <p>贷中监控产品</p>
+                                    </a>
                                   </div>
                                 </el-col>
                                 <el-col :span="8">

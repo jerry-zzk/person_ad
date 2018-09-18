@@ -291,6 +291,68 @@ const frameIn = [
         meta: { ...meta, title: '收入水平、月消费水平核验' },
       },
     ])('dataVerification-')
+  },
+  {
+    path: '/loaningMonitor',
+    name:'loaningMonitor',
+    redirect: { name: 'loaningMonitor-index' },
+    component: layoutHeaderAside,
+    children: (pre => [
+      {
+        path: 'index',
+        name: `${pre}index`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '态势预警' }
+      },
+      {
+        path: 'consumerMgt',
+        name: `${pre}consumerMgt`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '客户管理' }
+      },
+      {
+        path: 'situationWarning',
+        name: `${pre}situationWarning`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '态势预警' }
+      },
+      {
+        path: 'riskAssessment',
+        name: `${pre}riskAssessment`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '客户风险评估' }
+      },
+      {
+        path: 'lossRepair',
+        name: `${pre}lossRepair`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '失联修复' }
+      },
+      {
+        path: 'blackList',
+        name: `${pre}blackList`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '客户黑名单' }
+      },
+      {
+        path: 'rulesMgt',
+        name: `${pre}rulesMgt`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '规则集管理' }
+      },
+      {
+        path: 'statisticReport',
+        name: `${pre}statisticReport`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '统计报告' }
+      },
+      {
+        path: 'businessMgt',
+        name: `${pre}businessMgt`,
+        component: () => import('@/pages/loanMonitor'),
+        meta: { ...meta, title: '业务管理' }
+      }
+    ])('loaningMonitor-')
   }
 ]
 

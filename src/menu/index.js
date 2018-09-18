@@ -1,6 +1,7 @@
 import creditEvaluation from './modules/credit-evaluation'
 import antiFraud from './modules/anti-fraud'
 import dataVerification from './modules/data-verification'
+import loaningMonitor from './modules/loaning-monitor'
 
 // 菜单 侧边栏
 /*
@@ -13,6 +14,7 @@ export const menuAside = [
 
  export const menuAside = antiFraud
  export const menuAside1 = dataVerification
+ export const menuAside2 = loaningMonitor
 
 // 菜单 顶栏
 /*
