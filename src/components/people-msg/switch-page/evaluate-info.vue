@@ -421,7 +421,7 @@ export default {
     this.initChart8();
     this.initChart9();
     this.initChart10();
-    this.drawHeatMap();
+    this.drawHeatMap()
   }, 
   beforeDestroy() {
     if (!this.chart) {
@@ -999,7 +999,7 @@ export default {
           data: _this.heatMapData
         }]
       }
-      const heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
+      let heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
       heatMap_chart.setOption(option)
     }
   }
