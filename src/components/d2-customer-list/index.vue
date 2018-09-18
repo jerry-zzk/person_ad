@@ -4,11 +4,12 @@
             <input class="search_input" v-model="search_value">
             <span class="fa fa-search" @click="searchValueChange"></span>
         </p>
+        <p style="width: calc(100% + 40px);border-bottom: 1px solid rgba(0,0,0,0.2);margin-bottom: 10px;position: relative;left: -20px"></p>
         <div class="list">
             <el-scrollbar style="height: 100%">
-            <div v-for="top,index in item" :key="index" class=" list-one col-r">
+            <div v-for="top,index in item" :key="index" class=" list-one col-r" :class="{active:active==index}" @click="handleGroup(index)">
                 <p :span="24"> {{top.name}} </p>
-                <p :span="24"> <span style="color: rgb(17,139,254);font-size: 16px">{{top.danger_num}}</span>/{{top.num}}</p>
+                <p :span="24"> <span style="font-size: 16px">{{top.danger_num}}</span>/{{top.num}}</p>
             </div>
             </el-scrollbar>
         </div>
@@ -32,7 +33,8 @@
         data(){
             return{
                 search_value:'',
-                current:1
+                current:1,
+                active:0
             }
         },
         methods:{
@@ -51,6 +53,9 @@
                     search_value:search_value,
                     current:current
                 })
+            },
+            handleGroup(index){
+                this.active=index
             }
 
         }
@@ -68,12 +73,12 @@
         width: 100%;
         height: 100%;
         padding: 20px;
+        padding-top: 14px;
         box-sizing: border-box;
         position: relative;
         .search{
             height: 35px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 14px;
             input{
                 width: 100%;
                 height: 35px;
@@ -87,22 +92,28 @@
             .fa{
                 position: absolute;
                 right: 34px;
-                top:30px;
+                top:25px;
                 cursor: pointer;
+                color:dodgerblue;
             }
         }
         .list{
-            height: calc(100% - 90px);
+            height: calc(100% - 96px);
+            width: calc(100% + 20px);
+            box-sizing: border-box;
             .list-one{
                 background: rgb(227,239,254);
                 height: 70px;
                 margin-bottom: 10px;
-                border: 1px solid rgb(115, 195, 254);
                 border-radius: 3px;
+                width: calc(100% - 20px);
+                background: url('./image/bg.png') no-repeat center;
+                background-size:cover ;
+                color: white;
+                cursor: pointer;
                 p{
                     box-sizing: border-box;
-                    padding: 0 30px;
-                    color: rgb(84, 172, 254);;
+                    padding: 0 20px;
                     &:nth-child(1){
                         height: 40px;
                         line-height: 40px;
@@ -117,6 +128,14 @@
 
                     }
                 };
+                &:hover{
+                    background: url('./image/active.png') no-repeat center;
+                    background-size:cover ;
+                }
+            }
+            .list-one.active{
+                background: url('./image/active.png') no-repeat center;
+                background-size:cover ;
             }
         }
         .page-button{

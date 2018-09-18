@@ -5,7 +5,7 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
-      <p @click="open1">test</p>
+      <span @click="open1">临时test按钮，</span>
       <line-chart> </line-chart>
     </el-card>
     <!-- 反欺诈列表 -->
