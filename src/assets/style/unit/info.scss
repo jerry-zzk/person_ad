@@ -1,6 +1,11 @@
 $blue:#409efe;
 $black:#6e7377;
 $gray:#6e73775c;
+$red:#fc4547;
+$green1:#bcd754;
+$green2:#76cbc4;
+$green3:#8abbd2;
+$green4:#6e83ba;
 /**** fix *****/
 .el-tabs__header{
     margin:0px!important;
@@ -38,7 +43,7 @@ $gray:#6e73775c;
 					padding:5px 20px;
 					margin: 0px;
 					width:56%;
-					&:hover{
+					&:hover,&.active{
 						background:$blue;
 						color:white;
 					}
@@ -75,22 +80,200 @@ $gray:#6e73775c;
 		}
 	}
 	#evaluete-info-main{
-		padding-top:55px;
+		position: absolute;
+		top:54px;
+		left:0px;
+		right:0px;
 		height:calc(100% - 55px);
-		main{
+		padding: 20px;
+		#evaluete-info-main-inner{
 			p.title{
 				margin:0px;
-				font-szie:14px;
+				font-size:18px;
+				padding-left:18px;
 				position: relative;
 				&:before{
-					content:" ";
+					content: " ";
+				    position: absolute;
+				    top: 9px;
+				    left: 9px;
+				    background: #409efe;
+				    border-radius: 50%;
+				    width: 6px;
+				    height: 6px;
+				}
+			}
+			p.main-title{
+				padding-left:18px;
+				font-size:20px;
+				span{
+					color:$red;
+					font-weight:700;
+				}
+			}
+			.section{
+				height:580px;
+				width:100%;
+				div.container>p{
+					color:$red;
+					margin:5px 0;
+				}
+				ul{
+					list-style:none;
+					margin:0px;
+					padding:0px;
+					li{
+						background:$red;
+						color:white;
+						font-size:16px;
+						border-radius:8px;
+						padding:6px 10px;
+						width:130px;
+						text-align:center;
+						margin-bottom:2px;
+						&:nth-child(2){
+							opacity: 0.8;
+						}
+						&:nth-child(3){
+							opacity: 0.6;
+						}
+						&:nth-child(4){
+							opacity: 0.4;
+						}
+					}
+				}
+				table{
+
+					border-spacing:0px 4px;
+
+					width:calc(100% - 20px);
+					margin:10px;
+					tr{
+						text-align:center;
+						td{
+							position: relative;
+							padding:5px 30px;
+							border-top:1px solid $gray;
+							border-bottom:1px solid $gray;
+							border-right:1px solid $gray;
+						}
+						.color1{
+							&:before{
+								content:" ";
+								position: absolute;
+								top:0px;
+								left:0px;
+								width:5px;
+								height:100%;
+								background:$green1;
+							}
+						}
+						.color2{
+							&:before{
+								content:" ";
+								position: absolute;
+								top:0px;
+								left:0px;
+								width:5px;
+								height:100%;
+								background:$green2;
+							}
+						}
+						.color3{
+							&:before{
+								content:" ";
+								position: absolute;
+								top:0px;
+								left:0px;
+								width:5px;
+								height:100%;
+								background:$green3;
+							}
+						}
+						.color4{
+							&:before{
+								content:" ";
+								position: absolute;
+								top:0px;
+								left:0px;
+								width:5px;
+								height:100%;
+								background:$green4;
+							}
+						}
+					}
+				}
+				.echart{
+					margin:10px;
+					padding:20px;
+					width:calc(100% - 60px);
+					height:200px;
+					border:1px solid $gray;
+					&:before{
+						content:" ";
+						width:100%;
+						background:$blue;
+						height:10px;
+						position: absolute;
+						top:0px;
+						left:0px;
+					}
+				}
+			}
+			#anchor-3{
+				position: relative;
+				div.echarts{
+					width:300px;
+					height:300px;
 					position: absolute;
-					top:0px;
-					left:0px;
-					background:$blue;
-					border-radius:50%;
-					width:6px;
-					height:6px;
+					left:50%;
+					top:50%;
+					margin-top:-150px;
+					margin-left:-150px;
+				}
+				.guan_lian_hao{
+    				position: absolute;
+    				left: 200px;
+				}
+				.wang_luo_huan_jing{
+					position: absolute;
+    				left: 200px;
+    				top:350px;
+				}
+				.wei_zhi_xin_xi{
+
+					position: absolute;
+					left: 525px;
+    				top: 450px;
+				}
+				.IP_yi_chang{
+
+					position: absolute;
+					right: 200px;
+    				top:350px;
+
+    				text-align:right
+    				
+				}
+				.xu_ni_hao_ma{
+
+					position: absolute;
+					right: 200px;
+					top: 170px;
+				}
+				.xing_hao_xi_tong{
+
+					position: absolute;
+					left: 525px;
+					top:40px;
+				}
+			}
+			#anchor-4{
+				.table{
+					width:100%;
+					p{
+						margin:5px;
+					}
 				}
 			}
 		}
