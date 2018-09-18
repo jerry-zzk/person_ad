@@ -57,10 +57,9 @@
                         <div class="yuan" :class="yuan(index)">{{list.yuan}}</div>
                         <div class="sanjiao"></div>
                         <div class="sanjiao_gai"></div>
-                        <div class="sanjiao_gai1" ></div>
+                        <div class="sanjiao_gai1"></div>
                         <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
                         <p class="lis1" style="font-size:13px;" :title="list.name">
-                        <!-- <img style="height:10px;width:10px;border:1px solid red;display:inline-block;" src="../../assets/svg-icons/icons/phone.svg" alt=""> -->
                         <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
                         <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
                         <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>

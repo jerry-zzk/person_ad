@@ -10,7 +10,7 @@
                     :key="index+0"
                     :class="{isActive:typeActive[index]}"
                     @click="handleType(index)">
-                    <a :href='"./#type"+index'>
+                    <a @click="goEl('#type'+index)">
                         <span class="fa fa-lock"></span>
                         <span>{{item}}</span>
                     </a>
@@ -18,9 +18,9 @@
                 </ul>
             </el-scrollbar>
         </div>
-        <div class="right">
-            <el-scrollbar style="height: 100%;">
-                <div style="padding-right: 20px">
+        <div class="right" >
+            <el-scrollbar style="height: 100%;" id="item-wrap">
+                <div style="padding-right: 20px;" >
                     <div id="type0"  class="el-item">
                         <p class="tit"><b>.</b>欺诈风险</p>
                         <div class="head">
@@ -944,6 +944,10 @@
                     }
                 }
                 this.typeActive = arr
+            },
+            goEl(el){
+                let ele =this.$el.querySelector(el)
+                document.getElementById('item-wrap').children[0].scrollTop=ele.offsetTop
             }
         }
     }

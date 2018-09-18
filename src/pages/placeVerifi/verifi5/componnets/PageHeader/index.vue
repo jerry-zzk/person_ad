@@ -58,13 +58,13 @@
         重置
       </el-button>
     </el-form-item>
-    <el-form-item>
+    <!-- <el-form-item>
       <el-button type="primary"
         @click="add">
         <d2-icon name="add"/>
         添加客户组
       </el-button>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
       <div @click="add1":class="[toggle,to1]">表格</div>

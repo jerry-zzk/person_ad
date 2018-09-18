@@ -448,7 +448,7 @@ export default {
   		item.select = true;
         var anchor = this.$el.querySelector('#anchor-'+item.index);
        
-        document.querySelector(".el-scrollbar__view").scrollTop = anchor.offsetTop
+        document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
     },
     initChart1() {
       	this.chart1 = echarts.init(this.$refs.myEchart1);
