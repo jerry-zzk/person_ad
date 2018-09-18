@@ -18,10 +18,107 @@
 			<el-scrollbar style="height: 100%">
 				<div id="evaluete-info-main-inner">
 					<div id="anchor-1" class="section">
-						
+						<div class="detail-body">
+				      <el-row :gutter="40">
+				        <el-col :span="16">
+				        	<p class="title" style="margin:0 0 10px -20px;">身份欺诈</p>
+				          <el-row class="detail-thead" :gutter="2">
+				            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
+				            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
+				            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
+				          </el-row>
+				          <el-row class="detail-tr color-1">
+				            <el-col :span="8">户籍信息</el-col>
+				            <el-col :span="8">有</el-col>
+				            <el-col :span="8">与活动区域不符</el-col>
+				          </el-row>
+				          <el-row class="detail-tr color-2">
+				            <el-col :span="8">工作信息</el-col>
+				            <el-col :span="8">有</el-col>
+				            <el-col :span="8">与活动区域不符</el-col>
+				          </el-row>
+				          <el-row class="detail-tr color-3">
+				            <el-col :span="8">地址信息</el-col>
+				            <el-col :span="8">有</el-col>
+				            <el-col :span="8">与活动区域不符</el-col>
+				          </el-row>
+				          <el-row class="detail-tr color-4">
+				            <el-col :span="8">家庭成员信息</el-col>
+				            <el-col :span="8">无</el-col>
+				            <el-col :span="8">与活动区域不符</el-col>
+				          </el-row>
+				          <el-row class="detail-tr color-5">
+				            <el-col :span="8">虚拟身份</el-col>
+				            <el-col :span="8">无</el-col>
+				            <el-col :span="8">与活动区域不符</el-col>
+				          </el-row>
+				        </el-col>
+				        <el-col :span="8">
+				        	<p class="title" style="margin:0 0 10px -20px;">常活动区域</p>
+				          <div id="detail_heatMap"></div>
+				        </el-col>
+				      </el-row>
+			      </div>
+						<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
+		    		<div class="detail-body">
+				      <el-row class="detail-tr color-6">
+				        <el-col :span="3">1.</el-col>
+				        <el-col :span="6">姓名</el-col>
+				        <el-col :span="6">185********</el-col>
+				        <el-col :span="3">30次/月</el-col>
+				        <el-col :span="6">无可疑</el-col>
+				      </el-row>
+				      <el-row class="detail-tr color-7">
+				        <el-col :span="3">2.</el-col>
+				        <el-col :span="6">姓名</el-col>
+				        <el-col :span="6">185********</el-col>
+				        <el-col :span="3">30次/月</el-col>
+				        <el-col :span="6">无可疑</el-col>
+				      </el-row>
+				      <el-row class="detail-tr color-8">
+				        <el-col :span="3">3.</el-col>
+				        <el-col :span="6">姓名</el-col>
+				        <el-col :span="6">185********</el-col>
+				        <el-col :span="3">30次/月</el-col>
+				        <el-col :span="6">无可疑</el-col>
+				      </el-row>
+				      <el-row class="detail-tr color-9">
+				        <el-col :span="3">4.</el-col>
+				        <el-col :span="6">姓名</el-col>
+				        <el-col :span="6">185********</el-col>
+				        <el-col :span="3">30次/月</el-col>
+				        <el-col :span="6">无可疑</el-col>
+				      </el-row>
+				      <el-row class="detail-tr color-10">
+				        <el-col :span="3">5.</el-col>
+				        <el-col :span="6">姓名</el-col>
+				        <el-col :span="6">185********</el-col>
+				        <el-col :span="3">30次/月</el-col>
+				        <el-col :span="6">无可疑</el-col>
+				      </el-row>
+				    </div>
 					</div>
 					<div id="anchor-2" class="section">
-						
+						<p class="title" style="margin-bottom: 10px;">黑名单</p>
+					    <div class="detail-body">
+					      <div class="detail-thead2">实名黑名单</div>
+					      <el-row class="detail-tr2">
+					        <el-col :span="8">110105********</el-col>
+					        <el-col :span="8">法院被执行人（北京）</el-col>
+					        <el-col :span="8">2016年12月13日</el-col>
+					      </el-row>
+					      <el-row class="detail-tr2">
+					        <el-col :span="8">110105********</el-col>
+					        <el-col :span="8">吸毒人员（北京朝阳区）</el-col>
+					        <el-col :span="8">2016年12月13日</el-col>
+					      </el-row>
+					      <div style="margin-top:60px;" class="detail-thead2">手机号黑名单</div>
+					      <el-row class="detail-tr2">
+					        <el-col :span="8">1390105****</el-col>
+					        <el-col :span="8">欠款人员名单（互金协会）</el-col>
+					        <el-col :span="8">2016年12月13日</el-col>
+					      </el-row>
+					    </div>
 					</div>
 					<!--设备欺诈 -->
 					<div id="anchor-3" class="section">
@@ -236,6 +333,7 @@
 </style>
 <script>
 import echarts from 'echarts'
+import 'echarts/map/js/china.js';
 export default {
   data () {
     return {
@@ -274,6 +372,42 @@ export default {
     	chart8: null,
     	chart9: null,
     	chart10: null,
+    	heatMapData: [
+        {name: '北京', value: 5.3},
+        {name: '天津', value: 3.8},
+        {name: '上海', value: 4.6},
+        {name: '重庆', value: 3.6},
+        {name: '河北', value: 3.4 },
+        {name: '河南', value: 3.2 },
+        {name: '云南', value: 1.6 },
+        {name: '辽宁', value: 4.3 },
+        {name: '黑龙江', value: 4.1 },
+        {name: '湖南', value: 2.4 },
+        {name: '安徽', value: 3.3 },
+        {name: '山东', value: 3.0 },
+        {name: '新疆', value: 1 },
+        {name: '江苏', value: 3.9 },
+        {name: '浙江', value: 3.5 },
+        {name: '江西', value: 2.0 },
+        {name: '湖北', value: 2.1 },
+        {name: '广西', value: 3.0 },
+        {name: '甘肃', value: 1.2},
+        {name: '山西', value: 3.2},
+        {name: '内蒙古', value: 3.5},
+        {name: '陕西', value: 2.5},
+        {name: '吉林', value: 4.5},
+        {name: '福建', value: 2.8},
+        {name: '贵州', value: 1.8},
+        {name: '广东', value: 3.7},
+        {name: '青海', value: 0.6},
+        {name: '西藏', value: 0.4},
+        {name: '四川', value: 3.3},
+        {name: '宁夏', value: 0.8},
+        {name: '海南', value: 1.9},
+        {name: '台湾', value: 0.1},
+        {name: '香港', value: 0.1},
+        {name: '澳门', value: 0.1}
+      ]
     }
   },
   mounted() {
@@ -287,6 +421,7 @@ export default {
     this.initChart8();
     this.initChart9();
     this.initChart10();
+    this.drawHeatMap();
   }, 
   beforeDestroy() {
     if (!this.chart) {
@@ -828,6 +963,45 @@ export default {
 		    }]
 		})
     },
+    // 热力图
+    drawHeatMap(){
+      let _this = this;
+      let option = {
+        visualMap: {
+          type: 'continuous',
+          show: false,
+          showLabel: false,
+          min: 0,
+          max: 7,
+          inRange: {
+              color: ['#edfbfb', '#b7d6f3', '#40a9ed', '#3598c1', '#215096', ]
+          }
+        },
+        series: [{
+          name: '常驻人口分布',
+          type: 'map',
+          mapType: 'china',
+          roam: false,
+          itemStyle: {
+            normal: {
+              borderColor:'rgba(100,149,237,1)',
+              borderWidth:1
+            }
+          },
+          label: {
+            normal: {
+              show: false
+            },
+            emphasis: {
+              show: true
+            }
+          },
+          data: _this.heatMapData
+        }]
+      }
+      const heatMap_chart=echarts.init(document.getElementById('detail_heatMap'))
+      heatMap_chart.setOption(option)
+    }
   }
  }
 </script>
