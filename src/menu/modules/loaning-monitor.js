@@ -1,6 +1,6 @@
 export default [
     { path: '/loaningMonitor/consumerMgt', title: '客户管理', iconSvg: 'ihome' },
-    { path: '/loaningMonitor/situationWarning', title: '态势预警', iconSvg: 'icheatWarn' },
+    { path: '/loaningMonitor/index', title: '态势预警', iconSvg: 'icheatWarn' },
     { path: '/loaningMonitor/riskAssessment', title: '客户风险评估', iconSvg: 'iconsumerSearch' },
     { path: '/loaningMonitor/lossRepair', title: '失联修复', iconSvg: 'iauditsMgt' },
     { path: '/loaningMonitor/blackList', title: '客户黑名单', iconSvg: 'iconsumerBlacklist' },
