@@ -39,6 +39,8 @@
       :size="page.size"
       :total="page.total"
       @change="handlePaginationChange"/>
+   <!--人员信息弹窗-->
+      <people-info-popup></people-info-popup>
 
   <!-- 全屏信息展示 -->
     <el-dialog
@@ -237,7 +239,8 @@ export default {
         })
     },
     message () {
-      this.dialogVisible = true
+      // this.dialogVisible = true
+      this.$store.commit('setData',true)
     },
     handleClose (tag) {
       this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)

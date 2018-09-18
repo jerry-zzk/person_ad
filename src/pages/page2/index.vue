@@ -38,6 +38,9 @@
         </div>
       </el-col>
 
+      <!--人员信息弹窗-->
+      <people-info-popup></people-info-popup>
+
       <el-card v-show="!ok">
         <el-row :gutter="10">
           <el-col :span="24">
@@ -217,7 +220,8 @@ export default {
       // alert(this.ok);
     },
     message () {
-      this.dialogVisible = true
+      // this.dialogVisible = true
+      this.$store.commit('setData',true)
     },
     handleClose (tag) {
       this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)

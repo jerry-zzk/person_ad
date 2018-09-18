@@ -73,6 +73,8 @@
                 </div>
               </el-col>
           </el-col>
+      <!--人员信息弹窗-->
+      <people-info-popup></people-info-popup>
       <!-- 全屏详细信息 -->
       <el-dialog
         :title="tooltipContent"
@@ -329,7 +331,8 @@
       },
       message () {
         // alert(123213)
-        this.dialogVisible = true
+        // this.dialogVisible = true
+        this.$store.commit('setData',true)
       },
       zk (msg) {
         if (msg === true) {
