@@ -11,6 +11,22 @@ export default {
 </script>
 
 <style lang="scss">
+
+ .zk_input .el-input__inner {
+      box-shadow: none;
+      border: 1px solid #ea7312;
+  }
+
+  .zk_input .el-input__inner:hover {
+      border-color: #ea7312;
+  }
+
+  .zk_input .el-input__inner:focus {
+      border-color: #ea7312;
+      box-shadow: none;
+      transition-duration: .5s;
+  }
+
 @import '~@/assets/style/public-class.scss';
 .el-tabs__header.is-top{
   margin: 0;

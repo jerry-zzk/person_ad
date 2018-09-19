@@ -7,13 +7,15 @@
             <p style="text-align:center;">
               <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> <span style="font-size:24px;color:#666;">用 户 搜 索</span>
             </p>
-            <p style="text-align:center;">
+            <p class="zk_input" style="text-align:center;">
               <el-input
+                :class="{fo:fo}"
+                @click="fo"
                 placeholder="请输入搜索内容"
                 style="width:600px;"
                 prefix-icon="el-icon-search"
                 clearable="">
-                <el-button slot="append" >搜索</el-button>
+                <el-button style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜索</el-button>
               </el-input>
             </p>
           </div>
@@ -90,6 +92,7 @@ export default {
   },
   data () {
     return {
+      fo:'',
       zk_cli:false,
       zk_ul:'zk_ul',
       peo:[
@@ -122,6 +125,10 @@ export default {
     this.ajax()
   },
   methods: {
+    fo() {
+      // alert(123123)
+      this.fo = "fo"
+    },
     ajax(){
       axios({
           url: '/risk',
@@ -214,6 +221,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  // .el-input__inner, .el-checkbox__inner, .el-textarea__inner, .el-button {
+  //   border:1px solid #ea7312 !important;
+  //   border-radius:0px !important;
+  // }
+  .fo{
+    border:1px solid #ea7312;
+    border-radius:0px;
+  }
   .zk_ul{
     border:1px solid #ccc;
     padding:5px 0 5px 15px;
