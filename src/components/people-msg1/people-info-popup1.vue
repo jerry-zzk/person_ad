@@ -5,8 +5,8 @@
             <el-container style="height: 100%;">
 
                 <el-aside>
-                    <el-row class="left-msg">
-                        <el-scrollbar style="height: 100%;">
+                    <el-row class="left-msg" >
+                        <el-scrollbar style="height: 100%;" id="left-msg">
                             <el-col :span="24">
                                 <div class="bg-blue">
                                     <span>真实身份  </span>
@@ -47,8 +47,8 @@
                                     <p><label><i class="fa fa-comments-o "></i>论坛账号:</label> 张三__zhang(天涯)</p>
                                 </div>
                             </el-col>
-                            <el-col class="dangan" v-if="isDangan" @click="danganDetail">
-                                <div>查看档案详情</div>
+                            <el-col class="dangan" v-if="isDangan" >
+                                <div @click="dangAnDetail">查看档案详情</div>
                             </el-col>
                         </el-scrollbar>
                     </el-row>
@@ -117,12 +117,15 @@
         },
         methods: {
             handleClose() {
-                this.$store.commit('setData1', false)
+                if(this.$store.state.peopleInfoPopup.tab=='mainTab4'){
+                    this.$store.commit('setTab', 'mainTab5')
+                }else {
+                    this.$store.commit('setData1', false)
+                }
             },
-            danganDetail(){
-                console.log("fds")
-                this.$store.commit('setData1', false)
-                // this.$store.commit('setTab', 'mainTab3')
+            dangAnDetail(){
+                this.$el.querySelector('#left-msg').children[0].scrollTop=0
+                this.$store.commit('setTab', 'mainTab4')
             }
         }
     }
