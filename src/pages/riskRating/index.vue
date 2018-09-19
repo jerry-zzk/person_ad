@@ -4,10 +4,10 @@
       <el-row :gutter="10">
         <el-col :span="24">
           <div class="col col-l">
-            <p style="text-align:center;"> 
+            <p style="text-align:center;">
               <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> <span style="font-size:24px;color:#666;">用 户 搜 索</span>
             </p>
-            <p style="text-align:center;"> 
+            <p style="text-align:center;">
               <el-input
                 placeholder="请输入搜索内容"
                 style="width:600px;"
@@ -70,7 +70,7 @@
         :total="page.total"
         @change="handlePaginationChange"/>
       <!--人员信息弹窗-->
-      <people-info-popup></people-info-popup>
+      <people-info-popup1></people-info-popup1>
     </div>
   </d2-container>
 </template>
@@ -143,7 +143,8 @@ export default {
   methods: {
     mess(index){
       // 待修改替换
-      this.$store.commit('setData',true)
+      this.$store.commit('setData1',true)
+      this.$store.commit('setTab','mainTab3')
     },
     zk (msg) {
       if(msg == true){
@@ -192,7 +193,7 @@ export default {
     },
     message () {
       // this.dialogVisible = true
-      this.$store.commit('setData',true)
+      this.$store.commit('setData1',true)
     },
     handleClose (tag) {
       this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
