@@ -47,49 +47,7 @@
                 </el-aside>
 
                 <el-main>
-                    <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-                        <el-tab-pane  name="first">
-                            <span slot="label"><i class="el-icon-document"></i> 我的行程</span>
-                            <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                    <first></first>
-                                </el-scrollbar>
-                            </div>
-
-                        </el-tab-pane>
-                        <el-tab-pane label="失联倾向异常" name="second">
-                            <span slot="label"><i class="el-icon-document"></i> 失联倾向异常</span>
-                            <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                <second></second>
-                                </el-scrollbar>
-                            </div>
-                        </el-tab-pane>
-                        <el-tab-pane label="关联异常" name="third">
-                            <span slot="label"><i class="el-icon-document"></i> 关联异常</span>
-                            <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                    <third></third>
-                                </el-scrollbar>
-                            </div>
-                        </el-tab-pane>
-                        <el-tab-pane label="位置异常" name="four">
-                            <span slot="label"><i class="el-icon-document"></i> 位置异常</span>
-                            <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                    <four></four>
-                                </el-scrollbar>
-                            </div>
-                        </el-tab-pane>
-                        <el-tab-pane label="网络行为异常" name="five">
-                            <span slot="label"><i class="el-icon-document"></i> 网络行为异常</span>
-                            <div class="wrap">
-                                <el-scrollbar style="height: 100%">
-                                    <five></five>
-                                </el-scrollbar>
-                            </div>
-                        </el-tab-pane>
-                    </el-tabs>
+                    <component :is="currentTabComponent"></component>
                 </el-main>
             </el-container>
         </div>
@@ -101,21 +59,23 @@
     export default {
         name:"people-info-popup1",
         components:{
-            first:()=>import('./switch-page/first.vue'),
-            second:()=>import('./switch-page/second.vue'),
-            third:()=>import('./switch-page/third.vue'),
-            four:()=>import('./switch-page/four.vue'),
-            five:()=>import('./switch-page/five.vue'),
+            mainTab3:()=>import('./main-tab/main-tab-3.vue'),
+            mainTab4:()=>import('./main-tab/main-tab-4.vue'),
+            mainTab5:()=>import('./main-tab/main-tab-5.vue'),
         },
         data() {
             return {
                 isShow: false,
-                activeName2: 'first'
+                activeName: 'first'
             }
         },
         computed: {
             dialogVisible: {
                 get() {return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1},
+                set() {}
+            },
+            currentTabComponent:{
+                get() {return this.$store.state.peopleInfoPopup.tab},
                 set() {}
             }
         },
@@ -132,9 +92,7 @@
             handleClose() {
                 this.$store.commit('setData1', false)
             },
-            handleClick(tab, event) {
-                console.log(tab, event);
-            }
+
         }
     }
 </script>
@@ -207,10 +165,6 @@
             .el-main {
                 position: relative;
                 padding: 0;
-
-                .wrap {
-                    height: calc(100vh - 110px);
-                }
             }
         }
         .content.show {

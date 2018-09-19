@@ -5,7 +5,9 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
-      <span @click="open1">临时test按钮，</span>
+      <span @click="open1('mainTab5')">临时按钮(5个tab)    |    </span>
+      <span @click="open1('mainTab4')">临时按钮(4个tab)    |    </span>
+      <span @click="open1('mainTab3')">临时按钮(3个tab)  </span>
       <line-chart> </line-chart>
     </el-card>
     <!-- 反欺诈列表 -->
@@ -52,8 +54,9 @@ export default {
       getChartData(){
 
       },
-      open1(){
+      open1(tab){
           this.$store.commit('setData1',true)
+          this.$store.commit('setTab',tab)
       }
   }
 }
