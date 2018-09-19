@@ -47,10 +47,9 @@
                 </el-aside>
 
                 <el-main>
-                    <el-button class="msg-button" size="mini" type="primary">打印</el-button>
-                    <el-button class="msg-button" size="mini" type="primary">导出</el-button>
                     <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-                        <el-tab-pane label="总体概况" name="first">
+                        <el-tab-pane  name="first">
+                            <span slot="label"><i class="el-icon-document"></i> 我的行程</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <first></first>
@@ -59,6 +58,7 @@
 
                         </el-tab-pane>
                         <el-tab-pane label="失联倾向异常" name="second">
+                            <span slot="label"><i class="el-icon-document"></i> 失联倾向异常</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                 <second></second>
@@ -66,6 +66,7 @@
                             </div>
                         </el-tab-pane>
                         <el-tab-pane label="关联异常" name="third">
+                            <span slot="label"><i class="el-icon-document"></i> 关联异常</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <third></third>
@@ -73,6 +74,7 @@
                             </div>
                         </el-tab-pane>
                         <el-tab-pane label="位置异常" name="four">
+                            <span slot="label"><i class="el-icon-document"></i> 位置异常</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <four></four>
@@ -80,6 +82,7 @@
                             </div>
                         </el-tab-pane>
                         <el-tab-pane label="网络行为异常" name="five">
+                            <span slot="label"><i class="el-icon-document"></i> 网络行为异常</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <five></five>
@@ -112,12 +115,8 @@
         },
         computed: {
             dialogVisible: {
-                get() {
-                    return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1
-                },
-                set() {
-
-                }
+                get() {return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1},
+                set() {}
             }
         },
         watch: {
@@ -126,7 +125,6 @@
                 setTimeout(function () {
                     vm.isShow = val
                 })
-
                 this.dialogVisible = val
             }
         },
@@ -151,6 +149,7 @@
         padding: 30px;
         z-index: 9901;
         box-sizing: border-box;
+        color:  rgb(41, 45, 82);
         .close {
             position: absolute;
             right: 0px;
@@ -176,7 +175,7 @@
             transform: scale(0);
             transition: all 0.28s ease;
             .bg-blue {
-                background: rgb(64, 158, 254);
+                background: rgb(41, 45, 82);
                 color: white;
                 height: 40px;
                 padding-left: 20px;
@@ -184,7 +183,7 @@
             }
             .left-msg {
                 font-size: 14px;
-                color: #2e2e2e;
+                color:  rgb(41, 45, 82);
                 height: 100%;
                 border-right: 1px solid rgba(0, 0, 0, 0.2);
                 img {
@@ -208,17 +207,7 @@
             .el-main {
                 position: relative;
                 padding: 0;
-                .msg-button{
-                    position: absolute;
-                    top:6px;
-                    z-index: 100;
-                    &:first-child{
-                        right: 100px;
-                    }
-                    &:nth-child(2){
-                        right: 20px;
-                    }
-                };
+
                 .wrap {
                     height: calc(100vh - 110px);
                 }

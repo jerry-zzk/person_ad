@@ -25,7 +25,7 @@
                         <el-col :span="24">
                             <div style="padding: 0 20px">
                                 <p><label><i class="fa fa-id-card-o"></i>身份证号:</label> 612651657492698</p>
-                                <p><label><i class="fa fa-mobile" style="font-size: 30px"></i>手机号:</label> 女</p>
+                                <p><label><i class="fa fa-mobile" style="font-size: 30px"></i>手机号:</label> 1836 5132 1655</p>
                                 <p><label><i class="fa fa-file-o"></i>种类:</label> 未知 </p>
                                 <p><label><i class="fa fa-clock-o"></i>时间:</label> 2012-12-12</p>
                                 <p><label><i class="fa fa-home"></i>地址:</label> 安宁佳园小区 </p>
@@ -51,6 +51,7 @@
                     <el-button class="msg-button" size="mini" type="primary">导出</el-button>
                     <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
                         <el-tab-pane label="欺诈告警" name="first">
+                            <span slot="label"><i class="el-icon-document"></i> 欺诈告警</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                     <fraudulentAlarm></fraudulentAlarm>
@@ -59,6 +60,7 @@
 
                         </el-tab-pane>
                         <el-tab-pane label="评估详情" name="second">
+                            <span slot="label"><i class="el-icon-document"></i> 评估详情</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
                                 <evaluateInfo></evaluateInfo>
@@ -66,6 +68,7 @@
                             </div>
                         </el-tab-pane>
                         <el-tab-pane label="联通详单" name="third">
+                            <span slot="label"><i class="el-icon-document"></i> 联通详单</span>
                             <div class="wrap">
                                 <generalFederation></generalFederation>
                             </div>
