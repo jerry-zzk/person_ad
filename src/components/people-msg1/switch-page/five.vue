@@ -2,7 +2,7 @@
 	<el-scrollbar style="height: 100%">
 		<el-container>
 			<el-main>
-				<el-row>
+				<el-row :gutter="20">
 					<el-col :span="24">
 						<div class="container">
 							<div class="con-title">
@@ -10,10 +10,10 @@
 								最新三个月网络浏览行为
 							</div>
 							<el-row>
-								<el-col :span="16">
+								<el-col :span="12">
 									<div class="chart" ref="chart1"></div>	
 								</el-col>
-								<el-col :span="16">
+								<el-col :span="12">
 									<div class="chart" ref="chart2"></div>	
 								</el-col>
 							</el-row>
@@ -30,31 +30,61 @@
 						
 					</el-col>	
 					<el-col :span="8">
-						<div class="container">
+						<div class="container no-pad">
 							<div class="con-title">
-							<i class="fa fa-line-chart"></i>
+							<i class="fa fa-calendar"></i>
 							最近三个月消费行为情况
 							</div>
-							<table class="col-table">
-								<th>
-									<td>类别</td>
-									<td>贷款前（万元）</td>
-									<td>贷款后（万元）</td>
-								</th>
+							<table class="col-table list">
 								<tr>
-									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<th>类别</th>
+									<th>贷款前（万元）</th>
+									<th>贷款后（万元）</th>
 								</tr>
 								<tr>
 									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
 								</tr>
 								<tr>
 									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
 								</tr>
 							</table>
 						</div>
@@ -69,31 +99,61 @@
 						</div>
 					</el-col>
 					<el-col :span="8">
-						<div class="container">
+						<div class="container no-pad">
 							<div class="con-title">
-								<i class="fa fa-line-chart"></i>
+								<i class="fa fa-calendar"></i>
 								最近三个月消费行为情况
 							</div>
-							<table class="col-table">
-								<th>
-									<td>类别</td>
-									<td>贷款前（万元）</td>
-									<td>贷款后（万元）</td>
-								</th>
+							<table class="col-table list">
 								<tr>
-									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<th>类别</th>
+									<th>贷款前（万元）</th>
+									<th>贷款后（万元）</th>
 								</tr>
 								<tr>
 									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
 								</tr>
 								<tr>
 									<td>购物</td>
-									<td>2</td>
-									<td>4</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
+								</tr>
+								<tr>
+									<td>购物</td>
+									<td class="f-blue1">2</td>
+									<td class="f-red">4</td>
 								</tr>
 							</table>
 						</div>
@@ -112,16 +172,223 @@ import resize from 'vue-resize-directive'
 export default {
   data () {
     return {
-    	
+    	chart1:null,
+    	chart2:null,
+    	chart3:null,
+    	chart4:null,
    	}
   },
   directives: {
     resize
   },
+  mounted() {
+    this.initChart1();
+    this.initChart2();
+    this.initChart3();
+    this.initChart4();
+  },
+  beforeDestroy() {
+  	this.chart1.dispose();
+  	this.chart1= null;
+  	this.chart2.dispose();
+  	this.chart2= null;
+  	this.chart3.dispose();
+  	this.chart3= null;
+  	this.chart4.dispose();
+  	this.chart4= null;
+  },
   methods:{
   	onResize:function(){
-  		
-  	}
+  		if(this.chart1){
+  			this.chart1.resize();
+  			this.chart2.resize();
+  			this.chart3.resize();
+  			this.chart4.resize();
+  		}
+  	},
+  	initChart1() {
+      	this.chart1 = echarts.init(this.$refs.chart1);
+      	this.chart1.setOption({
+		    title : {
+		        text: '贷款前（2017-05-25 ~~ 2017-08-25',
+		        subtext: '',
+		        left:"center",
+		        top:"10%",
+		        textStyle:{
+		        	align :"center",
+					fontSize:12
+		        }
+		    },
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    grid:{
+		    	left:"10%",
+		    	right:"10%",
+		    	top:"10%",
+		    	bottom:"10%",
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        left: 'right',
+		        top:"middle",
+		        data: ['新闻','体育','文化','其他',]
+		    },
+		    series : [
+		        {
+		            name: '搜索行为',
+		            type: 'pie',
+		            radius: '50%',
+		            data:[
+		                {value:3351, name:'新闻'},
+		                {value:3101, name:'体育'},
+		                {value:1234, name:'文化'},
+		                {value:1325, name:'其他'},
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            }
+		        }
+		    ]
+		})
+    },
+    initChart2() {
+      	this.chart2 = echarts.init(this.$refs.chart2);
+      	this.chart2.setOption({
+		    title : {
+		        text: '贷款后（2017-05-25 ~~ 2017-08-25',
+		        subtext: '',
+		        left:"center",
+		        top:"10%",
+		        textStyle:{
+		        	align :"center",
+					fontSize:12
+		        }
+		    },
+		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    grid:{
+		    	left:"10%",
+		    	right:"10%",
+		    	top:"10%",
+		    	bottom:"10%",
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        left: 'right',
+		        top:"middle",
+		        data: ['新闻','体育','文化','其他',]
+		    },
+		    series : [
+		        {
+		            name: '搜索行为',
+		            type: 'pie',
+		            radius: '50%',
+		            data:[
+		                {value:3511, name:'新闻'},
+		                {value:31111, name:'体育'},
+		                {value:1231, name:'文化'},
+		                {value:1325, name:'其他'},
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            }
+		        }
+		    ]
+		})
+    },
+    initChart3() {
+      	this.chart3 = echarts.init(this.$refs.chart3);
+      	this.chart3.setOption({
+		    title: {
+		        text: ""
+		    },
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    radar: [
+		        {
+		            indicator: [
+		                {text: '失联倾向异常', max: 100},
+		                {text: '关联异常', max: 100},
+		                {text: '位置异常', max: 100},
+		                {text: '网络行为异常', max: 100}
+		            ],
+		            radius: 80
+		        },
+		     
+		    ],
+		    series: [
+		        {
+		            type: 'radar',
+		             tooltip: {
+		                trigger: 'item'
+		            },
+		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+		            data: [
+		                {
+		                    value: [66,78,95,90],
+		                    name: 'XXX'
+		                }
+		            ]
+		        },
+		      
+		    ]
+		})
+    },
+    initChart4() {
+      	this.chart4 = echarts.init(this.$refs.chart4);
+      	this.chart4.setOption({
+		    title: {
+		        text: ""
+		    },
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    radar: [
+		        {
+		            indicator: [
+		                {text: '失联倾向异常', max: 100},
+		                {text: '关联异常', max: 100},
+		                {text: '位置异常', max: 100},
+		                {text: '网络行为异常', max: 100}
+		            ],
+		            radius: 80
+		        },
+		     
+		    ],
+		    series: [
+		        {
+		            type: 'radar',
+		             tooltip: {
+		                trigger: 'item'
+		            },
+		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+		            data: [
+		                {
+		                    value: [66,78,95,90],
+		                    name: 'XXX'
+		                }
+		            ]
+		        },
+		      
+		    ]
+		})
+    }
+
   }
  }
 </script>

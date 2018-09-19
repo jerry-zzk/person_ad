@@ -2,7 +2,7 @@
 	<el-scrollbar style="height: 100%" v-resize:throttle="onResize">
 		<el-container>
 			<el-main>
-				<el-row>
+				<el-row :gutter="20">
 					<el-col :span="24">
 						<div class="container">
 							<p class="title">贷中风险评分</p>
@@ -12,79 +12,75 @@
 					</el-col>
 					<el-col :span="24">
 						<div class="container">
-							 <d2-crud
-						      ref="d2Crud"
-						      :columns="columns"
-						      :data="data"/>
-							<!-- <table class="col-table">
-								<th>
-									<td>规则集</td>
-									<td>规则</td>
-									<td>权重</td>
-									<td>评分</td>
-									<td>详情</td>
-								</th>
+							<table class="col-table">
 								<tr>
-									<td rowspan="3">失联倾向</td>
+									<th>规则集</th>
+									<th>规则</th>
+									<th>权重</th>
+									<th>评分</th>
+									<th>详情</th>
+								</tr>
+								<tr>
+									<td class="bg-gray blue" rowspan="3">失联倾向</td>
 									<td>预留手机持续关机</td>
-									<td>8</td>
-									<td rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info"></i> 详情查看</td>
+									<td class="f-orange" >8</td>
+									<td class="f-red" rowspan="3">90</td>
+									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>出省，出境</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
 									<td>更换新手机号</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
-									<td rowspan="3">关系异常</td>
+									<td class="bg-gray orange" rowspan="3">关系异常</td>
 									<td>身份关联异常</td>
-									<td>8</td>
-									<td rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info"></i> 详情查看</td>
+									<td class="f-orange" >8</td>
+									<td class="f-red" rowspan="3">90</td>
+									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>群体关联异常</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
 									<td>身份关联异常</td>
-									<td>8</td>
+									<td class="f-orange"  >8</td>
 								</tr>
 								<tr>
-									<td rowspan="3">位置异常</td>
+									<td class="bg-gray blue1" rowspan="3">位置异常</td>
 									<td>频繁出现高档消费场所</td>
-									<td>8</td>
-									<td rowspan="3">40</td>
-									<td rowspan="3"><i class="fa fa-info"></i> 详情查看</td>
+									<td class="f-orange" >8</td>
+									<td class="f-green" rowspan="3">40</td>
+									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>频繁出省出境</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
 									<td>重要位置和贷前差别较大（居住场所更新）</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
-									<td rowspan="3">行为异常</td>
+									<td class="bg-gray purple" rowspan="3">行为异常</td>
 									<td>网络应用异常</td>
-									<td>8</td>
-									<td rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info"></i> 详情查看</td>
+									<td class="f-orange">8</td>
+									<td class="f-red" rowspan="3">90</td>
+									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>网络浏览/发布/搜索等行为异常</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
 								<tr>
 									<td>大额消费记录（固定资产类/金融类/消费类）</td>
-									<td>8</td>
+									<td class="f-orange" >8</td>
 								</tr>
-							</table> -->
+							</table>
 						</div>
 					</el-col>
 				</el-row>
@@ -112,44 +108,7 @@ export default {
   data () {
     return {
     	chart: null,
-    	columns: [
-	        {
-	          title: '日期',
-	          key: 'date',
-	          width: '180'
-	        },
-	        {
-	          title: '姓名',
-	          key: 'name',
-	          width: '180'
-	        },
-	        {
-	          title: '地址',
-	          key: 'address'
-	        }
-	      ],
-      	data: [
-	        {
-	          date: '2016-05-02',
-	          name: '王小虎',
-	          address: '上海市普陀区金沙江路 1518 弄'
-	        },
-	        {
-	          date: '2016-05-04',
-	          name: '王小虎',
-	          address: '上海市普陀区金沙江路 1517 弄'
-	        },
-	        {
-	          date: '2016-05-01',
-	          name: '王小虎',
-	          address: '上海市普陀区金沙江路 1519 弄'
-	        },
-	        {
-	          date: '2016-05-03',
-	          name: '王小虎',
-	          address: '上海市普陀区金沙江路 1516 弄'
-	        }
-        ]
+
    	}
   },
   mounted() {
@@ -164,7 +123,8 @@ export default {
   },
   methods:{
   	onResize:function(){
-  		this.chart.resize();
+  		if(this.chart)
+  			this.chart.resize();
   	},
   	initChart() {
       	this.chart = echarts.init(this.$refs.chart);

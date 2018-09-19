@@ -282,10 +282,18 @@ $orange:#ff682f;
 	margin-bottom:20px;
 	box-shadow:0px 0px 1px 1px $gray;
 	background:white;
+	&.no-pad{
+		padding:0px;
+		.con-title{
+			margin:0px;
+			padding:20px;
+		}
+	}
 	.title{
 		font-size:14px;
 		padding:0 0 0 15px;
-		margin:0px;
+		margin:0px 0px 20px;
+
 		position: relative;
 		&:before{
 			position: absolute;
@@ -298,9 +306,149 @@ $orange:#ff682f;
 			background:$orange;
 		}
 	}
+	.col-header{
+		padding:0px;
+		margin-bottom:20px;
+		border-bottom:1px solid $gray;
+	}
+	.col-body{
+		margin:20px;
+	}
+	.con-title{
+		margin:-20px;
+		margin-bottom:0px;
+		padding:20px;
+		border-bottom:1px solid $gray;
+		i{
+			margin-right:10px;
+		}
+	}
 	.chart{
-		height:300px;
+		height:307px;
 		width:100%;
+	}
+	.col-table{
+		width:100%;
+		border-spacing:0px;
+		border-top:1px solid $gray;
+		font-size:14px;
+		&.list{
+			border-top:none;
+			font-size:14px;
+			th{
+				&:first-child{
+					border-left:none;
+				}
+				&:last-child{
+					border-right:none;
+				}
+			}
+			td{
+				padding:8px;
+				border-right:none;
+				text-align:center;
+			}
+				
+		}
+		th{
+			background:#e9eff3;
+			padding:5px;
+			border-bottom:1px solid $gray;
+			color:rgba(0,0,0,0.3);
+			&:first-child{
+				border-left:1px solid $gray;
+			}
+			&:last-child{
+				border-right:1px solid $gray;
+			}
+		}
+		tr{
+			td{
+				position: relative;
+				padding:10px;
+				border-right:1px solid $gray;
+				border-bottom:1px solid $gray;
+				text-align:center;
+			}
+		}
+		.bg-gray{
+			background:#e9eff3;
+		}
+		.blue{
+			&:before{
+				position: absolute;
+				left:0px;
+				top:0px;
+				content:" ";
+				display:block;
+				width:4px;
+				height:100%;
+				background:#2f41a1;
+			}
+		}
+		.orange{
+			&:before{
+				position: absolute;
+				left:0px;
+				top:0px;
+				content:" ";
+				display:block;
+				width:4px;
+				height:100%;
+				background:$orange;
+			}
+		}
+		.blue1{
+			&:before{
+				position: absolute;
+				left:0px;
+				top:0px;
+				content:" ";
+				display:block;
+				width:4px;
+				height:100%;
+				background:#2898f2;
+			}
+		}
+		.blue1{
+			&:before{
+				position: absolute;
+				left:0px;
+				top:0px;
+				content:" ";
+				display:block;
+				width:4px;
+				height:100%;
+				background:#2898f2;
+			}
+		}
+		.purple{
+			&:before{
+				position: absolute;
+				left:0px;
+				top:0px;
+				content:" ";
+				display:block;
+				width:4px;
+				height:100%;
+				background:#be68d4;
+			}
+		}
+		.f-red{
+			color:red;
+		}
+		.f-green{
+			color:#90e03e;
+		}
+		.f-orange{
+			color:$orange;
+		}
+		.f-blue{
+			color:$blue;
+		}
+		.f-blue1{
+			color:#2f41a1;
+		}
 	}
 }
 
