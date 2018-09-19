@@ -65,7 +65,7 @@
       <el-row :gutter="20">
         <el-col :span="12">
           <div class="ibox">
-            <p class="ibox-title"><i class="fa fa-line-chart"></i>当前产品变化趋势</p>
+            <p class="ibox-title"><i class="fa fa-bar-chart"></i>当前产品变化趋势</p>
             <div id="lm_situationWarn_barChart"></div>
           </div>
         </el-col>
