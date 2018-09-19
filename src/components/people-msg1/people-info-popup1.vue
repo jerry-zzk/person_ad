@@ -7,41 +7,49 @@
                 <el-aside>
                     <el-row class="left-msg">
                         <el-scrollbar style="height: 100%;">
-                        <el-col :span="24">
-                            <div class="bg-blue">
-                                <span>真实身份  </span>
-                            </div>
-                        </el-col>
-                        <el-col :span="10" style="padding: 16px">
-                            <img src="./image/people.png" style="width: 100%">
-                        </el-col>
-                        <el-col :span="14">
-                            <div style="padding: 0 20px">
-                                <p><label><i class="fa fa-user-o"></i>姓名:</label> 李二</p>
-                                <p><label><i class="fa fa-venus-mars"></i>性别:</label> 女</p>
-                                <p><label><i class="fa fa-birthday-cake"></i>年龄:</label> 17 </p>
-                            </div>
-                        </el-col>
-                        <el-col :span="24">
-                            <div style="padding: 0 20px">
-                                <p><label><i class="fa fa-id-card-o"></i>身份证号:</label> 612651657492698</p>
-                                <p><label><i class="fa fa-mobile" style="font-size: 30px"></i>手机号:</label> 女</p>
-                                <p><label><i class="fa fa-file-o"></i>种类:</label> 未知 </p>
-                                <p><label><i class="fa fa-clock-o"></i>时间:</label> 2012-12-12</p>
-                                <p><label><i class="fa fa-home"></i>地址:</label> 安宁佳园小区 </p>
-                            </div>
-                        </el-col>
-                        <el-col :span="24">
-                            <div class="bg-blue">
-                                <span>虚拟身份  </span>
-                            </div>
-                        </el-col>
-                        <el-col :span="24">
-                            <div style="padding: 0 20px">
-                                <p><label><i class="fa fa-qq"></i>qq:</label> 小二</p>
-                                <p><label><i class="fa fa-envelope"></i>邮箱:</label> 51616455616@fds4.com</p>
-                            </div>
-                        </el-col>
+                            <el-col :span="24">
+                                <div class="bg-blue">
+                                    <span>真实身份  </span>
+                                </div>
+                            </el-col>
+                            <el-col :span="10" style="padding: 16px">
+                                <img src="./image/people.png" style="width: 100%">
+                            </el-col>
+                            <el-col :span="14">
+                                <div style="padding: 0 20px">
+                                    <p><label><i class="fa fa-user-o"></i>姓名:</label> 张三</p>
+                                    <p><label><i class="fa fa-venus-mars"></i>性别:</label> 男</p>
+                                    <p><label><i class="fa fa-birthday-cake"></i>年龄:</label> 25 </p>
+                                </div>
+                            </el-col>
+                            <el-col :span="24">
+                                <div style="padding: 0 20px">
+                                    <p><label><i class="fa fa-id-card-o"></i>身份证号:</label> 612651657492698</p>
+                                    <p><label><i class="fa fa-mobile" style="font-size: 30px"></i>手机号:</label> 135 4635
+                                        4656</p>
+                                    <p><label><i class="fa fa-file-o"></i>民族:</label> 汉 </p>
+                                    <p><label><i class="fa fa-clock-o"></i>籍贯:</label> 北京市-朝阳区</p>
+                                    <p><label><i class="fa fa-home"></i>居住地址:</label> 河北石家庄 </p>
+                                    <p><label><i class="fa fa-bookmark-o"></i>学历:</label> 本科 </p>
+                                </div>
+                            </el-col>
+                            <el-col :span="24">
+                                <div class="bg-blue">
+                                    <span>虚拟身份  </span>
+                                </div>
+                            </el-col>
+                            <el-col :span="24" style="margin-bottom: 40px">
+                                <div style="padding: 0 20px">
+                                    <p><label><i class="fa fa-qq"></i>Emain:</label> 561654686@qq.com</p>
+                                    <p><label><i class="fa fa-envelope"></i>QQ号:</label> 561654686</p>
+                                    <p><label><i class="fa fa-weibo"></i>微博ID:</label> 767832786</p>
+                                    <p><label><i class="fa fa-weixin"></i>微信UNI:</label>369433383</p>
+                                    <p><label><i class="fa fa-comments-o "></i>论坛账号:</label> 张三__zhang(天涯)</p>
+                                </div>
+                            </el-col>
+                            <el-col class="dangan" v-if="isDangan" @click="danganDetail">
+                                <div>查看档案详情</div>
+                            </el-col>
                         </el-scrollbar>
                     </el-row>
                 </el-aside>
@@ -57,26 +65,45 @@
 
 <script>
     export default {
-        name:"people-info-popup1",
-        components:{
-            mainTab3:()=>import('./main-tab/main-tab-3.vue'),
-            mainTab4:()=>import('./main-tab/main-tab-4.vue'),
-            mainTab5:()=>import('./main-tab/main-tab-5.vue'),
+        name: "people-info-popup1",
+        components: {
+            mainTab3: () => import('./main-tab/main-tab-3.vue'),
+            mainTab4: () => import('./main-tab/main-tab-4.vue'),
+            mainTab5: () => import('./main-tab/main-tab-5.vue'),
         },
         data() {
             return {
                 isShow: false,
-                activeName: 'first'
+                activeName: 'first',
             }
         },
         computed: {
             dialogVisible: {
-                get() {return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1},
-                set() {}
+                get() {
+                    return this.$store.state.peopleInfoPopup.showPeopleInfoPopup1
+                },
+                set() {
+                }
             },
-            currentTabComponent:{
-                get() {return this.$store.state.peopleInfoPopup.tab},
-                set() {}
+            currentTabComponent: {
+                get() {
+                    return this.$store.state.peopleInfoPopup.tab
+                },
+                set() {
+                }
+            },
+            isDangan:{
+                get() {
+                    let tab=this.$store.state.peopleInfoPopup.tab
+                    if(tab=='mainTab5'){
+                        return true
+                    }else {
+                        return false
+                    }
+
+                },
+                set() {
+                }
             }
         },
         watch: {
@@ -92,7 +119,11 @@
             handleClose() {
                 this.$store.commit('setData1', false)
             },
-
+            danganDetail(){
+                console.log("fds")
+                this.$store.commit('setData1', false)
+                // this.$store.commit('setTab', 'mainTab3')
+            }
         }
     }
 </script>
@@ -107,7 +138,7 @@
         padding: 30px;
         z-index: 9901;
         box-sizing: border-box;
-        color:  rgb(41, 45, 82);
+        color: rgb(41, 45, 82);
         .close {
             position: absolute;
             right: 0px;
@@ -141,7 +172,7 @@
             }
             .left-msg {
                 font-size: 14px;
-                color:  rgb(41, 45, 82);
+                color: rgb(41, 45, 82);
                 height: 100%;
                 border-right: 1px solid rgba(0, 0, 0, 0.2);
                 img {
@@ -161,10 +192,30 @@
                         line-height: 40px;
                     }
                 }
+                .dangan{
+                    height: 140px;
+                    div{
+                        width: 200px;
+                        height: 40px;
+                        margin: 0 auto;
+                        margin-top: 20px;
+                        border-radius: 5px;
+                        background:rgb(217,226,243);
+                        text-align: center;
+                        line-height: 40px;
+                        color: #ff6150;
+                        font-size: 14px;
+                        cursor: pointer;
+                        &:hover{
+                            background: rgb(212, 218, 241);
+                        }
+                    }
+                }
             }
             .el-main {
                 position: relative;
                 padding: 0;
+
             }
         }
         .content.show {
