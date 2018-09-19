@@ -1,11 +1,12 @@
 $blue:#409efe;
 $black:#6e7377;
-$gray:#6e73775c;
+$gray:#6e73773c;
 $red:#fc4547;
 $green1:#bcd754;
 $green2:#76cbc4;
 $green3:#8abbd2;
 $green4:#6e83ba;
+$orange:#ff682f;
 #evaluete-info{
 	height:100%;
 	#evaluete-info-header{
@@ -278,18 +279,28 @@ $green4:#6e83ba;
 
 .container{
 	padding:20px;
-	border:1px solid $gray;
+	margin-bottom:20px;
 	box-shadow:0px 0px 1px 1px $gray;
+	background:white;
 	.title{
-		font-size:18px;
-		padding-left:20px;
+		font-size:14px;
+		padding:0 0 0 15px;
+		margin:0px;
+		position: relative;
 		&:before{
 			position: absolute;
+			left:0px;
+			top:0px;
 			content:" ";
 			display:block;
-			width:10px;
-
+			width:4px;
+			height:100%;
+			background:$orange;
 		}
+	}
+	.chart{
+		height:300px;
+		width:100%;
 	}
 }
 
