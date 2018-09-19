@@ -55,7 +55,8 @@
 </template>
 
 <script>
-import { BusinessTable1List } from '@/api/demo/business/table/1'
+// import { BusinessTable1List } from '@/api/demo/business/table/1'
+import request from '@/plugin/axios'
 export default {
   name: 'demo-business-table-1',
   components: {
@@ -107,6 +108,15 @@ export default {
     }
   },
   methods: {
+
+    BusinessTable1List (data) {
+      return request({
+        url: 'demo/business/table/2',
+        method: 'post',
+        data
+      })
+    },
+
     message () {
       this.dialogVisible = true
     },
@@ -135,7 +145,7 @@ export default {
       this.$notify({
         title: '开始请求模拟表格数据'
       })
-      BusinessTable1List({
+      this.BusinessTable1List({
         ...form,
         page: this.page
       })

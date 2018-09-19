@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form
+    <!-- <el-form
       :inline="true"
       size="mini">
       <el-form-item :label="`已选数据下载 [ ${currentTableData.length} ]`">
@@ -39,7 +39,7 @@
           </el-button>
         </el-button-group>
       </el-form-item>
-    </el-form>
+    </el-form> -->
 
     <el-table
       :data="currentTableData"
