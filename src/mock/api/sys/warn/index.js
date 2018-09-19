@@ -1,4 +1,7 @@
 import Mock from 'mockjs'
+const jsonAll = [
+  {name:'',age:'',phone:'',star:'',type:'',peoNum:'',time:'',yuan:''},
+]
 const type = ["信用贷","XX贷","抵押贷"]
 
 Mock.mock('/api/warn', 'post',({}) => {

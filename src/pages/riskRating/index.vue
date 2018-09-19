@@ -36,17 +36,18 @@
             <el-col :span="6">
               <p><b style="color:#ea7312;">{{lb.name}}</b></p>
               <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
-              <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz}}</p>
+              <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index].mz}}</p>
+              <!-- <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index]}}</p> -->
             </el-col>
             <el-col :span="6">
               <p style="height:10px;"> </p>
-              <p><span style="color:#999"> 性别 </span> <b>:</b> {{lb.sex}}</p>
-              <p><span style="color:#999"> 籍贯 </span> <b>:</b> {{lb.country}}</p>
+              <p><span style="color:#999"> 性别 </span> <b>:</b> {{lb.sex[index].sex}}</p>
+              <p><span style="color:#999"> 籍贯 </span> <b>:</b> {{lb.country[index].country}}</p>
             </el-col>
             <el-col :span="6">
               <p style="height:10px;"> </p>
-              <p><span style="color:#999"> 电话号码 </span> <b>:</b> {{lb.phone}}</p>
-              <p><span style="color:#999"> 居住地址 </span> <b>:</b> {{lb.address}}</p>
+              <p><span style="color:#999"> 电话号码 </span> <b>:</b> {{lb.phone[index].phone}}</p>
+              <p><span style="color:#999"> 居住地址 </span> <b>:</b> {{lb.address[index].address}}</p>
             </el-col>
             <el-col :span="3">
               <p @click="mess(index)">
@@ -102,34 +103,10 @@ export default {
       resault:'2336',
       zk_name: 'zk',
       zk_phone: '15522322212',
-      item: [
-        { name: 'zk3', status: 'danger' },
-        { name: 'zk1', status: 'success' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'success' },
-        { name: 'zk2', status: 'danger' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'success' },
-        { name: 'zk2', status: 'warning' },
-        { name: 'zk2', status: 'danger' }
-      ],
       dynamicTags: [],
       inputVisible: false,
       inputValue: '',
       dialogVisible: false,
-      items: [
-        { name: 'zk', phone: 15522322212, status: 'danger', img: img1 },
-        { name: 'zk1', phone: 15652322212, status: 'success', img: img3 },
-        { name: 'zk2', phone: 15578956212, status: 'danger', img: img1 },
-        { name: 'zk2', phone: 15578956212, status: 'warning', img: img3 },
-        { name: 'zk2', phone: 15578956212, status: 'success', img: img1 },
-        { name: 'zk2', phone: 15578956212, status: 'warning', img: img3 },
-        { name: 'zk2', phone: 15578956212, status: 'danger', img: img1 },
-        { name: 'zk2', phone: 15578956212, status: 'success', img: img3 },
-        { name: 'zk2', phone: 15578956212, status: 'warning', img: img1 },
-        { name: 'zk2', phone: 15578956212, status: 'danger', img: img3 }
-      ],
       ok:false,
       ok1:true,
       table: [],
