@@ -50,8 +50,9 @@
             </el-col>
             <el-col :span="3">
               <p @click="mess(index)">
-                <d2-icon-svg style="width:30px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
-                padding:5px 0;background:#efefef;" name="count" ></d2-icon-svg>
+                <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
+                padding:5px 0 5px 5px;background:#efefef;" class="fa fa-id-card-o"></i>
+                <!-- <d2-icon-svg  name="count" ></d2-icon-svg> -->
               </p>
               <p> </p>
               <p> </p>
