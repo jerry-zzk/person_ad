@@ -35,7 +35,7 @@
             </el-col>
             <el-col :span="6">
               <p><b style="color:#ea7312;">{{lb.name}}</b></p>
-              <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard}}</p>
+              <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
               <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz}}</p>
             </el-col>
             <el-col :span="6">
@@ -50,8 +50,9 @@
             </el-col>
             <el-col :span="3">
               <p @click="mess(index)">
-                <d2-icon-svg style="width:30px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
-                padding:5px 0;background:#efefef;" name="count" ></d2-icon-svg>
+                <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
+                padding:5px 0 5px 5px;background:#efefef;" class="fa fa-id-card-o"></i>
+                <!-- <d2-icon-svg  name="count" ></d2-icon-svg> -->
               </p>
               <p> </p>
               <p> </p>
@@ -64,7 +65,6 @@
       <!-- <demo-toggle /> -->
       <demo-page-footer
         slot="footer"
-         style="padding-bottom:10px;margin-left:5px;"
         :current="page.current"
         :size="page.size"
         :total="page.total"
@@ -79,6 +79,7 @@
 import img1 from '../../assets/img/1.jpg'
 import img3 from '../../assets/img/3.jpg'
 import { BusinessTable1List } from '@/api/demo/business/table/1'
+import axios from '@/plugin/axios'
 export default {
   name: 'demo-business-table-1',
   components: {
@@ -91,12 +92,12 @@ export default {
       zk_cli:false,
       zk_ul:'zk_ul',
       peo:[
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
-        {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'}
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'},
+        // {name:'张三',idcard:'142300xxxxxxxx0000',mz:'汉族',sex:'男',phone:'15555446665',address:'北京',country:'山西'}
       ],
       resault:'2336',
       zk_name: 'zk',
@@ -140,7 +141,24 @@ export default {
       },
     }
   },
+  mounted:function(){
+    this.ajax()
+  },
   methods: {
+    ajax(){
+      axios({
+          url: '/risk',
+          method: 'post',
+        })
+        .then(res => {
+          console.log(res);
+          this.peo = res.list
+        })
+        .catch((error) => {
+          // 错误情况
+          console.log(error);
+        })
+    },
     mess(index){
       // 待修改替换
       this.$store.commit('setData1',true)

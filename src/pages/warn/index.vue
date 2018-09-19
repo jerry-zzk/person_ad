@@ -63,7 +63,7 @@
                         <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
                         <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
                         <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
-                        <p class="lis" :title="list.type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type}}</span></p>
+                        <p class="lis" :title="list.type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[parseInt(Math.random()*3)]}}</span></p>
                         <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
                         <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
                         <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
@@ -176,6 +176,7 @@
   // import img1 from '../../assets/img/1.jpg'
   // import img3 from '../../assets/img/3.jpg'
   const cityOptions = ['信用贷', '抵押贷', 'XX贷'];
+  import axios from '@/plugin/axios'
   export default {
     name: 'demo-business-table-1',
     components: {
@@ -232,18 +233,18 @@
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
         ],
         items: [
-          { name: '马尔扎哈维', phone: 15522322212, age: '18', star: 2.6, type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5'},
-          { name: 'zk1', phone: 15652322212, age: '23', star: 3.5, type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
-          { name: 'zk2', phone: 15578956212, age: '24', star: 6.9,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'4' },
-          { name: 'zk2', phone: 15578956212, age: '54', star: 7.8,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'2'},
-          { name: 'zk2', phone: 15578956212, age: '32', star: 8.0,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5' },
-          { name: 'zk2', phone: 15578956212, age: '54', star: 5.1,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
-          { name: 'zk2', phone: 15578956212, age: '32', star: 4.6,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5' },
-          { name: 'zk2', phone: 15578956212, age: '19', star: 6.5,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'3' },
-          { name: 'zk2', phone: 15578956212, age: '28', star: 6.9,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'2' },
-          { name: 'zk2', phone: 15578956212, age: '23', star: 5.4,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
-          { name: 'zk2', phone: 15578956212, age: '20', star: 7.5,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'3' },
-          { name: 'zk2', phone: 15578956212, age: '24', star: 6.2,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
+          // { name: '马尔扎哈维', phone: 15522322212, age: '18', star: 2.6, type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5'},
+          // { name: 'zk1', phone: 15652322212, age: '23', star: 3.5, type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
+          // { name: 'zk2', phone: 15578956212, age: '24', star: 6.9,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'4' },
+          // { name: 'zk2', phone: 15578956212, age: '54', star: 7.8,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'2'},
+          // { name: 'zk2', phone: 15578956212, age: '32', star: 8.0,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5' },
+          // { name: 'zk2', phone: 15578956212, age: '54', star: 5.1,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
+          // { name: 'zk2', phone: 15578956212, age: '32', star: 4.6,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5' },
+          // { name: 'zk2', phone: 15578956212, age: '19', star: 6.5,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'3' },
+          // { name: 'zk2', phone: 15578956212, age: '28', star: 6.9,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'2' },
+          // { name: 'zk2', phone: 15578956212, age: '23', star: 5.4,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
+          // { name: 'zk2', phone: 15578956212, age: '20', star: 7.5,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'3' },
+          // { name: 'zk2', phone: 15578956212, age: '24', star: 6.2,type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'1' },
         ],
         ok: false,
         ok1: true,
@@ -260,7 +261,25 @@
         inputValue: ''
       }
     },
+    mounted:function() {
+      // debugger 
+      this.ajax();
+    },
     methods: {
+      ajax(){
+        axios({
+          url: '/warn',
+          method: 'post',
+        })
+        .then(res => {
+          console.log(res);
+          this.items = res.list
+        })
+        .catch((error) => {
+          // 错误情况
+          console.log(error);
+        })
+      },
       chan_zk(index){
         this.inx = index
       },
@@ -279,7 +298,7 @@
         }
       },
       dbx(index){
-        let yu = this.items[index].yuan
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'dbx1'
         }else if(yu === '2'){
@@ -293,7 +312,7 @@
         }
       },
       yuan(index){
-        let yu = this.items[index].yuan
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'yuan1'
         }else if(yu === '2'){
@@ -307,7 +326,7 @@
         }
       },
       bian(index){
-        let yu = this.items[index].yuan
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'bian1'
         }else if(yu === '2'){
