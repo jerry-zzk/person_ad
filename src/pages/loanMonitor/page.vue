@@ -159,13 +159,13 @@ export default {
       ],
       pepoleList: [
         {id:1,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:2,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:3,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:4,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:5,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:6,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:7,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:8,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:2,name:'李四',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:3,name:'王二麻子',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:4,name:'汤姆汉克斯',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:5,name:'奥姆浩格沃茨',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:6,name:'张三四五六七八',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:7,name:'一二三四五六七',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:8,name:'abcdefghijklm',idCard:'410785198407141786',gender:'男',grade:'75'},
         {id:9,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
         {id:10,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'}
       ]
@@ -400,7 +400,7 @@ export default {
       background-color: #e9eff3;
     }
     .pList-first{
-      text-align: center;
+      padding-left: 20px;
       .fa{
         margin-right: 4px;
         font-size: 24px;
