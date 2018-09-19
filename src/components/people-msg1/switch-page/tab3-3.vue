@@ -24,5 +24,6 @@ export default {
   	padding: 30px 20px;
   	border: 1px solid #ddd;
   	font-size: 14px;
+  	background-color: #fff;
   }
 </style>
