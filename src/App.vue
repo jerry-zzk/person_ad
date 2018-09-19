@@ -34,7 +34,7 @@ export default {
     }
   }
   .el-tabs__item.is-active{
-    background: white;
+    background: #f9f9f9;
     color: rgb(220,67,39);
   }
 }

@@ -218,7 +218,7 @@
             .el-main {
                 position: relative;
                 padding: 0;
-
+                background: #f9f9f9;
             }
         }
         .content.show {
