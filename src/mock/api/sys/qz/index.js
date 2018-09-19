@@ -1,12 +1,22 @@
 import Mock from 'mockjs'
+const status = ["danger","warning","primary","success"]
 
-const userDB = [
-  { 'list': 1, 'name': 'zk', 'phone': 18800556336, 'star': 3 },
-  { 'list': 3, 'name': 'zk', 'phone': 18851556966, 'star': 6 },
-  { 'list': 5, 'name': 'zk', 'phone': 18856556866, 'star': 9 }
-]
 
-Mock.mock('/api/qz', 'post', ({ url, type, body }) => {
-  const bodyObj = JSON.parse(body)
-  console.log(bodyObj)
+Mock.mock('/api/qz', 'post',({}) => {
+  return Mock.mock(
+    {
+      code: 0,
+      msg: '获取数据成功',
+      data: {
+        'list|4': [
+          {
+            'img': "@dataImage('300x250', 'mock的图片')",
+            'phone': '15596446321',
+            'name': '@cname',
+            'status': status,
+          }
+        ]
+      }
+    }
+  )
 })
