@@ -111,6 +111,9 @@ export default {
       ]
     }
   },
+  mounted:function(){
+    this.ajax()
+  },
   methods: {
     // mock 数据请求
     ajax () {

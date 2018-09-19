@@ -33,12 +33,12 @@
       </p>
     </el-header>
     <div :min-percent='10' :default-percent='30' split="vertical">
-      <el-col slot="paneL" :span="4" style="background:#fff;height:788px;border-right:2px solid #ddd;">
+      <el-col slot="paneL" :span="5" style="background:#fff;height:788px;border-right:2px solid #ddd;">
         <d2-customer-list :item="items1" style="">
             <!-- 数据编写 -->
         </d2-customer-list>
       </el-col>
-      <el-col slot="paneR" :span="20" style="background:#fff;">
+      <el-col slot="paneR" :span="19" style="background:#fff;">
               <p>
                 <!-- 表格 -->
                 <demo-page-header
@@ -51,7 +51,7 @@
               </p>
               <el-col :span="24" v-show="!ok">
                 <div class="col col-l">
-                  <el-row :gutter="23">
+                  <el-row :gutter="10">
                     <el-col style="margin-bottom:20px;" :span="4" v-for="(list,index) in items" :key="list">
                       <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                         <div class="yuan" :class="yuan(index)">{{list.yuan}}</div>
@@ -653,9 +653,21 @@
     // padding-right: 5px;
     font-size:13px;
   }
+  @media screen and (max-width: 1280) {
+    .lis1 {
+      display: inline-block;
+      // width:;
+      overflow: hidden;
+      white-space: nowrap; //使其不换行
+      text-overflow:ellipsis;
+      vertical-align: middle;
+      border-bottom:1px solid #333;
+      padding-bottom:10px;
+    }
+  }
   .lis1 {
     display: inline-block;
-    width:132px;
+    width:130px;
     overflow: hidden;
     white-space: nowrap; //使其不换行
     text-overflow:ellipsis;
