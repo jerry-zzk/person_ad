@@ -171,13 +171,16 @@ export default {
     this.initChart();
   },
   beforeDestroy() {
-  	this.chart.dispose();
-  	this.chart= null;
+  	if(this.chart){
+  		this.chart.dispose();
+  		this.chart= null;
+  	}
   },
   methods:{
   	onResize:function(){
-  		if(this.chart)
+  		if(this.chart){
   			this.chart.resize();
+  		}
   	},
   	initChart() {
       	this.chart = echarts.init(this.$refs.chart);

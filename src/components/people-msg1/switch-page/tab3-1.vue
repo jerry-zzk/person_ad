@@ -3,14 +3,14 @@
   	<div>
   		<p class="ipanel-p">新手机号的可信度</p>
   		<el-row class="ipanel-thead">
-  			<el-col :span="4" class="ipanel-first">判定规则</el-col>
+  			<el-col :span="4">判定规则</el-col>
   			<el-col :span="5">判定依据</el-col>
   			<el-col :span="5">规则权重</el-col>
   			<el-col :span="5">规则匹配情况</el-col>
   			<el-col :span="5">详情</el-col>
   		</el-row>
   		<el-row v-for="(msg,index) in phoneMsg" :key="msg.ruleName" class="ipanel-tr" :class="{'ipanel-tr-bg':index%2==0}">
-  			<el-col :span="4" class="ipanel-first">{{msg.ruleName}}</el-col>
+  			<el-col :span="4">{{msg.ruleName}}</el-col>
   			<el-col :span="5">{{msg.judgeBase}}</el-col>
   			<el-col :span="5">{{msg.ruleWeight}}</el-col>
   			<el-col :span="5">{{msg.ruleCondition}}</el-col>
@@ -172,14 +172,13 @@ export default {
   	}
   	.ipanel-thead{
   		height: 32px;
+  		padding-left: 40px;
   		line-height: 32px;
   		background-color: #e9eff3;
   	}
-  	.ipanel-first{
-  		padding-left: 40px;
-  	}
   	.ipanel-tr{
   		height: 40px;
+  		padding-left: 40px;
   		line-height: 40px;
   		font-weight: 600;
   		background-color: #e9eff3;

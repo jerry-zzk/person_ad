@@ -1,6 +1,6 @@
 <template>
-	<el-scrollbar style="height: 100%" v-resize:throttle="onResize">
-		<el-container>
+	<el-scrollbar style="height: 100%" >
+		<el-container v-resize:throttle="onResize">
 			<el-main>
 				<el-row>
 					<el-col :span="24">
@@ -138,23 +138,27 @@ export default {
     this.initChart2();
   },
   beforeDestroy() {
-  	this.chart1.dispose();
-  	this.chart1= null;
-  	this.chart2.dispose();
-  	this.chart2= null;
+  	if(this.chart1&&this.chart2){
+  		this.chart1.dispose();
+	  	this.chart1= null;
+	  	this.chart2.dispose();
+	  	this.chart2= null;
+  	}
+  	
   },
   directives: {
     resize
   },
   methods:{
   	onResize:function(){
-  		if(this.chart1){
+  		debugger
+  		if(this.chart1&&this.chart2){
   			this.chart1.resize();
   			this.chart2.resize();
   		}
-  		
   	},
   	initChart1() {
+  		debugger
       	this.chart1 = echarts.init(this.$refs.chart1);
       	this.chart1.setOption({
             backgroundColor: '#ffffff',
