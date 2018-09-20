@@ -68,4 +68,9 @@
         box-shadow: none;
         transition-duration: .5s;
     }
+    .zk_head .d2-container-full__header {
+        padding:0px !important;
+        padding-left:15px !important;
+    }
+
 </style>
