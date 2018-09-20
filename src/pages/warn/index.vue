@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page zk_page">
+  <d2-container class="page zk_page zk_head">
     <el-header slot="header">
           <p>信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
@@ -32,50 +32,50 @@
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
       </p>
     </el-header>
-    <div :min-percent='10' :default-percent='30' split="vertical">
-      <el-col slot="paneL" :span="5" style="background:#fff;height:788px;border-right:2px solid #ddd;">
+    <el-col :span="5" style="background:#fff;height:688px;border-right:2px solid #ddd;">
         <d2-customer-list :item="items1" style="">
             <!-- 数据编写 -->
         </d2-customer-list>
-      </el-col>
-      <el-col slot="paneR" :span="19" style="background:#fff;">
-              <p>
-                <!-- 表格 -->
-                <demo-page-header
-                  slot="header"
-                  @submit="handleSubmit"
-                  ref="header"  @zk = "zk" style="padding-left:20px;margin-bottom:10px;border-bottom:1px solid #ddd;"/>
-                <demo-page-main style="padding-left:20px;"
-                  :table-data="table"
-                  :loading="loading" v-show="ok"/>
-              </p>
-              <el-col :span="24" v-show="!ok">
-                <div class="col col-l">
-                  <el-row :gutter="10">
-                    <el-col style="margin-bottom:20px;" :span="4" v-for="(list,index) in items" :key="list">
-                      <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
-                        <div class="yuan" :class="yuan(index)">{{list.yuan}}</div>
-                        <div class="sanjiao"></div>
-                        <div class="sanjiao_gai"></div>
-                        <div class="sanjiao_gai1"></div>
-                        <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
-                        <p class="lis1" style="font-size:13px;" :title="list.name">
-                        <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
-                        <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
-                        <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
-                        <p class="lis" :title="list.type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
-                        <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
-                        <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
-                        <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
-                      </el-card>
-                    </el-col>
-                  </el-row>
-                </div>
-              </el-col>
+    </el-col>
+    <el-col :span="19" style="background:#fff;height:688px;">
+        <el-scrollbar style="height:100%;">
+          <p>
+            <!-- 表格 -->
+            <demo-page-header
+            slot="header"
+            @submit="handleSubmit"
+            ref="header"  @zk = "zk" style="padding-left:20px;margin-bottom:10px;border-bottom:1px solid #ddd;"/>
+          <demo-page-main style="padding-left:20px;"
+            :table-data="table"
+            :loading="loading" v-show="ok"/>
+          </p>
+          <el-col :span="24" v-show="!ok">
+                    <div class="col col-l">
+                      <el-row :gutter="20">
+                        <el-col style="margin-bottom:20px;width:256px"  v-for="(list,index) in items" :key="list">
+                          <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
+                            <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
+                            <div class="sanjiao"></div>
+                            <div class="sanjiao_gai"></div>
+                            <div class="sanjiao_gai1"></div>
+                            <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
+                            <p class="lis1" style="font-size:13px;" :title="list.name">
+                            <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
+                            <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
+                            <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
+                            <p class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
+                            <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
+                            <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
+                            <p class="lis" title="点击查看详细信息" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
+                          </el-card>
+                        </el-col>
+                      </el-row>
+                    </div>
           </el-col>
-      <!--人员信息弹窗-->
-      <people-info-popup></people-info-popup>
-    </div>
+        </el-scrollbar>
+      </el-col>
+    <!--人员信息弹窗-->
+    <people-info-popup></people-info-popup>
   </d2-container>
 </template>
 <script>
@@ -138,6 +138,9 @@
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
         ],
         items: [
           // { name: '马尔扎哈维', phone: 15522322212, age: '18', star: 2.6, type:'信用贷',peoNum:'141234196598050561',time:'2000-1-1',yuan:'5'},
@@ -192,6 +195,92 @@
       },
       chan_zk(index){
         this.inx = index
+        if(this.inx == 0){
+          axios({
+              url: '/warn1',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+        }else if(this.inx == 1){
+          axios({
+              url: '/warn2',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+        }else if(this.inx == 2){
+          axios({
+              url: '/warn3',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+        }else if(this.inx == 3){
+          axios({
+              url: '/warn4',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+        }else if(this.inx == 4){
+          axios({
+              url: '/warn5',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+        }
       },
       bg_zk(index){
         let bg = this.bgc[index].num
@@ -208,7 +297,7 @@
         }
       },
       dbx(index){
-        let yu = this.items[index].yuan.toString()
+        let yu = this.items[index].yuan[index].yuan.toString()
         if(yu === '1'){
           return 'dbx1'
         }else if(yu === '2'){
@@ -222,7 +311,7 @@
         }
       },
       yuan(index){
-        let yu = this.items[index].yuan.toString()
+        let yu = this.items[index].yuan[index].yuan.toString()
         if(yu === '1'){
           return 'yuan1'
         }else if(yu === '2'){
@@ -236,7 +325,7 @@
         }
       },
       bian(index){
-        let yu = this.items[index].yuan.toString()
+        let yu = this.items[index].yuan[index].yuan.toString()
         if(yu === '1'){
           return 'bian1'
         }else if(yu === '2'){
@@ -252,11 +341,91 @@
       handleCheckAllChange(val) {
         this.checkedCities = val ? cityOptions : [];
         this.isIndeterminate = false;
+        if(val == true){
+          this.ajax()
+        }
       },
       handleCheckedCitiesChange(value) {
         let checkedCount = value.length;
         this.checkAll = checkedCount === this.cities.length;
         this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+        for(let i=0;i<value.length;i++){
+          if(value.length == 1 && value[i] == "信用贷"){
+            // 信用贷
+            axios({
+              url: '/warn1',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+          }else if(value.length == 1 && value[i] == "抵押贷"){
+            // 抵押贷
+            axios({
+              url: '/warn2',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+          }else if(value.length == 1 && value[i] == "XX贷"){
+            // 抵押贷
+            axios({
+              url: '/warn3',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+          }else if(value.length == 2 && value[i] == "抵押贷" || value[i] == "信用贷"){
+            // 抵押贷
+            axios({
+              url: '/warn4',
+              method: 'post',
+              data:{
+                login:'admin'
+              }
+            })
+            .then(res => {
+              console.log(res);
+              this.items = ""
+              this.items = res.list
+            })
+            .catch((error) => {
+              // 错误情况
+              console.log(error);
+            })
+          }else if(value.length == 3){
+            this.ajax()
+          }
+        }
       },
       message () {
         // alert(123213)
@@ -564,9 +733,6 @@
   .yuan5{
     background:#ef1c11;
   }
-  .zk_page .d2-container-full__body{
-    padding-top: 0px !important;
-  }
   .cir{
     height:50px;
     width:50px;
@@ -653,10 +819,21 @@
     // padding-right: 5px;
     font-size:13px;
   }
+  .lis1 {
+    display: inline-block;
+    width:165px;
+    overflow: hidden;
+    white-space: nowrap; //使其不换行
+    text-overflow:ellipsis;
+    vertical-align: middle;
+    border-bottom:1px solid #333;
+    padding-bottom:10px;
+  }
+
   @media screen and (max-width: 1280) {
     .lis1 {
       display: inline-block;
-      // width:;
+      width:54px;
       overflow: hidden;
       white-space: nowrap; //使其不换行
       text-overflow:ellipsis;
@@ -665,16 +842,7 @@
       padding-bottom:10px;
     }
   }
-  .lis1 {
-    display: inline-block;
-    width:130px;
-    overflow: hidden;
-    white-space: nowrap; //使其不换行
-    text-overflow:ellipsis;
-    vertical-align: middle;
-    border-bottom:1px solid #333;
-    padding-bottom:10px;
-  }
+
   .time {
     font-size: 13px;
     color: #999;

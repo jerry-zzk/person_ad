@@ -173,7 +173,7 @@ export default {
     mess(index){
       // 待修改替换
       this.$store.commit('setData1',true)
-      this.$store.commit('setTab','mainTab5')
+      this.$store.commit('setTab','mainTab4')
     },
     zk (msg) {
       if(msg == true){
