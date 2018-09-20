@@ -41,25 +41,25 @@ const setting = {
         title: '简约线条',
         name: 'line',
         backgroundImage: 'image/theme/line/bg.jpg',
-        preview: 'image/theme/line/preview@2x.png'
+        preview: 'image/theme/line/bg.jpg'
       },
       {
         title: '纯色',
         name: 'd2',
         backgroundImage: 'image/theme/d2/bg.jpg',
-        preview: 'image/theme/d2/preview@2x.png'
+        preview: 'image/theme/d2/bg.jpg'
       },
       {
         title: '蓝色',
         name: 'violet',
         backgroundImage: 'image/theme/violet/bg.jpg',
-        preview: 'image/theme/violet/preview@2x.png'
+        preview: 'image/theme/violet/bg.jpg'
       },
       {
         title: '模糊',
         name: 'star',
         backgroundImage: 'image/theme/star/bg.jpg',
-        preview: 'image/theme/star/preview@2x.png'
+        preview: 'image/theme/star/bg.jpg'
       }
     ]
   },
