@@ -35,23 +35,37 @@
             &:hover {
                 color: rgb(220, 67, 39);
             }
+            .BMap_cpyCtrl {
+                display: none;
+            }
+
+            .anchorBL {
+                display: none;
+            }
+
+            .el-tabs__nav {
+                opacity: 0.78;
+            }
         }
         .el-tabs__item.is-active {
             background: #f9f9f9;
             color: rgb(220, 67, 39);
             border-bottom-color: #f9f9f9 !important;
         }
+
+    }
+    .zk_input .el-input__inner {
+        box-shadow: none;
+        border: 2px solid #ea7312;
     }
 
-    .BMap_cpyCtrl {
-        display: none;
+    .zk_input .el-input__inner:hover {
+        border-color: #ea7312;
     }
 
-    .anchorBL {
-        display: none;
-    }
-
-    .el-tabs__nav {
-        opacity: 0.78;
+    .zk_input .el-input__inner:focus {
+        border-color: #ea7312;
+        box-shadow: none;
+        transition-duration: .5s;
     }
 </style>
