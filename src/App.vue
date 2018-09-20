@@ -72,5 +72,7 @@
         padding:0px !important;
         padding-left:15px !important;
     }
-
+    .zk_page .d2-container-full__body{
+        padding-bottom: 0px !important;
+    }
 </style>
