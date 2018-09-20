@@ -55,10 +55,41 @@ export default {
     drawBaiduMap(){
     	let _this = this;
     	// 百度地图API功能
-			let map = new BMap.Map("active_map_baidu2");    // 创建Map实例
-			map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别	  
-			map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    	// 创建Map实例
+			let map2 = new BMap.Map("active_map_baidu2")
+			// 初始化地图,设置中心点坐标和地图级别
+			map2.centerAndZoom(new BMap.Point(116, 40.4), 11)
+			// 设置地图显示的城市 此项是必须设置的
+			map2.setCurrentCity("北京")
+			//开启鼠标滚轮缩放
+			map2.enableScrollWheelZoom(true)
+
+			// 海量点
+			let points1 = []
+			let points2 = []
+			points1.push(new BMap.Point(116.338153,39.96406))
+			points1.push(new BMap.Point(116.197299,39.936625))
+			points1.push(new BMap.Point(116.182926,39.967599))
+			points1.push(new BMap.Point(116.074842,39.950786))
+			points1.push(new BMap.Point(116.074842,39.950786))
+			points2.push(new BMap.Point(116.338153,40.06406))
+			points2.push(new BMap.Point(116.197299,40.036625))
+			points2.push(new BMap.Point(116.182926,40.067599))
+			points2.push(new BMap.Point(116.074842,40.050786))
+			points2.push(new BMap.Point(116.074842,40.050786))
+			// 初始化PointCollection
+			let pointCollection1 = new BMap.PointCollection(points1, {
+        size: BMAP_POINT_SIZE_BIGGER,
+        shape: BMAP_POINT_SHAPE_CIRCLE,
+        color: '#1d8af2'
+      });
+			let pointCollection2 = new BMap.PointCollection(points2, {
+        size: BMAP_POINT_SIZE_BIGGER,
+        shape: BMAP_POINT_SHAPE_CIRCLE,
+        color: '#963390'
+      });
+     	map2.addOverlay(pointCollection1);
+     	map2.addOverlay(pointCollection2);
     }
   }
 }

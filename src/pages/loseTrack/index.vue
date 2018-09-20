@@ -4,18 +4,19 @@
       <el-row :gutter="10">
         <el-col :span="24">
           <div class="col col-l">
-            <p style="text-align:center;">
-              <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> <span style="font-size:24px;color:#666;">用 户 搜 索</span>
+            <p class="zk_sousuo" style="text-align:center;">
+              <!-- <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> -->
+              <i style="vertical-align:middle;margin-right:10px;height:29px;display:inline-block;font-size:22px;color:#ea7312;" class="fa fa-search"></i>
+               <span style="font-size:24px;color:#666;">用 户 搜 索</span>
             </p>
             <p class="zk_input" style="text-align:center;">
               <el-input
-                :class="{fo:fo}"
-                @click="fo"
+                v-model="val"
                 placeholder="请输入搜索内容"
                 style="width:600px;"
                 prefix-icon="el-icon-search"
                 clearable="">
-                <el-button style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜索</el-button>
+                <el-button @click="sear" style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜索</el-button>
               </el-input>
             </p>
           </div>
@@ -23,12 +24,11 @@
       </el-row>
     </el-card>
     <div style="background:#fff;margin-top:-20px;border:5px solid #d5d8de;border-top:20px solid #d5d8de;">
-      <p style="background:#aaa;opacity:0.3;height:30px;line-height:30px;iwdth:100%;margin-top:0px;color:#333;">共搜索出 <b style="color:#000;"> {{resault}} </b> 条信息</p>
+      <p style="background:#aaa;opacity:0.2;height:30px;line-height:30px;iwdth:100%;margin-top:0px;color:#333;">共搜索出 <b style="color:#000;"> {{resault}} </b> 条信息</p>
       <!-- 表格 -->
       <demo-page-header
         slot="header"
         @submit="handleSubmit"
-        style="margin-bottom:-10px;"
         ref="header"  @zk = "zk"/>
         <p v-show="ok1">
           <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
@@ -36,7 +36,7 @@
               <img src="../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
             </el-col>
             <el-col :span="6">
-              <p><b style="color:#ea7312;">{{lb.name}}</b></p>
+              <p><b style="color:#ea7312;">{{lb.name[index].name}}</b></p>
               <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
               <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index].mz}}</p>
               <!-- <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index]}}</p> -->
@@ -53,8 +53,11 @@
             </el-col>
             <el-col :span="3">
               <p @click="mess(index)">
-                <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
+                <el-tooltip content="查看详情" placement="bottom" effect="light">
+                   <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
                 padding:5px 0 5px 5px;background:#efefef;" class="fa fa-id-card-o"></i>
+                </el-tooltip>
+               
                 <!-- <d2-icon-svg  name="count" ></d2-icon-svg> -->
               </p>
               <p> </p>
@@ -92,6 +95,7 @@ export default {
   },
   data () {
     return {
+      val:'',
       fo:'',
       zk_cli:false,
       zk_ul:'zk_ul',
@@ -125,9 +129,32 @@ export default {
     this.ajax()
   },
   methods: {
-    fo() {
-      // alert(123123)
-      this.fo = "fo"
+    sear(){
+      if(this.ok1 === true){
+        // 列表搜索
+        axios({
+          url: '/risk1',
+          method: 'post',
+        })
+        .then(res => {
+          for(let i =0;i<res.list.length;i++){
+            for(let j =0;i<res.list[i].name.length;j++){
+              if(this.val == res.list[i].name[j].name){
+                this.peo = ''
+                this.peo = res.list
+              }else if(this.val != res.list[i].name[j].name){
+                this.ajax()
+              }
+            }
+          }
+        })
+        .catch((error) => {
+          // 错误情况
+          console.log(error);
+        })
+      }else{
+        // 表格搜索
+      }
     },
     ajax(){
       axios({
@@ -146,7 +173,7 @@ export default {
     mess(index){
       // 待修改替换
       this.$store.commit('setData1',true)
-      this.$store.commit('setTab','mainTab3')
+      this.$store.commit('setTab','mainTab4')
     },
     zk (msg) {
       if(msg == true){
@@ -239,8 +266,9 @@ export default {
     border-left:5px solid #35ab62;
   }
   .zk_ul:hover{
-    border:2px solid #35ab62;
-    border-left:5px solid #35ab62;
+    border:1px solid #35ab62;
+    border-left:3px solid #35ab62;
+    background:rgba(132, 182, 144, 0.12);
   }
 @import '~@/assets/style/public.scss';
 .col {

@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page zk_page zk_head">
+  <d2-container class="page zk_page">
     <el-header slot="header">
           <p>信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
@@ -195,92 +195,6 @@
       },
       chan_zk(index){
         this.inx = index
-        if(this.inx == 0){
-          axios({
-              url: '/warn1',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-        }else if(this.inx == 1){
-          axios({
-              url: '/warn2',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-        }else if(this.inx == 2){
-          axios({
-              url: '/warn3',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-        }else if(this.inx == 3){
-          axios({
-              url: '/warn4',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-        }else if(this.inx == 4){
-          axios({
-              url: '/warn5',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-        }
       },
       bg_zk(index){
         let bg = this.bgc[index].num
@@ -297,7 +211,7 @@
         }
       },
       dbx(index){
-        let yu = this.items[index].yuan[index].yuan.toString()
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'dbx1'
         }else if(yu === '2'){
@@ -311,7 +225,7 @@
         }
       },
       yuan(index){
-        let yu = this.items[index].yuan[index].yuan.toString()
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'yuan1'
         }else if(yu === '2'){
@@ -325,7 +239,7 @@
         }
       },
       bian(index){
-        let yu = this.items[index].yuan[index].yuan.toString()
+        let yu = this.items[index].yuan.toString()
         if(yu === '1'){
           return 'bian1'
         }else if(yu === '2'){
@@ -341,91 +255,11 @@
       handleCheckAllChange(val) {
         this.checkedCities = val ? cityOptions : [];
         this.isIndeterminate = false;
-        if(val == true){
-          this.ajax()
-        }
       },
       handleCheckedCitiesChange(value) {
         let checkedCount = value.length;
         this.checkAll = checkedCount === this.cities.length;
         this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-        for(let i=0;i<value.length;i++){
-          if(value.length == 1 && value[i] == "信用贷"){
-            // 信用贷
-            axios({
-              url: '/warn1',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-          }else if(value.length == 1 && value[i] == "抵押贷"){
-            // 抵押贷
-            axios({
-              url: '/warn2',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-          }else if(value.length == 1 && value[i] == "XX贷"){
-            // 抵押贷
-            axios({
-              url: '/warn3',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-          }else if(value.length == 2 && value[i] == "抵押贷" || value[i] == "信用贷"){
-            // 抵押贷
-            axios({
-              url: '/warn4',
-              method: 'post',
-              data:{
-                login:'admin'
-              }
-            })
-            .then(res => {
-              console.log(res);
-              this.items = ""
-              this.items = res.list
-            })
-            .catch((error) => {
-              // 错误情况
-              console.log(error);
-            })
-          }else if(value.length == 3){
-            this.ajax()
-          }
-        }
       },
       message () {
         // alert(123213)
@@ -819,21 +653,10 @@
     // padding-right: 5px;
     font-size:13px;
   }
-  .lis1 {
-    display: inline-block;
-    width:165px;
-    overflow: hidden;
-    white-space: nowrap; //使其不换行
-    text-overflow:ellipsis;
-    vertical-align: middle;
-    border-bottom:1px solid #333;
-    padding-bottom:10px;
-  }
-
   @media screen and (max-width: 1280) {
     .lis1 {
       display: inline-block;
-      width:54px;
+      // width:;
       overflow: hidden;
       white-space: nowrap; //使其不换行
       text-overflow:ellipsis;
@@ -842,7 +665,16 @@
       padding-bottom:10px;
     }
   }
-
+  .lis1 {
+    display: inline-block;
+    width:130px;
+    overflow: hidden;
+    white-space: nowrap; //使其不换行
+    text-overflow:ellipsis;
+    vertical-align: middle;
+    border-bottom:1px solid #333;
+    padding-bottom:10px;
+  }
   .time {
     font-size: 13px;
     color: #999;

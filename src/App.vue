@@ -35,17 +35,6 @@
             &:hover {
                 color: rgb(220, 67, 39);
             }
-            .BMap_cpyCtrl {
-                display: none;
-            }
-
-            .anchorBL {
-                display: none;
-            }
-
-            .el-tabs__nav {
-                opacity: 0.78;
-            }
         }
         .el-tabs__item.is-active {
             background: #f9f9f9;
@@ -54,6 +43,19 @@
         }
 
     }
+    .BMap_cpyCtrl {
+        display: none;
+    }
+
+    .anchorBL {
+        display: none;
+    }
+
+    .el-tabs__nav {
+        opacity: 0.78;
+    }
+
+
     .zk_input .el-input__inner {
         box-shadow: none;
         border: 2px solid #ea7312;

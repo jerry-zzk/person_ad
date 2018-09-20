@@ -5,7 +5,7 @@
     :rules="rules"
     ref="form"
     size="mini"
-    style="margin-bottom: -18px;">
+    style="margin-bottom: -30px;">
 
     <!-- <el-form-item label="原因配型" prop="type">
       <el-select
@@ -20,7 +20,7 @@
       </el-select>
     </el-form-item> -->
 
-    <el-form-item label="姓名" prop="user">
+    <!-- <el-form-item label="姓名" prop="user">
       <el-input
         v-model="form.user"
         placeholder="姓名"
@@ -39,25 +39,25 @@
         v-model="form.phone"
         placeholder="电话号"
         style="width: 120px;"/>
-    </el-form-item>
+    </el-form-item> -->
     
 
-    <el-form-item>
+    <!-- <el-form-item >
       <el-button
         type="primary"
         @click="handleFormSubmit">
         <d2-icon name="search"/>
         查询
       </el-button>
-    </el-form-item>
+    </el-form-item> -->
 
-    <el-form-item>
+    <!-- <el-form-item>
       <el-button
         @click="handleFormReset">
         <d2-icon name="refresh"/>
         重置
       </el-button>
-    </el-form-item>
+    </el-form-item> -->
     <!-- <el-form-item>
       <el-button type="primary"
         @click="add">
@@ -65,8 +65,15 @@
         添加客户组
       </el-button>
     </el-form-item> -->
-    <el-form-item>
+    <el-form-item style="float:right;margin-right:45px;margin-top:-10px;">
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
+      <el-button
+        style="margin-right:30px;"
+        type="primary"
+        @click="handleFormSubmit">
+        <d2-icon name="search"/>
+        查询表格数据
+      </el-button>
       <div @click="add1":class="[toggle,to1]">表格</div>
       <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
       <!-- <el-switch
@@ -78,6 +85,7 @@
         active-icon-class="el-icon-menu"> 
       </el-switch> -->
     </el-form-item>
+    <div style="clear:both;"></div>
   </el-form>
 </template>
 
