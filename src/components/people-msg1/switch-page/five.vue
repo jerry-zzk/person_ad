@@ -323,40 +323,23 @@ export default {
     initChart3() {
       	this.chart3 = echarts.init(this.$refs.chart3);
       	this.chart3.setOption({
-		    title: {
-		        text: ""
+		    xAxis: {
+		        type: 'category',
+		        data: ['2017-05-01', '2017-05-06', '2017-05-11', '2017-05-16', '2017-05-21', '2017-05-26', '2017-05-31']
 		    },
-		    tooltip: {
-		        trigger: 'axis'
+		    yAxis: {
+		        type: 'value'
 		    },
-		    radar: [
-		        {
-		            indicator: [
-		                {text: '失联倾向异常', max: 100},
-		                {text: '关联异常', max: 100},
-		                {text: '位置异常', max: 100},
-		                {text: '网络行为异常', max: 100}
-		            ],
-		            radius: 80
-		        },
-		     
-		    ],
-		    series: [
-		        {
-		            type: 'radar',
-		             tooltip: {
-		                trigger: 'item'
-		            },
-		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-		            data: [
-		                {
-		                    value: [66,78,95,90],
-		                    name: 'XXX'
-		                }
-		            ]
-		        },
-		      
-		    ]
+		    series: [ {
+		    	barWidth: "10%",
+		    	zlevel:2,
+		        data: [820, 932, 901, 934, 1290, 1330, 1320],
+		        type: 'bar',
+		    },{
+		    	barWidth: "10%",
+		        data: [820, 932, 901, 934, 1290, 1330, 1320],
+		        type: 'bar',
+		    }]
 		})
     },
     initChart4() {
@@ -369,15 +352,7 @@ export default {
 		    yAxis: {
 		        type: 'value'
 		    },
-		    series: [ { 
-	            type: 'bar',
-	            itemStyle: {
-	                normal: {color: 'rgba(0,0,0,0.05)'}
-	            },
-	            zlevel:1,
-	            barWidth: "10%",
-	            data: [1500, 1500, 1500, 1500, 1500, 1500, 1500],
-	        },{
+		    series: [ {
 		    	barWidth: "10%",
 		    	zlevel:2,
 		        data: [820, 932, 901, 934, 1290, 1330, 1320],
@@ -388,6 +363,7 @@ export default {
 		        type: 'bar',
 		    }]
 		})
+
     }
 
   }
