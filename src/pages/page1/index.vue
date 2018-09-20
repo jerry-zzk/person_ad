@@ -24,19 +24,38 @@
       :total="page.total"
       @change="handlePaginationChange"/>
 
-    <el-card v-show="ok1">
-      <el-row :gutter="10">
-        <el-col :span="24">
-        <div class="col col-l">
-          <div shadow="hover" style="margin-bottom:10px;" v-for="top in item" :key="top" class="col col-r">
-            <span class="ri">组名 <b>:</b> <span> {{top.name}} </span></span>
-            <span class="ri">人数 <b>:</b> <span> &nbsp; {{top.num}} </span></span>
-            <span class="ri">添加 <b>:</b>  &nbsp; <el-button size="mini" @click="message" class="midd1" :type="top.status"> + </el-button> </span>
-          </div>
-        </div>
-      </el-col>
-      </el-row>
-    </el-card>
+      <p v-show="ok1">
+          <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
+            <el-col :span="3">
+              <img src="../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
+            </el-col>
+            <el-col :span="6">
+              <p><b style="color:#ea7312;">{{lb.name}}</b></p>
+              <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
+              <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index].mz}}</p>
+              <!-- <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index]}}</p> -->
+            </el-col>
+            <el-col :span="6">
+              <p style="height:10px;"> </p>
+              <p><span style="color:#999"> 性别 </span> <b>:</b> {{lb.sex[index].sex}}</p>
+              <p><span style="color:#999"> 籍贯 </span> <b>:</b> {{lb.country[index].country}}</p>
+            </el-col>
+            <el-col :span="6">
+              <p style="height:10px;"> </p>
+              <p><span style="color:#999"> 电话号码 </span> <b>:</b> {{lb.phone[index].phone}}</p>
+              <p><span style="color:#999"> 居住地址 </span> <b>:</b> {{lb.address[index].address}}</p>
+            </el-col>
+            <el-col :span="3">
+              <p @click="message(index)">
+                <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
+                padding:5px 0 5px 5px;background:#efefef;" class="fa fa-id-card-o"></i>
+                <!-- <d2-icon-svg  name="count" ></d2-icon-svg> -->
+              </p>
+              <p> </p>
+              <p> </p>
+            </el-col>
+          </el-row>
+        </p>
 
     <!-- 全屏 -->
     <el-dialog
@@ -63,6 +82,7 @@
 
 <script>
 import { BusinessTable1List } from '@/api/demo/business/table/1'
+import axios from '@/plugin/axios'
 export default {
   // name 值和本页的 $route.name 一致才可以缓存页面
   name: 'demo-business-table-1',
@@ -74,18 +94,11 @@ export default {
   },
   data () {
     return {
+      zk_cli:false,
+      zk_ul:'zk_ul',
+      peo:[],
       value1: true,
       value2: true,
-      item: [
-        { name: 'zk3', num: 3065, status: 'danger' },
-        { name: 'zk3', num: 3065, status: 'warning' },
-        { name: 'zk3', num: 3065, status: 'success' },
-        { name: 'zk3', num: 3065, status: 'danger' },
-        { name: 'zk3', num: 3065, status: 'success' },
-        { name: 'zk3', num: 3065, status: 'danger' },
-        { name: 'zk3', num: 3065, status: 'info' },
-        { name: 'zk3', num: 3065, status: 'danger' }
-      ],
       ok: false,
       ok1: true,
       table: [],
@@ -101,7 +114,24 @@ export default {
       inputValue: ''
     }
   },
+  mounted:function(){
+    this.ajax()
+  },
   methods: {
+    ajax(){
+      axios({
+          url: '/send',
+          method: 'post',
+        })
+        .then(res => {
+          console.log(res);
+          this.peo = res.list
+        })
+        .catch((error) => {
+          // 错误情况
+          console.log(error);
+        })
+    },
     message () {
       this.dialogVisible = true
     },
@@ -160,7 +190,21 @@ export default {
 //   }
 // }
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
+.zk_ul{
+    border:1px solid #ccc;
+    padding:5px 0 5px 15px;
+    // margin-bottom: 15px;
+  }
+  .zk_cli{
+    border:2px solid #35ab62;
+    border-left:5px solid #35ab62;
+  }
+  .zk_ul:hover{
+    border:2px solid #35ab62;
+    border-left:5px solid #35ab62;
+  }
+
 .ri{
   margin-right:5%;
 }

@@ -33,12 +33,12 @@
       </p>
     </el-header>
     <div :min-percent='10' :default-percent='30' split="vertical">
-      <el-col slot="paneL" :span="4" style="background:#fff;height:788px;border-right:2px solid #ddd;">
+      <el-col slot="paneL" :span="5" style="background:#fff;height:788px;border-right:2px solid #ddd;">
         <d2-customer-list :item="items1" style="">
             <!-- 数据编写 -->
         </d2-customer-list>
       </el-col>
-      <el-col slot="paneR" :span="20" style="background:#fff;">
+      <el-col slot="paneR" :span="19" style="background:#fff;">
               <p>
                 <!-- 表格 -->
                 <demo-page-header
@@ -51,7 +51,7 @@
               </p>
               <el-col :span="24" v-show="!ok">
                 <div class="col col-l">
-                  <el-row :gutter="23">
+                  <el-row :gutter="10">
                     <el-col style="margin-bottom:20px;" :span="4" v-for="(list,index) in items" :key="list">
                       <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                         <div class="yuan" :class="yuan(index)">{{list.yuan}}</div>
@@ -63,7 +63,7 @@
                         <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
                         <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
                         <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
-                        <p class="lis" :title="list.type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[parseInt(Math.random()*3)]}}</span></p>
+                        <p class="lis" :title="list.type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
                         <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
                         <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
                         <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
@@ -75,99 +75,6 @@
           </el-col>
       <!--人员信息弹窗-->
       <people-info-popup></people-info-popup>
-      <!-- 全屏详细信息 -->
-      <el-dialog
-        :title="tooltipContent"
-        :fullscreen="true"
-        :visible.sync="dialogVisible"
-        :append-to-body="true">
-        <div class="d2-mb-10">
-          <el-card  class="d2-mb">
-            <el-row :gutter="10" style="margin-bottom:15px;">
-              <el-col :span="24">
-                <div class="col col-l">
-                  <el-button class="button-new-tag" size="small" @click="showInput">添加标签</el-button>
-                  <el-tag
-                  :key="index"
-                  v-for="tag,index in dynamicTags"
-                  closable
-                  :disable-transitions="false"
-                  @close="handleClose(tag)">
-                  {{tag}}
-                </el-tag>
-                <el-input
-                  class="input-new-tag"
-                  v-if="inputVisible"
-                  v-model="inputValue"
-                  ref="saveTagInput"
-                  size="small"
-                  @keyup.enter.native="handleInputConfirm"
-                  @blur="handleInputConfirm"
-                >
-                </el-input>
-                </div>
-              </el-col>
-            </el-row>
-            <p style="font-size:24px;">个人详细信息</p>
-            <el-row :gutter="10">
-              <el-col :span="5">
-                <div class="col col-d">
-                  <img src="../../assets/img/1.jpg" class="image1" alt="">
-                  <span style="display:inline-block;height:130px;width:170px;overflow-x:hidden;">
-                    <el-tag
-                      :key="tag"
-                      v-for="tag in dynamicTags"
-                      closable
-                      :disable-transitions="false"
-                      @close="handleClose(tag)">
-                      {{tag}}
-                    </el-tag>
-                  </span>
-                  <p>姓名 <b>:</b> {{zk_name}}</p>
-                  <p>电话 <b>:</b> {{zk_phone}}</p>
-                  <p>状态 <b>:</b> &nbsp;&nbsp;<el-button size="mini" class="midd1" type="danger"></el-button></p>
-                </div>
-              </el-col>
-              <el-col :span="18">
-                <div class="col col-d">
-                  （1）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                  （2）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                （3）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                （4）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                  （1）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                  （2）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                （3）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                  （4）欺诈告警  对该企业新检查发现的欺诈客户向业务人员进行告警，由业务人员标记后从告警中移除。告警主要让业务人员对欺诈行为及时处理。
-                        其中告警内容需要多方面的展示欺诈检测不同指标内容。
-                        在审核的过程中，欺诈告警就已经在后台逐渐产生，产生一个告警一个。
-                        审核的结果报告单独页面展示，能够快速让业务人员发现问题，做出评判。<br>
-                </div>
-              </el-col>
-            </el-row>
-          </el-card>
-        </div>
-      </el-dialog>
     </div>
   </d2-container>
 </template>
@@ -252,7 +159,7 @@
         loading: false,
         page: {
           current: 1,
-          size: 100,
+          size: 10,
           total: 0
         },
         dialogVisible: false,
@@ -270,6 +177,9 @@
         axios({
           url: '/warn',
           method: 'post',
+          data:{
+            login:'admin'
+          }
         })
         .then(res => {
           console.log(res);
@@ -743,9 +653,21 @@
     // padding-right: 5px;
     font-size:13px;
   }
+  @media screen and (max-width: 1280) {
+    .lis1 {
+      display: inline-block;
+      // width:;
+      overflow: hidden;
+      white-space: nowrap; //使其不换行
+      text-overflow:ellipsis;
+      vertical-align: middle;
+      border-bottom:1px solid #333;
+      padding-bottom:10px;
+    }
+  }
   .lis1 {
     display: inline-block;
-    width:132px;
+    width:130px;
     overflow: hidden;
     white-space: nowrap; //使其不换行
     text-overflow:ellipsis;

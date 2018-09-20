@@ -11,8 +11,11 @@ import '@/mock'
 import i18n from './i18n'
 // 核心插件
 import d2Admin from '@/plugin/d2admin'
+import D2Crud from '@d2-projects/d2-crud'
 // 调用接口
 import global from './pages/global/global.vue'
+
+Vue.use(D2Crud)
 
 // 菜单和路由设置
 import router from './router'
