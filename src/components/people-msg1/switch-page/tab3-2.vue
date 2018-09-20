@@ -15,13 +15,13 @@
   			<div class="lbox-body">
   				<el-row class="lbox-thead">
   					<el-col :span="8">重要位置</el-col>
-  					<el-col :span="8">经纬度</el-col>
-  					<el-col :span="8">活跃时间</el-col>
+  					<el-col :span="9">经纬度</el-col>
+  					<el-col :span="7">活跃时间</el-col>
   				</el-row>
   				<el-row v-for="loc in importantLocs" :key='loc.id' class="lbox-tr">
   					<el-col :span="8">{{loc.address}}</el-col>
-  					<el-col :span="8">&lt; {{loc.lat}},{{loc.lng}} &gt;</el-col>
-  					<el-col :span="8">{{loc.activeTime}}</el-col>
+  					<el-col :span="9">&lt; {{loc.lat}},{{loc.lng}} &gt;</el-col>
+  					<el-col :span="7">{{loc.activeTime}}</el-col>
   				</el-row>
 
   			</div>
@@ -67,19 +67,17 @@ export default {
   .ipanel{
   	position: relative;
   	margin: 30px 20px;
-  	padding: 20px;
   	border: 1px solid #ddd;
   	font-size: 14px;
   	background-color: #fff;
   	.ipanel-item{
   		position: relative;
-  		margin-top: 30px;
   	}
   	.btns-div{
   		position: absolute;
   		z-index: 10;
   		right: 16px;
-  		top: 70px;
+  		top: 20px;
   	}
   	.ipanel-btn{
   		&:hover{
@@ -91,10 +89,41 @@ export default {
 			color: #fff;
   		background-color: #f99500;
   	}
+  	.lbox{
+  		position: absolute;
+  		z-index: 10;
+  		top: 80px;
+  		right: 16px;
+  		width: 300px;
+  		background-color: #fff;
+  		.lbox-title{
+  			padding: 8px 16px;
+  			color: #fff;
+  			background-color: #292d52;
+  		}
+			.lbox-body{
+				padding: 20px 10px;
+				.lbox-thead{
+					padding: 4px 0 4px 8px;
+					color: #888;
+					background-color: #e9eff3;
+				}
+				.lbox-tr{
+					padding-left: 8px;
+					height: 40px;
+					line-height: 40px;
+					border-bottom: 1px solid #ddd;
+					&:hover{
+						color: #fff;
+						background-color: #f99500;
+					}
+				}
+			}
+  	}
 
   	#active_map_baidu2{
   		width: 100%;
-  		height: 500px;
+  		height: 600px;
   	}
   }
 </style>
