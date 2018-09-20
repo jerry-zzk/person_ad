@@ -1,7 +1,7 @@
 <template>
-	<el-scrollbar style="height: 100%" v-resize:throttle="onResize">
+	<el-scrollbar style="height: 100%">
 		<el-container>
-			<el-main>
+			<el-main  >
 				<el-row :gutter="20">
 					<el-col :span="16">
 						<div class="container">
@@ -9,7 +9,7 @@
 								<i class="fa fa-line-chart"></i>
 								最近一个月通话统计
 							</div>
-							<div class="chart" ref="chart1"></div>	
+							<div class="chart" ref="chart1" v-resize="onResize"></div>	
 						</div>
 					</el-col>
 					<el-col :span="8">
@@ -205,24 +205,34 @@ export default {
     this.initChart3();
   },
   beforeDestroy() {
-  	this.chart1.dispose();
-  	this.chart2.dispose();
-  	this.chart3.dispose();
-  	this.chart1= null;
-  	this.chart2= null;
-  	this.chart3= null;
+  	// if(this.chart1){
+  	// 	this.chart1.dispose();
+	  // 	this.chart1= null;
+  	// }
+  	// if(this.chart2){
+  	// 	this.chart2.dispose();
+  	// 	this.chart2= null;
+  	// }
+  	// if(this.chart3){
+  	// 	this.chart3.dispose();
+  	// 	this.chart3= null;
+  	// }
   },
   directives: {
     resize
   },
   methods:{
   	onResize:function(){
-  		if(this.chart){
+  		debugger
+  		if(this.chart1){
   			this.chart1.resize();
-  			this.chart2.resize();	
-  			this.chart3.resize();
   		}
-  				
+  		if(this.chart2){
+  			this.chart2.resize();
+  		}
+  		if(this.chart3){
+  			this.chart3.resize();
+  		}		
   	},
   	initChart1() {
       	this.chart1 = echarts.init(this.$refs.chart1);
