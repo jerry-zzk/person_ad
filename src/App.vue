@@ -70,4 +70,11 @@
         box-shadow: none;
         transition-duration: .5s;
     }
+    .zk_head .d2-container-full__header {
+        padding:0px !important;
+        padding-left:15px !important;
+    }
+    .zk_page .d2-container-full__body{
+        padding-bottom: 0px !important;
+    }
 </style>
