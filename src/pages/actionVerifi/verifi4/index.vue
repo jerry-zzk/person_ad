@@ -28,7 +28,31 @@
               :table-data="table"
               :loading="loading" v-show="ok"/>
 
-            <el-card v-show="ok1" style="margin-bottom:15px;">
+            <p v-show="ok1">
+              <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
+                <el-col :span="3">
+                  <img src="../../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
+                </el-col>
+                <el-col :span="6">
+                  <p><b style="color:#ea7312;">{{lb.name}}</b></p>
+                  <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
+                  <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index].mz}}</p>
+                  <!-- <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index]}}</p> -->
+                </el-col>
+                <el-col :span="6">
+                  <p style="height:10px;"> </p>
+                  <p><span style="color:#999"> 性别 </span> <b>:</b> {{lb.sex[index].sex}}</p>
+                  <p><span style="color:#999"> 籍贯 </span> <b>:</b> {{lb.country[index].country}}</p>
+                </el-col>
+                <el-col :span="6">
+                  <p style="height:10px;"> </p>
+                  <p><span style="color:#999"> 电话号码 </span> <b>:</b> {{lb.phone[index].phone}}</p>
+                  <p><span style="color:#999"> 居住地址 </span> <b>:</b> {{lb.address[index].address}}</p>
+                </el-col>
+              </el-row>
+            </p>
+
+            <!-- <el-card v-show="ok1" style="margin-bottom:15px;">
               <el-row :gutter="10">
                 <el-col :span="24">
                 <div class="col col-l">
@@ -40,7 +64,7 @@
                 </div>
               </el-col>
               </el-row>
-            </el-card>
+            </el-card> -->
 
             <demo-page-footer
               style="margin-top:10px;"
@@ -56,6 +80,7 @@
 
 <script>
 import { BusinessTable1List } from '@/api/demo/business/table/1'
+import axios from '@/plugin/axios'
 export default {
   name: 'demo-business-table-1',
   components: {
@@ -65,6 +90,9 @@ export default {
   },
   data () {
     return {
+      zk_cli:false,
+        zk_ul:'zk_ul',
+        peo:[],
         value1:'',
         value2:'',
         ok:false,
@@ -104,8 +132,24 @@ export default {
           ]
         }
     }
+  },mounted(){
+    this.ajax()
   },
   methods: {
+    ajax(){
+      axios({
+          url: '/send',
+          method: 'post',
+        })
+        .then(res => {
+          console.log(res);
+          this.peo = res.list
+        })
+        .catch((error) => {
+          // 错误情况
+          console.log(error);
+        })
+    }, 
     message () {
       this.dialogVisible = true
     },
@@ -167,6 +211,20 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.zk_ul{
+    border:1px solid #ccc;
+    padding:5px 0 5px 15px;
+    // margin-bottom: 15px;
+  }
+  .zk_cli{
+    border:2px solid #35ab62;
+    border-left:5px solid #35ab62;
+  }
+  .zk_ul:hover{
+    border:1px solid #35ab62;
+    border-left:3px solid #35ab62;
+    background:rgba(132, 182, 144, 0.12);
+  }
 @import '~@/assets/style/public.scss';
 .page {
     .page__btn-group {
