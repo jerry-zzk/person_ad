@@ -14,7 +14,7 @@ export default {
 
  .zk_input .el-input__inner {
       box-shadow: none;
-      border: 1px solid #ea7312;
+      border: 2px solid #ea7312;
   }
 
   .zk_input .el-input__inner:hover {
