@@ -16,29 +16,29 @@
             昨天<span class="iblock-digit">+ 420</span>
           </div>
         </div>
-        <div class="ibox iblock iblock-margin">
-          <p class="iblock-num">2450</p>
-          <p class="iblock-title">风险用户数</p>
-          <i class="fa fa-question-circle" style="font-size:60px;"></i>
-          <div class="iblock-foot iblock-foot-blue">
-            昨天<span class="iblock-digit">- 50</span>
+        <div class="ibox iblock iblock-margin iblock-blue">
+          <p class="iblock-num">486</p>
+          <p class="iblock-title">存量规则数</p>
+          <i class="fa fa-question-circle"></i>
+          <div class="iblock-foot">
+            昨天<span class="iblock-digit">- 140</span>
           </div>
         </div>
       </el-col>
       <el-col :span="6">
-        <div class="ibox iblock">
-          <p class="iblock-num">486</p>
-          <p class="iblock-title">存量规则数</p>
-          <i class="fa fa-cubes"></i>
-          <div class="iblock-foot iblock-foot-orange">
-            昨天<span class="iblock-digit">- 140</span>
+        <div class="ibox iblock iblock-orange">
+          <p class="iblock-num">2450</p>
+          <p class="iblock-title">风险用户数</p>
+          <i class="fa fa-cubes" style="font-size:60px;"></i>
+          <div class="iblock-foot iblock-foot-blue">
+            昨天<span class="iblock-digit">- 50</span>
           </div>
         </div>
-        <div class="ibox iblock iblock-margin">
+        <div class="ibox iblock iblock-margin iblock-purple">
           <p class="iblock-num">4156</p>
           <p class="iblock-title">应用产品数</p>
           <i class="fa fa-bell"></i>
-          <div class="iblock-foot iblock-foot-purple">
+          <div class="iblock-foot">
             昨天<span class="iblock-digit">+ 0</span>
           </div>
         </div>
@@ -74,7 +74,7 @@
             <p class="ibox-title"><i class="fa fa-table"></i>预警人员top10</p>
             <div class="pList">
               <el-row class="pList-head">
-                <el-col :span="6" class="pList-first">人员姓名</el-col>
+                <el-col :span="6">人员姓名</el-col>
                 <el-col :span="8">身份证号</el-col>
                 <el-col :span="3">性别</el-col>
                 <el-col :span="3">风险评分</el-col>
@@ -160,12 +160,12 @@ export default {
       pepoleList: [
         {id:1,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
         {id:2,name:'李四',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:3,name:'王二麻子',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:4,name:'汤姆汉克斯',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:5,name:'奥姆浩格沃茨',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:6,name:'张三四五六七八',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:7,name:'一二三四五六七',idCard:'410785198407141786',gender:'男',grade:'75'},
-        {id:8,name:'abcdefghijklm',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:3,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:4,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:5,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:6,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:7,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
+        {id:8,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
         {id:9,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'},
         {id:10,name:'张三',idCard:'410785198407141786',gender:'男',grade:'75'}
       ]
@@ -190,11 +190,13 @@ export default {
           show: true
         },
         legend:{
+          top: 20,
           right: 30,
           data: [{name:'存量用户',icon:'rect'},{name:'预警人员',icon:'rect'}]
         },
         xAxis: {
           type: 'category',
+          axisLine: {show: false},
           axisTick: {show: false},
           axisLabel: {rotate: 60},
           data: ['05-01','05-02','05-03','05-04','05-05','05-06','05-07']
@@ -203,10 +205,11 @@ export default {
           type: 'value',
           axisLine: {show: false},
           axisTick: {show: false},
+          splitLine: {lineStyle: {color: '#eee'}},
+          name: '数量/人',
           nameRotate: 270,
           nameLocation: 'middle',
-          nameGap: 50,
-          name: '数量/人'
+          nameGap: 50
         },
         series: [{
           type: 'line',
@@ -257,7 +260,6 @@ export default {
     drawBarChart(){
       let _this = this;
       let option = {
-        color: ['#fb7857','#3245a4'],
         grid: {
           right: 30,
           left: 90
@@ -266,6 +268,7 @@ export default {
           show: true
         },
         legend:{
+          top: 20,
           right: 30,
           data: [{name:'风险用户数',icon:'rect'},{name:'存量用户数',icon:'rect'}]
         },
@@ -273,29 +276,47 @@ export default {
           type: 'category',
           axisLine: {show: false},
           axisTick: {show: false},
+          name: '类别',
+          nameLocation: 'middle',
+          nameGap: 50,
           data: ['产品1','产品2','产品3','产品4','产品5','产品6','产品7','产品8']
         },
         yAxis: {
           type: 'value',
           axisLine: {show: false},
           axisTick: {show: false},
+          splitLine: {lineStyle: {color: '#eee'}},
+          name: '数量/人',
           nameRotate: 270,
           nameLocation: 'middle',
-          nameGap: 50,
-          name: '数量/人'
+          nameGap: 50
         },
         series : [{
           type:'bar',
-          name: '风险用户数',
-          stack: 'x',
+          name: 'y',
           barWidth: 16,
-          data: [4100, 3200, 2800, 4500, 1600, 2200, 2400, 4100]
+          itemStyle: {
+            color: '#eee'
+          },
+          data: [7000, 7000, 7000, 7000, 7000, 7000, 7000, 7000]
         },{
           type:'bar',
           name: '存量用户数',
-          stack: 'x',
           barWidth: 16,
+          barGap: '-100%',
+          itemStyle: {
+            color: '#3245a4'
+          },
           data: [5800, 4200, 3800, 6100, 2000, 2700, 3200, 5800]
+        },{
+          type:'bar',
+          name: '风险用户数',
+          barWidth: 16,
+          barGap: '-100%',
+          itemStyle: {
+            color: '#fb7857'
+          },
+          data: [4100, 3200, 2800, 4500, 1600, 2200, 2400, 4100]
         }]
       }
       let barChart=echarts.init(document.getElementById('lm_situationWarn_barChart'))
@@ -358,13 +379,28 @@ export default {
         float: right;
       }
     }
-    .iblock-foot-orange{
+  }
+  .iblock-orange{
+    .iblock-num{
+      color: #f2645e;
+    }
+    .iblock-foot{
       background: linear-gradient(90deg, #f98464, #f2645e);
     }
-    .iblock-foot-blue{
+  }
+  .iblock-blue{
+    .iblock-num{
+      color: #208bef;
+    }
+    .iblock-foot{
       background: linear-gradient(90deg, #80cef3, #208bef);
     }
-    .iblock-foot-purple{
+  }
+  .iblock-purple{
+    .iblock-num{
+      color: #5d38ba;
+    }
+    .iblock-foot{
       background: linear-gradient(90deg, #c885d9, #5d38ba);
     }
   }
@@ -396,11 +432,12 @@ export default {
     font-size: 14px;
     .pList-head{
       height: 32px;
+      padding-left: 20px;
       line-height: 32px;
+      color: #9da2bc;
       background-color: #e9eff3;
     }
     .pList-first{
-      padding-left: 20px;
       .fa{
         margin-right: 4px;
         font-size: 24px;
@@ -408,6 +445,7 @@ export default {
     }
     .pList-tr{
       height: 48px;
+      padding-left: 20px;
       line-height: 48px;
       border-top: 1px solid #ddd;
       .pList-gender{
