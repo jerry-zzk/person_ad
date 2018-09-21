@@ -125,7 +125,7 @@
 						<p class="title">设备欺诈</p>
 						<p class="main-title">设备评分：<span class="red"><i class="fa fa-warning"></i> 有风险</span></p>
 						<div class="echarts" ref="myEchart1"></div>
-						<div class="container guan_lian_hao">
+						<div class=" guan_lian_hao">
 							<p><i class="fa fa-warning"></i>有风险</p>
 							<ul class="waring-list">
 								<li class="list-item">139*******</li>
@@ -134,19 +134,19 @@
 								<li class="list-item">139*******</li>
 							</ul>
 						</div>
-						<div class="container wang_luo_huan_jing">
+						<div class="wang_luo_huan_jing">
 							<p><i class="fa fa-warning"></i>疑似黑中介wifi</p>
 							<ul class="waring-list">
 								<li class="list-item">网络环境</li>
 							</ul>
 						</div>
-						<div class="container wei_zhi_xin_xi">
+						<div class="wei_zhi_xin_xi">
 							<p><i class="fa fa-warning"></i>疑似黑中介地址</p>
 							<ul class="waring-list">
 								<li class="list-item">位置信息</li>
 							</ul>
 						</div>
-						<div class="container IP_yi_chang">
+						<div class="IP_yi_chang">
 							<p><i class="fa fa-warning"></i>疑似团伙欺诈</p>
 							<ul class="waring-list">
 								<li class="list-item">ip地址</li>
@@ -156,7 +156,7 @@
 								<li class="list-item">ip地址</li>
 							</ul>
 						</div>
-						<div class="container xu_ni_hao_ma">
+						<div class="xu_ni_hao_ma">
 							<table>
 								<tr>
 									<td class="first color1">微博</td>
@@ -168,7 +168,7 @@
 								</tr>
 							</table>
 						</div>
-						<div class="container xing_hao_xi_tong">
+						<div class="xing_hao_xi_tong">
 							<table>
 								<tr>
 									<td class="first color1">系统</td>
@@ -487,22 +487,38 @@ export default {
 		           }
 		        },
 		        indicator: [
-		           { name: '销售（sales）', max: 6500},
-		           { name: '管理（Administration）', max: 16000},
-		           { name: '信息技术（Information Techology）', max: 30000},
-		           { name: '客服（Customer Support）', max: 38000},
-		           { name: '研发（Development）', max: 52000},
-		           { name: '市场（Marketing）', max: 25000}
+		           { name: '型号/系统', max: 100},
+		           { name: '关联号', max: 100},
+		           { name: '网络环境', max: 100},
+		           { name: '位置异常', max: 100},
+		           { name: 'IP异常', max: 100},
+		           { name: '虚拟号码', max: 100}
 		        ]
 		    },
 		    series: [{
-		        name: '预算 vs 开销（Budget vs spending）',
+		        name: '',
 		        type: 'radar',
-		        // areaStyle: {normal: {}},
+		        symbolSize:5,
+            	symbol:'circle',
+		        lineStyle:{
+					normal: {
+		        		color:'#409efe'
+		        	}
+		        },
+		        itemStyle:{
+		        	normal: {
+		        		color:'#409efe'
+		        	}
+		        },
+		        areaStyle: {
+		        	normal: {
+		        		color:'#409efe'
+		        	}
+		    	},
 		        data : [
 		            {
-		                value : [4300, 10000, 28000, 35000, 50000, 19000],
-		                name : '预算分配（Allocated Budget）'
+		                value : [66, 78, 98, 85, 90, 61],
+		                name : ''
 		            }
 		        ]
 		    }]

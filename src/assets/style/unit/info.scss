@@ -101,12 +101,12 @@ $orange:#ff682f;
 				&:before{
 					content: " ";
 				    position: absolute;
-				    top: 9px;
-				    left: 9px;
+				    top: 10px;
+				    left: 6px;
 				    background: $blue;
 				    border-radius: 50%;
-				    width: 6px;
-				    height: 6px;
+				    width: 4px;
+				    height: 4px;
 				}
 			}
 			p.main-title{
@@ -118,10 +118,10 @@ $orange:#ff682f;
 				}
 			}
 			.section{
-				min-height:700px;
+				min-height:550px;
 				width:calc(100% - 40px);
 				padding:20px;
-				div.container>p{
+				div>p{
 					color:$red;
 					margin:5px 0;
 				}
@@ -163,6 +163,8 @@ $orange:#ff682f;
 							border-top:1px solid $gray;
 							border-bottom:1px solid $gray;
 							border-right:1px solid $gray;
+							line-height: 14px;
+    						font-size: 14px;
 						}
 						.color1{
 							&:before{
@@ -230,49 +232,57 @@ $orange:#ff682f;
 			#anchor-3{
 				position: relative;
 				div.echarts{
-					width:300px;
-					height:300px;
+					width:500px;
+					height:500px;
 					position: absolute;
 					left:50%;
-					top:50%;
-					margin-top:-150px;
-					margin-left:-150px;
+					top:0%;
+					margin-top:50px;
+					margin-left:-250px;
 				}
 				.guan_lian_hao{
     				position: absolute;
-    				left: 200px;
+    				left: 50%;
+    				margin-left:-400px;
+    				top:50%;
+    				margin-top:-170px;
 				}
 				.wang_luo_huan_jing{
 					position: absolute;
-    				left: 200px;
-    				top:350px;
+    				left: 50%;
+    				margin-left:-400px;
+    				top:50%;
+    				margin-top:20px;
 				}
 				.wei_zhi_xin_xi{
-
 					position: absolute;
-					left: 525px;
-    				top: 450px;
+					left:50%;
+    				margin-left:-70px;
+    				top:50%;
+    				margin-top:230px;
 				}
 				.IP_yi_chang{
-
 					position: absolute;
-					right: 200px;
-    				top:350px;
-
-    				text-align:right
-    				
+    				left: 50%;
+    				margin-left:250px;
+    				top:50%;
+    				margin-top:20px;
 				}
 				.xu_ni_hao_ma{
-
+					width:250px;
 					position: absolute;
-					right: 200px;
-					top: 170px;
+    				left: 50%;
+    				margin-left:250px;
+    				top:50%;
+    				margin-top:-170px;
 				}
 				.xing_hao_xi_tong{
-
+					width:250px;
 					position: absolute;
-					left: 525px;
-					top:40px;
+					left: 50%;
+					margin-left:-85px;
+					top:50%;
+					margin-top:-300px;
 				}
 			}
 			#anchor-4{
@@ -341,7 +351,7 @@ $orange:#ff682f;
 		width:100%;
 		border-spacing:0px;
 		border-top:1px solid $gray;
-		font-size:14px;
+		font-size:16px;
 		&.list{
 			border-top:none;
 			font-size:14px;
@@ -357,6 +367,7 @@ $orange:#ff682f;
 				padding:8px;
 				border-right:none;
 				text-align:center;
+				line-height: 16px;
 			}
 				
 		}
