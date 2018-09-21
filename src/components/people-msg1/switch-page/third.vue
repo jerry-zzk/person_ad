@@ -1,5 +1,5 @@
 <template>
-	<el-scrollbar style="height: 100%" v-resize:throttle="onResize">
+	<el-scrollbar style="height: 100%" v-resize:throttle="onResize1">
 		<el-container>
 			<el-main>
 				<el-row>
@@ -108,7 +108,7 @@
 										<tr>
 											<td class="blue">15022343234</td>
 											<td>同事</td>
-											<td>金融圈</td>
+											<td>金融圈111</td>
 											<td>2018年6月4日</td>
 											<td>23</td>
 										</tr>
@@ -177,7 +177,7 @@ export default {
   	}
   },
   methods:{
-  	onResize:function(){
+  	onResize1:function(){
   		if(this.chart){
   			this.chart.resize();
   		}

@@ -223,7 +223,6 @@ export default {
   },
   methods:{
   	onResize:function(){
-  		debugger
   		if(this.chart1){
   			this.chart1.resize();
   		}

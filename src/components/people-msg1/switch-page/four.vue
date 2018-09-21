@@ -206,7 +206,6 @@ export default {
   },
   methods:{
   	onResize:function(){
-  		debugger
   		if(this.chart1&&this.chart2){
   			this.chart1.resize();
   			this.chart2.resize();
