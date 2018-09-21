@@ -1,6 +1,6 @@
 <template>
     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-        <el-tab-pane  name="first" lazy="true">
+        <el-tab-pane  name="first"  lazy="lazy">
             <span slot="label"><i class="el-icon-document"></i> 基本信息</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -9,7 +9,7 @@
             </div>
 
         </el-tab-pane>
-        <el-tab-pane label="重要位置" name="second"  lazy="true">
+        <el-tab-pane label="重要位置" name="second"   lazy="lazy">
             <span slot="label"><i class="el-icon-document"></i> 重要位置</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -17,7 +17,7 @@
                 </el-scrollbar>
             </div>
         </el-tab-pane>
-        <el-tab-pane label="社会关系" name="third"  lazy="true">
+        <el-tab-pane label="社会关系" name="third"  lazy="lazy">
             <span slot="label"><i class="el-icon-document"></i> 社会关系</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -25,7 +25,7 @@
                 </el-scrollbar>
             </div>
         </el-tab-pane>
-        <el-tab-pane label="网络行为异常" name="four"  lazy="true">
+        <el-tab-pane label="网络行为异常" name="four"   lazy="lazy">
             <span slot="label"><i class="el-icon-document"></i> 网络行为异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -39,6 +39,7 @@
     export default {
         data(){
             return{
+                lazy:true,
                 activeName:'first'
             }
         },

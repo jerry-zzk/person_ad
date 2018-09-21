@@ -113,11 +113,10 @@
                         </div>
                         <div class="con">
                             <el-col :span="12">
-                                <div style="height: 60px;position: relative">
-
+                                <div>
                                     <div class="buttons">
                                         <span class="tit">收支对比</span>
-                                        <el-col class="menu">
+                                        <el-col class="menu1">
                                             <span v-for="item,index in buttons" class="button"
                                                   @click="handleButton(index)"
                                                   :class="{active:active==index }">
@@ -129,7 +128,22 @@
                                 </div>
                                 <div style="height: 400px" id="leftChart"></div>
                             </el-col>
-                            <el-col :span="12">2</el-col>
+                            <el-col :span="12">
+                                <div>
+                                    <div class="buttons" style="float: left">
+                                        <span class="tit" style="display: inline-block;width: 150px">收入\消费类统计记录</span>
+                                        <el-col class="menu1">
+                                            <span v-for="item,index in buttons" class="button"
+                                                  @click="handleButton(index)"
+                                                  :class="{active:active==index }">
+                                            {{item}}
+                                            </span>
+
+                                        </el-col>
+                                    </div>
+                                </div>
+                                <div style="height: 400px" id="peiChart-wrap"></div>
+                            </el-col>
                         </div>
                     </div>
                 </el-col>
@@ -173,6 +187,17 @@
                 right: 10px;
                 top: 20px;
                 z-index: 999;
+            }
+            .menu1{
+                width: 360px;
+                height: 28px;
+                display: inline-block;
+                float: right;
+                margin-top: 19px;
+
+                .button{
+                    width: 75px;
+                }
             }
             .left {
                 width: calc(100% - 10px);
@@ -244,7 +269,13 @@
             .bottom {
                 background: rgb(249, 249, 249);
                 border: 1px solid rgba(0, 0, 0, 0.159);
+                width: 100%;
+                float: left;
                 .con {
+                    width: 100%;
+                    float: left;
+                    background: #f9f9f9;
+
                     .tit {
                         line-height: 20px;
                         display: inline-block;
