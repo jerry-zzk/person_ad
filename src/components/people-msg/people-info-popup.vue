@@ -50,7 +50,7 @@
                     <el-button class="msg-button" size="mini" type="primary">打印</el-button>
                     <el-button class="msg-button" size="mini" type="primary">导出</el-button>
                     <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-                        <el-tab-pane label="欺诈告警" name="first">
+                        <el-tab-pane label="欺诈告警" name="first" lazy="true">
                             <span slot="label"><i class="el-icon-document"></i> 欺诈告警</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
@@ -59,7 +59,7 @@
                             </div>
 
                         </el-tab-pane>
-                        <el-tab-pane label="评估详情" name="second">
+                        <el-tab-pane label="评估详情" name="second"  lazy="true">
                             <span slot="label"><i class="el-icon-document"></i> 评估详情</span>
                             <div class="wrap">
                                 <el-scrollbar style="height: 100%">
@@ -67,7 +67,7 @@
                                 </el-scrollbar>
                             </div>
                         </el-tab-pane>
-                        <el-tab-pane label="联通详单" name="third">
+                        <el-tab-pane label="联通详单" name="third"  lazy="true">
                             <span slot="label"><i class="el-icon-document"></i> 联通详单</span>
                             <div class="wrap">
                                 <generalFederation></generalFederation>
