@@ -67,7 +67,12 @@
                               <p class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
                               <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
                               <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
-                              <p class="lis" title="点击查看详细信息" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
+                              <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
+                                <el-tooltip content="点击查看详细信息" placement="right">
+                                  <el-button style="font-size:13px;" size="mini">详细信息</el-button>
+                                  <!-- <span ></span> -->
+                                </el-tooltip>  
+                              </p>
                             </el-card>
                           </el-col>
                         </el-row>
