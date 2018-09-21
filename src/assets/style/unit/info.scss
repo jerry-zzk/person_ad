@@ -39,9 +39,9 @@ $orange:#ff682f;
 					border:1px solid $gray;
 					color:$black;
 					border-radius:20px;
-					padding:5px 20px;
+					padding:5px 10px;
 					margin: 0px;
-					width:56%;
+					width:50%;
 					&:hover,&.active{
 						background:$blue;
 						color:white;
@@ -49,10 +49,10 @@ $orange:#ff682f;
 				}
 				span.bar{
 					position: absolute;
-				    right: -4%;
+				    right: 0px;
 				    top: 0px;
 				    display: block;
-				    width: 100px;
+				    width:50%;
 				    height: 24px;
 				    span{
 						display: block;
@@ -60,12 +60,19 @@ $orange:#ff682f;
 					    height: 6px;
 					    background: rgba(0, 0, 0, 0.2);
 					    border-radius: 50%;
-					    margin: 8px 0px 0 10px;
-					    float: left;
+					    position: absolute;
+					    top:0px;
+					    left:50%;
+					    &:nth-child(1){
+					    	margin: 8px 0px 0 -13px;
+					    }
+					    &:nth-child(3){
+					    	margin: 8px 0px 0 7px;
+					    }
 					    &.center{
 					    	width: 8px;
 					    	height: 8px;
-					    	margin: 7px 0px 0 10px;
+					    	margin: 7px 0px 0 -4px;
 					    }	
 				    }
 				}
