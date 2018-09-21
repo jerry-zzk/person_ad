@@ -1,6 +1,6 @@
 <template>
     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-        <el-tab-pane  name="first">
+        <el-tab-pane  name="first" lazy="true">
             <span slot="label"><i class="el-icon-document"></i> 我的行程</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -9,7 +9,7 @@
             </div>
 
         </el-tab-pane>
-        <el-tab-pane label="失联倾向异常" name="second">
+        <el-tab-pane label="失联倾向异常" name="second" lazy="true">
             <span slot="label"><i class="el-icon-document"></i> 失联倾向异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -17,7 +17,7 @@
                 </el-scrollbar>
             </div>
         </el-tab-pane>
-        <el-tab-pane label="关联异常" name="third">
+        <el-tab-pane label="关联异常" name="third" lazy="true">
             <span slot="label"><i class="el-icon-document"></i> 关联异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -25,7 +25,7 @@
                 </el-scrollbar>
             </div>
         </el-tab-pane>
-        <el-tab-pane label="位置异常" name="four">
+        <el-tab-pane label="位置异常" name="four" lazy="true">
             <span slot="label"><i class="el-icon-document"></i> 位置异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
@@ -33,7 +33,7 @@
                 </el-scrollbar>
             </div>
         </el-tab-pane>
-        <el-tab-pane label="网络行为异常" name="five">
+        <el-tab-pane label="网络行为异常" name="five" lazy="true">
             <span slot="label"><i class="el-icon-document"></i> 网络行为异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">

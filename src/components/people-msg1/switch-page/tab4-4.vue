@@ -147,6 +147,8 @@
             }
         },
         mounted() {
+            alert("fds")
+            this.$el.querySelector("#right").style.height = this.$el.querySelector("#left").offsetHeight + 'px'
         },
         watch: {
             activeName(data) {
