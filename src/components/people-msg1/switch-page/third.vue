@@ -1,5 +1,5 @@
 <template>
-	<el-scrollbar style="height: 100%" v-resize:throttle="onResize">
+	<el-scrollbar style="height: 100%" v-resize:throttle="onResize1">
 		<el-container>
 			<el-main>
 				<el-row>
@@ -108,7 +108,7 @@
 										<tr>
 											<td class="blue">15022343234</td>
 											<td>同事</td>
-											<td>金融圈</td>
+											<td>金融圈111</td>
 											<td>2018年6月4日</td>
 											<td>23</td>
 										</tr>
@@ -150,7 +150,7 @@
 		&:hover,&.active{
 			color:white;
 			background:$orange;
-		}
+		} 
 		margin:0 10px;
 	}
 }
@@ -171,13 +171,16 @@ export default {
     this.initChart();
   },
   beforeDestroy() {
-  	this.chart.dispose();
-  	this.chart= null;
+  	if(this.chart){
+  		this.chart.dispose();
+  		this.chart= null;
+  	}
   },
   methods:{
-  	onResize:function(){
-  		if(this.chart)
+  	onResize1:function(){
+  		if(this.chart){
   			this.chart.resize();
+  		}
   	},
   	initChart() {
       	this.chart = echarts.init(this.$refs.chart);
@@ -193,7 +196,7 @@ export default {
 		     animationDuration: 1500,
 		     animationEasingUpdate: 'quinticInOut',
 		     series: [{
-
+		        
 		         type: 'graph',
 		         layout: 'force',
 		         symbolSize: 58,
@@ -221,7 +224,7 @@ export default {
 		         lineStyle: {
 		             color: 'source',
 		             curveness: 0.3,
-
+		             
 		         },
 		         edgeLabel: {
 		             normal: {

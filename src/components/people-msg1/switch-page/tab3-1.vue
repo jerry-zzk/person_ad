@@ -19,7 +19,11 @@
   	</div>
 
   	<div class="ipanel-item">
-  		<p class="ipanel-p">活动区域的热力图 13557986547 135478961423</p>
+  		<p class="ipanel-p">活动区域的热力图</p>
+  		<div class="ipanel-cellphones">
+  			<span class="cellphone"><i class="fa fa-square" style="color:#1d8af2"></i>13557986547</span>
+  			<span class="cellphone"><i class="fa fa-square" style="color:#963390"></i>135478961423</span>
+  		</div>
   		<div class="btns-div">
   			<el-button class="ipanel-btn ipanel-btn-active">近一周</el-button>
   			<el-button class="ipanel-btn">近一月</el-button>
@@ -31,6 +35,10 @@
 
   	<div class="ipanel-item">
   		<p class="ipanel-p">社会关系的关系图</p>
+  		<div class="ipanel-cellphones">
+  			<span class="cellphone"><i class="fa fa-square" style="color:#1d8af2"></i>13557986547</span>
+  			<span class="cellphone"><i class="fa fa-square" style="color:#963390"></i>135478961423</span>
+  		</div>
   		<div id="f_relationCahrt"></div>
   	</div>
 
@@ -86,12 +94,49 @@ export default {
 
     },
     drawBaiduMap(){
-    	let _this = this;
+    	let _this = this
     	// 百度地图API功能
-			let map = new BMap.Map("active_map_baidu");    // 创建Map实例
-			map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-			map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    	// 创建Map实例
+			let map = new BMap.Map("active_map_baidu")
+			// 初始化地图,设置中心点坐标和地图级别
+			map.centerAndZoom(new BMap.Point(116.404, 39.915), 11)
+			// 设置地图显示的城市 此项是必须设置的
+			map.setCurrentCity("北京")
+			//开启鼠标滚轮缩放
+			map.enableScrollWheelZoom(true)
+
+			/*
+			// 创建点
+			var marker = new BMap.Marker(new BMap.Point(116.404, 40,{color: 'blue'}))
+			map.addOverlay(marker)
+			*/
+			// 海量点
+			let points1 = []
+			let points2 = []
+			points1.push(new BMap.Point(116.338153,39.96406))
+			points1.push(new BMap.Point(116.197299,39.936625))
+			points1.push(new BMap.Point(116.182926,39.967599))
+			points1.push(new BMap.Point(116.074842,39.950786))
+			points1.push(new BMap.Point(116.074842,39.950786))
+			points2.push(new BMap.Point(116.338153,40.06406))
+			points2.push(new BMap.Point(116.197299,40.036625))
+			points2.push(new BMap.Point(116.182926,40.067599))
+			points2.push(new BMap.Point(116.074842,40.050786))
+			points2.push(new BMap.Point(116.074842,40.050786))
+			// 初始化PointCollection
+			let pointCollection1 = new BMap.PointCollection(points1, {
+        size: BMAP_POINT_SIZE_BIGGER,
+        shape: BMAP_POINT_SHAPE_CIRCLE,
+        color: '#1d8af2'
+      });
+			let pointCollection2 = new BMap.PointCollection(points2, {
+        size: BMAP_POINT_SIZE_BIGGER,
+        shape: BMAP_POINT_SHAPE_CIRCLE,
+        color: '#963390'
+      });
+     	map.addOverlay(pointCollection1);
+     	map.addOverlay(pointCollection2);
+
     },
     // 封装的关系数据
     drawRelationChart(json){
@@ -107,6 +152,10 @@ export default {
               position: 'right',
               show: true
             }
+          },
+          grid: {
+          	top: 0,
+          	bottom: 0
           },
           roam: true,
           focusNodeAdjacency: true,
@@ -137,7 +186,7 @@ export default {
               target: edge.targetID
             };
           }),
-
+                
         }]
       }
       let relationChart=echarts.init(document.getElementById('f_relationCahrt'))
@@ -170,6 +219,19 @@ export default {
   			color: #f99909;
   		}
   	}
+		.ipanel-cellphones{
+			position: absolute;
+			z-index: 10;
+			top: 6px;
+			right: 0;
+			.cellphone{
+				margin-left: 20px;
+				.fa{
+					position: relative;
+					right: 6px;
+				}
+			}
+		}
   	.ipanel-thead{
   		height: 32px;
   		padding-left: 40px;

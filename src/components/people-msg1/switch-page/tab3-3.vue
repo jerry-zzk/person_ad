@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="ipanel">
   	<el-table :data="tableData" style="width: 100%;">
@@ -73,19 +74,19 @@ export default {
   	}
 	},
   mounted(){
-  	
+
   },
   methods:{
-    
+
   }
 }
 </script>
 <style lang="scss" scoped>
-  .ipanel{
-  	margin: 30px 20px;
-  	padding: 30px 20px;
-  	border: 1px solid #ddd;
-  	font-size: 14px;
-  	background-color: #fff;
-  }
+	.ipanel{
+		margin: 30px 20px;
+		padding: 30px 20px;
+		border: 1px solid #ddd;
+		font-size: 14px;
+		background-color: #fff;
+	}
 </style>

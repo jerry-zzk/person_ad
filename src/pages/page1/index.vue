@@ -201,8 +201,9 @@ export default {
     border-left:5px solid #35ab62;
   }
   .zk_ul:hover{
-    border:2px solid #35ab62;
-    border-left:5px solid #35ab62;
+    border:1px solid #35ab62;
+    border-left:3px solid #35ab62;
+    background:rgba(132, 182, 144, 0.12);
   }
 
 .ri{

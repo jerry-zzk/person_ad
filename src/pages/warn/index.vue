@@ -1,6 +1,6 @@
 <template>
   <d2-container class="page zk_page zk_head">
-    <el-header slot="header">
+    <el-header style="padding-left:5px;" slot="header">
           <p>信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
             <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
@@ -32,50 +32,57 @@
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
       </p>
     </el-header>
-    <div>
-      <el-col slot="paneL" :span="5" style="background:#fff;height:788px;border-right:2px solid #ddd;">
+    <el-col :span="5" class="zk_vh" style="">
         <d2-customer-list :item="items1" style="">
             <!-- 数据编写 -->
         </d2-customer-list>
+    </el-col>
+    <el-col :span="19" style="background:#fff;">
+          <p>
+            <!-- 表格 -->
+            <demo-page-header
+            slot="header"
+            @submit="handleSubmit"
+            ref="header"  @zk = "zk"/>
+            <!-- ref="header"  @zk = "zk" style="position:fixed;top:250px;right:30px;"/> -->
+          <el-scrollbar style="height:100%;">
+            <demo-page-main 
+            class="zk_gd"
+              :table-data="table"
+              :loading="loading" v-show="ok"/>
+            <el-col :span="24" v-show="!ok" class="zk_gd">
+                      <div class="col-l">
+                        <el-row :gutter="20">
+                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="list">
+                            <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
+                              <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
+                              <div class="sanjiao"></div>
+                              <div class="sanjiao_gai"></div>
+                              <div class="sanjiao_gai1"></div>
+                              <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
+                              <p class="lis1" style="font-size:13px;" :title="list.name">
+                              <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
+                              <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
+                              <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
+                              <p class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
+                              <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
+                              <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
+                              <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
+                                <el-tooltip content="点击查看详细信息" placement="right">
+                                  <el-button style="font-size:13px;" size="mini">详细信息</el-button>
+                                  <!-- <span ></span> -->
+                                </el-tooltip>  
+                              </p>
+                            </el-card>
+                          </el-col>
+                        </el-row>
+                      </div>
+            </el-col>
+          </el-scrollbar>
+        </p>
       </el-col>
-      <el-col slot="paneR" :span="19" style="background:#fff;">
-              <p>
-                <!-- 表格 -->
-                <demo-page-header
-                  slot="header"
-                  @submit="handleSubmit"
-                  ref="header"  @zk = "zk" style="padding-left:20px;margin-bottom:10px;border-bottom:1px solid #ddd;"/>
-                <demo-page-main style="padding-left:20px;"
-                  :table-data="table"
-                  :loading="loading" v-show="ok"/>
-              </p>
-              <el-col :span="24" v-show="!ok">
-                <div class="col col-l">
-                  <el-row :gutter="20">
-                    <el-col style="margin-bottom:20px;width:256px"  v-for="(list,index) in items" :key="list">
-                      <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
-                        <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
-                        <div class="sanjiao"></div>
-                        <div class="sanjiao_gai"></div>
-                        <div class="sanjiao_gai1"></div>
-                        <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
-                        <p class="lis1" style="font-size:13px;" :title="list.name">
-                        <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
-                        <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
-                        <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
-                        <p class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
-                        <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
-                        <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
-                        <p class="lis" title="点击查看详细信息" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">详细信息<span style="font-size:13px;"></span></p>
-                      </el-card>
-                    </el-col>
-                  </el-row>
-                </div>
-              </el-col>
-          </el-col>
-      <!--人员信息弹窗-->
-      <people-info-popup></people-info-popup>
-    </div>
+    <!--人员信息弹窗-->
+    <people-info-popup></people-info-popup>
   </d2-container>
 </template>
 <script>
@@ -133,6 +140,9 @@
           { name: 'zk', num: 15522322, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'success' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'warning' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
+          { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'danger' },
@@ -495,6 +505,15 @@
   }
 </script>
 <style lang="scss" scoped>
+  .zk_gd{
+    padding-left:20px;
+    height:calc(100vh - 302px);
+  }
+  .zk_vh{
+    background:#fff;
+    height:calc(100vh - 238px);
+    min-width:215px; 
+  }
   .ic_svg{
     height:10px;
     width:10px;
@@ -729,9 +748,6 @@
   }
   .yuan5{
     background:#ef1c11;
-  }
-  .zk_page .d2-container-full__body{
-    padding-top: 0px !important;
   }
   .cir{
     height:50px;

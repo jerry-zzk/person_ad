@@ -325,7 +325,7 @@ const frameIn = [
       {
         path: 'lossRepair',
         name: `${pre}lossRepair`,
-        component: () => import('@/pages/riskRating'),
+        component: () => import('@/pages/loseTrack'),
         meta: { ...meta, title: '失联修复' }
       },
       {
