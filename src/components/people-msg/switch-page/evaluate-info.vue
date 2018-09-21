@@ -1,5 +1,5 @@
 <template>
-	<div id="evaluete-info" >
+	<div id="evaluete-info">
 		<div id="evaluete-info-header">
 			<ul>
 			  <li :index="item.index" v-for="item in menu_item">
@@ -19,84 +19,84 @@
 				<div id="evaluete-info-main-inner" v-resize:throttle="onResize">
 					<div id="anchor-1" class="section" >
 						<div class="detail-body">
-				      <el-row :gutter="40">
-				        <el-col :span="16">
-				        	<p class="title" style="margin:0 0 10px -20px;">身份欺诈</p>
-				          <el-row class="detail-thead" :gutter="2">
-				            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
-				            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
-				            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
-				          </el-row>
-				          <el-row class="detail-tr color-1">
-				            <el-col :span="8">户籍信息</el-col>
-				            <el-col :span="8">有</el-col>
-				            <el-col :span="8">与活动区域不符</el-col>
-				          </el-row>
-				          <el-row class="detail-tr color-2">
-				            <el-col :span="8">工作信息</el-col>
-				            <el-col :span="8">有</el-col>
-				            <el-col :span="8">与活动区域不符</el-col>
-				          </el-row>
-				          <el-row class="detail-tr color-3">
-				            <el-col :span="8">地址信息</el-col>
-				            <el-col :span="8">有</el-col>
-				            <el-col :span="8">与活动区域不符</el-col>
-				          </el-row>
-				          <el-row class="detail-tr color-4">
-				            <el-col :span="8">家庭成员信息</el-col>
-				            <el-col :span="8">无</el-col>
-				            <el-col :span="8">与活动区域不符</el-col>
-				          </el-row>
-				          <el-row class="detail-tr color-5">
-				            <el-col :span="8">虚拟身份</el-col>
-				            <el-col :span="8">无</el-col>
-				            <el-col :span="8">与活动区域不符</el-col>
-				          </el-row>
-				        </el-col>
-				        <el-col :span="8">
-				        	<p class="title" style="margin:0 0 10px -20px;">常活动区域</p>
-				          <div id="detail_heatMap"></div>
-				        </el-col>
-				      </el-row>
-			      	</div>
+					      <el-row :gutter="40">
+					        <el-col :span="16">
+					        	<p class="title" style="margin:0 0 10px -20px;">身份欺诈</p>
+					          <el-row class="detail-thead" :gutter="2">
+					            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
+					            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
+					            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
+					          </el-row>
+					          <el-row class="detail-tr color-1">
+					            <el-col :span="8">户籍信息</el-col>
+					            <el-col :span="8">有</el-col>
+					            <el-col :span="8">与活动区域不符</el-col>
+					          </el-row>
+					          <el-row class="detail-tr color-2">
+					            <el-col :span="8">工作信息</el-col>
+					            <el-col :span="8">有</el-col>
+					            <el-col :span="8">与活动区域不符</el-col>
+					          </el-row>
+					          <el-row class="detail-tr color-3">
+					            <el-col :span="8">地址信息</el-col>
+					            <el-col :span="8">有</el-col>
+					            <el-col :span="8">与活动区域不符</el-col>
+					          </el-row>
+					          <el-row class="detail-tr color-4">
+					            <el-col :span="8">家庭成员信息</el-col>
+					            <el-col :span="8">无</el-col>
+					            <el-col :span="8">与活动区域不符</el-col>
+					          </el-row>
+					          <el-row class="detail-tr color-5">
+					            <el-col :span="8">虚拟身份</el-col>
+					            <el-col :span="8">无</el-col>
+					            <el-col :span="8">与活动区域不符</el-col>
+					          </el-row>
+					        </el-col>
+					        <el-col :span="8">
+					        	<p class="title" style="margin:0 0 10px -20px;">常活动区域</p>
+					          <div id="detail_heatMap"></div>
+					        </el-col>
+					      </el-row>
+				      	</div>
 						<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
-		    		<div class="detail-body">
-				      <el-row class="detail-tr color-6">
-				        <el-col :span="3">1.</el-col>
-				        <el-col :span="6">姓名</el-col>
-				        <el-col :span="6">185********</el-col>
-				        <el-col :span="3">30次/月</el-col>
-				        <el-col :span="6">无可疑</el-col>
-				      </el-row>
-				      <el-row class="detail-tr color-7">
-				        <el-col :span="3">2.</el-col>
-				        <el-col :span="6">姓名</el-col>
-				        <el-col :span="6">185********</el-col>
-				        <el-col :span="3">30次/月</el-col>
-				        <el-col :span="6">无可疑</el-col>
-				      </el-row>
-				      <el-row class="detail-tr color-8">
-				        <el-col :span="3">3.</el-col>
-				        <el-col :span="6">姓名</el-col>
-				        <el-col :span="6">185********</el-col>
-				        <el-col :span="3">30次/月</el-col>
-				        <el-col :span="6">无可疑</el-col>
-				      </el-row>
-				      <el-row class="detail-tr color-9">
-				        <el-col :span="3">4.</el-col>
-				        <el-col :span="6">姓名</el-col>
-				        <el-col :span="6">185********</el-col>
-				        <el-col :span="3">30次/月</el-col>
-				        <el-col :span="6">无可疑</el-col>
-				      </el-row>
-				      <el-row class="detail-tr color-10">
-				        <el-col :span="3">5.</el-col>
-				        <el-col :span="6">姓名</el-col>
-				        <el-col :span="6">185********</el-col>
-				        <el-col :span="3">30次/月</el-col>
-				        <el-col :span="6">无可疑</el-col>
-				      </el-row>
-				    </div>
+			    		<div class="detail-body">
+					      <el-row class="detail-tr color-6">
+					        <el-col :span="3">1.</el-col>
+					        <el-col :span="6">姓名</el-col>
+					        <el-col :span="6">185********</el-col>
+					        <el-col :span="3">30次/月</el-col>
+					        <el-col :span="6">无可疑</el-col>
+					      </el-row>
+					      <el-row class="detail-tr color-7">
+					        <el-col :span="3">2.</el-col>
+					        <el-col :span="6">姓名</el-col>
+					        <el-col :span="6">185********</el-col>
+					        <el-col :span="3">30次/月</el-col>
+					        <el-col :span="6">无可疑</el-col>
+					      </el-row>
+					      <el-row class="detail-tr color-8">
+					        <el-col :span="3">3.</el-col>
+					        <el-col :span="6">姓名</el-col>
+					        <el-col :span="6">185********</el-col>
+					        <el-col :span="3">30次/月</el-col>
+					        <el-col :span="6">无可疑</el-col>
+					      </el-row>
+					      <el-row class="detail-tr color-9">
+					        <el-col :span="3">4.</el-col>
+					        <el-col :span="6">姓名</el-col>
+					        <el-col :span="6">185********</el-col>
+					        <el-col :span="3">30次/月</el-col>
+					        <el-col :span="6">无可疑</el-col>
+					      </el-row>
+					      <el-row class="detail-tr color-10">
+					        <el-col :span="3">5.</el-col>
+					        <el-col :span="6">姓名</el-col>
+					        <el-col :span="6">185********</el-col>
+					        <el-col :span="3">30次/月</el-col>
+					        <el-col :span="6">无可疑</el-col>
+					      </el-row>
+					    </div>
 					</div>
 					<div id="anchor-2" class="section">
 						<p class="title" style="margin-bottom: 10px;">黑名单</p>
@@ -183,7 +183,7 @@
 					</div>
 					<!--团伙关联 -->
 					<div id="anchor-4" class="section">
-						<el-row>
+						<el-row :gutter="20">
 							<el-col :span="12">
 								<p class="title">通联关系</p>
 								<div class="echart" ref="myEchart2"></div>
@@ -255,7 +255,7 @@
 					</div>
 					<!--金融属性 -->
 					<div id="anchor-5" class="section">
-						<el-row>
+						<el-row :gutter="20">
 							<el-col :span="12">
 								<el-col :span="24">
 									<p class="title">催收电话</p>
@@ -304,7 +304,7 @@
 					</div>
 					<!--网络行为 -->
 					<div id="anchor-6" class="section">
-						<el-row>
+						<el-row :gutter="20">
 							<el-col :span="12">
 								<p class="title">APP使用</p>
 								<div class="echart"  ref="myEchart7"></div>
