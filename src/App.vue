@@ -77,4 +77,7 @@
     .zk_page .d2-container-full__body{
         padding-bottom: 0px !important;
     }
+    .zk_head .d2-container-full__body {
+        padding:0px !important;
+    }
 </style>

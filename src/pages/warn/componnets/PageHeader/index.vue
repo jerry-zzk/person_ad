@@ -5,7 +5,7 @@
     :rules="rules"
     ref="form"
     size="mini"
-    style="margin-bottom: -18px;">
+    style="margin-bottom: -2px;text-align:right;">
 
     <!-- <el-form-item label="原因配型" prop="type">
       <el-select
@@ -20,7 +20,7 @@
       </el-select>
     </el-form-item> -->
 
-    <el-form-item label="姓名" prop="user">
+    <!-- <el-form-item label="姓名" prop="user">
       <el-input
         v-model="form.user"
         placeholder="姓名"
@@ -40,24 +40,24 @@
         placeholder="电话号"
         style="width: 120px;"/>
     </el-form-item>
-    
+     -->
 
-    <el-form-item>
+    <!-- <el-form-item>
       <el-button
         type="primary"
         @click="handleFormSubmit">
         <d2-icon name="search"/>
         查询
       </el-button>
-    </el-form-item>
+    </el-form-item> -->
 
-    <el-form-item>
+    <!-- <el-form-item>
       <el-button
         @click="handleFormReset">
         <d2-icon name="refresh"/>
         重置
       </el-button>
-    </el-form-item>
+    </el-form-item> -->
     <!-- <el-form-item>
       <el-button type="primary"
         @click="add">
@@ -67,8 +67,16 @@
     </el-form-item> -->
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
+      <el-button
+        style="margin-right:30px;"
+        type="primary"
+        @click="handleFormSubmit">
+        <d2-icon name="search"/>
+        查询
+      </el-button>
       <div @click="add1":class="[toggle,to1]">表格</div>
       <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
+      <div class="clear:both"></div>
       <!-- <el-switch
         v-model="value2"
         @change="add1"
@@ -81,6 +89,7 @@
 
     <el-form-item>
       <el-pagination
+        style="margin-right:20px;"
         :current-page="current"
         layout="prev, next, jumper">
       </el-pagination>
