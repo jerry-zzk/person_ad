@@ -150,7 +150,7 @@
 		&:hover,&.active{
 			color:white;
 			background:$orange;
-		} 
+		}
 		margin:0 10px;
 	}
 }
@@ -171,16 +171,13 @@ export default {
     this.initChart();
   },
   beforeDestroy() {
-  	if(this.chart){
-  		this.chart.dispose();
-  		this.chart= null;
-  	}
+  	this.chart.dispose();
+  	this.chart= null;
   },
   methods:{
   	onResize:function(){
-  		if(this.chart){
+  		if(this.chart)
   			this.chart.resize();
-  		}
   	},
   	initChart() {
       	this.chart = echarts.init(this.$refs.chart);
@@ -196,7 +193,7 @@ export default {
 		     animationDuration: 1500,
 		     animationEasingUpdate: 'quinticInOut',
 		     series: [{
-		        
+
 		         type: 'graph',
 		         layout: 'force',
 		         symbolSize: 58,
@@ -224,7 +221,7 @@ export default {
 		         lineStyle: {
 		             color: 'source',
 		             curveness: 0.3,
-		             
+
 		         },
 		         edgeLabel: {
 		             normal: {

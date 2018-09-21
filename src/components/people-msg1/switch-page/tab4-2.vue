@@ -122,11 +122,11 @@
     export default {
         data() {
             return {
-                center: {lng: 116.38853, lat: 39.991717},
+                center: {lng: 116.38753, lat:39.991717},
                 zoom: 18,
-                markerPoint: {lng: 116.38853, lat: 39.991717},
+                markerPoint: {lng: 116.38653, lat: 39.991717},
                 markerPoint1: {lng: 116.38753, lat: 39.991717},
-                markerPoint2: {lng: 116.38653, lat: 39.991717},
+                markerPoint2: {lng: 116.38853, lat: 39.991717},
                 buttons: ["近一周", "近一月", "近三个月", "近一年"],
                 active: 0
             }
@@ -135,9 +135,9 @@
         },
         methods: {
             handler({BMap, map}) {
-                // this.center.lng = 116.38853
-                // this.center.lat = 39.991717
-                // this.zoom = 18
+                this.center.lng = 116.38753
+                this.center.lat = 39.991717
+                this.zoom = 18
             },
             handleButton(index) {
                 this.active = index

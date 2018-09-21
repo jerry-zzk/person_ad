@@ -62,10 +62,10 @@
                 <el-col class="xiahuaxian"></el-col>
                 <el-col class="table">
                     <el-col :span="16">
-                        <div style="height: 320px" id="relativeChart"></div>
+                        <div id="relativeChart"></div>
                     </el-col>
                     <el-col :span="8" style="height: 320px;overflow: hidden">
-                            <div id="message">
+                        <div id="message">
                             <div class="con">
                                 <ul>
                                     <li class="header">
@@ -147,7 +147,7 @@
                 active: 0
             }
         },
-        methods:{
+        methods: {
             handleButton(index) {
                 this.active = index
             }
@@ -169,7 +169,7 @@
                 border-left: 4px solid $orangeColor;
                 padding-left: 10px;
             }
-            .menu{
+            .menu {
                 position: absolute;
                 top: -10px;
                 right: -10px;
@@ -194,6 +194,11 @@
                         background: rgb(233, 239, 243);
                     }
                 }
+            }
+            #relativeChart {
+                height: 320px;
+                padding-right: 30px;
+                box-sizing: border-box
             }
             #message {
                 width: 100%;
@@ -225,7 +230,7 @@
                         }
                         li:not(.header):hover {
                             background: $orangeColor;
-                            color: white!important;
+                            color: white !important;
                         }
                     }
                 }
