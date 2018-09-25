@@ -29,7 +29,7 @@
             <span slot="label"><i class="el-icon-document"></i> 网络行为异常</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
-                    <tab44 :activeName="activeName"></tab44>
+                    <tab44></tab44>
                 </el-scrollbar>
             </div>
         </el-tab-pane>

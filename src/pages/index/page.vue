@@ -5,7 +5,6 @@
     </el-card>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
-      <span @click="open1('mainTab5')">临时按钮(5个tab) </span>
       <line-chart> </line-chart>
     </el-card>
     <!-- 反欺诈列表 -->
