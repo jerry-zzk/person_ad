@@ -1077,7 +1077,6 @@
                     padding-left: 15%;
                     box-sizing: border-box;
                     border: 1px solid rgba(0,0,0,0.12);
-                    font-family: '楷体';
                     overflow: hidden;
                     font-size: 14px;
                 }

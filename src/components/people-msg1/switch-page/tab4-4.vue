@@ -8,7 +8,7 @@
                             <span class="fa fa-line-chart" style="margin-right: 10px"></span>
                             银行类、金融类APP安装记录、使用记录
                         </div>
-                        <div class="buttons">
+                        <div class="buttons" style="height: 50px;">
                             <el-col class="menu">
                                 <span v-for="item,index in buttons" class="button"
                                       @click="handleButton(index)"
@@ -88,7 +88,7 @@
                             <span class="fa fa-line-chart" style="margin-right: 10px"></span>
                             网络搜索、浏览、发布、下载金融类相关行为记录
                         </div>
-                        <div class="buttons">
+                        <div class="buttons"  style="height: 50px;">
                             <el-col class="menu">
                                 <span v-for="item,index in buttons" class="button"
                                       @click="handleButton(index)"
@@ -114,7 +114,7 @@
                         <div class="con">
                             <el-col :span="12">
                                 <div>
-                                    <div class="buttons">
+                                    <div class="buttons" style="float: left">
                                         <span class="tit">收支对比</span>
                                         <el-col class="menu1">
                                             <span v-for="item,index in buttons" class="button"
@@ -225,7 +225,7 @@
             }
             .buttons {
                 position: relative;
-                height: 50px;
+                /*float: left;*/
                 margin-bottom: 20px;
             }
             .item {
@@ -275,7 +275,6 @@
                     width: 100%;
                     float: left;
                     background: #f9f9f9;
-
                     .tit {
                         line-height: 20px;
                         display: inline-block;
@@ -284,7 +283,11 @@
                         padding-left: 10px;
                         margin-top: 24px;
                     }
-
+                    #peiChart-wrap,#leftChart{
+                        width: 100%;
+                        height: 400px;
+                        float: left;
+                    }
                 }
             }
 
