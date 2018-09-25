@@ -72,7 +72,10 @@ new Vue({
       let url_path = val[0].path
       let now_menuAside =  menuAside
       // 监听到不同的子模块
-      if(url_path=='/dataVerification'){
+      if(url_path=='/antiFraud'){
+        now_menuAside =  menuAside
+
+      }else if(url_path=='/dataVerification'){
         now_menuAside = menuAside1
 
       }else if(url_path=='/loaningMonitor'){
@@ -83,6 +86,9 @@ new Vue({
       this.$store.commit('d2admin/search/init', now_menuAside)
       // 显示侧边菜单
       this.$store.commit('d2admin/menu/asideSet', now_menuAside)
+      // 设置子模块logo的路经
+      this.$store.commit('d2admin/theme/setLogoPath', url_path.substring(1))
+      
     }
     
   }

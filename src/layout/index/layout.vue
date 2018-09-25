@@ -16,8 +16,10 @@
         }"
         flex-box="0">
         <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.svg`">
-          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/logo.svg`">
+         <!--  <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.svg`"> -->
+          <img v-if="asideCollapse" :src="`${$baseUrl}image/logos/logo.svg`">
+          <!-- <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/logo.svg`"> -->
+          <img v-else :src="`${$baseUrl}image/logos/all.svg`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
@@ -63,7 +65,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
                                     <img :src="`${$baseUrl}image/index/lian_xin_he_bg.png`">
-                                    <a :href="`${$baseUrl}#/antiFraud/index`">
+                                    <a :href="`${$baseUrl}#/antiFraud/index`" @click="closeAll">
                                       <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
                                       <p>联信核</p>
                                       <p>贷前反欺诈产品</p>
@@ -73,7 +75,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
                                     <img :src="`${$baseUrl}image/index/lian_xin_kong_bg.png`">
-                                    <a :href="`${$baseUrl}#/loaningMonitor/index`">
+                                    <a :href="`${$baseUrl}#/loaningMonitor/index`" @click="closeAll">
                                       <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
                                       <p>联信控</p>
                                       <p>贷中监控产品</p>
@@ -83,7 +85,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
                                     <img :src="`${$baseUrl}image/index/lian_xin_fu_bg.png`">
-                                    <a :href="`${$baseUrl}#/dataVerification/index`">
+                                    <a :href="`${$baseUrl}#/dataVerification/index`" @click="closeAll">
                                       <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
                                       <p>联信服</p>
                                       <p>数据核验服务产品</p>
@@ -316,6 +318,10 @@ export default {
      */
     handleToggleAside () {
       this.menuAsideCollapseToggle()
+    },
+    // 关闭所有小导航
+    closeAll (){
+      this.$store.commit('d2admin/page/closeAll', this)
     }
   }
 }

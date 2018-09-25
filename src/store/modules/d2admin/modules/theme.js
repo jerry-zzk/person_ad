@@ -7,7 +7,9 @@ export default {
     // 主题
     list: setting.theme.list,
     // 现在激活的主题 这应该是一个名字 不是对象
-    activeName: setting.theme.list[0].name
+    activeName: setting.theme.list[0].name,
+    // 每个子模块对应的logo，默认是antiFraud
+    logoPatn: 'antiFraud'
   },
   getters: {
     /**
@@ -16,6 +18,9 @@ export default {
      */
     activeSetting (state) {
       return state.list.find(theme => theme.name === state.activeName)
+    },
+    logoPathSetting(state){
+      return state.logoPatn
     }
   },
   mutations: {
@@ -58,6 +63,11 @@ export default {
      */
     dom (state) {
       document.body.className = `theme-${state.activeName}`
+    },
+
+    // 设置子模块logo的路经
+    setLogoPath(state, pathName){
+      state.logoPatn = pathName?pathName:'antiFraud'
     }
   }
 }
