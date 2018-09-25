@@ -16,8 +16,10 @@
         }"
         flex-box="0">
         <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.svg`">
-          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/logo.svg`">
+          <!-- <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.svg`"> -->
+          <img v-if="asideCollapse" :src="`${$baseUrl}image/logos/logo.svg`">
+          <!-- <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/logo.svg`"> -->
+          <img v-else :src="`${$baseUrl}image/logos/${logoPath}/all.svg`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
@@ -122,7 +124,8 @@ export default {
     }),
     ...mapGetters('d2admin', {
       keepAlive: 'page/keepAlive',
-      themeActiveSetting: 'theme/activeSetting'
+      themeActiveSetting: 'theme/activeSetting',
+      logoPath: 'theme/logoPathSetting',
     }),
     /**
      * @description 最外层容器的背景图片样式
