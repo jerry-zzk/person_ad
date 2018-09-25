@@ -67,13 +67,13 @@
     </el-form-item> -->
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
-      <el-button
+      <!-- <el-button
         style="margin-right:30px;"
         type="primary"
         @click="handleFormSubmit">
         <d2-icon name="search"/>
         查询
-      </el-button>
+      </el-button> -->
       <div @click="add1":class="[toggle,to1]">表格</div>
       <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
       <div class="clear:both"></div>
@@ -127,6 +127,19 @@ export default {
   },
   methods: {
     add1 (index) {
+      
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          this.$emit('submit', this.form)
+        } else {
+          this.$notify.error({
+            title: '错误',
+            message: '表单校验失败'
+          })
+          return false
+        }
+      })
+
       // if(this.ok == false){
       //   this.ok = true
       //   this.$emit('zk',this.ok)
