@@ -194,12 +194,12 @@ const frameIn = [
         path: 'place1',
         name: `${pre}place1`,
         component: () => import('@/pages/placeVerifi/verifi1'),
-        meta: { ...meta, title: '手机号当前位置所在省市区县核验' },
+        meta: { ...meta, title: '手机号所在省市区县核验' },
       },{
         path: 'place2',
         name: `${pre}place2`,
         component: () => import('@/pages/placeVerifi/verifi2'),
-        meta: { ...meta, title: '手机号近期活跃省份、活跃城市核验' },
+        meta: { ...meta, title: '手机号近期活跃地方核验' },
       },{
         path: 'place3',
         name: `${pre}place3`,
@@ -219,12 +219,12 @@ const frameIn = [
         path: 'place6',
         name: `${pre}place6`,
         component: () => import('@/pages/placeVerifi/verifi6'),
-        meta: { ...meta, title: '手机号历史时间点出现位置核验' },
+        meta: { ...meta, title: '手机号时间点出现位置核验' },
       },{
         path: 'place7',
         name: `${pre}place7`,
         component: () => import('@/pages/placeVerifi/verifi7'),
-        meta: { ...meta, title: '手机号在某地活跃时间核验' },
+        meta: { ...meta, title: '手机号活跃时间核验' },
       },{
         path: 'place8',
         name: `${pre}place8`,
@@ -234,41 +234,41 @@ const frameIn = [
         path: 'place9',
         name: `${pre}place9`,
         component: () => import('@/pages/placeVerifi/verifi9'),
-        meta: { ...meta, title: '出行规律核验（在某个重要位置的活跃时间段）' },
+        meta: { ...meta, title: '出行规律核验' },
       },
       //关系核验
       {
         path: 'relation',
         name: `${pre}relation`,
         component: () => import('@/pages/relationVerifi/verifi'),
-        meta: { ...meta, title: '两个手机号之间熟悉程度' },
+        meta: { ...meta, title: '两个手机号熟悉程度' },
       },{
         path: 'relation1',
         name: `${pre}relation1`,
         component: () => import('@/pages/relationVerifi/verifi1'),
-        meta: { ...meta, title: '两个手机号之间社会关系' },
+        meta: { ...meta, title: '两个手机号社会关系' },
       },{
         path: 'relation2',
         name: `${pre}relation2`,
         component: () => import('@/pages/relationVerifi/verifi2'),
-        meta: { ...meta, title: '两个虚拟账号之间的是否有关系' },
+        meta: { ...meta, title: '虚拟账号是否有关系' },
       },{
         path: 'relation3',
         name: `${pre}relation3`,
         component: () => import('@/pages/relationVerifi/verifi3'),
-        meta: { ...meta, title: '多个实体之间是否有群体关系' },
+        meta: { ...meta, title: '实体是否有群体关系' },
       },{
         path: 'relation4',
         name: `${pre}relation4`,
         component: () => import('@/pages/relationVerifi/verifi4'),
-        meta: { ...meta, title: '两个手机号之间通联频次' },
+        meta: { ...meta, title: '手机通联频次' },
       },
       //行为核验
       {
         path: 'action',
         name: `${pre}action`,
         component: () => import('@/pages/actionVerifi/verifi'),
-        meta: { ...meta, title: '车牌违章行为核验' },
+        meta: { ...meta, title: '车牌违章核验' },
       },{
         path: 'action1',
         name: `${pre}action1`,
@@ -283,12 +283,12 @@ const frameIn = [
         path: 'action3',
         name: `${pre}action3`,
         component: () => import('@/pages/actionVerifi/verifi3'),
-        meta: { ...meta, title: '借贷行为核验，是否有借贷记录，月还款额度' },
+        meta: { ...meta, title: '借贷行为核验' },
       },{
         path: 'action4',
         name: `${pre}action4`,
         component: () => import('@/pages/actionVerifi/verifi4'),
-        meta: { ...meta, title: '收入水平、月消费水平核验' },
+        meta: { ...meta, title: '收入消费水平核验' },
       },
     ])('dataVerification-')
   },
