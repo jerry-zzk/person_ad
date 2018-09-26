@@ -8,8 +8,8 @@ export default {
     list: setting.theme.list,
     // 现在激活的主题 这应该是一个名字 不是对象
     activeName: setting.theme.list[0].name,
-    // 每个子模块对应的logo，默认是antiFraud
-    logoPatn: 'antiFraud'
+    // 每个子模块对应的logo，默认是index
+    logoPatn: 'index'
   },
   getters: {
     /**
@@ -67,7 +67,7 @@ export default {
 
     // 设置子模块logo的路经
     setLogoPath(state, pathName){
-      state.logoPatn = pathName?pathName:'antiFraud'
+      state.logoPatn = pathName?pathName:'index'
     }
   }
 }
