@@ -1,36 +1,30 @@
 <template>
   <d2-container>
-    <el-card class="d2-mb">
-      <el-row :gutter="10">
-        <el-col :span="24">
-          <div class="col col-l">
-            <p class="zk_sousuo" style="text-align:center;">
-              <!-- <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> -->
-              <i style="vertical-align:middle;margin-right:10px;height:29px;display:inline-block;font-size:22px;color:#ea7312;" class="fa fa-search"></i>
-               <span style="font-size:24px;color:#666;">用 户 搜 索</span>
-            </p>
-            <p class="zk_input" style="text-align:center;">
-              <el-input
-                v-model="val"
-                placeholder="请输入搜索内容"
-                style="width:600px;"
-                prefix-icon="el-icon-search"
-                clearable="">
-                <el-button @click="sear" style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜索</el-button>
-              </el-input>
-            </p>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
-    <div style="background:#fff;margin-top:-20px;border:5px solid #d5d8de;border-top:20px solid #d5d8de;">
-      <p style="background:#aaa;opacity:0.2;height:30px;margin-bottom:-16px;line-height:30px;width:100%;margin-top:0px;color:#333;">共搜索出 <b style="color:#000;"> {{resault}} </b> 条信息</p>
+    <div class="col col-l">
+      <p class="zk_sousuo" style="text-align:center;">
+        <!-- <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> -->
+        <i style="vertical-align:middle;margin-right:10px;height:29px;display:inline-block;font-size:22px;color:#ea7312;" class="fa fa-search"></i>
+         <span style="font-size:24px;color:#666;">用 户 搜 索</span>
+      </p>
+      <p class="zk_input" style="text-align:center;">
+        <el-input
+          v-model="val"
+          placeholder="请输入搜索内容"
+          style="width:600px;"
+          prefix-icon="el-icon-search"
+          clearable="">
+          <el-button @click="sear" style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜索</el-button>
+        </el-input>
+      </p>
+    </div>
+    <div style="background-color:#fff;border-width:24px 10px 5px 10px;border-style:solid;border-color:#f5f6fa;">
+      <p style="background-color:#eaeff3;height:40px;line-height:40px;margin: 0 0 0 -1px;padding-left: 10px;font-size: 16px;font-weight:600;color:#999;">共搜索到{{resault}}个结果</p>
       <!-- 表格 -->
       <demo-page-header
         slot="header"
         @submit="handleSubmit"
         ref="header"  @zk = "zk"/>
-        <p v-show="ok1">
+        <div v-show="ok1">
           <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
             <el-col :span="3">
               <img src="../../assets/img/1.jpg" style="width:120px;vertical-align:middle;" alt="">
@@ -64,7 +58,7 @@
               <p> </p>
             </el-col>
           </el-row>
-        </p>
+        </div>
       <demo-page-main
         :table-data="table"
         :loading="loading" v-show="ok"/>
@@ -257,8 +251,8 @@ export default {
     border-radius:0px;
   }
   .zk_ul{
-    border:1px solid #ccc;
-    padding:5px 0 5px 15px;
+    border-bottom:1px solid #eee;
+    padding: 20px 0 5px 15px;
     // margin-bottom: 15px;
   }
   .zk_cli{
@@ -267,20 +261,20 @@ export default {
   }
   .zk_ul:hover{
     border:1px solid #35ab62;
-    border-left:3px solid #35ab62;
+    border-left:4px solid #35ab62;
     background:rgba(132, 182, 144, 0.12);
   }
 @import '~@/assets/style/public.scss';
 .col {
-  padding: 20px;
+  padding: 0 20px 40px 20px;
   border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
+  // border-width: 1px;
+  // border-style: solid;
   font-size: 16px;
 }
 .col-l {
-  background-color: lighten($color-info, 40%);
-  border-color: lighten($color-info, 35%);
+  // background-color: lighten($color-info, 40%);
+  // border-color: lighten($color-info, 35%);
 }
 .col-r {
   background-color: lighten($color-success, 47%);
