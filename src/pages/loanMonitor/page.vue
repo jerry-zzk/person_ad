@@ -31,7 +31,7 @@
           <p class="iblock-title">风险用户数</p>
           <i class="fa fa-cubes" style="font-size:60px;"></i>
           <div class="iblock-foot iblock-foot-blue">
-            昨天<span class="iblock-digit">- 50</span>
+            昨天<span class="iblock-digit">- 51</span>
           </div>
         </div>
         <div class="ibox iblock iblock-margin iblock-purple">
@@ -187,7 +187,18 @@ export default {
           left: 90
         },
         tooltip: {
-          show: true
+          show: true,
+          trigger: 'item',
+          formatter: function(params){
+            var htmlDom = '<div style="margin-bottom:4px;color:#999;">'+params.name+'</div><div>'+params.seriesName+'<span style="margin-left:6px;color:red">'+params.data+'</span></div>';
+            return htmlDom
+          },
+          padding: [10, 20],
+          extraCssText: 'box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);',
+          backgroundColor: 'rgb(255,255,255)',
+          textStyle: {
+            color: '#000'
+          }
         },
         legend:{
           top: 20,
@@ -265,7 +276,18 @@ export default {
           left: 90
         },
         tooltip: {
-          show: true
+          show: true,
+          trigger: 'item',
+          formatter: function(params){
+            var htmlDom = '<div style="margin-bottom:4px;color:#999;">'+params.name+'</div><div>'+params.seriesName+'<span style="margin-left:6px;color:red">'+params.data+'</span></div>';
+            return htmlDom
+          },
+          padding: [10, 20],
+          extraCssText: 'box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);',
+          backgroundColor: 'rgb(255,255,255)',
+          textStyle: {
+            color: '#000'
+          }
         },
         legend:{
           top: 20,
@@ -278,7 +300,7 @@ export default {
           axisTick: {show: false},
           name: '类别',
           nameLocation: 'middle',
-          nameGap: 50,
+          nameGap: 40,
           data: ['产品1','产品2','产品3','产品4','产品5','产品6','产品7','产品8']
         },
         yAxis: {
@@ -293,8 +315,11 @@ export default {
         },
         series : [{
           type:'bar',
-          name: 'y',
+          name: '上限',
           barWidth: 16,
+          tooltip: {
+            show: false
+          },
           itemStyle: {
             color: '#eee'
           },
