@@ -80,4 +80,21 @@
     .zk_head .d2-container-full__body {
         padding:0px !important;
     }
+
+
+
+    /*分页按钮样式*/
+    .btn-prev{
+        background: rgb(64,158,255)!important;
+        margin-right: 10px!important;
+        padding: 0!important;
+        color: white!important;
+        border-radius: 5px;
+    }
+    .btn-next{
+        padding: 0!important;
+        background:rgb(64,158,255)!important;
+        color: white!important;
+        border-radius: 5px;
+    }
 </style>

@@ -1,9 +1,6 @@
 <template>
     <div id="general-federation">
         <div class="left">
-            <div class="shuqian">
-                <span class="fa fa-book" style="margin-right: 20px;margin-left: 17px"></span>书签
-            </div>
             <el-scrollbar style="height: 100%">
                 <ul class="type-wrap">
                 <li v-for="item,index in type"
@@ -983,6 +980,7 @@
                 font-size: 16px;
             }
             .type-wrap {
+                margin-top: 5px;
                 padding: 0 17px;
                 list-style: none;
                 li.isActive {
@@ -995,7 +993,7 @@
                     height: 46px;
                     line-height: 46px;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-                    font-size: 13px;
+                    font-size: 14px;
                     cursor: pointer;
                     &:hover {
                         color: #2f74ff;
