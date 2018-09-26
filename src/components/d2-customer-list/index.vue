@@ -1,6 +1,7 @@
 <template>
     <div class="wrap">
         <p class="search">
+            <span class="all">全部</span>
             <input class="search_input" v-model="search_value">
             <span class="fa fa-search" @click="searchValueChange"></span>
         </p>
@@ -15,10 +16,11 @@
         </div>
 
         <el-pagination
-                class="page-button"
-                :current-page="current"
-                layout="prev, next, jumper"
-                @current-change="handleCurrentChange">
+                style="float: right;margin-top: 10px"
+                @current-change="handleCurrentChange"
+                :current-page.sync="current"
+                layout="total, prev, next"
+                :total="100">
         </el-pagination>
 
     </div>
@@ -76,12 +78,26 @@
         padding-top: 14px;
         box-sizing: border-box;
         position: relative;
+        padding-top: 10px;
         .search{
-            height: 35px;
+            height: 34px;
             margin-bottom: 14px;
+            padding-left: 50px;
+            margin-bottom: 10px;
+            .all{
+                position: absolute;
+                left: 22px;
+                top: 12px;
+                padding: 5px 6px;
+                background: rgb(64,158,255);
+                border-radius: 5px;
+                font-size: 14px;
+                color: white;
+                cursor: pointer;
+            }
             input{
                 width: 100%;
-                height: 35px;
+                height: 34px;
                 border:1px solid rgba(0,0,0,0.2);
                 border-radius: 20px;
                 outline: none;
@@ -91,8 +107,8 @@
             }
             .fa{
                 position: absolute;
-                right: 34px;
-                top:25px;
+                right: 30px;
+                top:18px;
                 cursor: pointer;
                 color:dodgerblue;
             }
