@@ -324,7 +324,9 @@ export default {
       // 关闭所有小导航
       this.$store.commit('d2admin/page/closeAll', this)
       // 设置不同的皮肤
-      themeName = themeName?themeName:'line'
+      if (!themeName) {
+        themeName = 'line'
+      }
       this.$store.commit('d2admin/theme/set', themeName)
     }
   }
