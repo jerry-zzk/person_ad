@@ -24,7 +24,7 @@
       </el-row>
     </el-card>
     <div style="background:#fff;margin-top:-20px;border:5px solid #d5d8de;border-top:20px solid #d5d8de;">
-      <p style="background:#aaa;opacity:0.2;height:30px;line-height:30px;iwdth:100%;margin-top:0px;color:#333;">共搜索出 <b style="color:#000;"> {{resault}} </b> 条信息</p>
+      <p style="background:#aaa;opacity:0.2;height:30px;margin-bottom:-16px;line-height:30px;width:100%;margin-top:0px;color:#333;">共搜索出 <b style="color:#000;"> {{resault}} </b> 条信息</p>
       <!-- 表格 -->
       <demo-page-header
         slot="header"
@@ -33,7 +33,7 @@
         <p v-show="ok1">
           <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
             <el-col :span="3">
-              <img src="../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
+              <img src="../../assets/img/1.jpg" style="width:120px;vertical-align:middle;" alt="">
             </el-col>
             <el-col :span="6">
               <p><b style="color:#ea7312;">{{lb.name[index].name}}</b></p>
@@ -89,9 +89,9 @@ import axios from '@/plugin/axios'
 export default {
   name: 'demo-business-table-1',
   components: {
-    'DemoPageHeader': () => import('./componnets/PageHeader'),
-    'DemoPageMain': () => import('./componnets/PageMain'),
-    'DemoPageFooter': () => import('./componnets/PageFooter')
+   // 'DemoPageHeader': () => import('./componnets/PageHeader'),
+   // 'DemoPageMain': () => import('./componnets/PageMain'),
+   // 'DemoPageFooter': () => import('./componnets/PageFooter')
   },
   data () {
     return {

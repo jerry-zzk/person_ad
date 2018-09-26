@@ -11,7 +11,7 @@
                     </el-form-item>
                         <el-button type="warning" size="small" @click="cli">点击验证</el-button>
                     </p>
-               <div v-show="hide" style="height:50px; border-bottom:1px solid #ddd;line-height:50px;">
+               <div v-show="hide" style="height:50px; border-top:1px solid #ccc;line-height:50px;">
                    <h3 style="color:#666;margin-top:3px;" v-show="hello">恭喜,您输入验证的信息相匹配。</h3>
                    <h3 style="color:#aaa;margin-top:3px;" v-show="sorry">很抱歉,您验证的信息不匹配。</h3>
                 </div>
