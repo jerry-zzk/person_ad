@@ -279,7 +279,7 @@
                     display: inline-block;
                     width: calc(25% - 2px);
                     height: 40px;
-                    font-size: 13px;
+                    font-size: 14px;
                     text-align: center;
                     line-height: 40px;
                     border: 1px solid rgba(0, 0, 0, 0.12);
