@@ -67,8 +67,8 @@
     </el-form-item> -->
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
-      <div @click="add1":class="[toggle,to1]">表格</div>
-      <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
+      <div @click="add1":class="[toggle,to1]"><d2-icon-svg class="ic_svg" name="iauditsMgt"/></div>
+      <div @click="add2" :class="[toggle,to]" ref="bg"><d2-icon-svg class="ic_svg" name="iauditsMgt"/></div>
       <!-- <el-switch
         v-model="value2"
         @change="add1"
@@ -156,6 +156,12 @@ export default {
 }
 </script>
 <style>
+  .ic_svg{
+    height:10px;
+    width:10px;
+    margin-right:3px;
+    vertical-align: center;
+  }
   .toggle{
     margin:0;
     /* border:1px solid #ccc; */

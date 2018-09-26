@@ -91,10 +91,16 @@
         color: white!important;
         border-radius: 5px;
     }
-    .btn-next{
-        padding: 0!important;
-        background:rgb(64,158,255)!important;
-        color: white!important;
+    .btn-next {
+        padding: 0 !important;
+        background: rgb(64, 158, 255) !important;
+        color: white !important;
         border-radius: 5px;
+    }
+
+
+
+    .el-form-item{
+        margin:0px 10px !important;
     }
 </style>

@@ -1,7 +1,7 @@
 <template class="page">
     <d2-container class="page">
         <el-card shadow="never" class="d2-mb">
-            <h2>性别/手机号对应关系核验</h2>
+            <h3>性别/手机号对应关系核验</h3>
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
                     <el-form-item label="性别 : " prop="name" style="display:inline-block">
                         <el-input v-model="ruleForm.name"  placeholder="请输入您的性别" clearable="" value1="" prefix-icon="el-icon-edit" value="" style="width:300px;margin-right:30px;"></el-input>
@@ -11,10 +11,10 @@
                     </el-form-item>
                         <el-button type="warning" size="small" @click="cli">点击验证</el-button>
                     </p>
-                <el-card shadow="never" class="d2-mb" style="height:80px;">
-                   <h2 style="color:#666;margin-top:3px;" v-show="hello">恭喜,您输入验证的信息相匹配。</h2>
-                   <h2 style="color:#aaa;margin-top:3px;" v-show="sorry">很抱歉,您验证的信息不匹配。</h2>
-                </el-card>
+                 <div v-show="hide" style="height:50px; border-top:1px solid #ccc;line-height:50px;">
+                   <h3 style="color:#666;margin-top:3px;" v-show="hello">恭喜,您输入验证的信息相匹配。</h3>
+                   <h3 style="color:#aaa;margin-top:3px;" v-show="sorry">很抱歉,您验证的信息不匹配。</h3>
+                </div>
             </el-form>
         </el-card>
         <div>
@@ -26,9 +26,9 @@
             <demo-page-main
             style="margin-bottom:15px;"
               :table-data="table"
-              :loading="loading" v-show="ok"/>
+              :loading="loading" v-show="ok1"/>
 
-            <p v-show="ok1">
+            <p v-show="ok">
               <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
                 <el-col :span="3">
                   <img src="../../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
@@ -76,6 +76,7 @@ export default {
   },
   data () {
     return {
+    hide:false,
       zk_cli:false,
         zk_ul:'zk_ul',
         peo:[],
@@ -122,6 +123,7 @@ export default {
   },
   mounted(){
     this.ajax()
+    this.handleSubmit()
   },
   methods: {
     ajax(){
@@ -188,11 +190,13 @@ export default {
     },
     cli(){
         if(this.ruleForm.name == this.ruleForm.num){
+            this.hide = true
             this.hello = true
             this.sorry = false
         }else if(this.ruleForm.name != this.ruleForm.num){
             this.hello = false
             this.sorry = true
+            this.hide = true
         }
     }
   }

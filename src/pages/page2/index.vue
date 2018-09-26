@@ -10,8 +10,8 @@
           <p style="font-size:24px;">人员列表</p>
           <el-button size="small" type="success"></el-button> <span class="midd"> 安全 </span> <el-button size="small" type="danger"></el-button><span class="midd">欺诈</span><el-button size="small" type="info"></el-button><span class="midd">可疑</span><el-button size="small" type="warning"></el-button>
           <span class="midd" style="margin-right:20px;">待检测</span>
-          <span @click="toggle1" :class="[toggle,to1]">表格</span>
-          <span @click="toggle2" :class="[toggle,to]">列表</span>
+          <span @click="toggle1" :class="[toggle,to1]"><d2-icon-svg class="ic_svg" name="inewConsumerSubmit"/></span>
+          <span @click="toggle2" :class="[toggle,to]"><d2-icon-svg class="ic_svg" name="iauditsMgt"/></span>
           <!-- <el-switch
             style="margin-top:6px;"
             v-model="value1"
@@ -213,6 +213,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ic_svg{
+    height:10px;
+    width:10px;
+    margin-right:3px;
+    vertical-align: center;
+  }
 .zk_ul{
     border:1px solid #ccc;
     padding:5px 0 5px 15px;
@@ -235,7 +241,7 @@ export default {
     border-radius: 3px;
     height:20px;
     line-height: 24px;
-    width:50px;
+    width:40px;
     font-size:13px;
     display:inline-block;
     background: #a0cfff;

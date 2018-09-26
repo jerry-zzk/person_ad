@@ -65,7 +65,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_one">
                                     <img :src="`${$baseUrl}image/index/lian_xin_he_bg.png`">
-                                    <a :href="`${$baseUrl}#/antiFraud/index`" @click="closeAll">
+                                    <a :href="`${$baseUrl}#/antiFraud/index`" @click="link_event('line')">
                                       <img :src="`${$baseUrl}image/index/lian_xin_he.png`">
                                       <p>联信核</p>
                                       <p>贷前反欺诈产品</p>
@@ -75,7 +75,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_two">
                                     <img :src="`${$baseUrl}image/index/lian_xin_kong_bg.png`">
-                                    <a :href="`${$baseUrl}#/loaningMonitor/index`" @click="closeAll">
+                                    <a :href="`${$baseUrl}#/loaningMonitor/index`" @click="link_event('d2')">
                                       <img :src="`${$baseUrl}image/index/lian_xin_kong.png`">
                                       <p>联信控</p>
                                       <p>贷中监控产品</p>
@@ -85,7 +85,7 @@
                                 <el-col :span="8">
                                   <div class="menu_button button_three">
                                     <img :src="`${$baseUrl}image/index/lian_xin_fu_bg.png`">
-                                    <a :href="`${$baseUrl}#/dataVerification/index`" @click="closeAll">
+                                    <a :href="`${$baseUrl}#/dataVerification/index`" @click="link_event('violet')">
                                       <img :src="`${$baseUrl}image/index/lian_xin_fu.png`">
                                       <p>联信服</p>
                                       <p>数据核验服务产品</p>
@@ -319,9 +319,15 @@ export default {
     handleToggleAside () {
       this.menuAsideCollapseToggle()
     },
-    // 关闭所有小导航
-    closeAll (){
+    // 进入子模块触发(主题名字)
+    link_event (themeName) {
+      // 关闭所有小导航
       this.$store.commit('d2admin/page/closeAll', this)
+      // 设置不同的皮肤
+      if (!themeName) {
+        themeName = 'line'
+      }
+      this.$store.commit('d2admin/theme/set', themeName)
     }
   }
 }
