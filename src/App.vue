@@ -80,4 +80,7 @@
     .zk_head .d2-container-full__body {
         padding:0px !important;
     }
+    .el-form-item{
+        margin:0px 10px !important;
+    }
 </style>

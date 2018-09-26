@@ -67,8 +67,8 @@
     </el-form-item> -->
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
-      <div @click="add1":class="[toggle,to1]">表格</div>
-      <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
+      <!-- <div @click="add1":class="[toggle,to1]">表格</div>
+      <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>  -->
       <!-- <el-switch
         v-model="value2"
         @change="add1"
