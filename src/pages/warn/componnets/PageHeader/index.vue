@@ -65,6 +65,28 @@
         添加客户组
       </el-button>
     </el-form-item> -->
+
+    <!-- <el-form-item>
+      <el-pagination
+        style="margin-right:20px;"
+        :current-page="current"
+        layout="prev, next, jumper">
+      </el-pagination>
+    </el-form-item> -->
+
+    <el-form-item>
+      <span style="display:inline-block;height:27px;width:36px;font-size:16px;">{{pa}} / {{pag}}</span>
+    </el-form-item>
+
+    <el-form-item>
+      <div class="triangle_border_left">
+          <span></span>
+      </div>
+      <div class="triangle_border_right">
+          <span></span>
+      </div>
+    </el-form-item>
+
     <el-form-item>
       <!-- <div @click="add1" v-for="(id,index) in items" :key="id" :class="[toggle]">{{id.name}}</div> -->
       <!-- <el-button
@@ -74,8 +96,8 @@
         <d2-icon name="search"/>
         查询
       </el-button> -->
-      <div @click="add1":class="[toggle,to1]">表格</div>
-      <div @click="add2" :class="[toggle,to]" ref="bg">列表</div>
+      <div @click="add1":class="[toggle,to1]"><d2-icon-svg class="ic_svg" name="inewConsumerSubmit"/></div>
+      <div @click="add2" :class="[toggle,to]" ref="bg"><d2-icon-svg class="ic_svg" name="iauditsMgt"/></div>
       <div class="clear:both"></div>
       <!-- <el-switch
         v-model="value2"
@@ -87,14 +109,6 @@
       </el-switch> -->
     </el-form-item>
 
-    <el-form-item>
-      <el-pagination
-        style="margin-right:20px;"
-        :current-page="current"
-        layout="prev, next, jumper">
-      </el-pagination>
-    </el-form-item>
-
   </el-form>
 </template>
 
@@ -102,6 +116,8 @@
 export default {
   data () {
     return {
+      pa:1,
+      pag:1,
       active:0,
       toggle:"toggle",
       to:"to",
@@ -186,26 +202,76 @@ export default {
 }
 </script>
 <style>
-  .toggle{
+.triangle_border_right{
     margin:0;
-    /* border:1px solid #ccc; */
+    border:1px solid #ccc; 
     border-radius:0;
     text-align:center;
-    border-radius: 3px;
-    width:40px;
+    border-radius: 2px;
+    width:36px;
+    height:27px;
+    display:inline-block;
+    color:#FFF;
+    cursor:pointer;
+    background:#409EFF;
+    position:relative;
+}
+.triangle_border_right span{
+    width: 0;
+    height: 0;
+    border-left: 10px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position:absolute;
+    top:8px;
+    left:15px;
+}
+.triangle_border_left{
+    margin-right:5px;
+    margin-left:10px;
+    border:1px solid #ccc; 
+    border-radius:0;
+    text-align:center;
+    border-radius: 2px;
+    width:36px;
+    height:27px;
+    display:inline-block;
+    color:#FFF;
+    cursor:pointer;
+    background:#409EFF;
+    position:relative;
+}
+.triangle_border_left span{
+    width: 0;
+    height: 0;
+    border-right: 10px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position:absolute;
+    top:8px;
+    left:15px;
+}
+  .toggle{
+    margin:0;
+    border:1px solid #ccc; 
+    border-radius:0;
+    text-align:center;
+    border-radius: 2px;
+    width:35px;
     font-size:13px;
     display:inline-block;
-    background: #a0cfff;
+    background: #fff;
     color:#FFF;
+    cursor:pointer;
   }
   .to{
     background: #409EFF;
   }
-  .toggle:hover{
-    background: #409EFF;
-    color:#fff;
-    cursor: pointer;
-    font-size:13px;
+  .ic_svg{
+    height:10px;
+    width:10px;
+    margin-right:3px;
+    vertical-align: center;
   }
 </style>
 

@@ -59,6 +59,7 @@
                               <div class="sanjiao"></div>
                               <div class="sanjiao_gai"></div>
                               <div class="sanjiao_gai1"></div>
+                              <div class="bai_sanjiao">  </div>
                               <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
                               <p class="lis1" style="font-size:13px;" :title="list.name">
                               <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
@@ -505,6 +506,15 @@
   }
 </script>
 <style lang="scss" scoped>
+  .bai_sanjiao{
+    border-right:1px solid #fff;
+    border-bottom:1px solid #fff;
+    width:5px;
+    height:5px;
+    position:absolute;
+    bottom:4px;
+    right:4px; 
+  }
   .zk_gd{
     padding-left:20px;
     height:calc(100vh - 302px);
