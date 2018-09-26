@@ -90,12 +90,37 @@
         padding: 0!important;
         color: white!important;
         border-radius: 5px;
+        .el-icon-arrow-left{
+            text-align: center;
+            &:before{
+                content: ' '!important;
+                display: inline-block;
+                width: 0px;
+                height: 0px;
+                border-right: 10px solid #fff;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+        }
+
     }
     .btn-next {
         padding: 0 !important;
         background: rgb(64, 158, 255) !important;
         color: white !important;
         border-radius: 5px;
+        .el-icon-arrow-right{
+            text-align: center;
+            &:before{
+                content: ' '!important;
+                display: inline-block;
+                width: 0px;
+                height: 0px;
+                border-left: 10px solid #fff;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+        }
     }
 
 
