@@ -64,7 +64,7 @@
                     <el-col :span="16">
                         <div id="relativeChart"></div>
                     </el-col>
-                    <el-col :span="8" style="height: 320px;overflow: hidden">
+                    <el-col :span="8" style="height: calc(100vh - 528px);;overflow: hidden;min-height: 326px">
                         <div id="message">
                             <div class="con">
                                 <ul>
@@ -550,9 +550,11 @@
                 }
             }
             #relativeChart {
-                height: 320px;
-                padding-right: 30px;
-                box-sizing: border-box
+                height: calc(100vh - 520px);
+                min-height: 326px;
+                box-sizing: border-box;
+                padding: 20px;
+                box-sizing: border-box;
             }
             #message {
                 width: 100%;
