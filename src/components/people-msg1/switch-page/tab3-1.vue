@@ -159,6 +159,9 @@ export default {
           },
           roam: true,
           focusNodeAdjacency: true,
+          force: {
+            repulsion: 2500
+          },
           lineStyle: {
             normal: {
               width: 0.5,
