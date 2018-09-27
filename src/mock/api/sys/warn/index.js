@@ -1,17 +1,17 @@
 import Mock from 'mockjs'
 const jsonAll = [
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:1},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:3},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:4},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:2},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:5},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:5},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:3},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:2},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:2},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:3},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:4},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:1}
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:1,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:3,sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:4,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:2,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:5,sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:5,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:3,sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:2,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:2,sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:3,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:4,sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:1,sex:'女'}
 ]
 
 Mock.mock('/api/warn', 'post',({}) => {
@@ -29,7 +29,8 @@ Mock.mock('/api/warn', 'post',({}) => {
             type: jsonAll,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll
+            yuan:jsonAll,
+            sex:jsonAll,
           }
         ]
       }
@@ -38,12 +39,12 @@ Mock.mock('/api/warn', 'post',({}) => {
 })
 
 const jsonAll1 = [
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5'}
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'5',sex:'女'}
 ]
 
 Mock.mock('/api/warn1', 'post',({}) => {
@@ -71,10 +72,10 @@ Mock.mock('/api/warn1', 'post',({}) => {
 
 
 const jsonAll2 = [
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'4',sex:'女'},
 ]
 
 Mock.mock('/api/warn2', 'post',({}) => {
@@ -101,10 +102,10 @@ Mock.mock('/api/warn2', 'post',({}) => {
 })
 
 const jsonAll3 = [
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'3',sex:'女'},
 ]
 
 Mock.mock('/api/warn3', 'post',({}) => {
@@ -131,14 +132,14 @@ Mock.mock('/api/warn3', 'post',({}) => {
 })
 
 const jsonAll4 = [
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2'}
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'信用贷',peoNum:'',time:'',yuan:'2',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'2',sex:'男'}
 ]
 
 Mock.mock('/api/warn4', 'post',({}) => {
@@ -165,12 +166,12 @@ Mock.mock('/api/warn4', 'post',({}) => {
 })
 
 const jsonAll5 = [
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'1'},
-  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'1'},
-  {name:'',age:'',phone:'',star:'',type:'贷',peoNum:'',time:'',yuan:'1'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1'},
-  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'1',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'1',sex:'男'},
+  {name:'',age:'',phone:'',star:'',type:'抵押贷',peoNum:'',time:'',yuan:'1',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1',sex:'女'},
+  {name:'',age:'',phone:'',star:'',type:'XX贷',peoNum:'',time:'',yuan:'1',sex:'男'},
 ]
 
 Mock.mock('/api/warn5', 'post',({}) => {

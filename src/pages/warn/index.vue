@@ -6,7 +6,7 @@
             <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
           </el-checkbox-group>
         </p>
-      <p style="margin:0px;padding:0px;">申请时间 <b>:</b>&nbsp; 
+      <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp; 
         <el-radio-group v-model="radio2">
           <el-radio :label="1">最近一天</el-radio>
           <el-radio :label="2">最近一周</el-radio>
@@ -66,12 +66,12 @@
                               <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
                               <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
                               <p style="margin-bottom:20px;margin-top:-5px;">
-                                <span style="padding-right:8px;" class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 性别 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.age}}</span></span>
+                                <span style="padding-right:8px;" class="lis" :title="list.sex[index].sex" ><d2-icon-svg class="ic_svg" name="old"/> 性别 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.sex[index].sex}}</span></span>
                                 <span style="padding-right:29px;" class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></span>
                               </p>
                               <p>
                               <span style="padding-right:10px;margin-left:0px;padding-left:17px;" class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.type[index].type}}</span></span>
-                              <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></span>
+                              <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b>&nbsp;<span style="font-size:13px;height:15px;display:inline-block;width:53px;line-height:21px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{list.time}} </span></span>
                               </p> 
                               
                               <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
@@ -850,7 +850,7 @@
     margin-right:5px;
     // padding-right: 5px;
     font-size:13px;
-    font-family:"微润雅黑";
+    font-family:"微软雅黑";
   }
   .lis1 {
     display: inline-block;
