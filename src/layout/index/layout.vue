@@ -25,7 +25,7 @@
           <d2-icon name="bars"/>
         </div>
         <!-- <d2-menu-header/> -->
-        <div class="d2-header-companyName">北京******科技有限公司</div>
+        <div class="d2-header-companyName">北京小微贷款科技有限公司</div>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
