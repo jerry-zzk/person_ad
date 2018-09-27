@@ -75,7 +75,7 @@
     </el-form-item> -->
 
     <el-form-item>
-      <span style="display:inline-block;height:27px;width:36px;font-size:16px;">{{pa}} / {{pag}}</span>
+      <span style="font-family:'微软雅黑';display:inline-block;height:27px;width:36px;font-size:15px;color:#666">{{pa}} / {{pag}}</span>
     </el-form-item>
 
     <el-form-item>
@@ -213,7 +213,7 @@ export default {
     display:inline-block;
     color:#FFF;
     cursor:pointer;
-    background:#409EFF;
+    background:#046AF3;
     position:relative;
 }
 .triangle_border_right span{
@@ -238,7 +238,7 @@ export default {
     display:inline-block;
     color:#FFF;
     cursor:pointer;
-    background:#409EFF;
+    background:#046AF3;
     position:relative;
 }
 .triangle_border_left span{
@@ -253,7 +253,9 @@ export default {
 }
   .toggle{
     margin:0;
-    border:1px solid #ccc; 
+    margin-left:-1px;
+    border:1px solid #ccc;
+    box-shadow: 0 0 5px #ccc inset;
     border-radius:0;
     text-align:center;
     border-radius: 2px;
@@ -265,7 +267,7 @@ export default {
     cursor:pointer;
   }
   .to{
-    background: #409EFF;
+    background: #046AF3;
   }
   .ic_svg{
     height:10px;

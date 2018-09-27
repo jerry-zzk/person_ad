@@ -1,9 +1,9 @@
 <template>
   <d2-container class="page zk_page zk_head">
     <el-header style="padding-left:5px;" slot="header">
-          <p style="margin:5px 0 5px 0;padding:0px;">信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
+          <p style="margin:5px 0 5px 0;padding:0px;">信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:58px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
-            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+            <el-checkbox  style="margin-right:14px;font-family:'微软雅黑';" v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
           </el-checkbox-group>
         </p>
       <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp; 
