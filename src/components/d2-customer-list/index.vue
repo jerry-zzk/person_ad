@@ -1,16 +1,16 @@
 <template>
     <div class="wrap">
         <p class="search">
-            <span class="all">全部</span>
+            <span class="all" @click="handleGroup(-1)" :class="{'all_active':all_active}">全部分组</span>
             <input class="search_input" v-model="search_value">
             <span class="fa fa-search" @click="searchValueChange"></span>
         </p>
-        <p style="width: calc(100% + 40px);border-bottom: 1px solid rgba(0,0,0,0.2);margin-bottom: 10px;position: relative;left: -20px"></p>
+        <p style="width: calc(100% + 24px);border-bottom: 1px solid rgba(0,0,0,0.2);margin-bottom: 10px;position: relative;left: -11px"></p>
         <div class="list">
             <el-scrollbar style="height: 100%">
             <div v-for="top,index in item" :key="index" class=" list-one col-r" :class="{active:active==index}" @click="handleGroup(index)">
                 <p :span="24"> {{top.name}} </p>
-                <p :span="24"> <span style="font-size: 16px">{{top.danger_num}}</span>/{{top.num}}</p>
+                <p :span="24"> <span style="font-size: 18px;font-weight: bold">{{top.danger_num}}</span>/{{top.num}}</p>
             </div>
             </el-scrollbar>
         </div>
@@ -36,7 +36,8 @@
             return{
                 search_value:'',
                 current:1,
-                active:0
+                active:0,
+                all_active:false,
             }
         },
         methods:{
@@ -58,6 +59,11 @@
             },
             handleGroup(index){
                 this.active=index
+                if(index==-1){
+                    this.all_active=true
+                }else {
+                    this.all_active=false
+                }
             }
 
         }
@@ -74,30 +80,35 @@
         border-radius: 5px;
         width: 100%;
         height: 100%;
-        padding: 20px;
+        padding: 12px;
         padding-top: 14px;
         box-sizing: border-box;
         position: relative;
-        padding-top: 10px;
+        padding-top: 8px;
         .search{
-            height: 34px;
+            height: 25px;
             margin-bottom: 14px;
-            padding-left: 50px;
+            padding-left: 74px;
             margin-bottom: 10px;
             .all{
                 position: absolute;
-                left: 22px;
-                top: 12px;
-                padding: 5px 6px;
+                left: 12px;
+                top: 8px;
+                padding: 4px 5px;
                 background: rgb(64,158,255);
                 border-radius: 5px;
-                font-size: 14px;
+                font-size: 13px;
+                line-height: 18px;
                 color: white;
                 cursor: pointer;
             }
+            .all_active{
+                box-shadow: 0 0 8px rgba(128, 128, 128, 0.28);
+                background: rgb(42, 147, 255);
+            }
             input{
                 width: 100%;
-                height: 34px;
+                height: 28px;
                 border:1px solid rgba(0,0,0,0.2);
                 border-radius: 20px;
                 outline: none;
@@ -107,22 +118,22 @@
             }
             .fa{
                 position: absolute;
-                right: 30px;
-                top:18px;
+                right: 26px;
+                top:14px;
                 cursor: pointer;
                 color:dodgerblue;
             }
         }
         .list{
-            height: calc(100% - 96px);
-            width: calc(100% + 20px);
+            height: calc(100% - 84px);
+            width: calc(100% + 15px);
             box-sizing: border-box;
             .list-one{
                 background: rgb(227,239,254);
                 height: 70px;
                 margin-bottom: 10px;
                 border-radius: 3px;
-                width: calc(100% - 20px);
+                width: calc(100% - 15px);
                 background: url('./image/bg.png') no-repeat center;
                 background-size:cover ;
                 color: white;
@@ -132,8 +143,8 @@
                     padding: 0 20px;
                     &:nth-child(1){
                         height: 40px;
-                        line-height: 40px;
-                        font-size: 16px;
+                        line-height: 63px;
+                        font-size: 23px;
                         text-align:left ;
                     }
                     &:nth-child(2){

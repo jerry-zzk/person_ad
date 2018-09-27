@@ -7,7 +7,7 @@
 						<div class="container">
 							<p class="title">贷中风险评分</p>
 							<div class="title-text">风险评分：<span>90</span></div>
-							<div class="chart" ref="chart"></div>	
+							<div class="chart" ref="chart"></div>
 						</div>
 					</el-col>
 					<el-col :span="24">
@@ -25,7 +25,7 @@
 									<td>预留手机持续关机</td>
 									<td class="f-orange" >8</td>
 									<td class="f-red" rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
+									<td rowspan="3" @click="tabChange(2)"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>出省，出境</td>
@@ -40,7 +40,7 @@
 									<td>身份关联异常</td>
 									<td class="f-orange" >8</td>
 									<td class="f-red" rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
+									<td rowspan="3" @click="tabChange(3)"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>群体关联异常</td>
@@ -55,7 +55,7 @@
 									<td>频繁出现高档消费场所</td>
 									<td class="f-orange" >8</td>
 									<td class="f-green" rowspan="3">40</td>
-									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
+									<td rowspan="3" @click="tabChange(4)"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>频繁出省出境</td>
@@ -70,7 +70,7 @@
 									<td>网络应用异常</td>
 									<td class="f-orange">8</td>
 									<td class="f-red" rowspan="3">90</td>
-									<td rowspan="3"><i class="fa fa-info f-blue"></i> 详情查看</td>
+									<td rowspan="3" @click="tabChange(5)"><i class="fa fa-info f-blue"></i> 详情查看</td>
 								</tr>
 								<tr>
 									<td>网络浏览/发布/搜索等行为异常</td>
@@ -148,7 +148,7 @@ export default {
 		            ],
 		            radius: 80
 		        },
-		     
+
 		    ],
 		    series: [
 		        {
@@ -164,10 +164,13 @@ export default {
 		                }
 		            ]
 		        },
-		      
+
 		    ]
 		})
-    }
+    },
+      tabChange(tab){
+		  this.$emit("tabChange",tab)
+	  }
   }
  }
 </script>

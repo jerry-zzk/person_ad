@@ -1,13 +1,12 @@
 <template>
     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
         <el-tab-pane  name="first"  lazy="lazy">
-            <span slot="label"><i class="el-icon-document"></i> 我的行程</span>
+            <span slot="label"><i class="el-icon-document"></i> 总体概况</span>
             <div class="wrap">
                 <el-scrollbar style="height: 100%">
-                    <first></first>
+                    <first @tabChange="tabChange1"></first>
                 </el-scrollbar>
             </div>
-
         </el-tab-pane>
         <el-tab-pane label="失联倾向异常" name="second"  lazy="lazy">
             <span slot="label"><i class="el-icon-document"></i> 失联倾向异常</span>
@@ -61,6 +60,19 @@
         methods:{
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            tabChange1(data){
+                if(data==2){
+                    this.activeName='second'
+                }else if(data==3){
+                    this.activeName='third'
+                }
+                else if(data==4){
+                    this.activeName='four'
+                }
+                else if(data==5){
+                    this.activeName='five'
+                }
             }
         }
     }

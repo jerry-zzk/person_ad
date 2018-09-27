@@ -97,10 +97,13 @@
                 display: inline-block;
                 width: 0px;
                 height: 0px;
-                border-right: 10px solid #fff;
-                border-top: 5px solid transparent;
-                border-bottom: 5px solid transparent;
+                border-right: 6px solid #fff;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
             }
+        }
+        &:hover{
+            background: rgb(86, 186, 255) !important;
         }
 
     }
@@ -116,11 +119,15 @@
                 display: inline-block;
                 width: 0px;
                 height: 0px;
-                border-left: 10px solid #fff;
-                border-top: 5px solid transparent;
-                border-bottom: 5px solid transparent;
+                border-left: 6px solid #fff;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
             }
         }
+        &:hover{
+            background: rgb(86, 186, 255) !important;
+        }
+
     }
 
 
