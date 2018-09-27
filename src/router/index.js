@@ -57,9 +57,9 @@ router.afterEach(to => {
   if(toName == 'antiFraud'){
     htmlTitle = '联信核';
   }else if(toName == 'dataVerification'){
-    htmlTitle = '联信控';
-  }else if(toName == 'loaningMonitor'){
     htmlTitle = '联信服';
+  }else if(toName == 'loaningMonitor'){
+    htmlTitle = '联信控';
   }
   util.title(htmlTitle)
 })
