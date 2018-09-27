@@ -330,6 +330,12 @@
 </template>
 <style lang="scss" scoped>
 @import '~@/assets/style/unit/info.scss';
+	#evaluete-info{
+		font-size: 14px;
+	}
+	.title{
+		color: black!important;
+	}
 </style>
 <script>
 import echarts from 'echarts'
@@ -427,7 +433,7 @@ export default {
     this.initChart9();
     this.initChart10();
     this.drawHeatMap();
-  }, 
+  },
   beforeDestroy() {
     this.chart1.dispose();
     this.chart2.dispose();
@@ -462,7 +468,7 @@ export default {
 		});
   		item.select = true;
         var anchor = this.$el.querySelector('#anchor-'+item.index);
-       
+
         document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
     },
     initChart1() {
@@ -539,7 +545,7 @@ export default {
 		     animationDuration: 1500,
 		     animationEasingUpdate: 'quinticInOut',
 		     series: [{
-		        
+
 		         type: 'graph',
 		         layout: 'force',
 		         symbolSize: 58,
@@ -567,7 +573,7 @@ export default {
 		         lineStyle: {
 		             color: 'source',
 		             curveness: 0.3,
-		             
+
 		         },
 		         edgeLabel: {
 		             normal: {
@@ -893,7 +899,7 @@ export default {
 		     animationDuration: 1500,
 		     animationEasingUpdate: 'quinticInOut',
 		     series: [{
-		        
+
 		         type: 'graph',
 		         layout: 'force',
 		         symbolSize: 58,
@@ -921,7 +927,7 @@ export default {
 		         lineStyle: {
 		             color: 'source',
 		             curveness: 0.3,
-		             
+
 		         },
 		         edgeLabel: {
 		             normal: {
@@ -1239,7 +1245,7 @@ export default {
 		    xAxis: {
 		        type: 'category',
 		        boundaryGap: false,
-		        
+
 		        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],
@@ -1266,7 +1272,7 @@ export default {
 		    xAxis: {
 		        type: 'category',
 		        boundaryGap: false,
-		        
+
 		        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
 		    },
 		    color:['#409eff','#bad654','#76cbc5', '#65a4c3', '#6e82b9','#8e6bcf'],

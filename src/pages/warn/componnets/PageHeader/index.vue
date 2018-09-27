@@ -105,7 +105,7 @@
         active-color="#13ce46"
         inactive-color="#ff4949"
         inactive-icon-class="el-icon-tickets"
-        active-icon-class="el-icon-menu"> 
+        active-icon-class="el-icon-menu">
       </el-switch> -->
     </el-form-item>
 
@@ -143,7 +143,7 @@ export default {
   },
   methods: {
     add1 (index) {
-      
+
       this.$refs.form.validate((valid) => {
         if (valid) {
           this.$emit('submit', this.form)
@@ -204,24 +204,23 @@ export default {
 <style>
 .triangle_border_right{
     margin:0;
-    border:1px solid #ccc; 
-    border-radius:0;
+    border:1px solid #ccc;
     text-align:center;
-    border-radius: 2px;
-    width:36px;
-    height:27px;
+    border-radius: 5px;
+    width:34px;
+    height:28px;
     display:inline-block;
     color:#FFF;
     cursor:pointer;
-    background:#046AF3;
+    background: #2d93f3;
     position:relative;
 }
 .triangle_border_right span{
     width: 0;
     height: 0;
-    border-left: 10px solid #fff;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    border-left: 6px solid #fff;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
     position:absolute;
     top:8px;
     left:15px;
@@ -229,24 +228,23 @@ export default {
 .triangle_border_left{
     margin-right:5px;
     margin-left:10px;
-    border:1px solid #ccc; 
-    border-radius:0;
+    border:1px solid #ccc;
     text-align:center;
-    border-radius: 2px;
-    width:36px;
-    height:27px;
+    border-radius: 5px;
+    width:35px;
+    height:28px;
     display:inline-block;
     color:#FFF;
     cursor:pointer;
-    background:#046AF3;
+    background: #2d93f3;
     position:relative;
 }
 .triangle_border_left span{
     width: 0;
     height: 0;
-    border-right: 10px solid #fff;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    border-right: 6px solid #fff;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
     position:absolute;
     top:8px;
     left:15px;
@@ -265,15 +263,17 @@ export default {
     background: #fff;
     color:#FFF;
     cursor:pointer;
+    position: relative;
+    top:-2px;
   }
   .to{
-    background: #046AF3;
+    background: #2d93f3;
   }
   .ic_svg{
-    height:10px;
-    width:10px;
-    margin-right:3px;
-    vertical-align: center;
+    height:14px;
+    width:14px;
+    display: inline-block;
+    margin-top: 7px;
   }
 </style>
 
