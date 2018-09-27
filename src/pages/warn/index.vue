@@ -1,12 +1,12 @@
 <template>
   <d2-container class="page zk_page zk_head">
     <el-header style="padding-left:5px;" slot="header">
-          <p>信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
+          <p style="margin:5px 0 5px 0;padding:0px;">信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:10px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
             <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
           </el-checkbox-group>
         </p>
-      <p>申请时间 <b>:</b>&nbsp; 
+      <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp; 
         <el-radio-group v-model="radio2">
           <el-radio :label="1">最近一天</el-radio>
           <el-radio :label="2">最近一周</el-radio>
@@ -26,7 +26,7 @@
           placeholder="选择日期时间">
         </el-date-picker>
       </p>
-      <p>告警规则 <b>:</b>&nbsp; 
+      <p style="margin:5px 0 5px 0;padding:0px;">告警规则 <b>:</b>&nbsp; 
         <span v-for="(bg,index) in bgc" :key="bg" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
         评分范围 <b>:</b> &nbsp;
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
@@ -65,9 +65,15 @@
                               <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
                               <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
                               <p class="lis" :title="list.peoNum"><d2-icon-svg class="ic_svg" name="idcard"/> 身份证号 <b>:</b><span style="font-size:13px;"> {{list.peoNum}}</span></p>
-                              <p class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;"> {{list.type[index].type}}</span></p>
-                              <p class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b><span style="font-size:13px;"> {{list.time}}</span></p>
-                              <p class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></p>
+                              <p style="margin-bottom:20px;margin-top:-5px;">
+                                <span style="padding-right:8px;" class="lis" :title="list.sex[index].sex" ><d2-icon-svg class="ic_svg" name="old"/> 性别 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.sex[index].sex}}</span></span>
+                                <span style="padding-right:29px;" class="lis" :title="list.age" ><d2-icon-svg class="ic_svg" name="old"/> 年龄 <b>:</b><span style="font-size:13px;"> {{list.age}}</span></span>
+                              </p>
+                              <p>
+                              <span style="padding-right:10px;margin-left:0px;padding-left:17px;" class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.type[index].type}}</span></span>
+                              <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b>&nbsp;<span style="font-size:13px;height:15px;display:inline-block;width:53px;line-height:21px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{list.time}} </span></span>
+                              </p> 
+                              
                               <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
                                 <el-tooltip content="点击查看详细信息" placement="right">
                                   <el-button style="font-size:13px;" size="mini">详细信息</el-button>
@@ -626,11 +632,11 @@
     height:25px;
     font-size:12px;
     opacity: 0.8;
-    background:#cde318;
+    background:#fdf705;
     margin-right:30px;
   }
   .el1:hover{
-    background:#cde318;
+    background:#fdf705;
     color:#fff;
     opacity: 1;
   }
@@ -652,8 +658,8 @@
     padding-left:5px;
   }
   .dbx1{
-    border: 2px solid #cde318;
-    background:#cde318;
+    border: 2px solid #fdf705;
+    background:#fdf705;
   }
   .dbx2{
     border: 2px solid #e3b718;
@@ -730,10 +736,10 @@
   }
   
   .bian1{
-    border-left:5px solid #cde318;
+    border-left:5px solid #fdf705;
   }
   .yuan1{
-    background:#cde318;
+    background:#fdf705;
   }
   .bian2{
     border-left:5px solid #e3b718;
@@ -787,7 +793,7 @@
   .el-header, .el-footer {
     background-color: #fff;
     color: #333;
-    height:120px !important;
+    height:95px !important;
     font-size:16px;
     /* text-align: center; */
     /* line-height: 60px; */
@@ -839,11 +845,12 @@
     overflow: hidden;
     white-space: nowrap; //使其不换行
     text-overflow:ellipsis;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #ccc;
     padding-bottom:8px;
     margin-right:5px;
     // padding-right: 5px;
     font-size:13px;
+    font-family:"微软雅黑";
   }
   .lis1 {
     display: inline-block;
@@ -852,7 +859,7 @@
     white-space: nowrap; //使其不换行
     text-overflow:ellipsis;
     vertical-align: middle;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #ccc;
     padding-bottom:10px;
   }
 

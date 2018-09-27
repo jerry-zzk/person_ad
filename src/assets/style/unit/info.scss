@@ -125,6 +125,7 @@ $orange:#ff682f;
                 padding: 20px;
                 div>p {
                     margin: 5px 0;
+                    color:$red;
                 }
                 ul {
                     list-style: none;
@@ -214,7 +215,7 @@ $orange:#ff682f;
                     margin: 10px;
                     padding: 20px;
                     width: calc(100% - 70px);
-                    height: 300px;
+                    height: 400px;
                     border: 1px solid $gray;
                     &:before {
                         content: " ";

@@ -251,8 +251,8 @@ export default {
     border-radius:0px;
   }
   .zk_ul{
-    border-bottom:1px solid #eee;
-    padding: 20px 0 5px 15px;
+    border-bottom:1px solid #ccc;
+    padding: 3px 0 0px 15px;
     // margin-bottom: 15px;
   }
   .zk_cli{
