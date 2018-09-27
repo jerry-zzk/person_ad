@@ -188,7 +188,7 @@
 								<p class="title">通联关系</p>
 								<div class="echart" ref="myEchart2"></div>
 								<div class="table">
-									<p>详情</p>
+									<p style="color: black">详情</p>
 									<table>
 										<tr>
 											<td class="first color1">张三</td>
@@ -207,7 +207,7 @@
 								<p class="title">虚拟身份</p>
 								<div class="echart" ref="myEchart3"></div>
 								<div class="table">
-									<p>详情</p>
+									<p style="color: black">详情</p>
 									<table>
 										<tr>
 											<td class="first color1">张三</td>
@@ -336,6 +336,9 @@
 	.title{
 		color: black!important;
 	}
+#evaluete-info-main-inner td{
+	padding: 10px!important;
+}
 </style>
 <script>
 import echarts from 'echarts'
