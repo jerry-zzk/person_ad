@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <div class="col col-l">
+    <div class="col col-l" style="background:#fff;">
       <p class="zk_sousuo" style="text-align:center;">
         <!-- <img src="../../assets/img/1.jpg" alt="搜索" style="width:2%;vertical-align:middle;margin-right:5px;"> -->
         <i style="vertical-align:middle;margin-right:10px;height:29px;display:inline-block;font-size:22px;color:#ea7312;" class="fa fa-search"></i>
@@ -27,7 +27,7 @@
         <div v-show="ok1">
           <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
             <el-col :span="3">
-              <img src="../../assets/img/1.jpg" style="width:120px;vertical-align:middle;" alt="">
+              <img src="../../assets/img/1.jpg" style="width:115px;vertical-align:middle;" alt="">
             </el-col>
             <el-col :span="6">
               <p><b style="color:#ea7312;">{{lb.name[index].name}}</b></p>
@@ -252,7 +252,7 @@ export default {
   }
   .zk_ul{
     border-bottom:1px solid #ccc;
-    padding: 3px 0 0px 15px;
+    padding: 12px 0 0px 15px;
     // margin-bottom: 15px;
   }
   .zk_cli{
