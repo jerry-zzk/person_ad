@@ -36,7 +36,7 @@ export default [
     { path: '/antiFraud/index', title: '总览', iconSvg: 'ihome' },
     { path: '/antiFraud/addCustomer', title: '新客户提交', iconSvg: 'inewConsumerSubmit' },
     { path: '/antiFraud/examineCustomer', title: '审核管理', iconSvg: 'iauditsMgt' },
-    { path: '/antiFraud/creditLoan', title: '欺诈警告', iconSvg: 'icheatWarn' },
+    { path: '/antiFraud/creditLoan', title: '欺诈告警', iconSvg: 'icheatWarn' },
     { path: '/antiFraud/searchCustomer', title: '客户检索', iconSvg: 'iconsumerSearch' },
     {  
       title: '客户黑名单', 

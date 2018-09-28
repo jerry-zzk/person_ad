@@ -57,7 +57,7 @@ const frameIn = [
         path: 'creditLoan',
         name: `${pre}creditLoan`,
         component: () => import('@/pages/warn'),
-        meta: { ...meta, title: '欺詐警告' }
+        meta: { ...meta, title: '欺诈告警' }
       },{
         path: 'manage',
         name: `${pre}manage`,
