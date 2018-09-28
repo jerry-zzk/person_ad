@@ -11,10 +11,17 @@
 					<el-col :span="2" class="info-nav" >
 						<el-button @click="goAnchor(inav)" v-if="inav.name" class="ibtn" :class="{'ibtn-active':inav.select}">
 							{{inav.name}}
-						</el-button>
+						</el-button> 
 						<span v-else></span>
 					</el-col>
-					<el-col :span="2" v-if="iflag<5" class="info-nav">{{inav.name?'...':'&nbsp;'}}</el-col>
+					<el-col :span="2" v-if="iflag<5" class="info-nav">
+						<div v-if="inav.name">
+							<div class="info-dot"></div>
+							<div  class="info-dot info-dot-big"></div>
+							<div class="info-dot"></div>
+						</div>
+						<span v-else></span>
+					</el-col>
 				</div>
 				<el-col :span="1" class="info-nav" style="padding-left:10px;">
 					<div style="padding-top: 4px;border-left:1px solid #ddd;">
@@ -360,6 +367,19 @@
 			.ibtn-active{
 				color: #fff;
 		    background-color: #409efe;
+			}
+			.info-dot{
+				display: inline-block;
+				width: 4px;
+				height: 4px;
+				margin-bottom: 2px;
+				border-radius: 50%;
+				background-color: #ccc;
+			}
+			.info-dot-big{
+				width: 6px;
+				height: 6px;
+				margin: 0 10px 1px 10px;
 			}
 		}
 	}
