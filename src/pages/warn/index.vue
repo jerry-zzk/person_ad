@@ -6,12 +6,12 @@
             <el-checkbox  style="margin-right:14px;font-family:'微软雅黑';" v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
           </el-checkbox-group>
         </p>
-      <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp; 
+      <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp;
         <el-radio-group v-model="radio2">
           <el-radio :label="1">最近一天</el-radio>
           <el-radio :label="2">最近一周</el-radio>
           <el-radio :label="3">最近一月</el-radio>
-          <el-radio style="margin-right:10px;" :label="4">自选</el-radio>
+          <el-radio style="margin-right:10px;" :label="4">自定</el-radio>
         </el-radio-group>
          <el-date-picker
           size="mini"
@@ -26,7 +26,7 @@
           placeholder="选择日期时间">
         </el-date-picker>
       </p>
-      <p style="margin:5px 0 5px 0;padding:0px;">告警规则 <b>:</b>&nbsp; 
+      <p style="margin:5px 0 5px 0;padding:0px;">告警规则 <b>:</b>&nbsp;
         <span v-for="(bg,index) in bgc" :key="bg" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
         评分范围 <b>:</b> &nbsp;
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
@@ -46,21 +46,21 @@
             ref="header"  @zk = "zk"/>
             <!-- ref="header"  @zk = "zk" style="position:fixed;top:250px;right:30px;"/> -->
           <el-scrollbar style="height:100%;">
-            <demo-page-main 
+            <demo-page-main
             class="zk_gd"
               :table-data="table"
               :loading="loading" v-show="ok"/>
             <el-col :span="24" v-show="!ok" class="zk_gd">
                       <div class="col-l">
                         <el-row :gutter="20">
-                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="list">
+                          <el-col style="margin-bottom:20px;width:252px;"  v-for="(list,index) in items" :key="list">
                             <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                               <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
                               <div class="sanjiao"></div>
                               <div class="sanjiao_gai"></div>
                               <div class="sanjiao_gai1"></div>
                               <div class="bai_sanjiao">  </div>
-                              <span class="dbx" :class="dbx(index)" >{{list.star}}</span> 
+                              <span class="dbx" :class="dbx(index)" >{{list.star}}</span>
                               <p class="lis1" style="font-size:13px;" :title="list.name">
                               <d2-icon-svg class="ic_svg" name="user"/>姓名 <b>:</b> <span style="font-size:13px;"> {{list.name}}</span></p>
                               <p class="lis" :title="list.phone"><d2-icon-svg class="ic_svg" name="phone"/> 手机号 <b>:</b><span style="font-size:13px;"> {{list.phone}}</span></p>
@@ -72,13 +72,13 @@
                               <p>
                               <span style="padding-right:10px;margin-left:0px;padding-left:17px;" class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.type[index].type}}</span></span>
                               <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b>&nbsp;<span style="font-size:13px;height:15px;display:inline-block;width:53px;line-height:21px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{list.time}} </span></span>
-                              </p> 
-                              
+                              </p>
+
                               <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
                                 <el-tooltip content="点击查看详细信息" placement="right">
                                   <el-button style="font-size:13px;" size="mini">详细信息</el-button>
                                   <!-- <span ></span> -->
-                                </el-tooltip>  
+                                </el-tooltip>
                               </p>
                             </el-card>
                           </el-col>
@@ -186,7 +186,7 @@
       }
     },
     mounted:function() {
-      // debugger 
+      // debugger
       this.ajax();
     },
     methods: {
@@ -519,16 +519,16 @@
     height:5px;
     position:absolute;
     bottom:4px;
-    right:4px; 
+    right:4px;
   }
   .zk_gd{
     padding-left:20px;
-    height:calc(100vh - 302px);
+    height:calc(100vh - 281px);
   }
   .zk_vh{
     background:#fff;
     height:calc(100vh - 238px);
-    min-width:215px; 
+    min-width:215px;
   }
   .ic_svg{
     height:10px;
@@ -734,7 +734,7 @@
     padding-right:3px;
     color:#fff;
   }
-  
+
   .bian1{
     border-left:5px solid #fdf705;
   }
@@ -798,14 +798,14 @@
     /* text-align: center; */
     /* line-height: 60px; */
   }
-  
+
   .el-aside {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
     line-height: 200px;
   }
-  
+
   .el-main {
     background-color: #E9EEF3;
     color: #333;
