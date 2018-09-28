@@ -1,18 +1,27 @@
 <template>
 	<div id="evaluete-info">
 		<div id="evaluete-info-header">
-			<ul>
-			  <li :index="item.index" v-for="item in menu_item">
-			  	<a :class="{'active':item.select}"  href="javascript:void(0)" @click="goAnchor(item)" target="_blank">
-			  		{{item.name}}
-			  	</a>
-			  	<span v-if="item.index!=6" class="bar">
-			  		<span></span>
-			  		<span class="center"></span>
-			  		<span></span>
-			  	</span>
-			  </li>
-			</ul>
+			<el-row>
+				<el-col :span="1" class="info-nav" style="padding-right:10px;">
+					<div style="padding-top: 4px;border-right:1px solid #ddd;">
+						<i class="fa fa-caret-left"></i>
+					</div>
+				</el-col>
+				<div v-for="(inav,iflag) in menu_item" :index="inav.index" :key="iflag" style="display: block;">
+					<el-col :span="2" class="info-nav" >
+						<el-button @click="goAnchor(inav)" v-if="inav.name" class="ibtn" :class="{'ibtn-active':inav.select}">
+							{{inav.name}}
+						</el-button>
+						<span v-else></span>
+					</el-col>
+					<el-col :span="2" v-if="iflag<5" class="info-nav">{{inav.name?'...':'&nbsp;'}}</el-col>
+				</div>
+				<el-col :span="1" class="info-nav" style="padding-left:10px;">
+					<div style="padding-top: 4px;border-left:1px solid #ddd;">
+						<i class="fa fa-caret-right"></i>
+					</div>
+				</el-col>
+			</el-row>
 		</div>
 		<div id="evaluete-info-main">
 			<el-scrollbar style="height: 100%">
@@ -332,6 +341,27 @@
 @import '~@/assets/style/unit/info.scss';
 	#evaluete-info{
 		font-size: 14px;
+		.info-nav{
+			height: 54px;
+			line-height: 54px;
+			text-align: center;
+			.fa{
+				font-size: 20px;
+				color: #409efe;
+			}
+			.ibtn{
+				padding: 8px 20px;
+		    border-radius: 20px;
+		    &:hover{
+			    color: #fff;
+			    background-color: #409efe;
+		    }
+			}
+			.ibtn-active{
+				color: #fff;
+		    background-color: #409efe;
+			}
+		}
 	}
 	.title{
 		color: black!important;
@@ -468,11 +498,11 @@ export default {
   	goAnchor(item) {
   		this.menu_item.forEach((item, index) => {
   			item.select = false;
-		});
+			});
   		item.select = true;
-        var anchor = this.$el.querySelector('#anchor-'+item.index);
+      var anchor = this.$el.querySelector('#anchor-'+item.index);
 
-        document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
+      document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
     },
     initChart1() {
       	this.chart1 = echarts.init(this.$refs.myEchart1);
