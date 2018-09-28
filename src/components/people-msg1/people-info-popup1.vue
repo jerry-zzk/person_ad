@@ -42,8 +42,8 @@
                                     </el-col>
                                     <el-col :span="24" style="margin-bottom: 40px">
                                         <div style="padding: 0 20px">
-                                            <p><label><i class="fa fa-qq"></i>Emain:</label> 561654686@qq.com</p>
-                                            <p><label><i class="fa fa-envelope"></i>QQ号:</label> 561654686</p>
+                                            <p><label><i class="fa fa-envelope"></i>Emain:</label> 561654686@qq.com</p>
+                                            <p><label><i class="fa fa-qq"></i>QQ号:</label> 561654686</p>
                                             <p><label><i class="fa fa-weibo"></i>微博ID:</label> 767832786</p>
                                             <p><label><i class="fa fa-weixin"></i>微信UNI:</label>369433383</p>
                                             <p><label><i class="fa fa-comments-o "></i>论坛账号:</label> 张三__zhang(天涯)</p>
