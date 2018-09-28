@@ -144,7 +144,7 @@
                     &:nth-child(1){
                         height: 40px;
                         line-height: 63px;
-                        font-size: 23px;
+                        font-size: 19px;
                         text-align:left ;
                     }
                     &:nth-child(2){
