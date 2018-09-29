@@ -13,29 +13,54 @@
     <div class="sCustomer-body">
       <div class="sCustomer-line"></div>
       <p class="sCustomer-body-title">共搜索到1000条结果</p>
-      <div id="sCustomer_table">
-        <el-table :data="tableData" style="width: 100%;">
-          <el-table-column prop="name" label="姓名"></el-table-column>
-          <el-table-column prop="gender" label="性别"></el-table-column>
-          <el-table-column prop="age" label="年龄"></el-table-column>
-          <el-table-column prop="cellphone" label="手机号"></el-table-column>
-          <el-table-column prop="idcard" label="身份证号"></el-table-column>
-          <el-table-column prop="type" label="种类"></el-table-column>
-          <el-table-column prop="time" label="时间"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
-          <el-table-column prop="blackList" label="黑名单"></el-table-column>
-          <el-table-column prop="grade" label="评分"></el-table-column>
-        </el-table>
-        <div style="margin-top: 50px;text-align: right;">
-          <el-pagination
-            background
-            layout="prev, pager, next"
-            :total="1000">
-          </el-pagination>
-        </div>
+      <div id="sCustomer_table" class="sc_table">
+        <el-row class="sc_table-thead" :gutter="1">
+          <el-col :span="3"><div class="sc_table-thead-td first">姓名</div></el-col>
+          <el-col :span="1"><div class="sc_table-thead-td">性别</div></el-col>
+          <el-col :span="1"><div class="sc_table-thead-td">年龄</div></el-col>
+          <el-col :span="3"><div class="sc_table-thead-td">手机号</div></el-col>
+          <el-col :span="4"><div class="sc_table-thead-td">身份证号</div></el-col>
+          <el-col :span="1"><div class="sc_table-thead-td">种类</div></el-col>
+          <el-col :span="2"><div class="sc_table-thead-td">时间</div></el-col>
+          <el-col :span="5"><div class="sc_table-thead-td">地址</div></el-col>
+          <el-col :span="2"><div class="sc_table-thead-td">黑名单</div></el-col>
+          <el-col :span="2"><div class="sc_table-thead-td last">评分</div></el-col>
+        </el-row>
+        <el-row v-for="item in tableData" :key="item.id" class="sc_table-tr" :gutter="1">
+          <el-col class="sc_table-tr-td" :span="3"><div class="itd itd-first">{{item.name}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.gender}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.age}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="3"><div class="itd">{{item.cellphone}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="4"><div class="itd">{{item.idcard}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.type}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="2"><div class="itd">{{item.time}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="5"><div class="itd">{{item.address}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="2">
+            <div class="itd">
+              <button v-if="item.blackList" class="itd-bl-Btn">
+                <d2-icon-svg name="iconsumerBlacklist" style="width:16px;height:16px;fill:#fff;"></d2-icon-svg>
+              </button>
+              <span v-else>&nbsp;</span>
+            </div>
+          </el-col>
+          <el-col class="sc_table-tr-td" :span="2">
+            <div class="itd itd-last">
+              {{item.grade}}
+              <div v-if="item.flag==1" class="itd-flag flag-blue"><p>已通过</p></div>
+              <div v-if="item.flag==2" class="itd-flag flag-red"><p>未通过</p></div>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="sc_table-foot">
+        <el-pagination
+          background
+          layout="total, sizes, prev, next, jumper"
+          :page-sizes="[100, 200, 300, 400]"
+          :total="1000">
+        </el-pagination>
       </div>
     </div>
-
   </d2-container>
 </template>
 
@@ -58,8 +83,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: true,
+        grade: '9.4',
+        flag: 1
       },{
         id: '2',
         name: '张三',
@@ -70,8 +96,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: false,
+        grade: '9.4',
+        flag: 1
       },{
         id: '3',
         name: '张三',
@@ -82,8 +109,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: true,
+        grade: '9.4',
+        flag: 1
       },{
         id: '4',
         name: '张三',
@@ -94,8 +122,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: false,
+        grade: '9.4',
+        flag: 2
       },{
         id: '5',
         name: '张三',
@@ -106,8 +135,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: false,
+        grade: '9.4',
+        flag: 1
       },{
         id: '6',
         name: '张三',
@@ -118,8 +148,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: true,
+        grade: '9.4',
+        flag: 2
       },{
         id: '7',
         name: '张三',
@@ -130,8 +161,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: true,
+        grade: '9.4',
+        flag: 2
       },{
         id: '8',
         name: '张三',
@@ -142,8 +174,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: false,
+        grade: '9.4',
+        flag: 1
       },{
         id: '9',
         name: '张三',
@@ -154,20 +187,9 @@ export default {
         type: '种类',
         time: '2018-09-29',
         address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
-      },{
-        id: '10',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: '',
-        grade: '9.4'
+        blackList: false,
+        grade: '9.4',
+        flag: 2
       }]
     }
   },
@@ -183,6 +205,7 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 #search_customer{
+  position: absolute;
   border-left: 1px solid #ccc;
   background-color: #fff;
   .sCustomer-head{
@@ -235,6 +258,98 @@ export default {
     }
     .sCustomer-body-title{
       color: #ccc;
+    }
+    .sc_table{
+      .sc_table-thead{
+        border-radius: 4px 4px 0 0;
+        margin-bottom: 4px;
+        .sc_table-thead-td{
+          padding: 12px 0;
+          text-align: center;
+          color: #fff;
+          background-color: #409efe;
+          &.first{
+            border-radius: 6px 0 0 0;
+          }
+          &.last{
+            border-radius: 0 6px 0 0;
+          }
+        }
+      }
+      .sc_table-tr{
+        border: 1px solid #ccc;
+        .sc_table-tr-td{
+          height: 46px;
+          line-height: 46px;
+          text-align: center;
+          .itd{
+            border-right: 1px solid #ccc;
+            .itd-bl-Btn{
+              position: relative;
+              top: 2px;
+              padding: 4px 4px 0px;
+              border: 0px;
+              outline: none;
+              background-color: rgb(250, 70, 69);
+              border-radius: 4px;
+            }
+          }
+          .itd-first{
+            border-left: 4px solid #fff;
+          }
+          .itd-last{
+            position: relative;
+            border-right: 0;
+            font-weight: 900;
+            color: rgb(250, 70, 69);
+            overflow: hidden;
+            .itd-flag{
+              position: absolute;
+              top: 8px;
+              width: 80px;
+              right: -24px;
+              height: 20px;
+              line-height: 20px;
+              color: #fff;
+              background: #aaa;
+              transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              p{
+                margin: 0;
+                font-size: 11px;
+                font-weight: 300;
+                transform: scale(.8);
+                -ms-transform: scale(.8);   /* IE 9 */
+                -moz-transform: scale(.8);  /* Firefox */
+                -webkit-transform: scale(.8); /* Safari 和 Chrome */
+                -o-transform: scale(.8);  /* Opera */
+              }
+            }
+            .flag-blue{
+              background-color: #52a8d7;
+            }
+            .flag-red{
+              background-color: #fd8081;
+            }
+          }
+        }
+        &:hover{
+          border-color: #fee1b7;
+          background-color: #fee1b7;
+          .sc_table-tr-td{
+            .itd-first{
+              border-left: 4px solid orange;
+            }
+          }
+        }
+      }
+    }
+    .sc_table-foot{
+      margin-top: 10px;
+      text-align: right;
     }
   }
 }
