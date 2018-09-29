@@ -9,8 +9,15 @@
         <div class="list">
             <el-scrollbar style="height: 100%">
             <div v-for="top,index in item" :key="index" class=" list-one col-r" :class="{active:active==index}" @click="handleGroup(index)">
-                <p :span="24"> {{top.name}} </p>
-                <p :span="24"> <span style="font-size: 18px;font-weight: bold">{{top.danger_num}}</span>/{{top.num}}</p>
+                <p :span="24">
+                    <span style="float: left;font-size: 19px;line-height: 50px">
+                        {{top.name}}
+                    </span>
+                    <span style="float: right;position: relative;top: 24px;">
+                        <span style="font-size: 18px;font-weight: bold">{{top.danger_num}}</span>/{{top.num}}
+                    </span>
+
+                </p>
             </div>
             </el-scrollbar>
         </div>
@@ -70,7 +77,6 @@
     }
 </script>
 <style lang="scss" scoped>
-    @import '~@/assets/style/public.scss';
     * {
         margin: 0;
         padding: 0;
@@ -130,7 +136,7 @@
             box-sizing: border-box;
             .list-one{
                 background: rgb(227,239,254);
-                height: 70px;
+                height: 50px;
                 margin-bottom: 10px;
                 border-radius: 3px;
                 width: calc(100% - 15px);
@@ -141,19 +147,6 @@
                 p{
                     box-sizing: border-box;
                     padding: 0 20px;
-                    &:nth-child(1){
-                        height: 40px;
-                        line-height: 63px;
-                        font-size: 19px;
-                        text-align:left ;
-                    }
-                    &:nth-child(2){
-                        text-align:right ;
-                        height: 30px;
-                        line-height: 30px;
-                        font-size: 15px;
-
-                    }
                 };
                 &:hover{
                     background: url('./image/active.png') no-repeat center;

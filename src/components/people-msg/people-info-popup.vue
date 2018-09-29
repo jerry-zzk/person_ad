@@ -50,33 +50,57 @@
                         </el-aside>
 
                         <el-main>
-                            <el-button class="msg-button" size="mini" type="primary">打印</el-button>
-                            <el-button class="msg-button" size="mini" type="primary">导出</el-button>
-                            <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-                                <el-tab-pane label="欺诈告警" name="first" lazy="lazy">
-                                    <span slot="label"><i class="el-icon-document"></i> 欺诈告警</span>
-                                    <div class="wrap">
-                                        <el-scrollbar style="height: 100%">
-                                            <fraudulentAlarm></fraudulentAlarm>
-                                        </el-scrollbar>
-                                    </div>
+                            <div style="width: 100%;height: 113px" v-if="is_input">
+                                <div style="height: 40px;margin-top: 20px">
+                                    <span style="width:60px;display:inline-block;text-align: center;line-height: 40px;font-size: 14px;color: grey">备注 </span>
+                                    <input type="text"
+                                           style="width: calc(100% - 80px);height: 30px;display: inline-block;border-radius: 5px ;border: 1px solid rgba(0,0,0,0.2)">
+                                </div>
+                                <div style="height: 40px;width: 100%;margin-top: 15px;position: relative;line-height: 40px">
+                                    <input id="input" type="checkbox" style="margin-left: 18px;position: relative;top: 4px;"> <span
+                                        style="font-size: 13px;color: grey">
+                                    <label for="input">加入黑名单</label>
+                                </span>
+                                    <el-button class="msg-button" size="mini" type="primary" style="right: 132px">通过审核
+                                    </el-button>
+                                    <el-button class="msg-button" size="mini" type="primary" style="right: 22px">不通过审核
+                                    </el-button>
+                                </div>
+                            </div>
+                            <div style="position: relative;">
+                                <el-button class="msg-button" size="mini" type="primary" style="right: 95px"
+                                           v-if="!is_input">打印
+                                </el-button>
+                                <el-button class="msg-button" size="mini" type="primary" style="right: 22px"
+                                           v-if="!is_input">导出
+                                </el-button>
+                                <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
+                                    <el-tab-pane label="欺诈告警" name="first" lazy="lazy">
+                                        <span slot="label"><i class="el-icon-document"></i> 欺诈告警</span>
+                                        <div class="wrap">
+                                            <el-scrollbar style="height: 100%">
+                                                <fraudulentAlarm></fraudulentAlarm>
+                                            </el-scrollbar>
+                                        </div>
 
-                                </el-tab-pane>
-                                <el-tab-pane label="评估详情" name="second" lazy="lazy">
-                                    <span slot="label"><i class="el-icon-document"></i> 评估详情</span>
-                                    <div class="wrap">
-                                        <el-scrollbar style="height: 100%">
-                                            <evaluateInfo></evaluateInfo>
-                                        </el-scrollbar>
-                                    </div>
-                                </el-tab-pane>
-                                <el-tab-pane label="联通详单" name="third" lazy="lazy">
-                                    <span slot="label"><i class="el-icon-document"></i> 联通详单</span>
-                                    <div class="wrap">
-                                        <generalFederation></generalFederation>
-                                    </div>
-                                </el-tab-pane>
-                            </el-tabs>
+                                    </el-tab-pane>
+                                    <el-tab-pane label="评估详情" name="second" lazy="lazy">
+                                        <span slot="label"><i class="el-icon-document"></i> 评估详情</span>
+                                        <div class="wrap">
+                                            <el-scrollbar style="height: 100%">
+                                                <evaluateInfo></evaluateInfo>
+                                            </el-scrollbar>
+                                        </div>
+                                    </el-tab-pane>
+                                    <el-tab-pane label="联通详单" name="third" lazy="lazy">
+                                        <span slot="label"><i class="el-icon-document"></i> 联通详单</span>
+                                        <div class="wrap">
+                                            <generalFederation></generalFederation>
+                                        </div>
+                                    </el-tab-pane>
+                                </el-tabs>
+                            </div>
+
                         </el-main>
                     </el-container>
                 </div>
@@ -89,6 +113,11 @@
 <script>
     export default {
         name: "people-info-popup",
+        props: {
+            is_input: {
+                defaults: false
+            },
+        },
         components: {
             fraudulentAlarm: () => import('./switch-page/fraudulent-alarm.vue'),
             generalFederation: () => import('./switch-page/general-federation.vue'),
@@ -98,7 +127,9 @@
             return {
                 lazy: true,
                 isShow: false,
-                activeName2: 'first'
+                activeName2: 'first',
+                input_value: '',
+                checked: false
             }
         },
         computed: {
@@ -209,12 +240,6 @@
                         position: absolute;
                         top: 6px;
                         z-index: 100;
-                        &:first-child {
-                            right: 100px;
-                        }
-                        &:nth-child(2) {
-                            right: 20px;
-                        }
                     }
                 ;
                     .wrap {

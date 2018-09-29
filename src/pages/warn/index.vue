@@ -37,7 +37,7 @@
             <!-- 数据编写 -->
         </d2-customer-list>
     </el-col>
-    <el-col :span="19" style="background:#fff;">
+    <el-col :span="19" style="background:#fff; height:calc(100vh - 200px);">
           <p>
             <!-- 表格 -->
             <demo-page-header
@@ -53,7 +53,7 @@
             <el-col :span="24" v-show="!ok" class="zk_gd">
                       <div class="col-l">
                         <el-row :gutter="20">
-                          <el-col style="margin-bottom:20px;width:252px;"  v-for="(list,index) in items" :key="list">
+                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="list">
                             <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                               <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
                               <div class="sanjiao"></div>
@@ -523,11 +523,11 @@
   }
   .zk_gd{
     padding-left:20px;
-    height:calc(100vh - 281px);
+    height:calc(100vh - 254px);
   }
   .zk_vh{
     background:#fff;
-    height:calc(100vh - 238px);
+    height:calc(100vh - 200px);
     min-width:215px;
   }
   .ic_svg{

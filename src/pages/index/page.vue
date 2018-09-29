@@ -1,8 +1,6 @@
 <template>
   <d2-container class="page">
-    <el-card shadow="never" class="d2-mb">
-      <card4></card4>
-    </el-card>
+    <card4></card4>
   <!-- 折线图区域 -->
     <el-card shadow="never" class="d2-mb">
       <line-chart> </line-chart>
