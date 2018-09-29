@@ -109,6 +109,7 @@
                 padding-left: 13px;
                 line-height: 45px;
                 box-sizing: border-box;
+                font-size: 15px;
                 img{
                     margin-right: 8px;
                     vertical-align: middle;
