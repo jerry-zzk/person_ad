@@ -46,7 +46,7 @@ const frameIn = [
       {
         path: 'searchCustomer',
         name: `${pre}searchCustomer`,
-        component: () => import('@/pages/page3'),
+        component: () => import('@/pages/searchCustomer'),
         meta: { ...meta, title: '客户检索' }
       }, {
         path: 'idCard',
