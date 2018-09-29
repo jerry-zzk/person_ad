@@ -1,17 +1,18 @@
 <template>
   <d2-container id="search_customer" class="page">
     <div class="sCustomer-head">
-      <p style="text-align: center;">
-        <i class="fa fa-search"></i> 客户搜索
+      <p class="sCustomer-p">
+        <d2-icon-svg name="isearch" style="position:relative;width:32px;height:32px;top:4px;margin-right:10px;"></d2-icon-svg>
+        <span class="sCustomer-title">客户搜索</span>
       </p>
-      <p style="text-align: center;">
-        <el-input v-model="val" style="width:600px;"></el-input>
-          <el-button @click="sear" style="background:#ea7312;color:#fff;border-radius:0;border:1px solid #ea7312;" slot="append">搜 索</el-button>
+      <p class="sCustomer-p">
+        <input v-model="searchVal" class="sCustomer-input">
+        <el-button class="sCustomer-btn" slot="append">搜 索</el-button>
       </p>
     </div>
     <div class="sCustomer-body">
-      <div style="width: 100%;height:1px;margin:0 -20px;background-color:#ccc;"></div>
-      <p>共搜索到1000条结果</p>
+      <div class="sCustomer-line"></div>
+      <p class="sCustomer-body-title">共搜索到1000条结果</p>
       <div id="sCustomer_table">
         <el-table :data="tableData" style="width: 100%;">
           <el-table-column prop="name" label="姓名"></el-table-column>
@@ -25,7 +26,7 @@
           <el-table-column prop="blackList" label="黑名单"></el-table-column>
           <el-table-column prop="grade" label="评分"></el-table-column>
         </el-table>
-        <div style="margin-top: 50px;text-align: center;">
+        <div style="margin-top: 50px;text-align: right;">
           <el-pagination
             background
             layout="prev, pager, next"
@@ -46,9 +47,7 @@ export default {
   },
   data () {
     return {
-      chartData: {
-        msg: '第二个图标的首页',
-      },
+      searchVal: '',
       tableData: [{
         id: '1',
         name: '张三',
@@ -186,5 +185,57 @@ export default {
 #search_customer{
   border-left: 1px solid #ccc;
   background-color: #fff;
+  .sCustomer-head{
+    .sCustomer-p{
+      margin-bottom: 30px;
+      text-align: center;
+      .fa{
+        margin-right: 16px;
+        font-size: 32px;
+        color: #409efe;
+      }
+      .sCustomer-title{
+        font-size: 28px;
+        color: #333;
+      }
+    }
+    .sCustomer-input{
+      display: inline-block;
+      width: 800px;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 15px;
+      border: 1px solid #409efe;
+      outline: 0;
+      border-radius: 4px;
+      font-size: inherit;
+      color: #606266;
+      background-color: #fff;
+      background-image: none;
+      -webkit-appearance: none;
+      -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .sCustomer-btn{
+      margin-left: -4px;
+      padding: 16px 30px 15px 30px;
+      color: #fff;
+      background-color: #409efe;
+      border: 1px solid #409efe;
+      font-size: 18px;
+    }
+  }
+  .sCustomer-body{
+    .sCustomer-line{
+      height: 1px;
+      margin: 0 -20px;
+      background-color: #ccc;
+    }
+    .sCustomer-body-title{
+      color: #ccc;
+    }
+  }
 }
 </style>
