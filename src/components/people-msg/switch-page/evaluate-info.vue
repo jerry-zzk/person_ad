@@ -32,50 +32,55 @@
 		</div>
 		<div id="evaluete-info-main">
 			<el-scrollbar style="height: 100%">
-				<div id="evaluete-info-main-inner" v-resize:throttle="onResize">
+				<div id="evaluete-info-main-inner" v-resize:throttle="onResize" style="background-color: #f9f9f9;">
 					<div id="anchor-1" class="section" >
 						<div class="detail-body">
-					      <el-row :gutter="40">
+					      <el-row :gutter="20">
 					        <el-col :span="16">
-					        	<p class="title" style="margin:0 0 10px -20px;">身份欺诈</p>
-					          <el-row class="detail-thead" :gutter="2">
-					            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
-					            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
-					            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
-					          </el-row>
-					          <el-row class="detail-tr color-1">
-					            <el-col :span="8">户籍信息</el-col>
-					            <el-col :span="8">有</el-col>
-					            <el-col :span="8">与活动区域不符</el-col>
-					          </el-row>
-					          <el-row class="detail-tr color-2">
-					            <el-col :span="8">工作信息</el-col>
-					            <el-col :span="8">有</el-col>
-					            <el-col :span="8">与活动区域不符</el-col>
-					          </el-row>
-					          <el-row class="detail-tr color-3">
-					            <el-col :span="8">地址信息</el-col>
-					            <el-col :span="8">有</el-col>
-					            <el-col :span="8">与活动区域不符</el-col>
-					          </el-row>
-					          <el-row class="detail-tr color-4">
-					            <el-col :span="8">家庭成员信息</el-col>
-					            <el-col :span="8">无</el-col>
-					            <el-col :span="8">与活动区域不符</el-col>
-					          </el-row>
-					          <el-row class="detail-tr color-5">
-					            <el-col :span="8">虚拟身份</el-col>
-					            <el-col :span="8">无</el-col>
-					            <el-col :span="8">与活动区域不符</el-col>
-					          </el-row>
+					        	<div class="ipanel">
+						        	<p class="title">身份欺诈</p>
+						          <el-row class="detail-thead" :gutter="2">
+						            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
+						            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
+						            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
+						          </el-row>
+						          <el-row class="detail-tr color-1">
+						            <el-col :span="8">户籍信息</el-col>
+						            <el-col :span="8">有</el-col>
+						            <el-col :span="8">与活动区域不符</el-col>
+						          </el-row>
+						          <el-row class="detail-tr color-2">
+						            <el-col :span="8">工作信息</el-col>
+						            <el-col :span="8">有</el-col>
+						            <el-col :span="8">与活动区域不符</el-col>
+						          </el-row>
+						          <el-row class="detail-tr color-3">
+						            <el-col :span="8">地址信息</el-col>
+						            <el-col :span="8">有</el-col>
+						            <el-col :span="8">与活动区域不符</el-col>
+						          </el-row>
+						          <el-row class="detail-tr color-4">
+						            <el-col :span="8">家庭成员信息</el-col>
+						            <el-col :span="8">无</el-col>
+						            <el-col :span="8">与活动区域不符</el-col>
+						          </el-row>
+						          <el-row class="detail-tr color-5">
+						            <el-col :span="8">虚拟身份</el-col>
+						            <el-col :span="8">无</el-col>
+						            <el-col :span="8">与活动区域不符</el-col>
+						          </el-row>
+					        	</div>
 					        </el-col>
 					        <el-col :span="8">
-					        	<p class="title" style="margin:0 0 10px -20px;">常活动区域</p>
-					          <div id="detail_heatMap"></div>
+					        	<div class="ipanel">
+						        	<p class="title">常活动区域</p>
+						          <div id="detail_heatMap"></div>
+					        	</div>
 					        </el-col>
 					      </el-row>
-				      	</div>
-						<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
+			      	</div>
+	        	<div class="ipanel">
+	        		<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
 			    		<div class="detail-body">
 					      <el-row class="detail-tr color-6">
 					        <el-col :span="3">1.</el-col>
@@ -113,9 +118,11 @@
 					        <el-col :span="6">无可疑</el-col>
 					      </el-row>
 					    </div>
+	        	</div>
 					</div>
 					<div id="anchor-2" class="section">
-						<p class="title" style="margin-bottom: 10px;">黑名单</p>
+					  <div class="ipanel" style="min-height: 550px;">
+					  	<p class="title" style="margin-bottom: 10px;">黑名单</p>
 					    <div class="detail-body">
 					      <div class="detail-thead2">实名黑名单</div>
 					      <el-row class="detail-tr2">
@@ -135,136 +142,145 @@
 					        <el-col :span="8">2016年12月13日</el-col>
 					      </el-row>
 					    </div>
+					  </div>
 					</div>
 					<!--设备欺诈 -->
 					<div id="anchor-3" class="section">
-						<p class="title">设备欺诈</p>
-						<p class="main-title">设备评分：<span class="red"><i class="fa fa-warning"></i> 有风险</span></p>
-						<div class="echarts" ref="myEchart1"></div>
-						<div class=" guan_lian_hao">
-							<p><i class="fa fa-warning"></i>有风险</p>
-							<ul class="waring-list">
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-								<li class="list-item">139*******</li>
-							</ul>
-						</div>
-						<div class="wang_luo_huan_jing">
-							<p><i class="fa fa-warning"></i>疑似黑中介wifi</p>
-							<ul class="waring-list">
-								<li class="list-item">网络环境</li>
-							</ul>
-						</div>
-						<div class="wei_zhi_xin_xi">
-							<p><i class="fa fa-warning"></i>疑似黑中介地址</p>
-							<ul class="waring-list">
-								<li class="list-item">位置信息</li>
-							</ul>
-						</div>
-						<div class="IP_yi_chang">
-							<p><i class="fa fa-warning"></i>疑似团伙欺诈</p>
-							<ul class="waring-list">
-								<li class="list-item">ip地址</li>
-							</ul>
-							<p><i class="fa fa-warning"></i>黑中介风险</p>
-							<ul class="waring-list">
-								<li class="list-item">ip地址</li>
-							</ul>
-						</div>
-						<div class="xu_ni_hao_ma">
-							<table>
-								<tr>
-									<td class="first color1">微博</td>
-									<td>**********</td>
-								</tr>
-								<tr>
-									<td class="first color2">微信</td>
-									<td>**********</td>
-								</tr>
-							</table>
-						</div>
-						<div class="xing_hao_xi_tong">
-							<table>
-								<tr>
-									<td class="first color1">系统</td>
-									<td>**********</td>
-								</tr>
-								<tr>
-									<td class="first color2">账号</td>
-									<td>**********</td>
-								</tr>
-							</table>
+						<div class="ipanel" style="height: 550px;">
+							<p class="title">设备欺诈</p>
+							<p class="main-title">设备评分：<span class="red"><i class="fa fa-warning"></i> 有风险</span></p>
+							<div class="echarts" ref="myEchart1"></div>
+							<div class=" guan_lian_hao">
+								<p><i class="fa fa-warning"></i>有风险</p>
+								<ul class="waring-list">
+									<li class="list-item">139*******</li>
+									<li class="list-item">139*******</li>
+									<li class="list-item">139*******</li>
+									<li class="list-item">139*******</li>
+								</ul>
+							</div>
+							<div class="wang_luo_huan_jing">
+								<p><i class="fa fa-warning"></i>疑似黑中介wifi</p>
+								<ul class="waring-list">
+									<li class="list-item">网络环境</li>
+								</ul>
+							</div>
+							<div class="wei_zhi_xin_xi">
+								<p><i class="fa fa-warning"></i>疑似黑中介地址</p>
+								<ul class="waring-list">
+									<li class="list-item">位置信息</li>
+								</ul>
+							</div>
+							<div class="IP_yi_chang">
+								<p><i class="fa fa-warning"></i>疑似团伙欺诈</p>
+								<ul class="waring-list">
+									<li class="list-item">ip地址</li>
+								</ul>
+								<p><i class="fa fa-warning"></i>黑中介风险</p>
+								<ul class="waring-list">
+									<li class="list-item">ip地址</li>
+								</ul>
+							</div>
+							<div class="xu_ni_hao_ma">
+								<table>
+									<tr>
+										<td class="first color1">微博</td>
+										<td>**********</td>
+									</tr>
+									<tr>
+										<td class="first color2">微信</td>
+										<td>**********</td>
+									</tr>
+								</table>
+							</div>
+							<div class="xing_hao_xi_tong" style="">
+								<table>
+									<tr>
+										<td class="first color1">系统</td>
+										<td>**********</td>
+									</tr>
+									<tr>
+										<td class="first color2">账号</td>
+										<td>**********</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 					<!--团伙关联 -->
 					<div id="anchor-4" class="section">
 						<el-row :gutter="20">
 							<el-col :span="12">
-								<p class="title">通联关系</p>
-								<div class="echart" ref="myEchart2"></div>
-								<div class="table">
-									<p style="color: black">详情</p>
-									<table>
-										<tr>
-											<td class="first color1">张三</td>
-											<td>黑名单</td>
-											<td>日期</td>
-										</tr>
-										<tr>
-											<td class="first color2">李四</td>
-											<td>黑名单</td>
-											<td>日期</td>
-										</tr>
-									</table>
+								<div class="ipanel">
+									<p class="title">通联关系</p>
+									<div class="echart" ref="myEchart2"></div>
+									<div class="table">
+										<p style="color: black">详情</p>
+										<table>
+											<tr>
+												<td class="first color1">张三</td>
+												<td>黑名单</td>
+												<td>日期</td>
+											</tr>
+											<tr>
+												<td class="first color2">李四</td>
+												<td>黑名单</td>
+												<td>日期</td>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">虚拟身份</p>
-								<div class="echart" ref="myEchart3"></div>
-								<div class="table">
-									<p style="color: black">详情</p>
-									<table>
-										<tr>
-											<td class="first color1">张三</td>
-											<td>黑名单</td>
-											<td>日期</td>
-											<td>微博转发</td>
-										</tr>
-										<tr>
-											<td class="first color2">李四</td>
-											<td>黑名单</td>
-											<td>日期</td>
-											<td>微博转发</td>
-										</tr>
-									</table>
+								<div class="ipanel">
+									<p class="title">虚拟身份</p>
+									<div class="echart" ref="myEchart3"></div>
+									<div class="table">
+										<p style="color: black">详情</p>
+										<table>
+											<tr>
+												<td class="first color1">张三</td>
+												<td>黑名单</td>
+												<td>日期</td>
+												<td>微博转发</td>
+											</tr>
+											<tr>
+												<td class="first color2">李四</td>
+												<td>黑名单</td>
+												<td>日期</td>
+												<td>微博转发</td>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</el-col>
 							<el-col :span="24">
-								<p class="title">行为关联风险</p>
-								<div class="table">
-									<table>
-										<tr>
-											<td class="first color1">多个设备同时申请</td>
-											<td>时间</td>
-											<td>设备</td>
-										</tr>
-										<tr>
-											<td class="first color2">多个设备同IP申请</td>
-											<td>IP</td>
-											<td>设备</td>
-										</tr>
-										<tr>
-											<td class="first color3">多个设备同位置P申请</td>
-											<td>位置</td>
-											<td>设备</td>
-										</tr>
-										<tr>
-											<td class="first color4">多个身份同设备申请</td>
-											<td>设备</td>
-											<td>身份</td>
-										</tr>
-									</table>
+								<div class="ipanel" style="margin-top: 30px;">
+									<p class="title">行为关联风险</p>
+									<div class="table">
+										<table>
+											<tr>
+												<td class="first color1">多个设备同时申请</td>
+												<td>时间</td>
+												<td>设备</td>
+											</tr>
+											<tr>
+												<td class="first color2">多个设备同IP申请</td>
+												<td>IP</td>
+												<td>设备</td>
+											</tr>
+											<tr>
+												<td class="first color3">多个设备同位置P申请</td>
+												<td>位置</td>
+												<td>设备</td>
+											</tr>
+											<tr>
+												<td class="first color4">多个身份同设备申请</td>
+												<td>设备</td>
+												<td>身份</td>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</el-col>
 						</el-row>
@@ -273,48 +289,56 @@
 					<div id="anchor-5" class="section">
 						<el-row :gutter="20">
 							<el-col :span="12">
-								<el-col :span="24">
-									<p class="title">催收电话</p>
-									<table>
-										<tr>
-											<td class="first color1">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-										<tr>
-											<td class="first color2">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-									</table>
-								</el-col>
-								<el-col :span="24">
-									<p class="title">催收短信</p>
-									<table>
-										<tr>
-											<td class="first color1">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-										<tr>
-											<td class="first color2">138********</td>
-											<td>2018年1月3日</td>
-											<td>建设银行</td>
-										</tr>
-									</table>
-								</el-col>
+								<div class="ipanel" style="height: 490px;">
+									<el-col :span="24">
+										<p class="title">催收电话</p>
+										<table>
+											<tr>
+												<td class="first color1">138********</td>
+												<td>2018年1月3日</td>
+												<td>建设银行</td>
+											</tr>
+											<tr>
+												<td class="first color2">138********</td>
+												<td>2018年1月3日</td>
+												<td>建设银行</td>
+											</tr>
+										</table>
+									</el-col>
+									<el-col :span="24" style="margin-top:30px;">
+										<p class="title">催收短信</p>
+										<table>
+											<tr>
+												<td class="first color1">138********</td>
+												<td>2018年1月3日</td>
+												<td>建设银行</td>
+											</tr>
+											<tr>
+												<td class="first color2">138********</td>
+												<td>2018年1月3日</td>
+												<td>建设银行</td>
+											</tr>
+										</table>
+									</el-col>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">高危消费行为</p>
-								<div class="echart"  ref="myEchart4"></div>
+								<div class="ipanel">
+									<p class="title">高危消费行为</p>
+									<div class="echart"  ref="myEchart4"></div>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">贷款类app注册</p>
-								<div class="echart"  ref="myEchart5"></div>
+								<div class="ipanel" style="margin-top: 30px;">
+									<p class="title">贷款类app注册</p>
+									<div class="echart"  ref="myEchart5"></div>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">高危消费类型</p>
-								<div class="echart"  ref="myEchart6"></div>
+								<div class="ipanel" style="margin-top: 30px;">
+									<p class="title">高危消费类型</p>
+									<div class="echart"  ref="myEchart6"></div>
+								</div>
 							</el-col>
 						</el-row>
 					</div>
@@ -322,20 +346,28 @@
 					<div id="anchor-6" class="section">
 						<el-row :gutter="20">
 							<el-col :span="12">
-								<p class="title">APP使用</p>
-								<div class="echart"  ref="myEchart7"></div>
+								<div class="ipanel">
+									<p class="title">APP使用</p>
+									<div class="echart"  ref="myEchart7"></div>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">社交行为</p>
-								<div class="echart"  ref="myEchart8"></div>
+								<div class="ipanel">
+									<p class="title">社交行为</p>
+									<div class="echart"  ref="myEchart8"></div>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">浏览行为</p>
-								<div class="echart"  ref="myEchart9"></div>
+								<div class="ipanel" style="margin-top: 30px;">
+									<p class="title">浏览行为</p>
+									<div class="echart"  ref="myEchart9"></div>
+								</div>
 							</el-col>
 							<el-col :span="12">
-								<p class="title">搜索行为</p>
-								<div class="echart"  ref="myEchart10"></div>
+								<div class="ipanel" style="margin-top: 30px;">
+									<p class="title">搜索行为</p>
+									<div class="echart"  ref="myEchart10"></div>
+								</div>
 							</el-col>
 						</el-row>
 					</div>
@@ -381,6 +413,11 @@
 				height: 6px;
 				margin: 0 10px 1px 10px;
 			}
+		}
+		.ipanel{
+			padding: 10px 20px;
+    	border: 1px solid #ccc;
+			background-color: #fff;
 		}
 	}
 	.title{
