@@ -49,9 +49,9 @@ const frameIn = [
         component: () => import('@/pages/searchCustomer'),
         meta: { ...meta, title: '客户检索' }
       }, {
-        path: 'idCard',
-        name: `${pre}idCard`,
-        component: () => import('@/pages/page4'),
+        path: 'iblackList',
+        name: `${pre}iblackList`,
+        component: () => import('@/pages/iblackList'),
         meta: { ...meta, title: '客户黑名单' }
       },{
         path: 'creditLoan',
