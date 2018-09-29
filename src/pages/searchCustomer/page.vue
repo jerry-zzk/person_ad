@@ -37,7 +37,7 @@
           <el-col class="sc_table-tr-td" :span="5"><div class="itd">{{item.address}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="2">
             <div class="itd">
-              <button v-if="item.blackList" class="itd-bl-Btn">
+              <button v-if="item.blackList" @click="openPeopleInfoPopup(item.id)" class="itd-bl-Btn">
                 <d2-icon-svg name="iconsumerBlacklist" style="width:16px;height:16px;fill:#fff;"></d2-icon-svg>
               </button>
               <span v-else>&nbsp;</span>
@@ -61,6 +61,7 @@
         </el-pagination>
       </div>
     </div>
+    <people-info-popup :is_input="true"></people-info-popup>
   </d2-container>
 </template>
 
@@ -86,7 +87,7 @@ export default {
         blackList: true,
         grade: '9.4',
         flag: 1
-      },{
+      }, {
         id: '2',
         name: '张三',
         gender: '男',
@@ -99,7 +100,7 @@ export default {
         blackList: false,
         grade: '9.4',
         flag: 1
-      },{
+      }, {
         id: '3',
         name: '张三',
         gender: '男',
@@ -112,7 +113,7 @@ export default {
         blackList: true,
         grade: '9.4',
         flag: 1
-      },{
+      }, {
         id: '4',
         name: '张三',
         gender: '男',
@@ -125,7 +126,7 @@ export default {
         blackList: false,
         grade: '9.4',
         flag: 2
-      },{
+      }, {
         id: '5',
         name: '张三',
         gender: '男',
@@ -138,7 +139,7 @@ export default {
         blackList: false,
         grade: '9.4',
         flag: 1
-      },{
+      }, {
         id: '6',
         name: '张三',
         gender: '男',
@@ -151,7 +152,7 @@ export default {
         blackList: true,
         grade: '9.4',
         flag: 2
-      },{
+      }, {
         id: '7',
         name: '张三',
         gender: '男',
@@ -164,7 +165,7 @@ export default {
         blackList: true,
         grade: '9.4',
         flag: 2
-      },{
+      }, {
         id: '8',
         name: '张三',
         gender: '男',
@@ -177,7 +178,7 @@ export default {
         blackList: false,
         grade: '9.4',
         flag: 1
-      },{
+      }, {
         id: '9',
         name: '张三',
         gender: '男',
@@ -193,12 +194,13 @@ export default {
       }]
     }
   },
-  mounted(){
-    
+  mounted () {
   },
-  methods:{
-    
-  },
+  methods: {
+    openPeopleInfoPopup () {
+      this.$store.commit('setData', true)
+    }
+  }
 }
 </script>
 

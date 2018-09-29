@@ -492,7 +492,7 @@ export default {
   .bl-list{
     .bl-list-left{
       position: relative;
-      height: 580px;
+      height: calc(100vh - 230px);
       border-right: 1px solid #ccc;
       .bl-box{
         margin: 12px 12px 2px 0;
