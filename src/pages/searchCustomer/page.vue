@@ -257,7 +257,7 @@ export default {
       background-color: #ccc;
     }
     .sCustomer-body-title{
-      color: #ccc;
+      color: #999;
     }
     .sc_table{
       .sc_table-thead{
