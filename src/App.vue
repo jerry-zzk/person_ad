@@ -129,6 +129,16 @@
         }
 
     }
+    .zk_page .is-horizontal{
+        display: none!important;
+    }
+    .el-card{
+        border: 1px solid rgba(0,0,0,0.2)!important;
+        border-radius: 0!important;
+    }
+    .el-input--mini{
+        width: 135px!important;
+    }
 
 
 
