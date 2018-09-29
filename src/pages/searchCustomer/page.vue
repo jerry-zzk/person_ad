@@ -292,6 +292,7 @@ export default {
               outline: none;
               background-color: rgb(250, 70, 69);
               border-radius: 4px;
+              cursor: pointer;
             }
           }
           .itd-first{
