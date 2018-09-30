@@ -3,7 +3,7 @@
     <el-header style="padding-left:5px;" slot="header">
           <p style="margin:5px 0 5px 0;padding:0px;">信贷种类 <b>:</b>&nbsp; <el-checkbox style="margin-right:58px;" :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
           <el-checkbox-group style="display:inline-block;" v-model="checkedCities" @change="handleCheckedCitiesChange">
-            <el-checkbox  style="margin-right:14px;font-family:'微软雅黑';" v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+            <el-checkbox  style="margin-right:14px;font-family:'微软雅黑';" v-for="(city,index) in cities" :label="city" :key="index">{{city}}</el-checkbox>
           </el-checkbox-group>
         </p>
       <p style="margin:5px 0 5px 0;padding:0px;">申请时间 <b>:</b>&nbsp;
@@ -27,7 +27,7 @@
         </el-date-picker>
       </p>
       <p style="margin:5px 0 5px 0;padding:0px;">告警规则 <b>:</b>&nbsp;
-        <span v-for="(bg,index) in bgc" :key="bg" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
+        <span v-for="(bg,index) in bgc" :key="bg.num" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
         评分范围 <b>:</b> &nbsp;
         <el-input class="inp" size="mini"></el-input>-- &nbsp;&nbsp; <el-input class="inp" size="mini"></el-input>
       </p>
@@ -53,7 +53,7 @@
             <el-col :span="24" v-show="!ok" class="zk_gd">
                       <div class="col-l">
                         <el-row :gutter="20">
-                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="index">
+                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="list.name">
                             <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                               <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
                               <div class="sanjiao"></div>
