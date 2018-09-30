@@ -188,17 +188,22 @@ export default {
     this.initChart4();
   },
   beforeDestroy() {
-  	// if(this.chart1){
-  	// 	this.chart1.dispose();
-	  // 	this.chart1= null;
-	  // 	this.chart2.dispose();
-	  // 	this.chart2= null;
-	  // 	this.chart3.dispose();
-	  // 	this.chart3= null;
-	  // 	this.chart4.dispose();
-	  // 	this.chart4= null;
-  	// }
-  	
+  	if(this.chart1){
+  		this.chart1.dispose();
+	  	this.chart1= null;	
+  	}
+  	if(this.chart1){
+  		this.chart1.dispose();
+	  	this.chart1= null;	
+  	}
+  	if(this.chart1){
+  		this.chart1.dispose();
+	  	this.chart1= null;	
+  	}
+  	if(this.chart1){
+  		this.chart1.dispose();
+	  	this.chart1= null;	
+  	}
   },
 
   methods:{
@@ -220,7 +225,7 @@ export default {
       	this.chart1 = echarts.init(this.$refs.chart1);
       	this.chart1.setOption({
 		    title : {
-		        text: '贷款前（2017-05-25 ~~ 2017-08-25',
+		        text: '贷款前（2017-05-25 ~~ 2017-08-25）',
 		        subtext: '',
 		        left:"center",
 		        top:"10%",
@@ -272,7 +277,7 @@ export default {
       	this.chart2 = echarts.init(this.$refs.chart2);
       	this.chart2.setOption({
 		    title : {
-		        text: '贷款后（2017-05-25 ~~ 2017-08-25',
+		        text: '贷款后（2017-05-25 ~~ 2017-08-25）',
 		        subtext: '',
 		        left:"center",
 		        top:"10%",
@@ -364,7 +369,6 @@ export default {
 		    }]
 		})
     }
-
   }
  }
 </script>
