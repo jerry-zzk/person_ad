@@ -327,27 +327,27 @@ const frameIn = [
         meta: { ...meta, title: '失联修复' }
       },
       {
-        path: 'blackList',
-        name: `${pre}blackList`,
-        component: () => import('@/pages/loanMonitor'),
+        path: 'kblackList',
+        name: `${pre}kblackList`,
+        component: () => import('@/pages/kblackList'),
         meta: { ...meta, title: '客户黑名单' }
       },
       {
         path: 'rulesMgt',
         name: `${pre}rulesMgt`,
-        component: () => import('@/pages/loanMonitor'),
+        component: () => import('@/pages/rulesMgt'),
         meta: { ...meta, title: '规则集管理' }
       },
       {
         path: 'statisticReport',
         name: `${pre}statisticReport`,
-        component: () => import('@/pages/loanMonitor'),
+        component: () => import('@/pages/statisticReport'),
         meta: { ...meta, title: '统计报告' }
       },
       {
         path: 'businessMgt',
         name: `${pre}businessMgt`,
-        component: () => import('@/pages/loanMonitor'),
+        component: () => import('@/pages/businessMgt'),
         meta: { ...meta, title: '业务管理' }
       }
     ])('loaningMonitor-')
