@@ -1,24 +1,9 @@
 <template>
   <d2-container id="black_list" class="page">
     <el-row :gutter="10" class="bl-navs">
-      <el-col :span="4">
-        <button class="bl-nav bl-nav-active">
-          <d2-icon-svg name="iidCardBlacklist" style="width:14px;height:14px;"/> 身份证黑名单
-        </button>
-      </el-col>
-      <el-col :span="4">
-        <button class="bl-nav">
-          <d2-icon-svg name="itelephoneBlacklist" style="width:14px;height:14px;"/> 手机号黑名单
-        </button>
-      </el-col>
-      <el-col :span="4">
-        <button class="bl-nav">
-          <d2-icon-svg name="ivirtualAccountBlacklist" style="width:14px;height:14px;"/> 虚拟帐号黑名单
-        </button>
-      </el-col>
-      <el-col :span="4">
-        <button class="bl-nav">
-          <d2-icon-svg name="iipAdressBlacklist" style="width:14px;height:14px;"/> IP地址黑名单
+      <el-col v-for="inav in navsList" :key="inav.index" :span="4">
+        <button class="bl-nav" :class="{'bl-nav-active': inav.select}" @click="navCtrl(inav.index)">
+          <d2-icon-svg :name="inav.ico" style="width:14px;height:14px;"/>{{inav.name}}
         </button>
       </el-col>
     </el-row>
@@ -37,26 +22,28 @@
     <div class="bl-line"></div>
     <el-row class="bl-list">
       <el-col :span="5" class="bl-list-left">
-        <div class="bl-box">
-          <p class="bl-box-head"><i class="fa fa-user-circle"></i> 110110100055559999</p>
-          <p class="bl-box-foot">2018/01/01</p>
-        </div>
-        <div class="bl-box bl-box-active">
-          <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-          <p class="bl-box-foot">2018/01/01</p>
-        </div>
-        <div class="bl-box">
-          <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-          <p class="bl-box-foot">2018/01/01</p>
-        </div>
-        <div class="bl-box">
-          <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-          <p class="bl-box-foot">2018/01/01</p>
-        </div>
+        <el-scrollbar class="bl-list-left-body">
+          <div class="bl-box">
+            <p class="bl-box-head"><i class="fa fa-user-circle"></i> 110110100055559999</p>
+            <p class="bl-box-foot">2018/01/01</p>
+          </div>
+          <div class="bl-box bl-box-active">
+            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
+            <p class="bl-box-foot">2018/01/01</p>
+          </div>
+          <div class="bl-box">
+            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
+            <p class="bl-box-foot">2018/01/01</p>
+          </div>
+          <div class="bl-box">
+            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
+            <p class="bl-box-foot">2018/01/01</p>
+          </div>
+        </el-scrollbar>
         <div class="bl-list-left-foot">
           共计15个 
-          <el-button type="primary" size="mini"><i class="fa fa-caret-left"></i></el-button>
-          <el-button type="primary" size="mini"><i class="fa fa-caret-right"></i></el-button>
+          <el-button type="primary" class="bl-list-btn"><i class="fa fa-caret-left"></i></el-button>
+          <el-button type="primary" class="bl-list-btn"><i class="fa fa-caret-right"></i></el-button>
         </div>
       </el-col>
       <el-col :span="19">
@@ -73,13 +60,38 @@ export default {
   data () {
     return {
       searchVal: '',
-      
+      navsList: [{
+        index: 1,
+        ico: 'itelephoneBlacklist',
+        name: '身份证黑名单',
+        select: true
+      }, {
+        index: 2,
+        ico: 'itelephoneBlacklist',
+        name: '手机号黑名单',
+        select: false
+      }, {
+        index: 3,
+        ico: 'ivirtualAccountBlacklist',
+        name: '虚拟帐号黑名单',
+        select: false
+      }, {
+        index: 4,
+        ico: 'iipAdressBlacklist',
+        name: 'IP地址黑名单',
+        select: false
+      }]
     }
   },
   mounted(){
     this.drawBlChart();
   },
   methods:{
+    navCtrl(idx){
+      this.navsList.forEach(nav => {
+        nav.select = (nav.index == idx)
+      })
+    },
     drawBlChart(){
       this.chart2 = echarts.init(document.getElementById('black_list_chart'));
         // 把配置和数据放这里
@@ -492,30 +504,42 @@ export default {
   .bl-list{
     .bl-list-left{
       position: relative;
-      height: calc(100vh - 230px);
       border-right: 1px solid #ccc;
-      .bl-box{
-        margin: 12px 12px 2px 0;
-        padding: 0 10px 0 20px;
-        border: 1px solid #ccc;
-        border-left: 4px solid #409efe;
-        cursor: pointer;
-        .bl-box-head{
-          margin-top: 6px;
-          .fa{
-            position: relative;
-            top: 4px;
-            font-size: 28px;
-            color: #409efe;
+      .bl-list-left-body{
+        height: calc(100vh - 270px);
+        overflow-y: auto;
+        .bl-box{
+          margin: 12px 12px 2px 0;
+          padding: 0 10px 0 20px;
+          border: 1px solid #ccc;
+          border-left: 4px solid #409efe;
+          cursor: pointer;
+          .bl-box-head{
+            margin-top: 6px;
+            .fa{
+              position: relative;
+              top: 4px;
+              font-size: 28px;
+              color: #409efe;
+            }
+          }
+          .bl-box-foot{
+            margin-bottom: 6px;
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+          }
+          &:hover{
+            border: 1px solid orange;
+            border-left: 4px solid orange;
+            .bl-box-head{
+              .fa{
+                color: orange;
+              }
+            }
           }
         }
-        .bl-box-foot{
-          margin-bottom: 6px;
-          text-align: right;
-          font-size: 12px;
-          color: #666;
-        }
-        &:hover{
+        .bl-box-active{
           border: 1px solid orange;
           border-left: 4px solid orange;
           .bl-box-head{
@@ -525,23 +549,19 @@ export default {
           }
         }
       }
-      .bl-box-active{
-        border: 1px solid orange;
-        border-left: 4px solid orange;
-        .bl-box-head{
-          .fa{
-            color: orange;
-          }
-        }
-      }
     }
     .bl-list-left-foot{
-      position: absolute;
-      bottom: 0;
-      right: 12px;
+      margin-left: -20px;
+      padding: 6px 12px 10px 0;
+      border-top: 1px solid #ccc;
+      text-align: right;
       .fa{
         color: #fff;
       }
+    }
+    .bl-list-btn{
+        padding: 2px 12px;
+        font-size: 18px;
     }
   }
   .bl-line{

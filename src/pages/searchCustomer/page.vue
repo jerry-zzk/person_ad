@@ -45,7 +45,7 @@
           </el-col>
           <el-col class="sc_table-tr-td" :span="2">
             <div class="itd itd-last">
-              {{item.grade}}
+              <span :class="{'itd-red':item.grade>=8,'itd-orange':6<item.grade&&item.grade<8,'itd-green':item.grade<=6}">{{item.grade}}</span>
               <div v-if="item.flag==1" class="itd-flag flag-blue"><p>已通过</p></div>
               <div v-if="item.flag==2" class="itd-flag flag-red"><p>未通过</p></div>
             </div>
@@ -68,9 +68,6 @@
 <script>
 export default {
   name: 'search_customer',
-  components: {
-     
-  },
   data () {
     return {
       searchVal: '',
@@ -176,7 +173,7 @@ export default {
         time: '2018-09-29',
         address: '北京市朝阳区',
         blackList: false,
-        grade: '9.4',
+        grade: '7',
         flag: 1
       }, {
         id: '9',
@@ -189,7 +186,7 @@ export default {
         time: '2018-09-29',
         address: '北京市朝阳区',
         blackList: false,
-        grade: '9.4',
+        grade: '5.4',
         flag: 2
       }]
     }
@@ -304,8 +301,17 @@ export default {
             position: relative;
             border-right: 0;
             font-weight: 900;
-            color: rgb(250, 70, 69);
+            color: #fa4645;
             overflow: hidden;
+            .itd-red{
+              color: #fa4645;
+            }
+            .itd-orange{
+              color: #fdbc81;
+            }
+            .itd-green{
+              color: #72cd88;
+            }
             .itd-flag{
               position: absolute;
               top: 8px;
