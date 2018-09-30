@@ -53,7 +53,7 @@
             <el-col :span="24" v-show="!ok" class="zk_gd">
                       <div class="col-l">
                         <el-row :gutter="20">
-                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="list">
+                          <el-col style="margin-bottom:20px;width:256px;"  v-for="(list,index) in items" :key="index">
                             <el-card shadow="hover" style="position:relative;" :class="bian(index)" :body-style="{ padding: '0px' }">
                               <div class="yuan" :class="yuan(index)">{{list.yuan[index].yuan}}</div>
                               <div class="sanjiao"></div>

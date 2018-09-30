@@ -129,32 +129,6 @@
       </el-table-column> -->
 
       <!-- 全屏详细信息 -->
-    <el-dialog
-      :title="tooltipContent"
-      :fullscreen="true"
-      :visible.sync="dialogVisible"
-      :append-to-body="true">
-      <!-- <vue-good-wizard :steps="steps"
-        :onNext="nextClicked" :onBack="backClicked">
-        <div slot="page1">
-          <h4>Step 1</h4>
-          <p>This is step 1</p>
-        </div>
-        <div slot="page2">
-          <h4>Step 2</h4>
-          <p>This is step 2</p>
-        </div>
-        <div slot="page3">
-          <h4>Step 3</h4>
-          <p>This is step 3</p>
-        </div>
-        <div slot="page4">
-          <h4>Step 4</h4>
-          <p>This is step 4</p>
-        </div>
-      </vue-good-wizard> -->
-       <good-wizard></good-wizard>
-    </el-dialog>
     </el-table>
   </div>
 </template>
