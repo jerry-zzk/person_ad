@@ -16,12 +16,12 @@
                     姓名：<input type="text" style="width: 80px">
                 </div>
                 <div class="tj">
-                    身份证号：<input type="text" style="width: 120px">
+                    身份证号：<input type="text" style="width: 160px">
                 </div>
                 <div class="tj" style="margin-right: 0">
                     电话号：<input type="text" style="width: 110px">
                 </div>
-                <el-button type="primary" size="mini" style="float: right">添加客户组</el-button>
+                <el-button type="primary" size="mini" style="float: right" @click="show_popup=true">添加客户组</el-button>
                 <el-button size="mini" style="float: right;margin-right: 8px">重置</el-button>
                 <el-button type="primary" size="mini" style="float: right">查询</el-button>
 
@@ -68,6 +68,7 @@
             </el-pagination>
         </el-col>
         <people-info-popup :is_input="true"></people-info-popup>
+        <addpopup :show_popup="show_popup" @closePopup="closePopup"></addpopup>
     </div>
 </template>
 <script>
@@ -210,12 +211,19 @@
                         addr: '详细',
                         fen: '90'
                     }
-                ]
+                ],
+                show_popup:false
             }
+        },
+        components:{
+            addpopup:()=>import('./component/add-popup.vue')
         },
         methods: {
             openPeopleInfoPopup() {
                 this.$store.commit('setData', true)
+            },
+            closePopup(val){
+                this.show_popup=val
             }
         }
     }
@@ -253,7 +261,7 @@
                 display: inline-block;
                 color: #3d3d3d;
                 line-height: 30px;
-                margin-right: 5%;
+                margin-right: 4%;
                 input{
                     height: 28px;
                     border: 1px solid rgba(0,0,0,0.1);
@@ -323,6 +331,7 @@
                         transform: rotate(45deg);
                         font-size: 11px;
                         background: rgb(64, 158, 254);
+                        font-weight: 500;
                     }
                 }
             }

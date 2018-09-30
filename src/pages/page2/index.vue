@@ -235,6 +235,7 @@
           transform: rotate(45deg);
           font-size: 11px;
           background:  rgb(64,158,254) ;
+          font-weight: 500;
         }
       }
     }

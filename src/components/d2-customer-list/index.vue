@@ -10,7 +10,7 @@
             <el-scrollbar style="height: 100%">
             <div v-for="top,index in item" :key="index" class=" list-one col-r" :class="{active:active==index}" @click="handleGroup(index)">
                 <p :span="24" style="position: relative;">
-                    <span style="float: left;font-size: 19px;line-height: 50px">
+                    <span style="float: left;font-size: 18px;line-height: 50px">
                         {{top.name}}
                     </span>
                     <span style="float: right;position: absolute;top: 24px;right:20px">

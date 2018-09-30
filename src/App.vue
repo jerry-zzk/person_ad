@@ -43,6 +43,16 @@
         }
 
     }
+    .popup .el-scrollbar__view{
+        height: 100%;
+
+    }
+    .popup .el-tabs__content{
+        height: calc(100% - 41px);
+        .el-tab-pane{
+            height: 100%;
+        }
+    }
     .BMap_cpyCtrl {
         display: none;
     }
