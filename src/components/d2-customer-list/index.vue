@@ -9,11 +9,11 @@
         <div class="list">
             <el-scrollbar style="height: 100%">
             <div v-for="top,index in item" :key="index" class=" list-one col-r" :class="{active:active==index}" @click="handleGroup(index)">
-                <p :span="24">
+                <p :span="24" style="position: relative;">
                     <span style="float: left;font-size: 19px;line-height: 50px">
                         {{top.name}}
                     </span>
-                    <span style="float: right;position: relative;top: 24px;">
+                    <span style="float: right;position: absolute;top: 24px;right:20px">
                         <span style="font-size: 18px;font-weight: bold">{{top.danger_num}}</span>/{{top.num}}
                     </span>
 

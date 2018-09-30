@@ -1,247 +1,332 @@
 <template>
-  <d2-container class="page">
-    <!-- 表格 -->
-    <demo-page-header
-      slot="header"
-      @submit="handleSubmit"
-      ref="header"  @zk = "zk"/>
-    <!-- <el-switch
-      v-model="value2"
-      style="position:fixed;top:122px;right:590px;height:32px;"
-      @change="add"
-      active-color="#13ce46"
-      inactive-color="#ff4949"
-      active-icon-class="el-icon-tickets"
-      inactive-icon-class="el-icon-menu"></el-switch> -->
-    <demo-page-main
-      :table-data="table"
-      :loading="loading" v-show="ok"/>
-    <!-- <demo-toggle /> -->
-    <demo-page-footer
-      slot="footer"
-      :current="page.current"
-      :size="page.size"
-      :total="page.total"
-      @change="handlePaginationChange"/>
+    <div id="addUser"
+         style="height: calc(100vh - 100px);width: calc(100% - 22px);border-right: 1px solid #80808066;background: white">
+        <div style="height: 46px;width: 100%;border-left: 1px solid rgba(0,0,0,0.1);border-bottom: 1px solid rgba(0,0,0,0.1)">
+            <div class="type" :class="{active:active==1}" @click="active=1">信用贷客户</div>
+            <div class="type" :class="{active:active==2}" @click="active=2">抵押贷客户</div>
+            <div class="type" :class="{active:active==3}" @click="active=3">xx贷客户</div>
+        </div>
+        <el-col :span="5" class="list">
+            <d2-customer-list :item="items">
+            </d2-customer-list>
+        </el-col>
+        <el-col :span="19" class="table">
+            <div style="height: 47px">
+                <div class="tj">
+                    姓名：<input type="text" style="width: 80px">
+                </div>
+                <div class="tj">
+                    身份证号：<input type="text" style="width: 120px">
+                </div>
+                <div class="tj" style="margin-right: 0">
+                    电话号：<input type="text" style="width: 110px">
+                </div>
+                <el-button type="primary" size="mini" style="float: right">添加客户组</el-button>
+                <el-button size="mini" style="float: right;margin-right: 8px">重置</el-button>
+                <el-button type="primary" size="mini" style="float: right">查询</el-button>
 
-      <p v-show="ok1">
-          <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
-            <el-col :span="3">
-              <img src="../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
-            </el-col>
-            <el-col :span="6">
-              <p><b style="color:#ea7312;">{{lb.name}}</b></p>
-              <p><span style="color:#999"> 身份证号码 </span> <b>:</b> {{lb.idcard[index].idcard}}</p>
-              <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index].mz}}</p>
-              <!-- <p><span style="color:#999"> 民族 </span> <b>:</b> {{lb.mz[index]}}</p> -->
-            </el-col>
-            <el-col :span="6">
-              <p style="height:10px;"> </p>
-              <p><span style="color:#999"> 性别 </span> <b>:</b> {{lb.sex[index].sex}}</p>
-              <p><span style="color:#999"> 籍贯 </span> <b>:</b> {{lb.country[index].country}}</p>
-            </el-col>
-            <el-col :span="6">
-              <p style="height:10px;"> </p>
-              <p><span style="color:#999"> 电话号码 </span> <b>:</b> {{lb.phone[index].phone}}</p>
-              <p><span style="color:#999"> 居住地址 </span> <b>:</b> {{lb.address[index].address}}</p>
-            </el-col>
-            <el-col :span="3">
-              <p @click="message(index)">
-                <i style="width:26px;height:15px;cursor:pointer;display:inline-block;border:1px solid #ccc;
-                padding:5px 0 5px 5px;background:#efefef;" class="fa fa-id-card-o"></i>
-                <!-- <d2-icon-svg  name="count" ></d2-icon-svg> -->
-              </p>
-              <p> </p>
-              <p> </p>
-            </el-col>
-          </el-row>
-        </p>
-
-    <!-- 全屏 -->
-    <el-dialog
-      :title="tooltipContent"
-      :fullscreen="true"
-      :visible.sync="dialogVisible"
-      :append-to-body="true">
-      <!-- <vue-good-wizard :steps="steps"
-        :onNext="nextClicked" :onBack="backClicked">
-        <div slot="page1">
-          <h4>Step 1</h4>
-        </div>
-        <div slot="page2">
-          <h4>Step 2</h4>
-        </div>
-        <div slot="page3">
-          <h4>Step 3</h4>
-        </div>
-      </vue-good-wizard> -->
-      <good-wizard></good-wizard>
-    </el-dialog>
-  </d2-container>
+            </div>
+            <div class="header">
+                <el-col style="border-radius: 8px 0 0 0 " :span="2">姓名</el-col>
+                <el-col :span="2">性别</el-col>
+                <el-col :span="2">年龄</el-col>
+                <el-col :span="3">手机号</el-col>
+                <el-col :span="5">身份证号</el-col>
+                <el-col :span="2">种类</el-col>
+                <el-col :span="3">时间</el-col>
+                <el-col :span="2">地址</el-col>
+                <el-col style="border-radius:0 8px  0 0 " :span="3">评分</el-col>
+            </div>
+            <div class="table-list">
+                <el-scrollbar style="height: 100%">
+                    <li v-for="item in list" @click="openPeopleInfoPopup">
+                        <div class="border"></div>
+                        <el-col :span="2">{{item.name}}</el-col>
+                        <el-col :span="2">{{item.sex}}</el-col>
+                        <el-col :span="2">{{item.age}}</el-col>
+                        <el-col :span="3">{{item.phone}}</el-col>
+                        <el-col :span="5">{{item.idcard}}</el-col>
+                        <el-col :span="2">{{item.type}}</el-col>
+                        <el-col :span="3">{{item.time}}</el-col>
+                        <el-col :span="2">{{item.addr}}</el-col>
+                        <el-col :span="3"
+                                style="color: #ff4b35;font-weight: 600;position: relative;overflow: hidden;font-size: 18px;">
+                            {{item.fen}}
+                            <span class="tg">
+                已通过
+              </span>
+                        </el-col>
+                    </li>
+                </el-scrollbar>
+            </div>
+            <el-pagination
+                    style="margin-top: 9px;float: right"
+                    background
+                    layout="total, sizes, prev, next, jumper"
+                    :page-sizes="[100, 200, 300, 400]"
+                    :total="1000">
+            </el-pagination>
+        </el-col>
+        <people-info-popup :is_input="true"></people-info-popup>
+    </div>
 </template>
-
 <script>
-import { BusinessTable1List } from '@/api/demo/business/table/1'
-import axios from '@/plugin/axios'
-export default {
-  // name 值和本页的 $route.name 一致才可以缓存页面
-  name: 'demo-business-table-1',
-  components: {
-    'DemoPageHeader': () => import('./componnets/PageHeader'),
-    'DemoPageMain': () => import('./componnets/PageMain'),
-    'DemoPageFooter': () => import('./componnets/PageFooter'),
-    'GoodWizard': () => import('../wizard/wizard.vue'),
-  },
-  data () {
-    return {
-      zk_cli:false,
-      zk_ul:'zk_ul',
-      peo:[],
-      value1: true,
-      value2: true,
-      ok: false,
-      ok1: true,
-      table: [],
-      loading: false,
-      page: {
-        current: 1,
-        size: 100,
-        total: 0
-      },
-      dialogVisible: false,
-      dynamicTags: [],
-      inputVisible: false,
-      inputValue: ''
+    export default {
+        data() {
+            return {
+                active:1,
+                items: [
+                    {name: '分组1', num: 15522322, danger_num: '123', status: 'danger'},
+                    {name: '分组2', num: 15522212, danger_num: '123', status: 'success'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'warning'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                    {name: 'zk', num: 15522212, danger_num: '123', status: 'danger'},
+                ],
+                list: [
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    },
+                    {
+                        name: 'gcx',
+                        sex: '男',
+                        age: '15',
+                        phone: '13651161512',
+                        idcard: '1564231564321654615',
+                        type: "type",
+                        time: '2012-12-12',
+                        addr: '详细',
+                        fen: '90'
+                    }
+                ]
+            }
+        },
+        methods: {
+            openPeopleInfoPopup() {
+                this.$store.commit('setData', true)
+            }
+        }
     }
-  },
-  mounted:function(){
-    this.ajax()
-  },
-  methods: {
-    ajax(){
-      axios({
-          url: '/send',
-          method: 'post',
-        })
-        .then(res => {
-          console.log(res);
-          this.peo = res.list
-        })
-        .catch((error) => {
-          // 错误情况
-          console.log(error);
-        })
-    },
-    message () {
-      this.dialogVisible = true
-    },
-    zk (msg) {
-      if (msg === true) {
-        this.ok = false
-        this.ok1 = true
-      } else {
-        this.ok1 = false
-        this.ok = true
-      }
-    },
-    handlePaginationChange (val) {
-      this.$notify({
-        title: '分页变化',
-        message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
-      })
-      this.page = val
-      // nextTick 只是为了优化示例中 notify 的显示
-      this.$nextTick(() => {
-        this.$refs.header.handleFormSubmit()
-      })
-    },
-    handleSubmit (form) {
-      this.loading = true
-      this.$notify({
-        title: '开始请求模拟表格数据'
-      })
-      BusinessTable1List({
-        ...form,
-        page: this.page
-      })
-        .then(res => {
-          this.loading = false
-          this.$notify({
-            title: '模拟表格数据请求完毕'
-          })
-          this.table = res.list
-          this.page = res.page
-        })
-        .catch(err => {
-          this.loading = false
-          this.$notify({
-            title: '模拟表格数据请求异常'
-          })
-          console.log('err', err)
-        })
-    }
-  }
-}
-// export default {
-//   name: 'page1',
-//   data () {
-//     return {
-//     }
-//   }
-// }
 </script>
 <style lang="scss" scoped>
-.zk_ul{
-    border:1px solid #ccc;
-    padding:5px 0 5px 15px;
-    // margin-bottom: 15px;
-  }
-  .zk_cli{
-    border:2px solid #35ab62;
-    border-left:5px solid #35ab62;
-  }
-  .zk_ul:hover{
-    border:1px solid #35ab62;
-    border-left:3px solid #35ab62;
-    background:rgba(132, 182, 144, 0.12);
-  }
+    #addUser {
+        .type{
+            padding: 4px 20px;
+            color: #434343;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 14px;
+            border: 1px solid rgba(0,0,0,0.15);
+            cursor: pointer;
+            margin: 8px 60px;
+            margin-left: 10px;
+            &:hover{
+                background:rgb(64, 158, 254);
+                color: white;
+            }
+            &.active{
+                background:rgb(64, 158, 254);
+                color: white;
+            }
+        }
+        .list {
+            height: calc(100% - 49px);
+        }
+        .table {
+            height: calc(100% - 94px);
+            padding: 10px;
+            box-sizing: border-box;
+            .tj{
+                font-size: 14px;
+                display: inline-block;
+                color: #3d3d3d;
+                line-height: 30px;
+                margin-right: 5%;
+                input{
+                    height: 28px;
+                    border: 1px solid rgba(0,0,0,0.1);
+                    border-radius: 15px;
+                    outline: none;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                }
+            }
+            .header {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
 
-.ri{
-  margin-right:5%;
-}
-  @import '~@/assets/style/public.scss';
-.col {
-  padding: 20px;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  font-size: 16px;
-}
-.col-l {
-  background-color: lighten($color-info, 40%);
-  border-color: lighten($color-info, 35%);
-}
-.col-r {
-  background-color: lighten($color-success, 47%);
-  border-color: lighten($color-success, 40%);
-}
-.page {
-  .page__btn-group {
-    color: $color-text-placehoder;
-    font-size: 12px;
-    span {
-      color: $color-text-sub;
-      &:hover {
-        color: $color-text-main;
-      }
+                color: white;
+                font-size: 14px;
+                margin-bottom: 6px;
+                div {
+                    border-right: 1px solid white;
+                    background: rgb(64, 158, 254);
+                }
+            }
+            .table-list {
+                list-style: none;
+                background: white;
+                height: calc(100% - 97px);
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                li {
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 49px;
+                    color: #3c3c3c;
+                    position: relative;
+                    .border {
+                        width: 4px;
+                        height: 50px;
+                        background: orange;
+                        position: absolute;
+                        left: 0;
+                        border: none !important;
+                        display: none;
+                    }
+                    &:hover {
+                        background: rgb(254, 225, 183);
+
+                        .border {
+                            display: block;
+                        }
+                    }
+                    div {
+                        border-right: 1px solid rgba(0, 0, 0, 0.1);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+                    .tg {
+                        position: absolute;
+                        top: 8px;
+                        width: 80px;
+                        right: -24px;
+                        height: 20px;
+                        line-height: 20px;
+                        color: #fff;
+                        background: #aaa;
+                        transform: rotate(45deg);
+                        font-size: 11px;
+                        background: rgb(64, 158, 254);
+                    }
+                }
+            }
+        }
     }
-  }
-}
-.midd1{
-    display: inline-block;
-    vertical-align: middle;
-    height:20px;
-    line-height:6px;
-    width:40px;
-  }
 </style>
+
