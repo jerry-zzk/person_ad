@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" style="min-width: 1280px">
         <router-view/>
     </div>
 </template>
@@ -42,6 +42,16 @@
             border-bottom-color: #f9f9f9 !important;
         }
 
+    }
+    .popup .el-scrollbar__view{
+        height: 100%;
+
+    }
+    .popup .el-tabs__content{
+        height: calc(100% - 41px);
+        .el-tab-pane{
+            height: 100%;
+        }
     }
     .BMap_cpyCtrl {
         display: none;
