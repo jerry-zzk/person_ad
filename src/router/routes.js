@@ -59,18 +59,16 @@ const frameIn = [
         component: () => import('@/pages/warn'),
         meta: { ...meta, title: '欺诈告警' }
       },{
+        path: 'count',
+        name: `${pre}count`,
+        component: () => import('@/pages/count'),
+        meta: { ...meta, title: '统计报告' }
+      },{
         path: 'manage',
         name: `${pre}manage`,
         component: () => import('@/pages/manage'),
         meta: { ...meta, title: '业务管理' }
       }
-      
-      // {
-      //   path: '/global',
-      //   name: 'global',
-      //   component: () => import('@/pages/global'),
-      //   meta: { meta, title: '接口' }
-      // }
     ])('antiFraud-')
   },
   {
