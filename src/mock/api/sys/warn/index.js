@@ -62,7 +62,8 @@ Mock.mock('/api/warn1', 'post',({}) => {
             type: jsonAll1,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll1
+            yuan:jsonAll1,
+            sex:jsonAll1,
           }
         ]
       }
@@ -93,7 +94,8 @@ Mock.mock('/api/warn2', 'post',({}) => {
             type: jsonAll2,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll2
+            yuan:jsonAll2,
+            sex:jsonAll2,
           }
         ]
       }
@@ -123,7 +125,8 @@ Mock.mock('/api/warn3', 'post',({}) => {
             type: jsonAll3,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll3
+            yuan:jsonAll3,
+            sex:jsonAll3,
           }
         ]
       }
@@ -157,7 +160,8 @@ Mock.mock('/api/warn4', 'post',({}) => {
             type: jsonAll4,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll4
+            yuan:jsonAll4,
+            sex:jsonAll4,
           }
         ]
       }
@@ -189,7 +193,8 @@ Mock.mock('/api/warn5', 'post',({}) => {
             type: jsonAll5,
             peoNum:'@integer(10000)',
             time:'@date("yyyy-MM-dd")',
-            yuan:jsonAll5
+            yuan:jsonAll5,
+            sex:jsonAll5,
           }
         ]
       }
