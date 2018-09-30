@@ -31,7 +31,7 @@
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
           <d2-header-gohome/>
           <d2-header-help/>
-          <d2-header-search @click="handleSearchClick"/>
+          <!-- <d2-header-search @click="handleSearchClick"/> -->
           <d2-header-error-log/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
