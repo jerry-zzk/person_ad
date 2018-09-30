@@ -71,7 +71,7 @@
                               </p>
                               <p>
                               <span style="padding-right:10px;margin-left:0px;padding-left:17px;" class="lis" :title="list.type[index].type"><d2-icon-svg class="ic_svg" name="star"/> 种类 <b>:</b><span style="font-size:13px;margin-right:10px;"> {{list.type[index].type}}</span></span>
-                              <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b>&nbsp;<span style="font-size:13px;height:15px;display:inline-block;width:53px;line-height:21px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{list.time}} </span></span>
+                              <span style="margin-left:-10px;" class="lis" :title="list.time"><d2-icon-svg class="ic_svg" name="alarm"/> 时间 <b>:</b>&nbsp;<span style="font-size:13px;height:15px;display:inline-block;width:53px;line-height:19px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{list.time}} </span></span>
                               </p>
 
                               <p class="lis" style="margin-bottom:25px;border:none;cursor:pointer;" @click="message">
@@ -143,7 +143,7 @@
         param:'2018-2-10',
         param2:'2018-2-16',
         param3:'2018-1-10',
-        items1: [
+        items1: [ 
           { name: 'zk', num: 15522322, danger_num: '123', status: 'danger' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'success' },
           { name: 'zk', num: 15522212, danger_num: '123', status: 'warning' },
