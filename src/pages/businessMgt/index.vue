@@ -1,13 +1,16 @@
 <template>
   <d2-container class="page">
-    待建设......
+    <div style="margin-top:50px;text-align: center;">
+      <img src="/image/building.png" alt="待建设"/>
+      <p style="color: #999;">待建设</p>
+    </div>
   </d2-container>
 </template>
 
 <script>
 export default {
   // name 值和本页的 $route.name 一致才可以缓存页面
-  name: 'demo-business-table-1',
+  name: 'businesMgt',
   components: {
     
   },

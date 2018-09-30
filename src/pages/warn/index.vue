@@ -375,7 +375,7 @@
             })
             .then(res => {
               console.log(res);
-              this.items = ""
+              //this.items = ""
               this.items = res.list
             })
             .catch((error) => {
