@@ -83,7 +83,6 @@
     }
     .wrap{
         border:1px solid rgba(0,0,0,0.1);
-        border-radius: 5px;
         width: 100%;
         height: 100%;
         padding: 12px;

@@ -1,6 +1,6 @@
 <template>
-  <div id="shgl" style="height: calc(100vh - 100px)">
-    <div style="height: 70px;width: 100%;border: 1px solid rgba(0,0,0,0.2)">
+  <div id="shgl" style="height: calc(100vh - 100px);width: calc(100% - 22px);border-right: 1px solid #80808066;background: white">
+    <div style="height: 70px;width: 100%;border-left: 1px solid rgba(0,0,0,0.1);border-bottom: 1px solid rgba(0,0,0,0.1)">
       <div class="tj">
         <li style="text-align: center;width:120px">信贷种类：</li>
         <li>
@@ -74,7 +74,7 @@
          <el-col style="border-radius:0 8px  0 0 " :span="3">评分</el-col>
       </div>
       <div class="table-list">
-        <div>
+        <el-scrollbar style="height: 100%">
           <li v-for="item in list"  @click="openPeopleInfoPopup">
             <div class="border"></div>
             <el-col :span="2">{{item.name}}</el-col>
@@ -85,16 +85,22 @@
             <el-col :span="2">{{item.type}}</el-col>
             <el-col :span="3">{{item.time}}</el-col>
             <el-col :span="2">{{item.addr}}</el-col>
-            <el-col :span="3" style="color: #ff4b35;font-weight: 600;position: relative;overflow: hidden;font-size: 18px">
+            <el-col :span="3" style="color: #ff4b35;font-weight: 600;position: relative;overflow: hidden;font-size: 18px;">
               {{item.fen}}
               <span class="tg">
                 已通过
               </span>
             </el-col>
           </li>
-        </div>
-
+        </el-scrollbar>
       </div>
+      <el-pagination
+              style="margin-top: 9px;float: right"
+              background
+              layout="total, sizes, prev, next, jumper"
+              :page-sizes="[100, 200, 300, 400]"
+              :total="1000">
+      </el-pagination>
     </el-col>
     <people-info-popup :is_input="true"></people-info-popup>
   </div>
@@ -126,13 +132,13 @@
                   {name:'gcx', sex:'男', age:'15', phone:'13651161512', idcard:'1564231564321654615', type:"type", time:'2012-12-12', addr:'详细', fen:'90'},
                   {name:'gcx', sex:'男', age:'15', phone:'13651161512', idcard:'1564231564321654615', type:"type", time:'2012-12-12', addr:'详细', fen:'90'},
                   {name:'gcx', sex:'男', age:'15', phone:'13651161512', idcard:'1564231564321654615', type:"type", time:'2012-12-12', addr:'详细', fen:'90'},
+                  {name:'gcx', sex:'男', age:'15', phone:'13651161512', idcard:'1564231564321654615', type:"type", time:'2012-12-12', addr:'详细', fen:'90'},
                   {name:'gcx', sex:'男', age:'15', phone:'13651161512', idcard:'1564231564321654615', type:"type", time:'2012-12-12', addr:'详细', fen:'90'}
               ]
           }
       },
       methods:{
           openPeopleInfoPopup() {
-              console.log("fds")
               this.$store.commit('setData', true)
           }
       }
@@ -185,15 +191,18 @@
     .table-list{
       list-style: none;
       background: white;
+      height: calc(100% - 97px);
+      border-left:1px solid rgba(0,0,0,0.1);
+      border-top:1px solid rgba(0,0,0,0.1);
+      border-bottom:1px solid rgba(0,0,0,0.1);
       li{
         height: 50px;
         line-height: 50px;
         font-size: 14px;
         text-align: center;
-        line-height: 50px;
+        line-height: 49px;
         color: #3c3c3c;
         position: relative;
-        overflow: hidden;
         .border{
           width: 4px;
           height: 50px;
@@ -211,24 +220,21 @@
           }
         }
         div{
-          border-left:1px solid rgba(0,0,0,0.1);
           border-right:1px solid rgba(0,0,0,0.1);
-          border-bottom:1px solid rgba(0,0,0,0.5);
-          border-top:1px solid rgba(0,0,0,0.5);
+          border-bottom:1px solid rgba(0,0,0,0.1);
         }
         .tg{
           position: absolute;
-          display: inline-block;
-          width: 80%;
-          height: 24px;
-          background: rgb(64,158,254) ;
-          -webkit-transform: rotate(45deg);
+          top: 8px;
+          width: 80px;
+          right: -24px;
+          height: 20px;
+          line-height: 20px;
+          color: #fff;
+          background: #aaa;
           transform: rotate(45deg);
-          color: white;
-          font-size: 12px;
-          line-height: 24px;
-          top: 7px;
-          right: -34px;
+          font-size: 11px;
+          background:  rgb(64,158,254) ;
         }
       }
     }

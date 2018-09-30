@@ -72,20 +72,26 @@
         float: left;
         margin-right: 40px;
         box-sizing: border-box;
+        border-radius: 0;
         &:last-child{
             margin-right: 0;
         }
         h4 {
             line-height: 32px;
             font-weight: 500;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        p{
+            margin-bottom: 20px;
         }
         .icon {
             position: absolute;
-            right: 15px;
-            top: 11px;
+            right: 26px;
+            top: 24px;
             font-size: 42px;
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             img {
                 width: 100%;
                 border-radius: 50%;
@@ -97,28 +103,28 @@
         border-left: 4px solid rgb(188,215,84);
         span{
             color:rgb(188,215,84);
-            padding-left: 11px;
+            padding-left: 28px;
         }
     }
     .col-2{
         border-left: 4px solid rgb(118,203,196);
         span{
             color:rgb(118,203,196);
-            padding-left: 23px;
+            padding-left: 40px;
         }
     }
     .col-3{
         border-left: 4px solid rgb(100,165,195);
         span{
             color:rgb(100,165,195);
-            padding-left: 23px;
+            padding-left: 40px;
         }
     }
     .col-4{
         border-left: 4px solid rgb(110,131,186);
         span{
             color:rgb(110,131,186);
-            padding-left: 17px;
+            padding-left: 34px;
         }
     }
 </style>

@@ -89,7 +89,8 @@
         margin-right: 10px!important;
         padding: 0!important;
         color: white!important;
-        border-radius: 5px;
+        border-radius: 2px!important;
+        min-width: 30px!important;
         .el-icon-arrow-left{
             text-align: center;
             &:before{
@@ -111,7 +112,8 @@
         padding: 0 !important;
         background: rgb(64, 158, 255) !important;
         color: white !important;
-        border-radius: 5px;
+        min-width: 30px!important;
+        border-radius: 2px!important;
         .el-icon-arrow-right{
             text-align: center;
             &:before{
