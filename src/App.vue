@@ -154,7 +154,7 @@
 
 
 
-    // .el-form-item{
-    //     margin:0px 10px !important;
-    // }
+    .zk_page .el-form-item{
+         margin:0px 10px !important;
+     }
 </style>
