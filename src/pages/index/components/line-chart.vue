@@ -58,10 +58,13 @@
               symbolOffset:[0,10]
             },
             splitLine:{
-              show:false
+              show:true,
+                lineStyle:{
+                  type:'dashed'
+                }
             },
             splitArea: {
-              show: true,
+              show: false,
               areaStyle :{
                 color:['#fff0fe','#e5f6ff'],
                 opacity:0.5
@@ -84,7 +87,7 @@
               lineStyle:{
                 width:1.2
               },
-              smooth: true,
+              smooth: false,
               data: chartData.y[0],
               showSymbol:true,
             },
@@ -94,7 +97,7 @@
               lineStyle:{
                 width:1.2
               },
-              smooth: true,
+              smooth: false,
               data: chartData.y[1],
               showSymbol:false,
             }

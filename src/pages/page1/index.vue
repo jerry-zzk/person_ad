@@ -250,7 +250,7 @@
             }
         }
         .list {
-            height: calc(100% - 49px);
+            height: calc(100% - 46px);
         }
         .table {
             height: calc(100% - 94px);
@@ -272,8 +272,8 @@
                 }
             }
             .header {
-                height: 50px;
-                line-height: 50px;
+                height: 46px;
+                line-height: 46px;
                 text-align: center;
 
                 color: white;
@@ -292,16 +292,15 @@
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                 li {
-                    height: 50px;
-                    line-height: 50px;
+                    height: 46px;
+                    line-height: 45px;
                     font-size: 14px;
                     text-align: center;
-                    line-height: 49px;
                     color: #3c3c3c;
                     position: relative;
                     .border {
                         width: 4px;
-                        height: 50px;
+                        height: 46px;
                         background: orange;
                         position: absolute;
                         left: 0;
