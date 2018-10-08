@@ -87,7 +87,7 @@
         }
         .icon {
             position: absolute;
-            right: 26px;
+            right: 22px;
             top: 24px;
             font-size: 42px;
             width: 90px;
