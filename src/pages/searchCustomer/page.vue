@@ -26,6 +26,7 @@
           <el-col :span="2"><div class="sc_table-thead-td">黑名单</div></el-col>
           <el-col :span="2"><div class="sc_table-thead-td last">评分</div></el-col>
         </el-row>
+        <el-scrollbar style="height: calc(100vh - 430px);border: 1px solid #ccc;">
         <el-row v-for="item in tableData" :key="item.id" class="sc_table-tr" :gutter="1">
           <el-col class="sc_table-tr-td" :span="3"><div class="itd itd-first">{{item.name}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.gender}}</div></el-col>
@@ -51,6 +52,7 @@
             </div>
           </el-col>
         </el-row>
+        </el-scrollbar>
       </div>
       <div class="sc_table-foot">
         <el-pagination
@@ -207,6 +209,9 @@ export default {
   position: absolute;
   border-left: 1px solid #ccc;
   background-color: #fff;
+  .d2-container-full__body{
+    padding-bottom: 0;
+  }
   .sCustomer-head{
     .sCustomer-p{
       margin-bottom: 30px;
@@ -223,10 +228,10 @@ export default {
     }
     .sCustomer-input{
       display: inline-block;
-      width: 800px;
+      width: 600px;
       height: 50px;
       line-height: 50px;
-      padding: 0 15px;
+      padding: 0 10px;
       border: 1px solid #409efe;
       outline: 0;
       border-radius: 4px;
@@ -241,15 +246,19 @@ export default {
       box-sizing: border-box;
     }
     .sCustomer-btn{
+      position: relative;
+      top: 1px;
       margin-left: -4px;
       padding: 16px 30px 15px 30px;
       color: #fff;
       background-color: #409efe;
       border: 1px solid #409efe;
+      border-radius: 0 4px 4px 0;
       font-size: 18px;
     }
   }
   .sCustomer-body{
+    font-size: 14px;
     .sCustomer-line{
       height: 1px;
       margin: 0 -20px;
@@ -276,10 +285,10 @@ export default {
         }
       }
       .sc_table-tr{
-        border: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
         .sc_table-tr-td{
-          height: 46px;
-          line-height: 46px;
+          height: 42px;
+          line-height: 42px;
           text-align: center;
           .itd{
             border-right: 1px solid #ccc;
@@ -292,6 +301,9 @@ export default {
               background-color: rgb(250, 70, 69);
               border-radius: 4px;
               cursor: pointer;
+              &:hover{
+                background-color: #409efe;
+              }
             }
           }
           .itd-first{
@@ -314,9 +326,9 @@ export default {
             }
             .itd-flag{
               position: absolute;
-              top: 8px;
+              top: 4px;
               width: 80px;
-              right: -24px;
+              right: -27px;
               height: 20px;
               line-height: 20px;
               color: #fff;
@@ -358,6 +370,7 @@ export default {
     }
     .sc_table-foot{
       margin-top: 10px;
+      margin-bottom: -20px;
       text-align: right;
     }
   }
