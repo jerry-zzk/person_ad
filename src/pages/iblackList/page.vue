@@ -1,16 +1,16 @@
 <template>
   <d2-container id="black_list" class="page">
-    <el-row :gutter="10" class="bl-navs">
-      <el-col v-for="inav in navsList" :key="inav.index" :span="4">
+    <ul class="bl-navs">
+      <li v-for="inav in navsList" :key="inav.index" :span="4">
         <button class="bl-nav" :class="{'bl-nav-active': inav.select}" @click="navCtrl(inav.index)">
-          <d2-icon-svg :name="inav.ico" style="width:14px;height:14px;"/>{{inav.name}}
+          <d2-icon-svg :name="inav.ico" style="position: relative;width: 24px;height: 15px;top: 2px;"/>{{inav.name}}
         </button>
-      </el-col>
-    </el-row>
+      </li>
+    </ul>
     <div class="bl-line"></div>
     <el-row :gutter="10" class="bl-search">
       <el-col :span="6"><div>姓名: <input class="bl-input"/></div></el-col>
-      <el-col :span="8"><div>身份证号: <input class="bl-input" style="width:240px;"/></div></el-col>
+      <el-col :span="8"><div>身份证号: <input class="bl-input" style="width:200px;"/></div></el-col>
       <el-col :span="6"><div>电话号: <input class="bl-input"/></div></el-col>
       <el-col :span="4">
         <div>
@@ -84,7 +84,11 @@ export default {
     }
   },
   mounted(){
-    this.drawBlChart();
+    let _this = this
+    this.drawBlChart()
+    window.onresize = function(){
+      _this.drawBlChart()
+    }
   },
   methods:{
     navCtrl(idx){
@@ -457,15 +461,30 @@ export default {
   border-left: 1px solid #ccc;
   background-color: #fff;
   .bl-navs{
+    position: relative;
+    margin: 0;
+    padding: 0;
     height: 54px;
     line-height: 54px;
     margin-top: -14px;
+    &:after{
+      content: '';
+      display: block;
+      width: 0;
+      clear: both;
+    }
+    li{
+      list-style: none;
+      float: left;
+      margin-right: 50px;
+    }
     .bl-nav{
       padding: 8px 24px;
       border: 1px solid #ccc;
       border-radius: 20px;
       background-color: #fff;
       outline: none;
+      font-size: 16px;
       cursor: pointer;
       &:hover{
         border: 1px solid #ccc;
@@ -489,7 +508,7 @@ export default {
     height: 64px;
     line-height: 64px;
     .bl-input{
-      width: 200px;
+      width: 160px;
       height: 24px;
       padding-left: 12px;
       border-radius: 20px;
@@ -497,7 +516,7 @@ export default {
       border: 1px solid #ccc;
     }
     .bl-btn{
-      padding: 10px 16px;
+      padding: 8px 12px;
       font-weight: 600;
     }
   }
@@ -510,7 +529,7 @@ export default {
         overflow-y: auto;
         .bl-box{
           margin: 12px 12px 2px 0;
-          padding: 0 10px 0 20px;
+          padding: 0 10px 0 10px;
           border: 1px solid #ccc;
           border-left: 4px solid #409efe;
           cursor: pointer;
@@ -527,7 +546,7 @@ export default {
             margin-bottom: 6px;
             text-align: right;
             font-size: 12px;
-            color: #666;
+            color: #888;
           }
           &:hover{
             border: 1px solid orange;
@@ -571,7 +590,12 @@ export default {
   }
   #black_list_chart{
     width: 100%;
-    height: 580px;
+    height: calc(100vh - 250px);
+  }
+  @media screen and (max-width: 1360px){
+    .bl-box-head{
+      font-size: 14px;
+    }
   }
 }
 </style>
