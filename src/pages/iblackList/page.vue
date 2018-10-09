@@ -43,7 +43,7 @@
         <div class="bl-list-left-foot">
           共计15个 
           <el-button type="primary" class="bl-list-btn"><i class="fa fa-caret-left"></i></el-button>
-          <el-button type="primary" class="bl-list-btn"><i class="fa fa-caret-right"></i></el-button>
+          <el-button type="primary" class="bl-list-btn" style="margin-left:4px;"><i class="fa fa-caret-right"></i></el-button>
         </div>
       </el-col>
       <el-col :span="19">

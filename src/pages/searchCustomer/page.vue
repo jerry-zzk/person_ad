@@ -7,7 +7,7 @@
       </p>
       <p class="sCustomer-p">
         <input v-model="searchVal" class="sCustomer-input">
-        <el-button class="sCustomer-btn" slot="append">搜 索</el-button>
+        <el-button @click="getTableData" class="sCustomer-btn" slot="append">搜 索</el-button>
       </p>
     </div>
     <div class="sCustomer-body">
@@ -27,7 +27,7 @@
           <el-col :span="2"><div class="sc_table-thead-td last">评分</div></el-col>
         </el-row>
         <el-scrollbar style="height: calc(100vh - 430px);border: 1px solid #ccc;">
-        <el-row v-for="item in tableData" :key="item.id" class="sc_table-tr" :gutter="1">
+        <el-row v-for="item in tableData" :key="item.index" class="sc_table-tr" :gutter="1">
           <el-col class="sc_table-tr-td" :span="3"><div class="itd itd-first">{{item.name}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.gender}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.age}}</div></el-col>
@@ -35,7 +35,7 @@
           <el-col class="sc_table-tr-td" :span="4"><div class="itd">{{item.idcard}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="1"><div class="itd">{{item.type}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="2"><div class="itd">{{item.time}}</div></el-col>
-          <el-col class="sc_table-tr-td" :span="5"><div class="itd">{{item.address}}</div></el-col>
+          <el-col class="sc_table-tr-td" :span="5"><div class="itd" :title="item.address">{{item.address}}</div></el-col>
           <el-col class="sc_table-tr-td" :span="2">
             <div class="itd">
               <button v-if="item.blackList" @click="openPeopleInfoPopup(item.id)" class="itd-bl-Btn">
@@ -56,10 +56,13 @@
       </div>
       <div class="sc_table-foot">
         <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
           background
           layout="total, sizes, prev, next, jumper"
           :page-sizes="[100, 200, 300, 400]"
-          :total="1000">
+          :current-page="currentPage"
+          :total="total">
         </el-pagination>
       </div>
     </div>
@@ -68,134 +71,47 @@
 </template>
 
 <script>
+import axios from '@/plugin/axios'
 export default {
   name: 'search_customer',
   data () {
     return {
       searchVal: '',
-      tableData: [{
-        id: '1',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: true,
-        grade: '9.4',
-        flag: 1
-      }, {
-        id: '2',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: false,
-        grade: '9.4',
-        flag: 1
-      }, {
-        id: '3',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: true,
-        grade: '9.4',
-        flag: 1
-      }, {
-        id: '4',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: false,
-        grade: '9.4',
-        flag: 2
-      }, {
-        id: '5',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: false,
-        grade: '9.4',
-        flag: 1
-      }, {
-        id: '6',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: true,
-        grade: '9.4',
-        flag: 2
-      }, {
-        id: '7',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: true,
-        grade: '9.4',
-        flag: 2
-      }, {
-        id: '8',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: false,
-        grade: '7',
-        flag: 1
-      }, {
-        id: '9',
-        name: '张三',
-        gender: '男',
-        age: '23',
-        cellphone: '13618261628',
-        idcard: '123456789123456789',
-        type: '种类',
-        time: '2018-09-29',
-        address: '北京市朝阳区',
-        blackList: false,
-        grade: '5.4',
-        flag: 2
-      }]
+      total: 1000,
+      currentPage: 1,
+      tableData: []
     }
   },
   mounted () {
+    this.getTableData()
   },
   methods: {
+    // 获取表格数据
+    getTableData(){
+      let _this = this
+      console.log( _this.currentPage)
+      _this.currentPage = 1
+      axios({
+        url: '/getSearchCustomer',
+        method: 'post',
+        data: null
+      })
+      .then(res => {
+        _this.tableData = res.list
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    },
+    // 每页条数改变
+    handleSizeChange(val) {
+      this.getTableData()
+    },
+    // 当前页改变
+    handleCurrentChange(val) {
+      this.getTableData()
+    },
+    // 打开弹窗
     openPeopleInfoPopup () {
       this.$store.commit('setData', true)
     }
@@ -290,6 +206,7 @@ export default {
           height: 42px;
           line-height: 42px;
           text-align: center;
+          overflow: hidden;
           .itd{
             border-right: 1px solid #ccc;
             .itd-bl-Btn{
