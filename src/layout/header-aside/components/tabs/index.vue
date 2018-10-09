@@ -19,6 +19,7 @@
           @edit="handleTabsEdit"
           @contextmenu.native="handleContextmenu">
           <el-tab-pane
+            lazy="lazy"
             v-for="(page, index) in opened"
             :key="index"
             :label="page.meta.title || '未命名'"

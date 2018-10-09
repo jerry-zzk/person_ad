@@ -18,7 +18,6 @@
     import echart from 'echarts'
     import D2HelpBtn from './components/d2-help-btn'
     import card4 from './components/card4.vue'
-    import lineChart from './components/line-chart.vue'
     import resize from 'vue-resize-directive'
 
     export default {
@@ -43,7 +42,7 @@
         components: {
             D2HelpBtn,
             card4,
-            lineChart,
+            lineChart:()=> import('./components/line-chart.vue'),
             topBox: () => import('./components/topBox')
         },
         mounted() {
@@ -52,9 +51,6 @@
             resize
         },
         methods: {
-            getChartData() {
-
-            },
             open1(tab) {
                 this.$store.commit('setData1', true)
                 this.$store.commit('setTab', tab)
