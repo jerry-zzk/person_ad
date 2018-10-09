@@ -61,10 +61,10 @@
     }
 
     .col {
-        padding: 20px;
+        padding: 14px;
         border:1px solid rgba(0,0,0,0.2);
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 14px;
+        line-height: 24px;
         position: relative;
         margin-bottom: 20px;
         width: calc(25% - 30px);
@@ -79,7 +79,7 @@
         h4 {
             line-height: 32px;
             font-weight: 500;
-            margin-top: 20px;
+            margin-top: 10px;
             padding-left: 20px;
         }
         p{
@@ -88,10 +88,10 @@
         .icon {
             position: absolute;
             right: 22px;
-            top: 24px;
+            top: 17px;
             font-size: 42px;
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             img {
                 width: 100%;
                 border-radius: 50%;
@@ -103,6 +103,7 @@
         border-left: 4px solid rgb(188,215,84);
         span{
             color:rgb(188,215,84);
+            font-weight: 600;
             padding-left: 28px;
         }
     }
@@ -111,6 +112,7 @@
         span{
             color:rgb(118,203,196);
             padding-left: 40px;
+            font-weight: 600;
         }
     }
     .col-3{
@@ -118,6 +120,7 @@
         span{
             color:rgb(100,165,195);
             padding-left: 40px;
+            font-weight: 600;
         }
     }
     .col-4{
@@ -125,6 +128,7 @@
         span{
             color:rgb(110,131,186);
             padding-left: 34px;
+            font-weight: 600;
         }
     }
 </style>

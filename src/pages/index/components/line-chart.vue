@@ -1,5 +1,5 @@
 <template>
-    <div id="line-chart">
+    <div id="line-chart" ref="lineChart">
     </div>
 </template>
 
@@ -14,32 +14,30 @@
             }
         },
         mounted() {
-            this.drawLineChart()
-        },
-        beforeDestroy() {
-            echart.init(document.getElementById('line-chart')).dispose()
+            let chartData = {
+                name: ["曲线A", "曲线B"],
+                x: (function () {
+                    let arr = []
+                    for (let i = 29; i >= 0; i--) {
+                        arr.push(new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getFullYear() + '-' + (new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getMonth() + 1) + '-' + new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getDate())
+                    }
+                    return arr
+                })(),
+                y: (function () {
+                    let arr = []
+                    let arr1 = []
+                    for (let i = 0; i < 30; i++) {
+                        arr.push((Math.random() * 100).toFixed(0))
+                        arr1.push((Math.random() * 10).toFixed(0))
+                    }
+                    return [arr, arr1]
+                })()
+            }
+            console.log(chartData)
+            this.drawLineChart(chartData)
         },
         methods: {
-            drawLineChart() {
-                let chartData = {
-                    name: ["曲线A", "曲线B"],
-                    x: (function () {
-                        let arr = []
-                        for (let i = 29; i >= 0; i--) {
-                            arr.push(new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getFullYear() + '-' + (new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getMonth() + 1) + '-' + new Date(new Date().getTime() - i * 24 * 60 * 60 * 1000).getDate())
-                        }
-                        return arr
-                    })(),
-                    y: (function () {
-                        let arr = []
-                        let arr1 = []
-                        for (let i = 0; i < 30; i++) {
-                            arr.push((Math.random() * 100).toFixed(0))
-                            arr1.push((Math.random() * 10).toFixed(0))
-                        }
-                        return [arr, arr1]
-                    })()
-                }
+            drawLineChart(chartData) {
                 let option = {
                     tooltip: {
                         trigger: 'axis',
@@ -177,7 +175,8 @@
                         }
                     ]
                 };
-                const line_chart = echart.init(document.getElementById('line-chart'))
+                let vm=this
+                const line_chart = echart.init(vm.$refs.lineChart)
                 line_chart.setOption(option)
                 // this.$store.commit('setX',[124,235])
             }
@@ -192,6 +191,6 @@
 
     #line-chart {
         width: 100%;
-        height: 340px;
+        height: 400px;
     }
 </style>
