@@ -23,7 +23,7 @@
     <el-row class="bl-list">
       <el-col :span="5" class="bl-list-left">
         <el-scrollbar class="bl-list-left-body">
-          <div v-for="item in leftList" :key="item.index" class="bl-box" :class="{'bl-box-active':item.active}">
+          <div v-for="item in leftList" :key="item.index" @click="doClickLeft(item.index)" class="bl-box" :class="{'bl-box-active':item.active}">
             <p class="bl-box-head"><i class="fa fa-user-circle"></i> {{item.idcard}}</p>
             <p class="bl-box-foot">{{item.date}}</p>
           </div>
@@ -122,6 +122,17 @@ export default {
         idCard: '',
         tel: ''
       }
+    },
+    // 点击左侧每个块
+    doClickLeft(index){
+      let _this = this
+      _this.leftList.forEach((item, idx) => {
+        if(item.index == index){
+          item.active = true
+        }else{
+          item.active = false
+        }
+      })
     },
     // 画关系图
     drawBlChart(){
