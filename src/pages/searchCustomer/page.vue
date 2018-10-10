@@ -89,14 +89,13 @@ export default {
     // 获取表格数据
     getTableData(){
       let _this = this
-      console.log( _this.currentPage)
       axios({
         url: '/getSearchCustomer',
         method: 'post',
         data: null
       })
       .then(res => {
-        _this.tableData = res.list
+        _this.tableData = res.data
       })
       .catch((error) => {
         console.log(error);

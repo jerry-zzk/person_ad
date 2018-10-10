@@ -6,7 +6,7 @@ Mock.mock('/api/getSearchCustomer', 'post',({}) => {
       code: 0,
       msg: '获取数据成功',
       data: {
-        'list|10': [
+        'data|10': [
           {
             'index|+1': 1, 
             'name': '@cname',
@@ -20,6 +20,26 @@ Mock.mock('/api/getSearchCustomer', 'post',({}) => {
             'blackList|1': true,
             'grade|1-9.1': 1,
             'flag|1': [1, 2]
+          }
+        ]
+      }
+    }
+  )
+})
+
+Mock.mock('/api/getBlackList1_left', 'get',({}) => {
+  return Mock.mock(
+    {
+      code: 0,
+      msg: '获取数据成功',
+      data: {
+        'leftTotal': 6,
+        'data|6': [
+          {
+            'index|+1': 1, 
+            'idcard': '@id',
+            'date': '@date("yyyy/MM/dd")',
+            'active|1-14': true
           }
         ]
       }

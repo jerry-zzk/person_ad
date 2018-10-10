@@ -9,13 +9,13 @@
     </ul>
     <div class="bl-line"></div>
     <el-row :gutter="10" class="bl-search">
-      <el-col :span="6"><div>姓名: <input class="bl-input"/></div></el-col>
-      <el-col :span="8"><div>身份证号: <input class="bl-input" style="width:200px;"/></div></el-col>
-      <el-col :span="6"><div>电话号: <input class="bl-input"/></div></el-col>
+      <el-col :span="6"><div>姓名: <input v-model="searchObj.name" class="bl-input"/></div></el-col>
+      <el-col :span="8"><div>身份证号: <input v-model="searchObj.idCard" class="bl-input" style="width:200px;"/></div></el-col>
+      <el-col :span="6"><div>电话号: <input v-model="searchObj.tel" class="bl-input"/></div></el-col>
       <el-col :span="4">
         <div>
-          <el-button type="primary" class="bl-btn"><i class="fa fa-search"></i> 查询</el-button> 
-          <el-button class="bl-btn"><i class="fa fa-refresh"></i> 重置</el-button>
+          <el-button @click="doSearch" type="primary" class="bl-btn"><i class="fa fa-search"></i> 查询</el-button> 
+          <el-button @click="reSet" class="bl-btn"><i class="fa fa-refresh"></i> 重置</el-button>
         </div>
       </el-col>
     </el-row>
@@ -23,25 +23,13 @@
     <el-row class="bl-list">
       <el-col :span="5" class="bl-list-left">
         <el-scrollbar class="bl-list-left-body">
-          <div class="bl-box">
-            <p class="bl-box-head"><i class="fa fa-user-circle"></i> 110110100055559999</p>
-            <p class="bl-box-foot">2018/01/01</p>
-          </div>
-          <div class="bl-box bl-box-active">
-            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-            <p class="bl-box-foot">2018/01/01</p>
-          </div>
-          <div class="bl-box">
-            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-            <p class="bl-box-foot">2018/01/01</p>
-          </div>
-          <div class="bl-box">
-            <p class="bl-box-head"><i class="fa fa-user fa-user-circle"></i> 110110100055559999</p>
-            <p class="bl-box-foot">2018/01/01</p>
+          <div v-for="item in leftList" :key="item.index" class="bl-box" :class="{'bl-box-active':item.active}">
+            <p class="bl-box-head"><i class="fa fa-user-circle"></i> {{item.idcard}}</p>
+            <p class="bl-box-foot">{{item.date}}</p>
           </div>
         </el-scrollbar>
         <div class="bl-list-left-foot">
-          共计15个 
+          共计{{leftTotal}}个 
           <el-button type="primary" class="bl-list-btn"><i class="fa fa-caret-left"></i></el-button>
           <el-button type="primary" class="bl-list-btn" style="margin-left:4px;"><i class="fa fa-caret-right"></i></el-button>
         </div>
@@ -55,6 +43,7 @@
 
 <script>
 import echarts from 'echarts'
+import axios from '@/plugin/axios'
 export default {
   name: 'black_list',
   data () {
@@ -80,22 +69,61 @@ export default {
         ico: 'iipAdressBlacklist',
         name: 'IP地址黑名单',
         select: false
-      }]
+      }],
+      leftList: [],
+      leftTotal: 0,
+      searchObj: {
+        name: '',
+        idCard: '',
+        tel: ''
+      }
     }
   },
   mounted(){
     let _this = this
-    this.drawBlChart()
+    _this.getLeftData()
+    _this.drawBlChart()
     window.onresize = function(){
       _this.drawBlChart()
     }
   },
   methods:{
+    // 导航切换
     navCtrl(idx){
       this.navsList.forEach(nav => {
         nav.select = (nav.index == idx)
       })
     },
+    // 获取左侧
+    getLeftData(){
+      let _this = this
+      axios({
+        url: '/getBlackList1_left',
+        method: 'get',
+        data: null
+      })
+      .then(res => {
+        _this.leftList = res.data
+        _this.leftTotal = res.leftTotal
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    },
+    // 查询
+    doSearch(){
+      console.dir(this.searchObj)
+      this.getLeftData()
+    },
+    // 重置
+    reSet(){
+      this.searchObj = {
+        name: '',
+        idCard: '',
+        tel: ''
+      }
+    },
+    // 画关系图
     drawBlChart(){
       this.chart2 = echarts.init(document.getElementById('black_list_chart'));
         // 把配置和数据放这里
