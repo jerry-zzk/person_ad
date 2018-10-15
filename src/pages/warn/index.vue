@@ -13,18 +13,28 @@
           <el-radio :label="3">最近一月</el-radio>
           <el-radio style="margin-right:10px;" :label="4">自定</el-radio>
         </el-radio-group>
-         <el-date-picker
+        <el-date-picker
+          v-model="value1"
+          size="mini"
+          type="daterange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期">
+        </el-date-picker>
+         <!-- <el-date-picker
           size="mini"
           class="in"
-          type="datetime"
-          placeholder="选择日期时间">
+          type="date"
+          v-model="value1"
+          placeholder="选择日期">
         </el-date-picker>
         <el-date-picker
           size="mini"
           class="in"
-          type="datetime"
-          placeholder="选择日期时间">
-        </el-date-picker>
+          v-model="value2"
+          type="date"
+          placeholder="选择日期">
+        </el-date-picker> -->
       </p>
       <p style="margin:5px 0 5px 0;padding:0px;">告警规则 <b>:</b>&nbsp;
         <span v-for="(bg,index) in bgc" :key="bg.num" :class="[{el_bg: index == inx},bg_zk(index)]" @click="chan_zk(index)">{{bg.num}}</span>
@@ -108,6 +118,8 @@
     },
     data () {
       return {
+        value1: '',
+        value2: '',
         selectedBlock: {},
         inx: -1,
         bgc:[
