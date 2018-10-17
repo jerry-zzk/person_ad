@@ -19,7 +19,7 @@ const setting = {
       {
         name: 'index',
         meta: {
-          title: '首页',
+          title: '首11',
           requiresAuth: false
         }
       }

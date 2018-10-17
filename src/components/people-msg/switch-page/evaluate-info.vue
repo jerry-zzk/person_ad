@@ -31,95 +31,97 @@
 			</el-row>
 		</div>
 		<div id="evaluete-info-main">
-			<el-scrollbar style="height: 100%">
-				<div id="evaluete-info-main-inner" v-resize:throttle="onResize" style="background-color: #f9f9f9;">
+			<el-scrollbar style="height: 100%" @mousewheel.native="Scroll">
+				<div id="evaluete-info-main-inner"   v-resize:throttle="onResize" style="background-color: #f9f9f9;">
 					<div id="anchor-1" class="section" >
 						<div class="detail-body">
-					      <el-row :gutter="20">
-					        <el-col :span="16">
-					        	<div class="ipanel">
-						        	<p class="title">身份欺诈</p>
-						          <el-row class="detail-thead" :gutter="2">
-						            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
-						            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
-						            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
-						          </el-row>
-						          <el-row class="detail-tr color-1">
-						            <el-col :span="8">户籍信息</el-col>
-						            <el-col :span="8">有</el-col>
-						            <el-col :span="8">与活动区域不符</el-col>
-						          </el-row>
-						          <el-row class="detail-tr color-2">
-						            <el-col :span="8">工作信息</el-col>
-						            <el-col :span="8">有</el-col>
-						            <el-col :span="8">与活动区域不符</el-col>
-						          </el-row>
-						          <el-row class="detail-tr color-3">
-						            <el-col :span="8">地址信息</el-col>
-						            <el-col :span="8">有</el-col>
-						            <el-col :span="8">与活动区域不符</el-col>
-						          </el-row>
-						          <el-row class="detail-tr color-4">
-						            <el-col :span="8">家庭成员信息</el-col>
-						            <el-col :span="8">无</el-col>
-						            <el-col :span="8">与活动区域不符</el-col>
-						          </el-row>
-						          <el-row class="detail-tr color-5">
-						            <el-col :span="8">虚拟身份</el-col>
-						            <el-col :span="8">无</el-col>
-						            <el-col :span="8">与活动区域不符</el-col>
-						          </el-row>
-					        	</div>
-					        </el-col>
-					        <el-col :span="8">
-					        	<div class="ipanel">
-						        	<p class="title">常活动区域</p>
-						          <div id="detail_heatMap"></div>
-					        	</div>
-					        </el-col>
-					      </el-row>
+						    <el-row :gutter="20">
+						        <el-col :span="16">
+						        	<div class="ipanel">
+							        	<p class="title">身份欺诈</p>
+							          <el-row class="detail-thead" :gutter="2">
+							            <el-col :span="8"><div class="detail-thead-th detail-thead-th-left">实名核实</div></el-col>
+							            <el-col :span="8"><div class="detail-thead-th">有无嫌疑</div></el-col>
+							            <el-col :span="8"><div class="detail-thead-th detail-thead-th-right">细则</div></el-col>
+							          </el-row>
+							          <el-row class="detail-tr color-1">
+							            <el-col :span="8">户籍信息</el-col>
+							            <el-col :span="8">有</el-col>
+							            <el-col :span="8">与活动区域不符</el-col>
+							          </el-row>
+							          <el-row class="detail-tr color-2">
+							            <el-col :span="8">工作信息</el-col>
+							            <el-col :span="8">有</el-col>
+							            <el-col :span="8">与活动区域不符</el-col>
+							          </el-row>
+							          <el-row class="detail-tr color-3">
+							            <el-col :span="8">地址信息</el-col>
+							            <el-col :span="8">有</el-col>
+							            <el-col :span="8">与活动区域不符</el-col>
+							          </el-row>
+							          <el-row class="detail-tr color-4">
+							            <el-col :span="8">家庭成员信息</el-col>
+							            <el-col :span="8">无</el-col>
+							            <el-col :span="8">与活动区域不符</el-col>
+							          </el-row>
+							          <el-row class="detail-tr color-5">
+							            <el-col :span="8">虚拟身份</el-col>
+							            <el-col :span="8">无</el-col>
+							            <el-col :span="8">与活动区域不符</el-col>
+							          </el-row>
+						        	</div>
+						        </el-col>
+						        <el-col :span="8">
+						        	<div class="ipanel">
+							        	<p class="title">常活动区域</p>
+							          	<div id="detail_heatMap"></div>
+						        	</div>
+						        </el-col>
+						        <el-col :span="24" style="margin-top:20px">
+						        	<div class="ipanel">
+			        					<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
+							    		<div class="detail-body">
+									      <el-row class="detail-tr color-6">
+									        <el-col :span="3">1.</el-col>
+									        <el-col :span="6">姓名</el-col>
+									        <el-col :span="6">185********</el-col>
+									        <el-col :span="3">30次/月</el-col>
+									        <el-col :span="6">无可疑</el-col>
+									      </el-row>
+									      <el-row class="detail-tr color-7">
+									        <el-col :span="3">2.</el-col>
+									        <el-col :span="6">姓名</el-col>
+									        <el-col :span="6">185********</el-col>
+									        <el-col :span="3">30次/月</el-col>
+									        <el-col :span="6">无可疑</el-col>
+									      </el-row>
+									      <el-row class="detail-tr color-8">
+									        <el-col :span="3">3.</el-col>
+									        <el-col :span="6">姓名</el-col>
+									        <el-col :span="6">185********</el-col>
+									        <el-col :span="3">30次/月</el-col>
+									        <el-col :span="6">无可疑</el-col>
+									      </el-row>
+									      <el-row class="detail-tr color-9">
+									        <el-col :span="3">4.</el-col>
+									        <el-col :span="6">姓名</el-col>
+									        <el-col :span="6">185********</el-col>
+									        <el-col :span="3">30次/月</el-col>
+									        <el-col :span="6">无可疑</el-col>
+									      </el-row>
+									      <el-row class="detail-tr color-10">
+									        <el-col :span="3">5.</el-col>
+									        <el-col :span="6">姓名</el-col>
+									        <el-col :span="6">185********</el-col>
+									        <el-col :span="3">30次/月</el-col>
+									        <el-col :span="6">无可疑</el-col>
+									      </el-row>
+									    </div>
+									</div>
+						        </el-col>
+						    </el-row>
+						</div>
 			      	</div>
-	        	<div class="ipanel">
-	        		<p class="title" style="margin-bottom:10px;">主要通联TOP5</p>
-			    		<div class="detail-body">
-					      <el-row class="detail-tr color-6">
-					        <el-col :span="3">1.</el-col>
-					        <el-col :span="6">姓名</el-col>
-					        <el-col :span="6">185********</el-col>
-					        <el-col :span="3">30次/月</el-col>
-					        <el-col :span="6">无可疑</el-col>
-					      </el-row>
-					      <el-row class="detail-tr color-7">
-					        <el-col :span="3">2.</el-col>
-					        <el-col :span="6">姓名</el-col>
-					        <el-col :span="6">185********</el-col>
-					        <el-col :span="3">30次/月</el-col>
-					        <el-col :span="6">无可疑</el-col>
-					      </el-row>
-					      <el-row class="detail-tr color-8">
-					        <el-col :span="3">3.</el-col>
-					        <el-col :span="6">姓名</el-col>
-					        <el-col :span="6">185********</el-col>
-					        <el-col :span="3">30次/月</el-col>
-					        <el-col :span="6">无可疑</el-col>
-					      </el-row>
-					      <el-row class="detail-tr color-9">
-					        <el-col :span="3">4.</el-col>
-					        <el-col :span="6">姓名</el-col>
-					        <el-col :span="6">185********</el-col>
-					        <el-col :span="3">30次/月</el-col>
-					        <el-col :span="6">无可疑</el-col>
-					      </el-row>
-					      <el-row class="detail-tr color-10">
-					        <el-col :span="3">5.</el-col>
-					        <el-col :span="6">姓名</el-col>
-					        <el-col :span="6">185********</el-col>
-					        <el-col :span="3">30次/月</el-col>
-					        <el-col :span="6">无可疑</el-col>
-					      </el-row>
-					    </div>
-	        	</div>
-					</div>
 					<div id="anchor-2" class="section">
 					  <div class="ipanel" style="min-height: 550px;">
 					  	<p class="title" style="margin-bottom: 10px;">黑名单</p>
@@ -434,6 +436,7 @@ import resize from 'vue-resize-directive'
 export default {
   data () {
     return {
+    	last_height:0,
     	menu_item:[{
     		index:1,
     		name:"身份核验",
@@ -555,12 +558,47 @@ export default {
   	goAnchor(item) {
   		this.menu_item.forEach((item, index) => {
   			item.select = false;
-			});
+		});
   		item.select = true;
-      var anchor = this.$el.querySelector('#anchor-'+item.index);
+      	var anchor = this.$el.querySelector('#anchor-'+item.index);
+      	document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
+	},
+	// jump(item) {
+	// 	// 用 class="d_jump" 添加锚点
+	// 	let total = this.$el.querySelector('#anchor-' + item.index).offsetTop
+	// 	let distance = document.documentElement.scrollTop || document.body.scrollTop
+	// 	// 平滑滚动，时长500ms，每10ms一跳，共50跳
+	// 	let step = total / 50
+	// 	if (total > distance) {
+	// 		smoothDown()
+	// 	} else {
+	// 		let newTotal = distance - total
+	// 		step = newTotal / 50
+	// 		smoothUp()
+	// 	}
 
-      document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop = anchor.offsetTop
-    },
+	// 	function smoothDown() {
+	// 		if (distance < total) {
+	// 			distance += step　　　　　　　 document.body.scrollTop = distance
+	// 			document.documentElement.scrollTop = distance
+	// 			setTimeout(smoothDown, 10)
+	// 		} else {
+	// 			document.body.scrollTop = total
+	// 			document.documentElement.scrollTop = total
+	// 		}
+	// 	}
+
+	// 	function smoothUp() {
+	// 		if (distance > total) {
+	// 			distance -= step　　　　　　　 document.body.scrollTop = distance
+	// 			document.documentElement.scrollTop = distance
+	// 			setTimeout(smoothUp, 10)
+	// 		} else {
+	// 			document.body.scrollTop = total
+	// 			document.documentElement.scrollTop = total
+	// 		}
+	// 	}
+	// },
     initChart1() {
       	this.chart1 = echarts.init(this.$refs.myEchart1);
       	// 把配置和数据放这里
@@ -619,6 +657,29 @@ export default {
 		        ]
 		    }]
 		})
+    },
+    Scroll(){
+    	var view  = this;
+    	var height = document.querySelector("#evaluete-info-main").querySelector(".el-scrollbar__wrap").scrollTop;
+    	this.menu_item.forEach((item, index) => {
+    		if(item.index<6){
+    			var anchor = view.$el.querySelector('#anchor-'+item.index);
+	  			var next_anchor = view.$el.querySelector('#anchor-'+(item.index+1));
+	  			if(height>=anchor.offsetTop&&height<next_anchor.offsetTop){
+	  				item.select = true;
+	  			}else{
+	  				item.select = false;
+	  			}
+    		}else{
+    			var anchor = view.$el.querySelector('#anchor-'+item.index);
+    			if(height>=anchor.offsetTop){
+	  				item.select = true;
+	  			}else{
+	  				item.select = false;
+	  			}
+    		}
+  			
+		});
     },
     initChart2() {
       	this.chart2 = echarts.init(this.$refs.myEchart2);
