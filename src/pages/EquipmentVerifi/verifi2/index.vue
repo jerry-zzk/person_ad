@@ -41,9 +41,9 @@
             <demo-page-main
             style="margin-bottom:15px;"
               :table-data="table"
-              :loading="loading" v-show="ok"/>
+              :loading="loading" v-show="ok1"/>
 
-            <p v-show="ok1">
+            <p v-show="ok">
               <el-row :class="[zk_ul,{cli:zk_cli}]" v-for="(lb,index) in peo" :key="lb">
                 <el-col :span="3">
                   <img src="../../../assets/img/1.jpg" style="width:60%;vertical-align:middle;" alt="">
